@@ -72,6 +72,8 @@
 		03FB56F620ECCA8500270859 /* DueAmountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB56F520ECCA8500270859 /* DueAmountVC.swift */; };
 		03FB56F820ECD0D400270859 /* MyOrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB56F720ECD0D400270859 /* MyOrdersVC.swift */; };
 		03FB56FF20ECEDD100270859 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB56FE20ECEDD100270859 /* DashboardViewModel.swift */; };
+		0F68656D20EFD5B200F95363 /* PickUpVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F68656C20EFD5B200F95363 /* PickUpVC.storyboard */; };
+		0F68656F20EFD61C00F95363 /* PickUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F68656E20EFD61C00F95363 /* PickUpVC.swift */; };
 		19815D5B28B0965573076D28 /* Pods_QDCCustomerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8206FF962A53EAF360AFEFB3 /* Pods_QDCCustomerAppTests.framework */; };
 		83661F5920BBFDA3B0BAB2C0 /* Pods_QDCCustomerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7DE35483804927E305602D8 /* Pods_QDCCustomerApp.framework */; };
 		C6E2022A9000E255F3924138 /* Pods_QDCCustomerAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA20F2CA4FF68F207C6ABD1B /* Pods_QDCCustomerAppUITests.framework */; };
@@ -166,6 +168,8 @@
 		03FB56F520ECCA8500270859 /* DueAmountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueAmountVC.swift; sourceTree = "<group>"; };
 		03FB56F720ECD0D400270859 /* MyOrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersVC.swift; sourceTree = "<group>"; };
 		03FB56FE20ECEDD100270859 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		0F68656C20EFD5B200F95363 /* PickUpVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickUpVC.storyboard; sourceTree = "<group>"; };
+		0F68656E20EFD61C00F95363 /* PickUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpVC.swift; sourceTree = "<group>"; };
 		3BF99ED0F81071F3C951EEF4 /* Pods-QDCCustomerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDCCustomerAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDCCustomerAppTests/Pods-QDCCustomerAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BE6E2D889EA6C81DD40BD16 /* Pods-QDCCustomerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDCCustomerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDCCustomerApp/Pods-QDCCustomerApp.release.xcconfig"; sourceTree = "<group>"; };
 		8206FF962A53EAF360AFEFB3 /* Pods_QDCCustomerAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QDCCustomerAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,6 +347,7 @@
 		03C2AB7E20DAAFAC0029AAA4 /* QDCCustomerApp */ = {
 			isa = PBXGroup;
 			children = (
+				0F68656720EFD55A00F95363 /* PickUp */,
 				03FB56F920ECD5F300270859 /* CancelReason */,
 				03FB56E820ECC79300270859 /* MyOrders */,
 				03FB56E720ECC78A00270859 /* DueAmount */,
@@ -796,6 +801,47 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		0F68656720EFD55A00F95363 /* PickUp */ = {
+			isa = PBXGroup;
+			children = (
+				0F68656B20EFD56F00F95363 /* Views */,
+				0F68656A20EFD56B00F95363 /* Controllers */,
+				0F68656920EFD56800F95363 /* ViewModels */,
+				0F68656820EFD56500F95363 /* Models */,
+			);
+			path = PickUp;
+			sourceTree = "<group>";
+		};
+		0F68656820EFD56500F95363 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0F68656920EFD56800F95363 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0F68656A20EFD56B00F95363 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F68656E20EFD61C00F95363 /* PickUpVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0F68656B20EFD56F00F95363 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F68656C20EFD5B200F95363 /* PickUpVC.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		196AD45EC9F5E5D21E707B01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -942,6 +988,7 @@
 				03FB56F420ECC81400270859 /* MyOrdersVC.storyboard in Resources */,
 				03CEBA3A20DC126B00A1FAB3 /* SelectLocalityVC.storyboard in Resources */,
 				03CEBA4320DC147C00A1FAB3 /* PincodeTVC.storyboard in Resources */,
+				0F68656D20EFD5B200F95363 /* PickUpVC.storyboard in Resources */,
 				03C2AB8520DAAFAC0029AAA4 /* Main.storyboard in Resources */,
 				03E0CB5120E1186200318E32 /* OTPVerifyTVC.storyboard in Resources */,
 			);
@@ -1099,6 +1146,7 @@
 				03EE3CC420DE2FA6005F1A4F /* ServicableAreaModel.swift in Sources */,
 				037745DA20DC259500CAB37E /* SignUpChoiceVC.swift in Sources */,
 				03CEBA6520DC188300A1FAB3 /* UITextField.swift in Sources */,
+				0F68656F20EFD61C00F95363 /* PickUpVC.swift in Sources */,
 				03CEBA7220DC18E000A1FAB3 /* UIImageView+URL.swift in Sources */,
 				03CEBA7420DC18F300A1FAB3 /* NetworkClient.swift in Sources */,
 				03EE3CD220DE5418005F1A4F /* SignUpModel.swift in Sources */,
