@@ -56,6 +56,7 @@
 		03CEBA7920DC1E4A00A1FAB3 /* SignUpChoiceVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CEBA7820DC1E4A00A1FAB3 /* SignUpChoiceVC.storyboard */; };
 		03E0CB5120E1186200318E32 /* OTPVerifyTVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E0CB5020E1186200318E32 /* OTPVerifyTVC.storyboard */; };
 		03E0CB5320E1187300318E32 /* OTPVerifyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0CB5220E1187300318E32 /* OTPVerifyTVC.swift */; };
+		03E2BF5720EFDB9C00999555 /* CancelReasonVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E2BF5620EFDB9C00999555 /* CancelReasonVC.storyboard */; };
 		03E54DF020E356A400BE948A /* QDCStringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E54DEF20E356A400BE948A /* QDCStringConstants.swift */; };
 		03E54DF220E356AC00BE948A /* QDCConfigurableConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E54DF120E356AC00BE948A /* QDCConfigurableConstants.swift */; };
 		03E54DF420E356F700BE948A /* QDCUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E54DF320E356F700BE948A /* QDCUserDefaults.swift */; };
@@ -150,6 +151,7 @@
 		03CEBA7820DC1E4A00A1FAB3 /* SignUpChoiceVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpChoiceVC.storyboard; sourceTree = "<group>"; };
 		03E0CB5020E1186200318E32 /* OTPVerifyTVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OTPVerifyTVC.storyboard; sourceTree = "<group>"; };
 		03E0CB5220E1187300318E32 /* OTPVerifyTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerifyTVC.swift; sourceTree = "<group>"; };
+		03E2BF5620EFDB9C00999555 /* CancelReasonVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = CancelReasonVC.storyboard; path = ../../../../CancelReasonVC.storyboard; sourceTree = "<group>"; };
 		03E54DEF20E356A400BE948A /* QDCStringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDCStringConstants.swift; sourceTree = "<group>"; };
 		03E54DF120E356AC00BE948A /* QDCConfigurableConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDCConfigurableConstants.swift; sourceTree = "<group>"; };
 		03E54DF320E356F700BE948A /* QDCUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDCUserDefaults.swift; sourceTree = "<group>"; };
@@ -792,6 +794,7 @@
 		03FB56FD20ECD60300270859 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				03E2BF5620EFDB9C00999555 /* CancelReasonVC.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -928,6 +931,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CEBA4F20DC187300A1FAB3 /* LoadingHUD.xib in Resources */,
+				03E2BF5720EFDB9C00999555 /* CancelReasonVC.storyboard in Resources */,
 				034B9B2820E6C056004CFD4D /* MenuItemsWithHeaderVC.storyboard in Resources */,
 				03CEBA3E20DC12B900A1FAB3 /* SignUpTVC.storyboard in Resources */,
 				03EE3CCC20DE390E005F1A4F /* ServiceAreaTableViewCell.xib in Resources */,
