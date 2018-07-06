@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Due Amount-->
+        <scene sceneID="kUY-Qm-fKy">
+            <objects>
+                <viewController storyboardIdentifier="QDCDueAmountViewControllerID" id="7wj-sI-1ph" customClass="QDCDueAmountViewController" customModule="Primoris_Laundry" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ez6-Ub-BmS"/>
+                        <viewControllerLayoutGuide type="bottom" id="t4v-vV-Hms"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2MV-dg-eOU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- AMOUNT --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7n-Tw-5jF">
+                                <rect key="frame" x="20" y="317" width="335" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="rZq-er-nnl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are in a process of integrating Credit card / Debit card /Online Payment, Look for this space in next version." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmR-6Z-U0P">
+                                <rect key="frame" x="10" y="368" width="355" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="4V2-ao-AQ0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Due:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54q-EK-uVz">
+                                <rect key="frame" x="20" y="267" width="335" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vVU-hs-vwE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HmR-6Z-U0P" firstAttribute="top" secondItem="S7n-Tw-5jF" secondAttribute="bottom" constant="18" id="5pp-dp-DM6"/>
+                            <constraint firstItem="54q-EK-uVz" firstAttribute="leading" secondItem="2MV-dg-eOU" secondAttribute="leading" constant="20" id="8Gz-sa-TUj"/>
+                            <constraint firstAttribute="trailing" secondItem="54q-EK-uVz" secondAttribute="trailing" constant="20" id="Aee-6Q-7J3"/>
+                            <constraint firstItem="S7n-Tw-5jF" firstAttribute="centerX" secondItem="2MV-dg-eOU" secondAttribute="centerX" id="HWW-Pi-Qit"/>
+                            <constraint firstItem="S7n-Tw-5jF" firstAttribute="leading" secondItem="2MV-dg-eOU" secondAttribute="leading" constant="20" id="Hmt-6o-iPF"/>
+                            <constraint firstItem="54q-EK-uVz" firstAttribute="centerX" secondItem="2MV-dg-eOU" secondAttribute="centerX" id="am9-Bt-SWa"/>
+                            <constraint firstItem="S7n-Tw-5jF" firstAttribute="top" secondItem="54q-EK-uVz" secondAttribute="bottom" constant="29" id="beL-1N-hxT"/>
+                            <constraint firstAttribute="trailing" secondItem="HmR-6Z-U0P" secondAttribute="trailing" constant="10" id="hF0-3G-ej7"/>
+                            <constraint firstItem="S7n-Tw-5jF" firstAttribute="centerY" secondItem="2MV-dg-eOU" secondAttribute="centerY" id="jd1-WB-qHJ"/>
+                            <constraint firstItem="HmR-6Z-U0P" firstAttribute="leading" secondItem="2MV-dg-eOU" secondAttribute="leading" constant="10" id="rHN-xm-uBg"/>
+                            <constraint firstAttribute="trailing" secondItem="S7n-Tw-5jF" secondAttribute="trailing" constant="20" id="xqw-rT-y80"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fv1-wE-xG5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Due Amount" id="5rE-My-MeB"/>
+                    <connections>
+                        <outlet property="amountDetailTitleLabel" destination="HmR-6Z-U0P" id="PGV-8E-8vc"/>
+                        <outlet property="amountTitleLabel" destination="S7n-Tw-5jF" id="yeF-sA-30r"/>
+                        <outlet property="dueAmountLabel" destination="54q-EK-uVz" id="Iwt-h6-lcW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zL8-RR-IS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1792.8" y="1145.577211394303"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EOc-b0-KX6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M4j-QF-QCv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ayg-QV-Zk8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7wj-sI-1ph" kind="relationship" relationship="rootViewController" id="r2F-Bh-y8P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cQD-fd-LaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853.60000000000002" y="1145.577211394303"/>
+        </scene>
+    </scenes>
+</document>

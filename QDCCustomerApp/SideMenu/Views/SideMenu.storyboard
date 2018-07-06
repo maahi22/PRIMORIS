@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cQC-gU-Zqc">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Side Menu View Controller-->
+        <scene sceneID="XQC-jK-hh2">
+            <objects>
+                <viewController storyboardIdentifier="CustomSideMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cQC-gU-Zqc" customClass="CustomSideMenuViewController" customModule="NewsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YKp-yu-gl9"/>
+                        <viewControllerLayoutGuide type="bottom" id="QtV-Ok-309"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QfJ-Jv-gqN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Efs-pl-aZn" kind="custom" identifier="showHome" customClass="CenterContainmentSegue" customModule="SideMenuController" id="j5f-df-VNP"/>
+                        <segue destination="4aq-YH-Fme" kind="custom" identifier="containSideMenu" customClass="SideContainmentSegue" customModule="SideMenuController" id="cvW-kz-pxX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uW7-Dl-cut" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2837" y="-1766"/>
+        </scene>
+        <!--MenuItemsWithHeaderVC-->
+        <scene sceneID="G4S-vR-rzR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MenuItemsWithHeaderVC" id="4aq-YH-Fme" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rLf-pa-FvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3735" y="-1789"/>
+        </scene>
+        <!--DashboardVC-->
+        <scene sceneID="aQ7-lZ-nDp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DashboardVC" id="Efs-pl-aZn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rJ-3v-Glm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3667" y="-1875"/>
+        </scene>
+    </scenes>
+</document>

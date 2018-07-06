@@ -1,0 +1,60 @@
+PODS:
+  - Alamofire (4.5.1)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - Crashlytics (3.10.0):
+    - Fabric (~> 1.7.3)
+  - Fabric (1.7.3)
+  - ReachabilitySwift (4.1.0)
+  - RNCryptor (5.0.2)
+  - SDWebImage (4.3.0):
+    - SDWebImage/Core (= 4.3.0)
+  - SDWebImage/Core (4.3.0)
+  - SideMenuController (0.2.4)
+  - SwiftyGif (4.1.0)
+  - SwiftyJSON (4.0.0)
+  - Swinject (2.2.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5.0)
+  - AlamofireImage
+  - Crashlytics
+  - Fabric
+  - ReachabilitySwift
+  - RNCryptor (~> 5.0)
+  - SDWebImage (~> 4.0)
+  - SideMenuController
+  - SwiftyGif
+  - SwiftyJSON (~> 4.0.0)
+  - Swinject
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - Crashlytics
+    - Fabric
+    - ReachabilitySwift
+    - RNCryptor
+    - SDWebImage
+    - SideMenuController
+    - SwiftyGif
+    - SwiftyJSON
+    - Swinject
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  Crashlytics: a989ef242b66605577a425733797f810bd2725eb
+  Fabric: bb495bb9a7a7677c6d03a1f8b83d95bc49b47e41
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  RNCryptor: 59b9f92e9fa8a1af74c32dc6b1af5e30ff5e1b64
+  SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
+  SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
+  SwiftyGif: d36c6dfb52e2ca1e48fe349d225f50ec4123ec85
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  Swinject: 4ca48bca7de5f398229a26abe1ac902b9f3ee541
+
+PODFILE CHECKSUM: 1a1bfb50efd72298bee896b7331485d68df28069
+
+COCOAPODS: 1.5.2
