@@ -13,7 +13,7 @@ class CustomerSummaryClient: NSObject {
     // MARK: - Injections
     internal let networkClient = NetworkClient.shared
     
-    func getCustomerSummary(completion:@escaping (CustomerSummaryResponse?,String)->())  {
+    func getCustomerSummary(completion:@escaping (CustomerSummaryModel?,String)->())  {
         
         let clientID = QDCUserDefaults.getClientID()
         let branchID = QDCUserDefaults.getBranchId()
@@ -29,8 +29,8 @@ class CustomerSummaryClient: NSObject {
                                            headers: headers,
                                            success: { (data, httpResponse) in
                                             
-                                            if let customerSummaryResponse = decodeJSON(type: CustomerSummaryResponse.self, from: data) {
-                                                completion(customerSummaryResponse, "Success")
+                                            if let customerSummaryModel = decodeJSON(type: CustomerSummaryModel.self, from: data) {
+                                                completion(customerSummaryModel, "Success")
                                             }else{
                                                 completion(nil,"failed")
                                             }

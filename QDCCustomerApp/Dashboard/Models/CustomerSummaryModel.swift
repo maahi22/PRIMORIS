@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct CustomerSummaryResponse:Codable {
+struct CustomerSummaryModel:Codable {
     let PendingGarments:String
     let PendingAmount:String
     let Currency:String

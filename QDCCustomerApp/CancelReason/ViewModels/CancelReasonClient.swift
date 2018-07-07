@@ -1,5 +1,5 @@
 //
-//  PickUpDateClient.swift
+//  CancelReasonClient.swift
 //  QDCCustomerApp
 //
 //  Created by Amit Pant on 07/07/18.
@@ -7,18 +7,17 @@
 //
 
 import Foundation
-
-class PickUpDateClient: NSObject {
+class CancelReasonClient: NSObject {
     // MARK: - Injections
     internal let networkClient = NetworkClient.shared
     
-    func getPickUpDate(completion:@escaping ([PickUpDateModel]?,String)->())  {
+    func getCancelReason(completion:@escaping ([CancelReasonModel]?,String)->())  {
         
         let clientID = QDCUserDefaults.getClientID()
-        let branchID = QDCUserDefaults.getBranchId()
         let token = QDCUserDefaults.getAccessToken()
         
-        let apiname = PICKUP_DATE_RELATIVE_URL + "\(clientID)/\(branchID)"
+        let apiname = GET_CANCEL_REASON_RELATIVE_URL + "\(clientID)/"
+        
         let headers = ["token": "\(token)"] as [String:String]
         
         networkClient.callAPIWithAlamofire(apiname: apiname,
@@ -27,8 +26,8 @@ class PickUpDateClient: NSObject {
                                            headers: headers,
                                            success: { (data, httpResponse) in
                                             
-                                            if let pickUpDateModel = decodeJSON(type: [PickUpDateModel].self, from: data) {
-                                                completion(pickUpDateModel, "Success")
+                                            if let cancelReasonModel = decodeJSON(type: [CancelReasonModel].self, from: data) {
+                                                completion(cancelReasonModel, "Success")
                                             }else{
                                                 completion(nil,"failed")
                                             }

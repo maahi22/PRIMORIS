@@ -42,7 +42,7 @@ let NOTIFICATION_RELATIVE_URL            = "PushNotification/"
 let PENDING_GARMENTS_RELATIVE_URL        = "PendingGarment/DryCleanKart/1/cust2"
 let PENDING_AMOUNT_RELATIVE_URL          = "PendingAmount/DryCleanKart/1/cust2"
 let PAY_NOW_RELATIVE_URL                 = ""
-let GET_CANCEL_REASON_RELATIVE_URL       = "CancelReason/DryCleanKart"
+let GET_CANCEL_REASON_RELATIVE_URL       = "CancelReason/"
 let SHARE_MECHANISM_RELATIVE_URL         = ""
 let GET_LICENSE_RELATIVE_URL             = "License/DryCleanKart/2/1223.26"
 

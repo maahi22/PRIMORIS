@@ -12,6 +12,8 @@
 		0338AF9A20F1191E00717D8C /* PickUpDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338AF9920F1191E00717D8C /* PickUpDateModel.swift */; };
 		0338AF9C20F1194000717D8C /* PickUpDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338AF9B20F1194000717D8C /* PickUpDateViewModel.swift */; };
 		0338AF9E20F11A1E00717D8C /* PickUpDateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338AF9D20F11A1E00717D8C /* PickUpDateClient.swift */; };
+		0338AFA120F11B4600717D8C /* CancelReasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338AFA020F11B4600717D8C /* CancelReasonModel.swift */; };
+		0338AFA520F11BBB00717D8C /* CancelReasonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338AFA420F11BBB00717D8C /* CancelReasonClient.swift */; };
 		034B9B1420E6BB4A004CFD4D /* CustomMessageVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034B9B1320E6BB4A004CFD4D /* CustomMessageVC.storyboard */; };
 		034B9B1620E6BC89004CFD4D /* CustomMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034B9B1520E6BC89004CFD4D /* CustomMessageVC.swift */; };
 		034B9B1C20E6C025004CFD4D /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034B9B1B20E6C025004CFD4D /* Section.swift */; };
@@ -21,7 +23,7 @@
 		034B9B2420E6C04D004CFD4D /* MenuItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034B9B2220E6C04D004CFD4D /* MenuItemTableViewCell.xib */; };
 		034B9B2720E6C056004CFD4D /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034B9B2520E6C056004CFD4D /* SideMenu.storyboard */; };
 		034B9B2820E6C056004CFD4D /* MenuItemsWithHeaderVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034B9B2620E6C056004CFD4D /* MenuItemsWithHeaderVC.storyboard */; };
-		036F54C920F1181400B4D7E0 /* CustomerSummaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F54C820F1181400B4D7E0 /* CustomerSummaryResponse.swift */; };
+		036F54C920F1181400B4D7E0 /* CustomerSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F54C820F1181400B4D7E0 /* CustomerSummaryModel.swift */; };
 		036F54CB20F1182E00B4D7E0 /* CustomerSummaryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F54CA20F1182E00B4D7E0 /* CustomerSummaryClient.swift */; };
 		037745D620DC248500CAB37E /* SignUpTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037745D520DC248500CAB37E /* SignUpTVC.swift */; };
 		037745D820DC24DA00CAB37E /* SelectLocalityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037745D720DC24DA00CAB37E /* SelectLocalityVC.swift */; };
@@ -108,8 +110,8 @@
 		0F5E427D20F0BB41005CC203 /* SuccessfullPickUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E427C20F0BB41005CC203 /* SuccessfullPickUpVC.swift */; };
 		0F5E428220F0BD31005CC203 /* ExitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E428120F0BD31005CC203 /* ExitVC.swift */; };
 		0F5E428420F0BD3C005CC203 /* ExitVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5E428320F0BD3C005CC203 /* ExitVC.storyboard */; };
-		0F68656D20EFD5B200F95363 /* PickUpVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F68656C20EFD5B200F95363 /* PickUpVC.storyboard */; };
-		0F68656F20EFD61C00F95363 /* PickUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F68656E20EFD61C00F95363 /* PickUpVC.swift */; };
+		0F68656D20EFD5B200F95363 /* PickUpDateVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F68656C20EFD5B200F95363 /* PickUpDateVC.storyboard */; };
+		0F68656F20EFD61C00F95363 /* PickUpDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F68656E20EFD61C00F95363 /* PickUpDateVC.swift */; };
 		19815D5B28B0965573076D28 /* Pods_QDCCustomerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8206FF962A53EAF360AFEFB3 /* Pods_QDCCustomerAppTests.framework */; };
 		83661F5920BBFDA3B0BAB2C0 /* Pods_QDCCustomerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7DE35483804927E305602D8 /* Pods_QDCCustomerApp.framework */; };
 		C6E2022A9000E255F3924138 /* Pods_QDCCustomerAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA20F2CA4FF68F207C6ABD1B /* Pods_QDCCustomerAppUITests.framework */; };
@@ -138,6 +140,8 @@
 		0338AF9920F1191E00717D8C /* PickUpDateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickUpDateModel.swift; sourceTree = "<group>"; };
 		0338AF9B20F1194000717D8C /* PickUpDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpDateViewModel.swift; sourceTree = "<group>"; };
 		0338AF9D20F11A1E00717D8C /* PickUpDateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpDateClient.swift; sourceTree = "<group>"; };
+		0338AFA020F11B4600717D8C /* CancelReasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelReasonModel.swift; sourceTree = "<group>"; };
+		0338AFA420F11BBB00717D8C /* CancelReasonClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelReasonClient.swift; sourceTree = "<group>"; };
 		034B9B1320E6BB4A004CFD4D /* CustomMessageVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomMessageVC.storyboard; sourceTree = "<group>"; };
 		034B9B1520E6BC89004CFD4D /* CustomMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageVC.swift; sourceTree = "<group>"; };
 		034B9B1B20E6C025004CFD4D /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -147,7 +151,7 @@
 		034B9B2220E6C04D004CFD4D /* MenuItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuItemTableViewCell.xib; sourceTree = "<group>"; };
 		034B9B2520E6C056004CFD4D /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		034B9B2620E6C056004CFD4D /* MenuItemsWithHeaderVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuItemsWithHeaderVC.storyboard; sourceTree = "<group>"; };
-		036F54C820F1181400B4D7E0 /* CustomerSummaryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerSummaryResponse.swift; sourceTree = "<group>"; };
+		036F54C820F1181400B4D7E0 /* CustomerSummaryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerSummaryModel.swift; sourceTree = "<group>"; };
 		036F54CA20F1182E00B4D7E0 /* CustomerSummaryClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerSummaryClient.swift; sourceTree = "<group>"; };
 		037745D520DC248500CAB37E /* SignUpTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTVC.swift; sourceTree = "<group>"; };
 		037745D720DC24DA00CAB37E /* SelectLocalityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocalityVC.swift; sourceTree = "<group>"; };
@@ -240,8 +244,8 @@
 		0F5E427C20F0BB41005CC203 /* SuccessfullPickUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfullPickUpVC.swift; sourceTree = "<group>"; };
 		0F5E428120F0BD31005CC203 /* ExitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitVC.swift; sourceTree = "<group>"; };
 		0F5E428320F0BD3C005CC203 /* ExitVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExitVC.storyboard; sourceTree = "<group>"; };
-		0F68656C20EFD5B200F95363 /* PickUpVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickUpVC.storyboard; sourceTree = "<group>"; };
-		0F68656E20EFD61C00F95363 /* PickUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpVC.swift; sourceTree = "<group>"; };
+		0F68656C20EFD5B200F95363 /* PickUpDateVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickUpDateVC.storyboard; sourceTree = "<group>"; };
+		0F68656E20EFD61C00F95363 /* PickUpDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpDateVC.swift; sourceTree = "<group>"; };
 		3BF99ED0F81071F3C951EEF4 /* Pods-QDCCustomerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDCCustomerAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDCCustomerAppTests/Pods-QDCCustomerAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BE6E2D889EA6C81DD40BD16 /* Pods-QDCCustomerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDCCustomerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDCCustomerApp/Pods-QDCCustomerApp.release.xcconfig"; sourceTree = "<group>"; };
 		8206FF962A53EAF360AFEFB3 /* Pods_QDCCustomerAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QDCCustomerAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -304,7 +308,7 @@
 		030C3C5E20E1AB04002DADD2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				036F54C820F1181400B4D7E0 /* CustomerSummaryResponse.swift */,
+				036F54C820F1181400B4D7E0 /* CustomerSummaryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +327,22 @@
 				030C3C6120E1C64A002DADD2 /* DashboardVC.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0338AF9F20F11B2C00717D8C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0338AFA020F11B4600717D8C /* CancelReasonModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0338AFA220F11BA200717D8C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0338AFA420F11BBB00717D8C /* CancelReasonClient.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		034B9B0F20E6BA67004CFD4D /* SideMenu */ = {
@@ -435,7 +455,7 @@
 				0F2AD3A420F07BAC002B4BF5 /* HeaderView */,
 				0F2AD3A020F07B5D002B4BF5 /* BaseView */,
 				0F2AD39920F0780D002B4BF5 /* Profile */,
-				0F68656720EFD55A00F95363 /* PickUp */,
+				0F68656720EFD55A00F95363 /* PickUpDate */,
 				03FB56F920ECD5F300270859 /* CancelReason */,
 				03FB56E820ECC79300270859 /* MyOrders */,
 				03FB56E720ECC78A00270859 /* DueAmount */,
@@ -821,6 +841,8 @@
 		03FB56F920ECD5F300270859 /* CancelReason */ = {
 			isa = PBXGroup;
 			children = (
+				0338AFA220F11BA200717D8C /* ViewModels */,
+				0338AF9F20F11B2C00717D8C /* Models */,
 				03FB56FD20ECD60300270859 /* Views */,
 				03FB56FC20ECD60000270859 /* Controllers */,
 			);
@@ -1201,7 +1223,7 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		0F68656720EFD55A00F95363 /* PickUp */ = {
+		0F68656720EFD55A00F95363 /* PickUpDate */ = {
 			isa = PBXGroup;
 			children = (
 				0F68656B20EFD56F00F95363 /* Views */,
@@ -1209,7 +1231,7 @@
 				0F68656920EFD56800F95363 /* ViewModels */,
 				0F68656820EFD56500F95363 /* Models */,
 			);
-			path = PickUp;
+			path = PickUpDate;
 			sourceTree = "<group>";
 		};
 		0F68656820EFD56500F95363 /* Models */ = {
@@ -1232,7 +1254,7 @@
 		0F68656A20EFD56B00F95363 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0F68656E20EFD61C00F95363 /* PickUpVC.swift */,
+				0F68656E20EFD61C00F95363 /* PickUpDateVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1241,7 +1263,7 @@
 			isa = PBXGroup;
 			children = (
 				0F2AD3A820F0806F002B4BF5 /* CollectionViewCell */,
-				0F68656C20EFD5B200F95363 /* PickUpVC.storyboard */,
+				0F68656C20EFD5B200F95363 /* PickUpDateVC.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1405,7 +1427,7 @@
 				0F5E423E20F0AD9A005CC203 /* OrderDetailVC.storyboard in Resources */,
 				03CEBA4320DC147C00A1FAB3 /* PincodeTVC.storyboard in Resources */,
 				0F5E423020F0A6EF005CC203 /* DueAmountVC.storyboard in Resources */,
-				0F68656D20EFD5B200F95363 /* PickUpVC.storyboard in Resources */,
+				0F68656D20EFD5B200F95363 /* PickUpDateVC.storyboard in Resources */,
 				03C2AB8520DAAFAC0029AAA4 /* Main.storyboard in Resources */,
 				03E0CB5120E1186200318E32 /* OTPVerifyTVC.storyboard in Resources */,
 				0F5E426020F0B44D005CC203 /* AboutUsVC.storyboard in Resources */,
@@ -1534,7 +1556,7 @@
 				03CEBA6220DC188300A1FAB3 /* UIImage+Gif.swift in Sources */,
 				0338AF9A20F1191E00717D8C /* PickUpDateModel.swift in Sources */,
 				03CEBA5220DC187300A1FAB3 /* ParentPushSegue.swift in Sources */,
-				036F54C920F1181400B4D7E0 /* CustomerSummaryResponse.swift in Sources */,
+				036F54C920F1181400B4D7E0 /* CustomerSummaryModel.swift in Sources */,
 				034B9B1C20E6C025004CFD4D /* Section.swift in Sources */,
 				03E54DF220E356AC00BE948A /* QDCConfigurableConstants.swift in Sources */,
 				03CEBA5D20DC188300A1FAB3 /* AppUtility.swift in Sources */,
@@ -1543,6 +1565,7 @@
 				037745D820DC24DA00CAB37E /* SelectLocalityVC.swift in Sources */,
 				0F5E425620F0B2A4005CC203 /* SettingsVC.swift in Sources */,
 				03CEBA5F20DC188300A1FAB3 /* LazyImage.swift in Sources */,
+				0338AFA520F11BBB00717D8C /* CancelReasonClient.swift in Sources */,
 				0F5E424C20F0B09B005CC203 /* DropOffVC.swift in Sources */,
 				03C2AB8220DAAFAC0029AAA4 /* ViewController.swift in Sources */,
 				03E0CB5320E1187300318E32 /* OTPVerifyTVC.swift in Sources */,
@@ -1561,6 +1584,7 @@
 				03C2AB8820DAAFAC0029AAA4 /* QDCCustomerApp.xcdatamodeld in Sources */,
 				03EE3CC820DE30A4005F1A4F /* ServiableAreaViewModel.swift in Sources */,
 				03CEBA5120DC187300A1FAB3 /* LoadingHUD.swift in Sources */,
+				0338AFA120F11B4600717D8C /* CancelReasonModel.swift in Sources */,
 				0F5E427D20F0BB41005CC203 /* SuccessfullPickUpVC.swift in Sources */,
 				0F5E428220F0BD31005CC203 /* ExitVC.swift in Sources */,
 				03CEBA6120DC188300A1FAB3 /* GradientView.swift in Sources */,
@@ -1583,7 +1607,7 @@
 				03EE3CC420DE2FA6005F1A4F /* ServicableAreaModel.swift in Sources */,
 				037745DA20DC259500CAB37E /* SignUpChoiceVC.swift in Sources */,
 				03CEBA6520DC188300A1FAB3 /* UITextField.swift in Sources */,
-				0F68656F20EFD61C00F95363 /* PickUpVC.swift in Sources */,
+				0F68656F20EFD61C00F95363 /* PickUpDateVC.swift in Sources */,
 				0F5E426220F0B461005CC203 /* AboutUsVC.swift in Sources */,
 				03CEBA7220DC18E000A1FAB3 /* UIImageView+URL.swift in Sources */,
 				036F54CB20F1182E00B4D7E0 /* CustomerSummaryClient.swift in Sources */,
