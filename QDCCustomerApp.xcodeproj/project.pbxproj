@@ -18,6 +18,8 @@
 		034B9B2420E6C04D004CFD4D /* MenuItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034B9B2220E6C04D004CFD4D /* MenuItemTableViewCell.xib */; };
 		034B9B2720E6C056004CFD4D /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034B9B2520E6C056004CFD4D /* SideMenu.storyboard */; };
 		034B9B2820E6C056004CFD4D /* MenuItemsWithHeaderVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034B9B2620E6C056004CFD4D /* MenuItemsWithHeaderVC.storyboard */; };
+		036F54C920F1181400B4D7E0 /* CustomerSummaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F54C820F1181400B4D7E0 /* CustomerSummaryResponse.swift */; };
+		036F54CB20F1182E00B4D7E0 /* CustomerSummaryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F54CA20F1182E00B4D7E0 /* CustomerSummaryClient.swift */; };
 		037745D620DC248500CAB37E /* SignUpTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037745D520DC248500CAB37E /* SignUpTVC.swift */; };
 		037745D820DC24DA00CAB37E /* SelectLocalityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037745D720DC24DA00CAB37E /* SelectLocalityVC.swift */; };
 		037745DA20DC259500CAB37E /* SignUpChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037745D920DC259500CAB37E /* SignUpChoiceVC.swift */; };
@@ -139,6 +141,8 @@
 		034B9B2220E6C04D004CFD4D /* MenuItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuItemTableViewCell.xib; sourceTree = "<group>"; };
 		034B9B2520E6C056004CFD4D /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		034B9B2620E6C056004CFD4D /* MenuItemsWithHeaderVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuItemsWithHeaderVC.storyboard; sourceTree = "<group>"; };
+		036F54C820F1181400B4D7E0 /* CustomerSummaryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerSummaryResponse.swift; sourceTree = "<group>"; };
+		036F54CA20F1182E00B4D7E0 /* CustomerSummaryClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerSummaryClient.swift; sourceTree = "<group>"; };
 		037745D520DC248500CAB37E /* SignUpTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTVC.swift; sourceTree = "<group>"; };
 		037745D720DC24DA00CAB37E /* SelectLocalityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocalityVC.swift; sourceTree = "<group>"; };
 		037745D920DC259500CAB37E /* SignUpChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpChoiceVC.swift; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 		030C3C5D20E1AAF4002DADD2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				036F54CA20F1182E00B4D7E0 /* CustomerSummaryClient.swift */,
 				03FB56FE20ECEDD100270859 /* DashboardViewModel.swift */,
 			);
 			path = ViewModels;
@@ -293,6 +298,7 @@
 		030C3C5E20E1AB04002DADD2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				036F54C820F1181400B4D7E0 /* CustomerSummaryResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1565,6 +1571,7 @@
 				03FB56F620ECCA8500270859 /* DueAmountVC.swift in Sources */,
 				03CEBA6220DC188300A1FAB3 /* UIImage+Gif.swift in Sources */,
 				03CEBA5220DC187300A1FAB3 /* ParentPushSegue.swift in Sources */,
+				036F54C920F1181400B4D7E0 /* CustomerSummaryResponse.swift in Sources */,
 				034B9B1C20E6C025004CFD4D /* Section.swift in Sources */,
 				03E54DF220E356AC00BE948A /* QDCConfigurableConstants.swift in Sources */,
 				03CEBA5D20DC188300A1FAB3 /* AppUtility.swift in Sources */,
@@ -1615,6 +1622,7 @@
 				0F68656F20EFD61C00F95363 /* PickUpVC.swift in Sources */,
 				0F5E426220F0B461005CC203 /* AboutUsVC.swift in Sources */,
 				03CEBA7220DC18E000A1FAB3 /* UIImageView+URL.swift in Sources */,
+				036F54CB20F1182E00B4D7E0 /* CustomerSummaryClient.swift in Sources */,
 				0F5E425A20F0B371005CC203 /* FeedBackVC.swift in Sources */,
 				03CEBA7420DC18F300A1FAB3 /* NetworkClient.swift in Sources */,
 				03EE3CD220DE5418005F1A4F /* SignUpModel.swift in Sources */,
