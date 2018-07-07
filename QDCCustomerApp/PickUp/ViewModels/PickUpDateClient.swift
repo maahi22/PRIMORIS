@@ -1,5 +1,5 @@
 //
-//  CustomerSummaryClient.swift
+//  PickUpDateClient.swift
 //  QDCCustomerApp
 //
 //  Created by Amit Pant on 07/07/18.
@@ -8,19 +8,17 @@
 
 import Foundation
 
-import Alamofire
-class CustomerSummaryClient: NSObject {
+class PickUpDateClient: NSObject {
     // MARK: - Injections
     internal let networkClient = NetworkClient.shared
     
-    func getCustomerSummary(completion:@escaping (CustomerSummaryResponse?,String)->())  {
+    func getPickUpDate(completion:@escaping ([PickUpDateModel]?,String)->())  {
         
         let clientID = QDCUserDefaults.getClientID()
         let branchID = QDCUserDefaults.getBranchId()
-        let customerCode = QDCUserDefaults.getCustomerId()
         let token = QDCUserDefaults.getAccessToken()
         
-        let apiname = CUSTOMER_HOME_RELATIVE_URL + "\(clientID)/\(branchID)/\(customerCode)"
+        let apiname = PICKUP_DATE_RELATIVE_URL + "\(clientID)/\(branchID)"
         let headers = ["token": "\(token)"] as [String:String]
         
         networkClient.callAPIWithAlamofire(apiname: apiname,
@@ -29,8 +27,8 @@ class CustomerSummaryClient: NSObject {
                                            headers: headers,
                                            success: { (data, httpResponse) in
                                             
-                                            if let customerSummaryResponse = decodeJSON(type: CustomerSummaryResponse.self, from: data) {
-                                                completion(customerSummaryResponse, "Success")
+                                            if let pickUpDateModel = decodeJSON(type: [PickUpDateModel].self, from: data) {
+                                                completion(pickUpDateModel, "Success")
                                             }else{
                                                 completion(nil,"failed")
                                             }

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		030C3C6220E1C64A002DADD2 /* DashboardVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030C3C6120E1C64A002DADD2 /* DashboardVC.storyboard */; };
 		030C3C6420E1C65F002DADD2 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030C3C6320E1C65F002DADD2 /* DashboardVC.swift */; };
+		0338AF9A20F1191E00717D8C /* PickUpDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338AF9920F1191E00717D8C /* PickUpDateModel.swift */; };
+		0338AF9C20F1194000717D8C /* PickUpDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338AF9B20F1194000717D8C /* PickUpDateViewModel.swift */; };
+		0338AF9E20F11A1E00717D8C /* PickUpDateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338AF9D20F11A1E00717D8C /* PickUpDateClient.swift */; };
 		034B9B1420E6BB4A004CFD4D /* CustomMessageVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034B9B1320E6BB4A004CFD4D /* CustomMessageVC.storyboard */; };
 		034B9B1620E6BC89004CFD4D /* CustomMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034B9B1520E6BC89004CFD4D /* CustomMessageVC.swift */; };
 		034B9B1C20E6C025004CFD4D /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034B9B1B20E6C025004CFD4D /* Section.swift */; };
@@ -132,6 +135,9 @@
 /* Begin PBXFileReference section */
 		030C3C6120E1C64A002DADD2 /* DashboardVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashboardVC.storyboard; sourceTree = "<group>"; };
 		030C3C6320E1C65F002DADD2 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		0338AF9920F1191E00717D8C /* PickUpDateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickUpDateModel.swift; sourceTree = "<group>"; };
+		0338AF9B20F1194000717D8C /* PickUpDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpDateViewModel.swift; sourceTree = "<group>"; };
+		0338AF9D20F11A1E00717D8C /* PickUpDateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpDateClient.swift; sourceTree = "<group>"; };
 		034B9B1320E6BB4A004CFD4D /* CustomMessageVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomMessageVC.storyboard; sourceTree = "<group>"; };
 		034B9B1520E6BC89004CFD4D /* CustomMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageVC.swift; sourceTree = "<group>"; };
 		034B9B1B20E6C025004CFD4D /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -767,8 +773,6 @@
 			children = (
 				03FB56F020ECC7C900270859 /* Views */,
 				03FB56EF20ECC7C700270859 /* Controllers */,
-				03FB56EE20ECC7C600270859 /* Models */,
-				03FB56ED20ECC7C400270859 /* ViewModels */,
 			);
 			path = DueAmount;
 			sourceTree = "<group>";
@@ -778,8 +782,6 @@
 			children = (
 				03FB56E920ECC79B00270859 /* Views */,
 				03FB56EA20ECC7A000270859 /* Controllers */,
-				03FB56EC20ECC7AC00270859 /* ViewModels */,
-				03FB56EB20ECC7A700270859 /* Models */,
 			);
 			path = MyOrders;
 			sourceTree = "<group>";
@@ -798,34 +800,6 @@
 				03FB56F720ECD0D400270859 /* MyOrdersVC.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		03FB56EB20ECC7A700270859 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		03FB56EC20ECC7AC00270859 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		03FB56ED20ECC7C400270859 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		03FB56EE20ECC7C600270859 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		03FB56EF20ECC7C700270859 /* Controllers */ = {
@@ -849,24 +823,8 @@
 			children = (
 				03FB56FD20ECD60300270859 /* Views */,
 				03FB56FC20ECD60000270859 /* Controllers */,
-				03FB56FB20ECD5FE00270859 /* New Group1 */,
-				03FB56FA20ECD5FC00270859 /* New Group */,
 			);
 			path = CancelReason;
-			sourceTree = "<group>";
-		};
-		03FB56FA20ECD5FC00270859 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		03FB56FB20ECD5FE00270859 /* New Group1 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group1";
 			sourceTree = "<group>";
 		};
 		03FB56FC20ECD60000270859 /* Controllers */ = {
@@ -1257,6 +1215,7 @@
 		0F68656820EFD56500F95363 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0338AF9920F1191E00717D8C /* PickUpDateModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1264,6 +1223,8 @@
 		0F68656920EFD56800F95363 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0338AF9B20F1194000717D8C /* PickUpDateViewModel.swift */,
+				0338AF9D20F11A1E00717D8C /* PickUpDateClient.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1566,10 +1527,12 @@
 			files = (
 				03CEBA6020DC188300A1FAB3 /* CircleView.swift in Sources */,
 				0F5E424520F0ADEC005CC203 /* NotificationVC.swift in Sources */,
+				0338AF9E20F11A1E00717D8C /* PickUpDateClient.swift in Sources */,
 				03CEBA5320DC187300A1FAB3 /* SetNavigationRootSegue.swift in Sources */,
 				03EE3CD020DE403B005F1A4F /* SignUpClient.swift in Sources */,
 				03FB56F620ECCA8500270859 /* DueAmountVC.swift in Sources */,
 				03CEBA6220DC188300A1FAB3 /* UIImage+Gif.swift in Sources */,
+				0338AF9A20F1191E00717D8C /* PickUpDateModel.swift in Sources */,
 				03CEBA5220DC187300A1FAB3 /* ParentPushSegue.swift in Sources */,
 				036F54C920F1181400B4D7E0 /* CustomerSummaryResponse.swift in Sources */,
 				034B9B1C20E6C025004CFD4D /* Section.swift in Sources */,
@@ -1601,6 +1564,7 @@
 				0F5E427D20F0BB41005CC203 /* SuccessfullPickUpVC.swift in Sources */,
 				0F5E428220F0BD31005CC203 /* ExitVC.swift in Sources */,
 				03CEBA6120DC188300A1FAB3 /* GradientView.swift in Sources */,
+				0338AF9C20F1194000717D8C /* PickUpDateViewModel.swift in Sources */,
 				03CEBA6F20DC18E000A1FAB3 /* Int+HTTPStatusCode.swift in Sources */,
 				0F5E426920F0B55F005CC203 /* CancelReasonVC.swift in Sources */,
 				03FB56F820ECD0D400270859 /* MyOrdersVC.swift in Sources */,
