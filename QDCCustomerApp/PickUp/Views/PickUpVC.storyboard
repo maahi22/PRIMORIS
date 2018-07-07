@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pick Up View Controller-->
+        <!--Pick Up-->
         <scene sceneID="0aO-yF-Nlg">
             <objects>
-                <viewController storyboardIdentifier="QDCPickUpViewControllerID" id="J83-Wr-FBW" customClass="QDCPickUpViewController" customModule="Primoris_Laundry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PickUpVC" id="J83-Wr-FBW" customClass="PickUpVC" customModule="QDCCustomerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HEz-6C-1ls"/>
                         <viewControllerLayoutGuide type="bottom" id="FwX-wq-XTT"/>
@@ -21,17 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrn-FV-8x6">
-                                <rect key="frame" x="0.0" y="62" width="320" height="418"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrn-FV-8x6">
+                                <rect key="frame" x="0.0" y="62" width="375" height="605"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eay-7S-HuX">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="418"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eay-7S-HuX">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="605"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IRy-1J-snn">
-                                                <rect key="frame" x="0.0" y="298" width="320" height="40"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRy-1J-snn">
+                                                <rect key="frame" x="0.0" y="485" width="375" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nCM-Ws-Awl">
-                                                        <rect key="frame" x="161" y="0.0" width="159" height="40"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nCM-Ws-Awl">
+                                                        <rect key="frame" x="188" y="0.0" width="187" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -45,8 +45,8 @@
                                                             <action selector="secondButtonClick:" destination="J83-Wr-FBW" eventType="touchUpInside" id="hoN-MF-CJc"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="plz-KD-hlx">
-                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="plz-KD-hlx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -60,15 +60,15 @@
                                                             <action selector="firstButtonClick:" destination="J83-Wr-FBW" eventType="touchUpInside" id="pAh-MS-Bpq"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cancel Reason Unselected.png" highlightedImage="Cancel Reason Selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="JAD-FE-UD1">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radioUnselected" highlightedImage="radioSelected" translatesAutoresizingMaskIntoConstraints="NO" id="JAD-FE-UD1">
                                                         <rect key="frame" x="8" y="12" width="15" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="15" id="Jns-5j-0Lj"/>
                                                             <constraint firstAttribute="height" constant="15" id="lSA-Jg-Ht5"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Cancel Reason Unselected.png" highlightedImage="Cancel Reason Selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="pCr-wC-OuH">
-                                                        <rect key="frame" x="168" y="12" width="15" height="15"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radioUnselected" highlightedImage="radioSelected" translatesAutoresizingMaskIntoConstraints="NO" id="pCr-wC-OuH">
+                                                        <rect key="frame" x="195" y="12" width="15" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="7qt-90-wUZ"/>
                                                             <constraint firstAttribute="width" constant="15" id="dmu-9l-ugT"/>
@@ -98,8 +98,8 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v3c-cr-iSF">
-                                                <rect key="frame" x="0.0" y="87" width="320" height="211"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v3c-cr-iSF">
+                                                <rect key="frame" x="0.0" y="87" width="375" height="398"/>
                                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="P4x-hn-TIm">
                                                     <size key="itemSize" width="50" height="50"/>
@@ -122,8 +122,8 @@
                                                     <outlet property="delegate" destination="J83-Wr-FBW" id="Du2-aR-2i2"/>
                                                 </connections>
                                             </collectionView>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n1c-ES-5iI">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n1c-ES-5iI">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="85" id="Nf1-Fy-Gmi"/>
@@ -155,8 +155,8 @@
                                                     <outlet property="delegate" destination="J83-Wr-FBW" id="fCP-M3-Q6H"/>
                                                 </connections>
                                             </collectionView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Special Instruction" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VhW-28-Yp1">
-                                                <rect key="frame" x="0.0" y="338" width="320" height="40"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Special Instruction" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VhW-28-Yp1">
+                                                <rect key="frame" x="0.0" y="525" width="375" height="40"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="3Jh-Lz-tkr"/>
@@ -167,9 +167,9 @@
                                                     <outlet property="delegate" destination="J83-Wr-FBW" id="XiX-C4-ERh"/>
                                                 </connections>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1U-2f-21x">
-                                                <rect key="frame" x="0.0" y="378" width="320" height="40"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1U-2f-21x">
+                                                <rect key="frame" x="0.0" y="565" width="375" height="40"/>
+                                                <color key="backgroundColor" red="1" green="0.60811546459999999" blue="0.36741596599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="zKd-Cu-ei5"/>
                                                 </constraints>
@@ -229,16 +229,20 @@
                         <viewLayoutGuide key="safeArea" id="g9l-nr-nEO"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="KEq-tF-32D"/>
-                                <exclude reference="fFV-Y5-ZGO"/>
                                 <exclude reference="CJI-JD-fHv"/>
                                 <exclude reference="DUn-pE-jvy"/>
+                                <exclude reference="KEq-tF-32D"/>
+                                <exclude reference="fFV-Y5-ZGO"/>
                                 <exclude reference="uaY-8g-7q7"/>
                                 <exclude reference="lBY-di-eoc"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="xQY-EQ-Oko"/>
+                    <navigationItem key="navigationItem" title="Pick Up" id="xQY-EQ-Oko">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Header Icon Notification" id="0qF-v4-0LL">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="containerScrollView" destination="Yrn-FV-8x6" id="iwI-QS-s5Y"/>
                         <outlet property="dateSelectionCollectionView" destination="n1c-ES-5iI" id="WA4-Lk-7bB"/>
@@ -276,7 +280,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cancel Reason Selected.png" width="16" height="16"/>
-        <image name="Cancel Reason Unselected.png" width="16" height="16"/>
+        <image name="Header Icon Notification" width="120" height="120"/>
+        <image name="radioSelected" width="528" height="528"/>
+        <image name="radioUnselected" width="225" height="225"/>
     </resources>
 </document>

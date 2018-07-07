@@ -70,19 +70,19 @@ extension MenuItemsTVC{
     fileprivate func getMenuItems(completion:([Section])->())  {
         let menuItems = [
             Section(name: "DASHBOARD", items: [], image: "sidebar_home", selImage: "", expanded: false,itemType:MenuItemType.home),
-            Section(name: "REQUEST PICKUP", items: [], image: "sidebar_wallet", selImage: "", expanded: false,itemType:MenuItemType.card),
-            Section(name: "MY REQUEST", items: [], image: "sidebar_moneytransfer", selImage: "", expanded: false,itemType:MenuItemType.none),
+            Section(name: "REQUEST PICKUP", items: [], image: "sidebar_wallet", selImage: "", expanded: false,itemType:MenuItemType.pickUp),
+            Section(name: "MY REQUEST", items: [], image: "sidebar_moneytransfer", selImage: "", expanded: false,itemType:MenuItemType.myRequest),
             // Section(name: "Fee Payment History", items: [], image: "", selImage: "", expanded: false,itemType:MenuItemType.feepaymenthistory),
             
-            Section(name: "DUE AMOUNT", items: [], image: "sidebar_food", selImage: "", expanded: false,itemType:MenuItemType.food),
-            Section(name: "MY ORDERS", items: [], image: "sidebar_education", selImage: "", expanded: false,itemType:MenuItemType.education),
-            Section(name: "PRICE LIST", items: [], image: "sidebar_govermentpayments", selImage: "", expanded: false,itemType:MenuItemType.none),
-            Section(name: "OFFERS", items: [], image: "sidebar_sdcardactivation", selImage: "", expanded: false,itemType:MenuItemType.none),
-            Section(name: "FEEDBACK", items: ["A","B"], image: "contact_us", selImage: "", expanded: true,itemType:MenuItemType.none),
-            Section(name: "SETTING", items: [], image: "user_profile", selImage: "", expanded: false,itemType:MenuItemType.profile),
+            Section(name: "DUE AMOUNT", items: [], image: "sidebar_food", selImage: "", expanded: false,itemType:MenuItemType.dueAmount),
+            Section(name: "MY ORDERS", items: [], image: "sidebar_education", selImage: "", expanded: false,itemType:MenuItemType.myOrder),
+            Section(name: "PRICE LIST", items: [], image: "sidebar_govermentpayments", selImage: "", expanded: false,itemType:MenuItemType.priceList),
+            Section(name: "OFFERS", items: [], image: "sidebar_sdcardactivation", selImage: "", expanded: false,itemType:MenuItemType.offers),
+            Section(name: "FEEDBACK", items: ["A","B"], image: "contact_us", selImage: "", expanded: true,itemType:MenuItemType.feedback),
+            Section(name: "SETTING", items: [], image: "user_profile", selImage: "", expanded: false,itemType:MenuItemType.settings),
             
             
-            Section(name: "ABOUT US", items: [], image: "sidebar_signout", selImage: "", expanded: false,itemType:MenuItemType.signout)
+            Section(name: "ABOUT US", items: [], image: "sidebar_signout", selImage: "", expanded: false,itemType:MenuItemType.aboutUs)
         ]
         
         
@@ -105,20 +105,32 @@ extension MenuItemsTVC{
             sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showHome.rawValue, sender: nil)
         case .signout:
             userLogout()
-        case .card:
-            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showCard.rawValue, sender: nil)
-        case .food:
-            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showRestaurant.rawValue, sender: nil)
-        case .education:
-            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showEducation.rawValue, sender: nil)
+        case .pickUp:
+            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showPickUp.rawValue, sender: nil)
+        case .myRequest:
+            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showMyRequest.rawValue, sender: nil)
+        case .dueAmount:
+            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showDueAmount.rawValue, sender: nil)
         case .feepaymenthistory:
             sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showFeePaymentHistory.rawValue, sender: nil)
-        case .orderhistory:
-            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showOrderHistory.rawValue, sender: nil)
+        case .myOrder:
+            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showMyOrder.rawValue, sender: nil)
         case .mywallet:
             sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showMyWallet.rawValue, sender: nil)
         case .profile:
             sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showProfile.rawValue, sender: nil)
+          
+            
+        case .priceList:
+            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showPriceList.rawValue, sender: nil)
+        case .offers:
+            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showOffer.rawValue, sender: nil)
+        case .feedback:
+            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showFeedback.rawValue, sender: nil)
+        case .settings:
+            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showSettings.rawValue, sender: nil)
+        case .aboutUs:
+            sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showAboutUs.rawValue, sender: nil)
             
             //profileOptions()
         case .contact:
@@ -127,6 +139,7 @@ extension MenuItemsTVC{
             print("Email")
         case .none:
             print("none")
+        
         }
     }
     

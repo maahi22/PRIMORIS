@@ -9,10 +9,10 @@
 import Foundation
 enum MenuItemType{
     case home
-    case card
-    case food
-    case education
-    case orderhistory
+    case pickUp
+    case myRequest
+    case dueAmount
+    case myOrder
     case mywallet
     case contact
     case email
@@ -20,6 +20,12 @@ enum MenuItemType{
     case feepaymenthistory
     case none
     case profile
+
+    case priceList
+    case offers
+    case feedback
+    case settings
+    case aboutUs
 }
 struct Section {
     

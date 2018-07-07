@@ -1,49 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ou4-Rk-l23">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Due Amount-->
-        <scene sceneID="kUY-Qm-fKy">
+        <scene sceneID="RbG-sE-Lto">
             <objects>
-                <viewController storyboardIdentifier="QDCDueAmountViewControllerID" id="7wj-sI-1ph" customClass="QDCDueAmountViewController" customModule="Primoris_Laundry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DueAmountVC" id="Rrq-Pn-b61" customClass="DueAmountVC" customModule="QDCCustomerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ez6-Ub-BmS"/>
-                        <viewControllerLayoutGuide type="bottom" id="t4v-vV-Hms"/>
+                        <viewControllerLayoutGuide type="top" id="6sI-Jo-bZg"/>
+                        <viewControllerLayoutGuide type="bottom" id="VFp-ya-wpx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2MV-dg-eOU">
+                    <view key="view" contentMode="scaleToFill" id="Lju-Zv-8P5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- AMOUNT --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7n-Tw-5jF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- AMOUNT --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beK-8f-FJm">
                                 <rect key="frame" x="20" y="317" width="335" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="rZq-er-nnl"/>
+                                    <constraint firstAttribute="height" constant="33" id="k1a-Gg-Nyk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are in a process of integrating Credit card / Debit card /Online Payment, Look for this space in next version." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmR-6Z-U0P">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are in a process of integrating Credit card / Debit card /Online Payment, Look for this space in next version." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mB-gv-5Qa">
                                 <rect key="frame" x="10" y="368" width="355" height="77"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="77" id="4V2-ao-AQ0"/>
+                                    <constraint firstAttribute="height" constant="77" id="Sbs-WY-dgi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Due:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54q-EK-uVz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Due:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-U0-NEm">
                                 <rect key="frame" x="20" y="267" width="335" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="vVU-hs-vwE"/>
+                                    <constraint firstAttribute="height" constant="21" id="cJ7-1l-fJ0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -52,48 +51,48 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HmR-6Z-U0P" firstAttribute="top" secondItem="S7n-Tw-5jF" secondAttribute="bottom" constant="18" id="5pp-dp-DM6"/>
-                            <constraint firstItem="54q-EK-uVz" firstAttribute="leading" secondItem="2MV-dg-eOU" secondAttribute="leading" constant="20" id="8Gz-sa-TUj"/>
-                            <constraint firstAttribute="trailing" secondItem="54q-EK-uVz" secondAttribute="trailing" constant="20" id="Aee-6Q-7J3"/>
-                            <constraint firstItem="S7n-Tw-5jF" firstAttribute="centerX" secondItem="2MV-dg-eOU" secondAttribute="centerX" id="HWW-Pi-Qit"/>
-                            <constraint firstItem="S7n-Tw-5jF" firstAttribute="leading" secondItem="2MV-dg-eOU" secondAttribute="leading" constant="20" id="Hmt-6o-iPF"/>
-                            <constraint firstItem="54q-EK-uVz" firstAttribute="centerX" secondItem="2MV-dg-eOU" secondAttribute="centerX" id="am9-Bt-SWa"/>
-                            <constraint firstItem="S7n-Tw-5jF" firstAttribute="top" secondItem="54q-EK-uVz" secondAttribute="bottom" constant="29" id="beL-1N-hxT"/>
-                            <constraint firstAttribute="trailing" secondItem="HmR-6Z-U0P" secondAttribute="trailing" constant="10" id="hF0-3G-ej7"/>
-                            <constraint firstItem="S7n-Tw-5jF" firstAttribute="centerY" secondItem="2MV-dg-eOU" secondAttribute="centerY" id="jd1-WB-qHJ"/>
-                            <constraint firstItem="HmR-6Z-U0P" firstAttribute="leading" secondItem="2MV-dg-eOU" secondAttribute="leading" constant="10" id="rHN-xm-uBg"/>
-                            <constraint firstAttribute="trailing" secondItem="S7n-Tw-5jF" secondAttribute="trailing" constant="20" id="xqw-rT-y80"/>
+                            <constraint firstItem="beK-8f-FJm" firstAttribute="leading" secondItem="Lju-Zv-8P5" secondAttribute="leading" constant="20" id="ApB-7J-ow8"/>
+                            <constraint firstAttribute="trailing" secondItem="c5d-U0-NEm" secondAttribute="trailing" constant="20" id="Jr5-Wi-MIm"/>
+                            <constraint firstItem="c5d-U0-NEm" firstAttribute="leading" secondItem="Lju-Zv-8P5" secondAttribute="leading" constant="20" id="UOg-3e-mES"/>
+                            <constraint firstItem="c5d-U0-NEm" firstAttribute="centerX" secondItem="Lju-Zv-8P5" secondAttribute="centerX" id="Ytq-cO-3Zx"/>
+                            <constraint firstItem="0mB-gv-5Qa" firstAttribute="leading" secondItem="Lju-Zv-8P5" secondAttribute="leading" constant="10" id="ZLV-Gz-n8B"/>
+                            <constraint firstAttribute="trailing" secondItem="0mB-gv-5Qa" secondAttribute="trailing" constant="10" id="axe-1N-8eT"/>
+                            <constraint firstItem="beK-8f-FJm" firstAttribute="centerY" secondItem="Lju-Zv-8P5" secondAttribute="centerY" id="dqd-ze-Ch2"/>
+                            <constraint firstAttribute="trailing" secondItem="beK-8f-FJm" secondAttribute="trailing" constant="20" id="hyU-7y-w8Q"/>
+                            <constraint firstItem="beK-8f-FJm" firstAttribute="centerX" secondItem="Lju-Zv-8P5" secondAttribute="centerX" id="mcw-NA-vKx"/>
+                            <constraint firstItem="0mB-gv-5Qa" firstAttribute="top" secondItem="beK-8f-FJm" secondAttribute="bottom" constant="18" id="rw2-Ci-9qR"/>
+                            <constraint firstItem="beK-8f-FJm" firstAttribute="top" secondItem="c5d-U0-NEm" secondAttribute="bottom" constant="29" id="xcb-OO-pMH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fv1-wE-xG5"/>
+                        <viewLayoutGuide key="safeArea" id="bQR-NR-h1V"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Due Amount" id="5rE-My-MeB"/>
+                    <navigationItem key="navigationItem" title="Due Amount" id="JV6-38-wmE"/>
                     <connections>
-                        <outlet property="amountDetailTitleLabel" destination="HmR-6Z-U0P" id="PGV-8E-8vc"/>
-                        <outlet property="amountTitleLabel" destination="S7n-Tw-5jF" id="yeF-sA-30r"/>
-                        <outlet property="dueAmountLabel" destination="54q-EK-uVz" id="Iwt-h6-lcW"/>
+                        <outlet property="amountDetailTitleLabel" destination="0mB-gv-5Qa" id="dIF-Cn-sDJ"/>
+                        <outlet property="amountTitleLabel" destination="beK-8f-FJm" id="F4z-SK-HV4"/>
+                        <outlet property="dueAmountLabel" destination="c5d-U0-NEm" id="KC6-BY-CT6"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zL8-RR-IS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Aq-c7-jtl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1792.8" y="1145.577211394303"/>
+            <point key="canvasLocation" x="2732" y="1145.577211394303"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="EOc-b0-KX6">
+        <scene sceneID="xXL-76-iZQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M4j-QF-QCv" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ou4-Rk-l23" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ayg-QV-Zk8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1rY-Hb-RTq">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7wj-sI-1ph" kind="relationship" relationship="rootViewController" id="r2F-Bh-y8P"/>
+                        <segue destination="Rrq-Pn-b61" kind="relationship" relationship="rootViewController" id="CA3-Rt-CQA"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cQD-fd-LaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ja-UV-h1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853.60000000000002" y="1145.577211394303"/>
+            <point key="canvasLocation" x="1792.8" y="1145.577211394303"/>
         </scene>
     </scenes>
 </document>

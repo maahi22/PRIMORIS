@@ -170,15 +170,20 @@ enum SideMenuOptions: String {
     case showHome = "showHome"
     case containSideMenu = "containSideMenu"
     case showMyWallet = "showMyWallet"
-    case showCard = "showManageCards"//"showCard"
+    case showPickUp = "showPickUp"//"showCard"
     
     case showRestaurant = "showRestaurant"
-    case showEducation = "showEducation"
-    case showOrderHistory = "showOrderHistory"
+    case showDueAmount = "showDueAmount"
+    case showMyOrder = "showMyOrder"
     case showFeePaymentHistory = "showFeePaymentHistory"
     case showProfile = "showProfile"
     
-    
+    case showMyRequest = "showMyRequest"
+    case showPriceList = "showPriceList"
+    case showOffer = "showOffer"
+    case showFeedback = "showFeedback"
+    case showSettings = "showSettings"
+    case showAboutUs = "showAboutUs"
 }
 
 //MARK: - Storyboards
