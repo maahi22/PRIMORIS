@@ -112,6 +112,8 @@
 		0F5E428420F0BD3C005CC203 /* ExitVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5E428320F0BD3C005CC203 /* ExitVC.storyboard */; };
 		0F68656D20EFD5B200F95363 /* PickUpDateVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F68656C20EFD5B200F95363 /* PickUpDateVC.storyboard */; };
 		0F68656F20EFD61C00F95363 /* PickUpDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F68656E20EFD61C00F95363 /* PickUpDateVC.swift */; };
+		0FA8C68420F20FA500F9DC83 /* CommonUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8C68320F20FA500F9DC83 /* CommonUtilities.swift */; };
+		0FA8C68620F2248700F9DC83 /* SchedulePickUpDateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8C68520F2248700F9DC83 /* SchedulePickUpDateClient.swift */; };
 		19815D5B28B0965573076D28 /* Pods_QDCCustomerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8206FF962A53EAF360AFEFB3 /* Pods_QDCCustomerAppTests.framework */; };
 		83661F5920BBFDA3B0BAB2C0 /* Pods_QDCCustomerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7DE35483804927E305602D8 /* Pods_QDCCustomerApp.framework */; };
 		C6E2022A9000E255F3924138 /* Pods_QDCCustomerAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA20F2CA4FF68F207C6ABD1B /* Pods_QDCCustomerAppUITests.framework */; };
@@ -246,6 +248,8 @@
 		0F5E428320F0BD3C005CC203 /* ExitVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExitVC.storyboard; sourceTree = "<group>"; };
 		0F68656C20EFD5B200F95363 /* PickUpDateVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickUpDateVC.storyboard; sourceTree = "<group>"; };
 		0F68656E20EFD61C00F95363 /* PickUpDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpDateVC.swift; sourceTree = "<group>"; };
+		0FA8C68320F20FA500F9DC83 /* CommonUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtilities.swift; sourceTree = "<group>"; };
+		0FA8C68520F2248700F9DC83 /* SchedulePickUpDateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePickUpDateClient.swift; sourceTree = "<group>"; };
 		3BF99ED0F81071F3C951EEF4 /* Pods-QDCCustomerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDCCustomerAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDCCustomerAppTests/Pods-QDCCustomerAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BE6E2D889EA6C81DD40BD16 /* Pods-QDCCustomerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDCCustomerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDCCustomerApp/Pods-QDCCustomerApp.release.xcconfig"; sourceTree = "<group>"; };
 		8206FF962A53EAF360AFEFB3 /* Pods_QDCCustomerAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QDCCustomerAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -747,6 +751,7 @@
 		03EE3CBE20DE2863005F1A4F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0FA8C68320F20FA500F9DC83 /* CommonUtilities.swift */,
 				03E54DF320E356F700BE948A /* QDCUserDefaults.swift */,
 				03E54DF120E356AC00BE948A /* QDCConfigurableConstants.swift */,
 				03E54DEF20E356A400BE948A /* QDCStringConstants.swift */,
@@ -1247,6 +1252,7 @@
 			children = (
 				0338AF9B20F1194000717D8C /* PickUpDateViewModel.swift */,
 				0338AF9D20F11A1E00717D8C /* PickUpDateClient.swift */,
+				0FA8C68520F2248700F9DC83 /* SchedulePickUpDateClient.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1578,9 +1584,11 @@
 				03EE3CC020DE2874005F1A4F /* WebServiceConstant.swift in Sources */,
 				034B9B1E20E6C03B004CFD4D /* MenuItemsTVC.swift in Sources */,
 				0F5E423C20F0AD8F005CC203 /* OrderDetailVC.swift in Sources */,
+				0FA8C68620F2248700F9DC83 /* SchedulePickUpDateClient.swift in Sources */,
 				03C2AB8020DAAFAC0029AAA4 /* AppDelegate.swift in Sources */,
 				03CEBA5020DC187300A1FAB3 /* UIViewController+LoadingHUD.swift in Sources */,
 				030C3C6420E1C65F002DADD2 /* DashboardVC.swift in Sources */,
+				0FA8C68420F20FA500F9DC83 /* CommonUtilities.swift in Sources */,
 				03C2AB8820DAAFAC0029AAA4 /* QDCCustomerApp.xcdatamodeld in Sources */,
 				03EE3CC820DE30A4005F1A4F /* ServiableAreaViewModel.swift in Sources */,
 				03CEBA5120DC187300A1FAB3 /* LoadingHUD.swift in Sources */,

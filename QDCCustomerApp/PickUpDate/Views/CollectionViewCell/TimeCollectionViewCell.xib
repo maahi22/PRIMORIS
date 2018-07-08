@@ -64,6 +64,10 @@
                 <constraint firstItem="Ygj-Og-nUy" firstAttribute="top" secondItem="2qi-a4-p0L" secondAttribute="top" id="zK3-ip-bno"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="0mZ-JH-KHh"/>
+            <connections>
+                <outlet property="formatLabel" destination="zQE-4f-tZe" id="csO-Ne-ZDb"/>
+                <outlet property="timeLabel" destination="KvJ-8G-bvv" id="YuC-WN-rsc"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

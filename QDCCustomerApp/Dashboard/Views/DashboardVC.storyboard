@@ -125,6 +125,9 @@
                                                         <integer key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="payButtonClickWithSender:" destination="R4G-yr-bju" eventType="touchUpInside" id="xXQ-6k-C9S"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiV-rf-mEm">
                                                 <rect key="frame" x="212" y="8" width="67" height="24"/>
@@ -190,6 +193,9 @@
                                                         <integer key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="detailsButtonClickWithSender:" destination="R4G-yr-bju" eventType="touchUpInside" id="Dni-U0-2RV"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doa-5G-cxh">
                                                 <rect key="frame" x="210" y="8" width="67" height="24"/>
@@ -286,6 +292,9 @@
                                         <exclude reference="Ouc-vD-ZZm"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="pickUpButtonClickWithSender:" destination="R4G-yr-bju" eventType="touchUpInside" id="Xvq-B6-7MY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzg-F0-vSv">
                                 <rect key="frame" x="20" y="418" width="335" height="40"/>
@@ -307,6 +316,9 @@
                                         <exclude reference="30X-do-MwB"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="shareButtonClickWithSender:" destination="R4G-yr-bju" eventType="touchUpInside" id="55Z-rc-UDB"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SHare" translatesAutoresizingMaskIntoConstraints="NO" id="nME-ef-8LY">
                                 <rect key="frame" x="20" y="425" width="26" height="26"/>
@@ -350,8 +362,14 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="customerSummaryClient" destination="fHf-WK-mt0" id="S9U-xg-VOT"/>
+                        <outlet property="garmentDueLabel" destination="Doa-5G-cxh" id="hwI-EZ-VOR"/>
+                        <outlet property="payAmountLabel" destination="NiV-rf-mEm" id="F4o-k4-0BB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRQ-Z6-iWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="fHf-WK-mt0" customClass="CustomerSummaryClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1256.8" y="-165.06746626686657"/>
         </scene>
