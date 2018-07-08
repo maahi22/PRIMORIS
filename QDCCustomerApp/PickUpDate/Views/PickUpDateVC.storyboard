@@ -12,7 +12,6 @@
         <!--Navigation Controller-->
         <scene sceneID="RDi-Fh-yQD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1v3-BF-s5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eRx-8S-yJS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HmK-CV-VbQ">
@@ -24,6 +23,7 @@
                         <segue destination="eHl-Mi-ezB" kind="relationship" relationship="rootViewController" id="S8o-iJ-e8R"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1v3-BF-s5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-292" y="-634"/>
         </scene>
@@ -68,8 +68,18 @@
                                     <outlet property="delegate" destination="eHl-Mi-ezB" id="inb-oi-OGM"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoY-4t-Eb9">
+                                <rect key="frame" x="0.0" y="149" width="375" height="2"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="Gtv-dt-A94"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTL-rb-GBM">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="626" width="375" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qz2-gx-QNd"/>
@@ -82,7 +92,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Special Instruction" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fCL-sV-NDA">
-                                <rect key="frame" x="0.0" y="587" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="584" width="375" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="YXu-7u-age"/>
@@ -91,7 +101,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qK2-oe-tO2">
-                                <rect key="frame" x="0.0" y="547" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="542" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kkI-bL-keu">
                                         <rect key="frame" x="188" y="0.0" width="187" height="40"/>
@@ -117,14 +127,14 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cancel Reason Unselected.png" highlightedImage="Cancel Reason Selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="GGC-Jd-Xkn">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cancel Reason Unselected" highlightedImage="Cancel Reason Selected" translatesAutoresizingMaskIntoConstraints="NO" id="GGC-Jd-Xkn">
                                         <rect key="frame" x="8" y="12" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="9lS-sf-UVr"/>
                                             <constraint firstAttribute="height" constant="15" id="mFt-Nq-foB"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cancel Reason Unselected.png" highlightedImage="Cancel Reason Selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="p98-XN-MNh">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cancel Reason Unselected" highlightedImage="Cancel Reason Selected" translatesAutoresizingMaskIntoConstraints="NO" id="p98-XN-MNh">
                                         <rect key="frame" x="195" y="12" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="EQl-Sk-b1I"/>
@@ -156,7 +166,7 @@
                                 </variation>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JYY-dM-3Ao">
-                                <rect key="frame" x="0.0" y="151" width="375" height="396"/>
+                                <rect key="frame" x="0.0" y="151" width="375" height="389"/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ci5-mk-ZMX">
                                     <size key="itemSize" width="50" height="50"/>
@@ -180,35 +190,42 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="p5s-bK-Ifh" firstAttribute="trailing" secondItem="fCL-sV-NDA" secondAttribute="trailing" id="5Nc-AN-hYY"/>
                             <constraint firstItem="qK2-oe-tO2" firstAttribute="leading" secondItem="Dyu-KC-Ui4" secondAttribute="leading" id="7cB-dM-X0A"/>
                             <constraint firstItem="e3E-RH-DF8" firstAttribute="top" secondItem="p5s-bK-Ifh" secondAttribute="top" id="Aoe-Zw-4fx"/>
                             <constraint firstItem="p5s-bK-Ifh" firstAttribute="trailing" secondItem="fTL-rb-GBM" secondAttribute="trailing" id="CNz-Lr-2pM"/>
-                            <constraint firstItem="fCL-sV-NDA" firstAttribute="top" secondItem="qK2-oe-tO2" secondAttribute="bottom" id="GUP-2k-iPW"/>
+                            <constraint firstItem="fCL-sV-NDA" firstAttribute="top" secondItem="qK2-oe-tO2" secondAttribute="bottom" constant="2" id="GUP-2k-iPW"/>
                             <constraint firstItem="JYY-dM-3Ao" firstAttribute="top" secondItem="e3E-RH-DF8" secondAttribute="bottom" constant="2" id="KrE-ac-2wN"/>
                             <constraint firstItem="p5s-bK-Ifh" firstAttribute="trailing" secondItem="e3E-RH-DF8" secondAttribute="trailing" id="MjO-Xq-bzU"/>
                             <constraint firstItem="fTL-rb-GBM" firstAttribute="leading" secondItem="p5s-bK-Ifh" secondAttribute="leading" id="NhS-he-Ah8"/>
                             <constraint firstItem="e3E-RH-DF8" firstAttribute="leading" secondItem="Dyu-KC-Ui4" secondAttribute="leading" id="VPU-K7-Y7H"/>
+                            <constraint firstItem="KoY-4t-Eb9" firstAttribute="leading" secondItem="Dyu-KC-Ui4" secondAttribute="leading" id="a24-Vy-WcP"/>
                             <constraint firstItem="p5s-bK-Ifh" firstAttribute="trailing" secondItem="JYY-dM-3Ao" secondAttribute="trailing" id="brV-Tp-kSf"/>
                             <constraint firstItem="fCL-sV-NDA" firstAttribute="leading" secondItem="Dyu-KC-Ui4" secondAttribute="leading" id="cru-fa-Vqi"/>
                             <constraint firstItem="p5s-bK-Ifh" firstAttribute="trailing" secondItem="qK2-oe-tO2" secondAttribute="trailing" id="cuP-29-MaF"/>
-                            <constraint firstItem="qK2-oe-tO2" firstAttribute="top" secondItem="JYY-dM-3Ao" secondAttribute="bottom" id="fFY-GB-BVi"/>
-                            <constraint firstItem="fTL-rb-GBM" firstAttribute="top" secondItem="fCL-sV-NDA" secondAttribute="bottom" id="gqR-ez-fS7"/>
-                            <constraint firstItem="p5s-bK-Ifh" firstAttribute="bottom" secondItem="fTL-rb-GBM" secondAttribute="bottom" id="tT4-cp-Bnu"/>
+                            <constraint firstItem="qK2-oe-tO2" firstAttribute="top" secondItem="JYY-dM-3Ao" secondAttribute="bottom" constant="2" id="fFY-GB-BVi"/>
+                            <constraint firstAttribute="trailing" secondItem="KoY-4t-Eb9" secondAttribute="trailing" id="fgh-ow-bvH"/>
+                            <constraint firstItem="fTL-rb-GBM" firstAttribute="top" secondItem="fCL-sV-NDA" secondAttribute="bottom" constant="2" id="gqR-ez-fS7"/>
+                            <constraint firstItem="p5s-bK-Ifh" firstAttribute="bottom" secondItem="fTL-rb-GBM" secondAttribute="bottom" constant="1" id="tT4-cp-Bnu"/>
+                            <constraint firstItem="KoY-4t-Eb9" firstAttribute="top" secondItem="e3E-RH-DF8" secondAttribute="bottom" id="tgE-aJ-E8D"/>
                             <constraint firstItem="JYY-dM-3Ao" firstAttribute="leading" secondItem="Dyu-KC-Ui4" secondAttribute="leading" id="uEl-LB-JS5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p5s-bK-Ifh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pick Up" id="b11-38-wVG"/>
+                    <navigationItem key="navigationItem" title="Pick Up" id="b11-38-wVG">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Header Icon Notification" id="BNT-bD-a9G"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateSelectionCollectionView" destination="e3E-RH-DF8" id="Srq-SR-06e"/>
                         <outlet property="firstButton" destination="1rK-Xk-1dO" id="hAM-5d-TVD"/>
+                        <outlet property="firstButtonRadioImage" destination="GGC-Jd-Xkn" id="1WE-r0-XOw"/>
                         <outlet property="pickUpDateViewModel" destination="S2N-w4-W4J" id="2aK-Xm-JNt"/>
                         <outlet property="schedulePickUpDateClient" destination="eCj-F5-3rG" id="SPJ-qT-aRT"/>
                         <outlet property="schedulePickupButton" destination="fTL-rb-GBM" id="DrR-zC-dfT"/>
                         <outlet property="secondButton" destination="kkI-bL-keu" id="LEH-aF-fnS"/>
+                        <outlet property="secondButtonRadioImage" destination="p98-XN-MNh" id="Y9s-KY-mzh"/>
                         <outlet property="specialInstructionTextView" destination="fCL-sV-NDA" id="23f-Qc-XSS"/>
                         <outlet property="timeSelectionCollectionView" destination="JYY-dM-3Ao" id="Fn0-y7-JxT"/>
                     </connections>
@@ -226,7 +243,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cancel Reason Selected.png" width="16" height="16"/>
-        <image name="Cancel Reason Unselected.png" width="16" height="16"/>
+        <image name="Cancel Reason Selected" width="60" height="60"/>
+        <image name="Cancel Reason Unselected" width="60" height="60"/>
+        <image name="Header Icon Notification" width="22" height="22"/>
     </resources>
 </document>

@@ -178,6 +178,54 @@ class PickUpDateVC: UIViewController {
     }
     
     
+    
+    @IBAction func firstButtonClick(sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        self.secondButton.isSelected = false
+        
+        if sender.isSelected {
+            self.firstButtonRadioImage.isHighlighted = true
+        }else{
+            self.firstButtonRadioImage.isHighlighted = false
+        }
+        
+        self.secondButtonRadioImage.isHighlighted = false
+        
+        if sender.isSelected {
+            selectedExpressDeliveryButton = 1
+        }else{
+            selectedExpressDeliveryButton = 0
+        }
+    }
+    
+    @IBAction func secondButtonClick(sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        self.firstButton.isSelected = false
+        
+        if sender.isSelected {
+            self.secondButtonRadioImage.isHighlighted = true
+        }else{
+            self.secondButtonRadioImage.isHighlighted = false
+        }
+        
+        self.firstButtonRadioImage.isHighlighted = false
+        
+        if sender.isSelected {
+            selectedExpressDeliveryButton = 2
+        }else{
+            selectedExpressDeliveryButton = 0
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
 }
 
 
@@ -229,7 +277,8 @@ extension PickUpDateVC:UICollectionViewDelegateFlowLayout{
         var cellSize:CGSize!
         
         if collectionView.tag == 1 {
-            cellSize = CGSize(width: 66, height: 85)
+            let width = (SCREEN_SIZE.width/5)
+            cellSize = CGSize(width: width, height: 85)
         }else{
             let width = (SCREEN_SIZE.width/3)
             cellSize = CGSize(width: width, height: width/2)
@@ -280,12 +329,12 @@ extension PickUpDateVC:UICollectionViewDataSource{
             //let scheduleModel = self.pickUpScheduleArray.objectAtIndex(indexPath.item) as? QDCScheduleModel
             //dateString = (scheduleModel?.date)!
             cell.contentView.backgroundColor = UIColor.white
-            //cell.dateLabel.textColor = BUTTON_COLOUR
+            cell.dateLabel.textColor = BUTTON_COLOUR
             cell.dayLabel.textColor = UIColor.darkGray
             cell.monthLabel.textColor = UIColor.darkGray
         }
         
-        let tempArr = dateStr.components(separatedBy: " ")//componentsSeparatedByString(" ")
+        let tempArr = dateStr.components(separatedBy: " ")
         cell.dayLabel.text = CommonUtilities.getWeekDayFromString(dateString: dateStr)
         cell.dateLabel.text = tempArr[0]
         cell.monthLabel.text = tempArr[1] 
@@ -301,26 +350,23 @@ extension PickUpDateVC:UICollectionViewDataSource{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TimeCollectionViewCell.identifier, for: indexPath) as? TimeCollectionViewCell else { return UICollectionViewCell() }
 
             
-            //let scheduleModel = self.pickUpScheduleArray.objectAtIndex(self.selectedDateIndex) as? QDCScheduleModel
+            guard let timeString = pickUpDateViewModel.pickUpTime(for: indexPath, pickUpDate: selectedDate) else{return UICollectionViewCell()}
             
-            guard let timeString = pickUpDateViewModel.pickUpTime(for: indexPath, pickUpDate: selectedDate) else{return UICollectionViewCell()}//(scheduleModel?.timeArray[indexPath.item])! as! String
-            
-            cell.timeLabel.text = timeString
-//            if timeString.containsString("AM") {
-//                cell.timeLabel.text = timeString.stringByReplacingOccurrencesOfString("AM", withString: "")
-//                cell.formatLabel.text = "AM"
-//            }else{
-//                cell.timeLabel.text = timeString.stringByReplacingOccurrencesOfString("PM", withString: "")
-//                cell.formatLabel.text = "PM"
-//            }
-//
-//            if timeString == self.selectedTime {
-//                cell.contentView.backgroundColor = BUTTON_COLOUR
-//                cell.timeLabel.textColor = UIColor.whiteColor()
-//            }else{
-//                cell.contentView.backgroundColor = UIColor.whiteColor()
-//                cell.timeLabel.textColor = BUTTON_COLOUR
-//            }
+            if timeString.contains("AM") {
+                cell.timeLabel.text = timeString.replacingOccurrences(of: "AM", with: "")
+                cell.formatLabel.text = "AM"
+            }else{
+                cell.timeLabel.text = timeString.replacingOccurrences(of: "PM", with: "")
+                cell.formatLabel.text = "PM"
+            }
+
+            if timeString == self.selectedTime {
+                cell.contentView.backgroundColor = BUTTON_COLOUR
+                cell.timeLabel.textColor = UIColor.white
+            }else{
+                cell.contentView.backgroundColor = UIColor.white
+                cell.timeLabel.textColor = BUTTON_COLOUR
+            }
            return cell
         }
     }

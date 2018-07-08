@@ -78,6 +78,8 @@
 		03FB56F620ECCA8500270859 /* DueAmountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB56F520ECCA8500270859 /* DueAmountVC.swift */; };
 		03FB56F820ECD0D400270859 /* MyOrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB56F720ECD0D400270859 /* MyOrdersVC.swift */; };
 		03FB56FF20ECEDD100270859 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB56FE20ECEDD100270859 /* DashboardViewModel.swift */; };
+		0F2995EC20F25FC800594B21 /* UIColor+QDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2995EB20F25FC800594B21 /* UIColor+QDC.swift */; };
+		0F2995EF20F27FBA00594B21 /* FeedbackClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2995EE20F27FBA00594B21 /* FeedbackClient.swift */; };
 		0F2AD39D20F0784D002B4BF5 /* ProfileVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AD39C20F0784D002B4BF5 /* ProfileVC.storyboard */; };
 		0F2AD39F20F0785B002B4BF5 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AD39E20F0785B002B4BF5 /* ProfileVC.swift */; };
 		0F2AD3A220F07B7F002B4BF5 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AD3A120F07B7F002B4BF5 /* BaseVC.swift */; };
@@ -214,6 +216,8 @@
 		03FB56F520ECCA8500270859 /* DueAmountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueAmountVC.swift; sourceTree = "<group>"; };
 		03FB56F720ECD0D400270859 /* MyOrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersVC.swift; sourceTree = "<group>"; };
 		03FB56FE20ECEDD100270859 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		0F2995EB20F25FC800594B21 /* UIColor+QDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+QDC.swift"; sourceTree = "<group>"; };
+		0F2995EE20F27FBA00594B21 /* FeedbackClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackClient.swift; sourceTree = "<group>"; };
 		0F2AD39C20F0784D002B4BF5 /* ProfileVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileVC.storyboard; sourceTree = "<group>"; };
 		0F2AD39E20F0785B002B4BF5 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		0F2AD3A120F07B7F002B4BF5 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
@@ -756,6 +760,7 @@
 				03E54DF120E356AC00BE948A /* QDCConfigurableConstants.swift */,
 				03E54DEF20E356A400BE948A /* QDCStringConstants.swift */,
 				03EE3CBF20DE2873005F1A4F /* WebServiceConstant.swift */,
+				0F2995EB20F25FC800594B21 /* UIColor+QDC.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -868,6 +873,14 @@
 				0F5E426620F0B552005CC203 /* CancelReasonVC.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0F2995ED20F27F8C00594B21 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0F2995EE20F27FBA00594B21 /* FeedbackClient.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		0F2AD39920F0780D002B4BF5 /* Profile */ = {
@@ -1065,6 +1078,7 @@
 		0F5E424E20F0B22A005CC203 /* FeedBack */ = {
 			isa = PBXGroup;
 			children = (
+				0F2995ED20F27F8C00594B21 /* ViewModels */,
 				0F5E425220F0B238005CC203 /* Views */,
 				0F5E425120F0B234005CC203 /* Controller */,
 			);
@@ -1594,11 +1608,13 @@
 				03CEBA5120DC187300A1FAB3 /* LoadingHUD.swift in Sources */,
 				0338AFA120F11B4600717D8C /* CancelReasonModel.swift in Sources */,
 				0F5E427D20F0BB41005CC203 /* SuccessfullPickUpVC.swift in Sources */,
+				0F2995EF20F27FBA00594B21 /* FeedbackClient.swift in Sources */,
 				0F5E428220F0BD31005CC203 /* ExitVC.swift in Sources */,
 				03CEBA6120DC188300A1FAB3 /* GradientView.swift in Sources */,
 				0338AF9C20F1194000717D8C /* PickUpDateViewModel.swift in Sources */,
 				03CEBA6F20DC18E000A1FAB3 /* Int+HTTPStatusCode.swift in Sources */,
 				0F5E426920F0B55F005CC203 /* CancelReasonVC.swift in Sources */,
+				0F2995EC20F25FC800594B21 /* UIColor+QDC.swift in Sources */,
 				03FB56F820ECD0D400270859 /* MyOrdersVC.swift in Sources */,
 				0F5E423720F0AD3B005CC203 /* PriceListVC.swift in Sources */,
 				03CEBA6420DC188300A1FAB3 /* CustomActivityIndicator.swift in Sources */,

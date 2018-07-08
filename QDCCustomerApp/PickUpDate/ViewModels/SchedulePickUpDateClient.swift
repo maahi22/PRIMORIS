@@ -78,6 +78,8 @@ class SchedulePickUpDateClient: NSObject {
         }
         let headers = ["token": "\(token)", "Content-Type": "application/json"] as [String:String]
         
+        let apiname = SCHEDULE_DETAILS_RELATIVE_URL + "\(clientID)/\(branchID)"
+        
         networkClient.callAPIWithAlamofire(apiname: nil,
                                            requestType: .post,
                                            params: params,

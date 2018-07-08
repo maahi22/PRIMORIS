@@ -159,9 +159,9 @@
                         <viewLayoutGuide key="safeArea" id="cHG-NF-nGN"/>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="ikf-TA-LGd"/>
                                 <exclude reference="k0i-YU-qGm"/>
                                 <exclude reference="r8I-Jo-A2v"/>
-                                <exclude reference="ikf-TA-LGd"/>
                                 <exclude reference="AWJ-y9-xPF"/>
                                 <exclude reference="sDG-4f-JS6"/>
                             </mask>
@@ -209,6 +209,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Header Icon Notification" width="40" height="40"/>
+        <image name="Header Icon Notification" width="22" height="22"/>
     </resources>
 </document>
