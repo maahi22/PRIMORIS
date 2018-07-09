@@ -10,6 +10,9 @@ import UIKit
 
 class FeedBackVC: UIViewController {
 
+    
+    @IBOutlet private var feedbackClient:FeedbackClient!
+    
     @IBOutlet weak var feedbackTextView:UITextView!
     @IBOutlet weak var countLabel:UILabel!
     @IBOutlet weak var feedbackLabel:UILabel!
@@ -20,20 +23,39 @@ class FeedBackVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.setupUI()
     }
 
-    
-    
-    
-    @IBAction func sendButtonClick(sender: AnyObject) {
+    func setupUI() {
         
-        self.hitFeedbackWebService()
+        self.sendButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
+        self.sendButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.selected)
+        self.sendButton.backgroundColor = BUTTON_COLOUR
+        
     }
+    
+    
+    @IBAction func sendButtonClick() {
+        
+        
+        guard let feedback = self.feedbackTextView.text else{return}
+        
+        feedbackClient.sendFeedBack(messageString: feedback) { [weak self]  (status, message) in
+            
+            guard let strongSelf = self else{return}
+            
+            showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            
+        }
+    }
+    
+    
     
     
     func hitFeedbackWebService() {
-       /* var tempDict:[String:AnyObject]? = nil
+       
+        
+        /* var tempDict:[String:AnyObject]? = nil
         tempDict = ["CustomerCode":QDCUserDefaults.getCustomerId(), "DatabaseName": QDCUserDefaults.getDataBaseName(),"Message": self.feedbackTextView.text!,"BranchID":QDCUserDefaults.getBranchId()]
         let dict:NSDictionary? = NSDictionary.init(object: tempDict!, forKey: kWebServicePostParamKey)
         QDCFeedbackWebService.hitApi(dict!, responseValue: { (isSuccess, response,header, error) ->
@@ -50,6 +72,8 @@ class FeedBackVC: UIViewController {
                 
             }
         })*/
+        
+        
     }
     
    /* func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
@@ -66,23 +90,22 @@ class FeedBackVC: UIViewController {
 
 
 extension FeedBackVC:UITextViewDelegate{
-    func textViewDidBeginEditing(textView:UITextView) {   //delegate method
-        
+    
+    
+    private func textViewDidBeginEditing(textView:UITextView) {   //delegate method
         textView.text = "";
         self.feedbackLabel.isHidden = true
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        
         if textView.text.count >= 1000 {
-            
             return false
         }
-        
         self.countLabel.text = "\(textView.text.count)/1000 Max Characters"
-        
         return true
     }
+    
+    
 }
 
 extension FeedBackVC{

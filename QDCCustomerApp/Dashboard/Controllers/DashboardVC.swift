@@ -11,6 +11,7 @@ import UIKit
 class DashboardVC: UIViewController {
 
     @IBOutlet var signUpClient:SignUpClient!
+    @IBOutlet var customerSummaryClient:CustomerSummaryClient!
     
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -36,8 +37,27 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        // Do any additional setup after loading the view.
+        customerSummaryClient.getCustomerSummary { [weak self] (customerSummeryModel, message) in
+            guard let strongSelf = self else{
+                return
+            }
+            
+            if let customerSummeryModel = customerSummeryModel{
+                
+                DispatchQueue.main.async {
+                    
+                    strongSelf.garmentDueLabel.text = customerSummeryModel.PendingGarments
+                    strongSelf.payAmountLabel.text = customerSummeryModel.PendingAmount
+                }
+                
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            }
+            
+            
+        }
+       
     }
     
     //action
@@ -57,8 +77,10 @@ class DashboardVC: UIViewController {
     }
     
     @IBAction func pickUpButtonClick(sender: AnyObject) {
-        
-        //self.performSegueWithIdentifier(SEGUE_PICKUP_IDENTIFIER, sender: self)
+        guard let navViewController = PickUpDateVC.getStoryboardInstance(),
+            let viewController = navViewController.topViewController as? PickUpDateVC
+            else { return  }
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     
