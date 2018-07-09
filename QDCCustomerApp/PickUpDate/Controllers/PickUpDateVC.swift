@@ -143,17 +143,17 @@ class PickUpDateVC: UIViewController {
         
      
         //let dict:NSDictionary? = NSDictionary.init(object: tempDict!, forKey: kWebServicePostParamKey)
-        schedulePickUpDateClient.getSchedulePickup(pickupDate: self.selectedDate, pickupTime: self.selectedTime, flag: flag, pickupNumber: "", expressDeliveryID: expressId, specialInstruction: instruction, dropOffDate: "", dropOffTime: "", cancelReason: "") { (shedulePickUpModel, message) in
-            
-            if let shedulePickUpModel = shedulePickUpModel {
-                
+        schedulePickUpDateClient.getSchedulePickup(pickupDate: self.selectedDate, pickupTime: self.selectedTime, flag: flag, pickupNumber: "", expressDeliveryID: expressId, specialInstruction: instruction, dropOffDate: "", dropOffTime: "", cancelReason: nil) { [weak self](schedulePickUpModel, message) in
+            guard let strongSelf = self else{return}
+            if let schedulePickUpModel = schedulePickUpModel {
+                strongSelf.pickupNumber = schedulePickUpModel.Status
                 guard let navViewController = SuccessfullPickUpVC.getStoryboardInstance(),
                     let viewController = navViewController.topViewController as? SuccessfullPickUpVC
                     else { return  }
-                self.navigationController?.pushViewController(viewController, animated: true)
+                strongSelf.navigationController?.pushViewController(viewController, animated: true)
             }else{
                 
-                showAlertMessage(vc: self, title: .Error, message: message)
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
             }
             
             

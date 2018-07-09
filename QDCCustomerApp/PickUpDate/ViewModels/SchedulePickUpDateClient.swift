@@ -78,16 +78,16 @@ class SchedulePickUpDateClient: NSObject {
         }
         let headers = ["token": "\(token)", "Content-Type": "application/json"] as [String:String]
         
-        let apiname = SCHEDULE_DETAILS_RELATIVE_URL + "\(clientID)/\(branchID)"
+        let apiname = REQUEST_PICKUP_RELATIVE_URL + "/\(clientID)/\(branchID)"
         
         networkClient.callAPIWithAlamofire(apiname: apiname,
-                                           requestType: .get,
+                                           requestType: .post,
                                            params: params,
                                            headers: headers,
                                            success: { (data, httpResponse) in
                                             
-                                            if let scheduleDetailsModel = decodeJSON(type: SchedulePickupModel.self, from: data) {
-                                                completion(scheduleDetailsModel, "Success")
+                                            if let schedulePickupModel = decodeJSON(type: SchedulePickupModel.self, from: data) {
+                                                completion(schedulePickupModel, "Success")
                                             }else{
                                                 completion(nil,"failed")
                                             }
