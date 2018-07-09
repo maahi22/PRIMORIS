@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-8G-bvv">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-8G-bvv">
                         <rect key="frame" x="0.0" y="0.0" width="119" height="29.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,7 +40,7 @@
                             <constraint firstAttribute="height" constant="1" id="rTx-53-wyK"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQE-4f-tZe">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQE-4f-tZe">
                         <rect key="frame" x="0.0" y="29.5" width="119" height="29.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,10 +57,12 @@
                 <constraint firstItem="Ygj-Og-nUy" firstAttribute="leading" secondItem="KvJ-8G-bvv" secondAttribute="trailing" id="JpX-ZX-9fv"/>
                 <constraint firstItem="zQE-4f-tZe" firstAttribute="top" secondItem="KvJ-8G-bvv" secondAttribute="bottom" id="McD-Rd-crB"/>
                 <constraint firstAttribute="trailing" secondItem="C5a-Bx-dlJ" secondAttribute="trailing" id="Oxz-B1-hrn"/>
+                <constraint firstItem="KvJ-8G-bvv" firstAttribute="leading" secondItem="2qi-a4-p0L" secondAttribute="leading" id="P81-9f-Oac"/>
                 <constraint firstItem="Ygj-Og-nUy" firstAttribute="leading" secondItem="zQE-4f-tZe" secondAttribute="trailing" id="QhC-rb-2Pr"/>
                 <constraint firstAttribute="trailing" secondItem="Ygj-Og-nUy" secondAttribute="trailing" id="RAn-HT-PKn"/>
                 <constraint firstAttribute="bottom" secondItem="C5a-Bx-dlJ" secondAttribute="bottom" id="Ybo-Z9-zUy"/>
-                <constraint firstItem="zQE-4f-tZe" firstAttribute="top" secondItem="KvJ-8G-bvv" secondAttribute="bottom" id="q44-hd-iKn"/>
+                <constraint firstItem="KvJ-8G-bvv" firstAttribute="top" secondItem="2qi-a4-p0L" secondAttribute="top" id="gq5-05-ABP"/>
+                <constraint firstItem="zQE-4f-tZe" firstAttribute="leading" secondItem="2qi-a4-p0L" secondAttribute="leading" id="lBx-8m-QNG"/>
                 <constraint firstItem="Ygj-Og-nUy" firstAttribute="top" secondItem="2qi-a4-p0L" secondAttribute="top" id="zK3-ip-bno"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="0mZ-JH-KHh"/>

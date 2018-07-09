@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="3795" y="-2049"/>
         </scene>
-        <!--PickUpVC-->
+        <!--PickUpDateVC-->
         <scene sceneID="IA2-Oy-gey">
             <objects>
-                <viewControllerPlaceholder storyboardName="PickUpVC" id="QqY-H9-sIN" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="PickUpDateVC" id="QqY-H9-sIN" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aY-OY-Hv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3705" y="-1994"/>

@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-292" y="-634"/>
         </scene>
-        <!--Pick Up-->
+        <!--Choose Date /Time-->
         <scene sceneID="VUQ-vE-Fet">
             <objects>
                 <viewController storyboardIdentifier="PickUpDateVC" id="eHl-Mi-ezB" customClass="PickUpDateVC" customModule="QDCCustomerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -220,7 +220,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p5s-bK-Ifh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pick Up" id="b11-38-wVG">
+                    <navigationItem key="navigationItem" title="Choose Date /Time" id="b11-38-wVG">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Header Icon Notification" id="BNT-bD-a9G"/>
                     </navigationItem>
                     <connections>

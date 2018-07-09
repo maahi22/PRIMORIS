@@ -1,5 +1,5 @@
 //
-//  OfferCell.swift
+//  PriceCell.swift
 //  QDCCustomerApp
 //
 //  Created by Maahi on 09/07/18.
@@ -8,14 +8,13 @@
 
 import UIKit
 
-class OfferCell: UITableViewCell {
+class PriceCell: UITableViewCell {
 
     
-    
-    
+    @IBOutlet weak var priceContainerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     
     static var identifier:String{
         return String(describing: self)
@@ -23,7 +22,6 @@ class OfferCell: UITableViewCell {
     static var nib:UINib{
         return UINib(nibName: identifier, bundle: nil)
     }
-    
     
     
     
@@ -40,18 +38,16 @@ class OfferCell: UITableViewCell {
     }
     
     
-    
-    /*func setupUI(offerDict:NSDictionary) {
+    func setupUI() {
         
-        self.titleLabel.text = offerDict["Title"] as? String
-        self.descriptionLabel.text = offerDict["Descreption"] as? String
+        var rct = self.priceContainerView.bounds
+        rct.size.width = SCREEN_SIZE.width-20
+        priceContainerView.layer.shadowColor = UIColor.black.cgColor
+        priceContainerView.layer.shadowOpacity = 0.5
+        priceContainerView.layer.shadowOffset = CGSize.zero
+        priceContainerView.layer.shadowRadius = 3
+        priceContainerView.layer.shadowPath = UIBezierPath(rect: rct).cgPath
+        priceContainerView.layer.shouldRasterize = true
         
-        self.iconImageView.image = self.iconImageView.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        self.iconImageView.tintColor = APP_ICON_COLOUR
-        
-        self.titleLabel.textColor = PRIMARY_COLOUR
-        self.descriptionLabel.textColor = UIColor.blackColor()
-        
-    }*/
-    
+    }
 }
