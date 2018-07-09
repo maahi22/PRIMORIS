@@ -114,6 +114,9 @@
                                         <state key="selected">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="secondButtonClickWithSender:" destination="eHl-Mi-ezB" eventType="touchUpInside" id="NbJ-Ku-ZAW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1rK-Xk-1dO">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="40"/>
@@ -126,6 +129,9 @@
                                         <state key="selected">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="firstButtonClickWithSender:" destination="eHl-Mi-ezB" eventType="touchUpInside" id="M1Z-iv-sVz"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cancel Reason Unselected" highlightedImage="Cancel Reason Selected" translatesAutoresizingMaskIntoConstraints="NO" id="GGC-Jd-Xkn">
                                         <rect key="frame" x="8" y="12" width="15" height="15"/>

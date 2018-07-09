@@ -87,6 +87,11 @@
 		0F2AD3AC20F080E7002B4BF5 /* DateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AD3AA20F080E7002B4BF5 /* DateCollectionViewCell.xib */; };
 		0F2AD3AF20F0810B002B4BF5 /* TimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AD3AD20F0810B002B4BF5 /* TimeCollectionViewCell.swift */; };
 		0F2AD3B020F0810B002B4BF5 /* TimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AD3AE20F0810B002B4BF5 /* TimeCollectionViewCell.xib */; };
+		0F2FE61C20F31C4200F4CC48 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE61A20F31C4200F4CC48 /* OfferCell.swift */; };
+		0F2FE61D20F31C4200F4CC48 /* OfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE61B20F31C4200F4CC48 /* OfferCell.xib */; };
+		0F2FE62120F3201B00F4CC48 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE62020F3201B00F4CC48 /* OfferModel.swift */; };
+		0F2FE62320F320E100F4CC48 /* OffersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE62220F320E100F4CC48 /* OffersViewModel.swift */; };
+		0F2FE62520F320F300F4CC48 /* OffersClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE62420F320F300F4CC48 /* OffersClient.swift */; };
 		0F5E423020F0A6EF005CC203 /* DueAmountVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5E422F20F0A6EF005CC203 /* DueAmountVC.storyboard */; };
 		0F5E423520F0AD28005CC203 /* PriceListVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5E423420F0AD28005CC203 /* PriceListVC.storyboard */; };
 		0F5E423720F0AD3B005CC203 /* PriceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E423620F0AD3B005CC203 /* PriceListVC.swift */; };
@@ -225,6 +230,11 @@
 		0F2AD3AA20F080E7002B4BF5 /* DateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCollectionViewCell.xib; sourceTree = "<group>"; };
 		0F2AD3AD20F0810B002B4BF5 /* TimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		0F2AD3AE20F0810B002B4BF5 /* TimeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCollectionViewCell.xib; sourceTree = "<group>"; };
+		0F2FE61A20F31C4200F4CC48 /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
+		0F2FE61B20F31C4200F4CC48 /* OfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferCell.xib; sourceTree = "<group>"; };
+		0F2FE62020F3201B00F4CC48 /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
+		0F2FE62220F320E100F4CC48 /* OffersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewModel.swift; sourceTree = "<group>"; };
+		0F2FE62420F320F300F4CC48 /* OffersClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersClient.swift; sourceTree = "<group>"; };
 		0F5E422F20F0A6EF005CC203 /* DueAmountVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DueAmountVC.storyboard; sourceTree = "<group>"; };
 		0F5E423420F0AD28005CC203 /* PriceListVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PriceListVC.storyboard; sourceTree = "<group>"; };
 		0F5E423620F0AD3B005CC203 /* PriceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListVC.swift; sourceTree = "<group>"; };
@@ -966,6 +976,32 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		0F2FE61920F31C1900F4CC48 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE61A20F31C4200F4CC48 /* OfferCell.swift */,
+				0F2FE61B20F31C4200F4CC48 /* OfferCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		0F2FE61E20F31F1700F4CC48 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE62220F320E100F4CC48 /* OffersViewModel.swift */,
+				0F2FE62420F320F300F4CC48 /* OffersClient.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0F2FE61F20F31F2300F4CC48 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE62020F3201B00F4CC48 /* OfferModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0F5E423120F0ACEA005CC203 /* PriceList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1145,6 +1181,8 @@
 		0F5E426320F0B4B4005CC203 /* OffersView */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE61F20F31F2300F4CC48 /* Models */,
+				0F2FE61E20F31F1700F4CC48 /* ViewModel */,
 				0F5E426520F0B4BC005CC203 /* Views */,
 				0F5E426420F0B4B9005CC203 /* Controller */,
 			);
@@ -1162,6 +1200,7 @@
 		0F5E426520F0B4BC005CC203 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE61920F31C1900F4CC48 /* TableViewCell */,
 				0F5E426A20F0B714005CC203 /* OffersVC.storyboard */,
 			);
 			path = Views;
@@ -1433,6 +1472,7 @@
 				0F5E425820F0B362005CC203 /* FeedBackVC.storyboard in Resources */,
 				0F5E426B20F0B714005CC203 /* OffersVC.storyboard in Resources */,
 				03C2AB8D20DAAFAE0029AAA4 /* LaunchScreen.storyboard in Resources */,
+				0F2FE61D20F31C4200F4CC48 /* OfferCell.xib in Resources */,
 				034B9B2420E6C04D004CFD4D /* MenuItemTableViewCell.xib in Resources */,
 				0F2AD3AC20F080E7002B4BF5 /* DateCollectionViewCell.xib in Resources */,
 				0F5E423520F0AD28005CC203 /* PriceListVC.storyboard in Resources */,
@@ -1584,6 +1624,7 @@
 				03E54DF020E356A400BE948A /* QDCStringConstants.swift in Sources */,
 				037745D820DC24DA00CAB37E /* SelectLocalityVC.swift in Sources */,
 				0F5E425620F0B2A4005CC203 /* SettingsVC.swift in Sources */,
+				0F2FE62520F320F300F4CC48 /* OffersClient.swift in Sources */,
 				03CEBA5F20DC188300A1FAB3 /* LazyImage.swift in Sources */,
 				0338AFA520F11BBB00717D8C /* CancelReasonClient.swift in Sources */,
 				0F5E424C20F0B09B005CC203 /* DropOffVC.swift in Sources */,
@@ -1605,6 +1646,7 @@
 				0FA8C68420F20FA500F9DC83 /* CommonUtilities.swift in Sources */,
 				03C2AB8820DAAFAC0029AAA4 /* QDCCustomerApp.xcdatamodeld in Sources */,
 				03EE3CC820DE30A4005F1A4F /* ServiableAreaViewModel.swift in Sources */,
+				0F2FE62320F320E100F4CC48 /* OffersViewModel.swift in Sources */,
 				03CEBA5120DC187300A1FAB3 /* LoadingHUD.swift in Sources */,
 				0338AFA120F11B4600717D8C /* CancelReasonModel.swift in Sources */,
 				0F5E427D20F0BB41005CC203 /* SuccessfullPickUpVC.swift in Sources */,
@@ -1614,6 +1656,7 @@
 				0338AF9C20F1194000717D8C /* PickUpDateViewModel.swift in Sources */,
 				03CEBA6F20DC18E000A1FAB3 /* Int+HTTPStatusCode.swift in Sources */,
 				0F5E426920F0B55F005CC203 /* CancelReasonVC.swift in Sources */,
+				0F2FE61C20F31C4200F4CC48 /* OfferCell.swift in Sources */,
 				0F2995EC20F25FC800594B21 /* UIColor+QDC.swift in Sources */,
 				03FB56F820ECD0D400270859 /* MyOrdersVC.swift in Sources */,
 				0F5E423720F0AD3B005CC203 /* PriceListVC.swift in Sources */,
@@ -1636,6 +1679,7 @@
 				03CEBA7220DC18E000A1FAB3 /* UIImageView+URL.swift in Sources */,
 				036F54CB20F1182E00B4D7E0 /* CustomerSummaryClient.swift in Sources */,
 				0F5E425A20F0B371005CC203 /* FeedBackVC.swift in Sources */,
+				0F2FE62120F3201B00F4CC48 /* OfferModel.swift in Sources */,
 				03CEBA7420DC18F300A1FAB3 /* NetworkClient.swift in Sources */,
 				03EE3CD220DE5418005F1A4F /* SignUpModel.swift in Sources */,
 				03E54DF420E356F700BE948A /* QDCUserDefaults.swift in Sources */,

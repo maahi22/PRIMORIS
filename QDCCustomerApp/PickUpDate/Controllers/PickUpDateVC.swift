@@ -44,7 +44,7 @@ class PickUpDateVC: UIViewController {
         
         timeSelectionCollectionView.register(TimeCollectionViewCell.nib, forCellWithReuseIdentifier: TimeCollectionViewCell.identifier)
 
-        
+        self.setupUI()
         
         pickUpDateViewModel.getPickUpDate { [weak self] (isSuccess, message) in
             guard let strongSelf = self else{return}
@@ -77,12 +77,30 @@ class PickUpDateVC: UIViewController {
     }
 
     
+    func setupUI() {
+        self.specialInstructionTextView.textColor = TEXT_FIELD_COLOUR
+        
+        self.firstButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        self.firstButton.backgroundColor = UIColor.white
+        
+        self.secondButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        self.secondButton.backgroundColor = UIColor.white
+        
+        self.schedulePickupButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
+        self.schedulePickupButton.backgroundColor = BUTTON_COLOUR
+    }
     
     @IBAction func schedulePickupButtonClick(sender: AnyObject) {
         
         if self.selectedExpressDeliveryButton == 0 && self.showDropOff == true {
             //none of them is selected and user can select drop then send to drop off controller
             //self.performSegueWithIdentifier(SEGUE_DROPOFF_IDENTIFIER, sender: self)
+            
+            guard let navViewController = DropOffVC.getStoryboardInstance(),
+                let viewController = navViewController.topViewController as? DropOffVC
+                else { return  }
+            self.navigationController?.pushViewController(viewController, animated: true)
+            
             
         }else {
             //user has selected fast delivery or he can not choose drop off

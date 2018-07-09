@@ -80,8 +80,8 @@ class SchedulePickUpDateClient: NSObject {
         
         let apiname = SCHEDULE_DETAILS_RELATIVE_URL + "\(clientID)/\(branchID)"
         
-        networkClient.callAPIWithAlamofire(apiname: nil,
-                                           requestType: .post,
+        networkClient.callAPIWithAlamofire(apiname: apiname,
+                                           requestType: .get,
                                            params: params,
                                            headers: headers,
                                            success: { (data, httpResponse) in
