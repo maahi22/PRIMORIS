@@ -33,22 +33,21 @@ class MyOrdersVC: UIViewController {
 
     
     func registerNib() {
-        //let cellName = UINib(nibName: "QDCOrderTableViewCell", bundle:nil)
-        //orderTableView.registerNib(cellName, forCellReuseIdentifier: orderCellIdentier)
+        orderTableView.register(MyOrderCell.nib, forCellReuseIdentifier: MyOrderCell.identifier)
     }
     
     func setupUI() {
         
-       /* self.view.backgroundColor = PRIMARY_COLOUR
-        self.orderTableView.backgroundColor =  UIColor.whiteColor()
+        self.view.backgroundColor = PRIMARY_COLOUR
+        self.orderTableView.backgroundColor =  UIColor.white
         
-        self.dueImageView.image = self.dueImageView.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        self.dueImageView.image = self.dueImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         self.dueImageView.tintColor = APP_ICON_COLOUR
-        self.readyImageView.image = self.readyImageView.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        self.readyImageView.image = self.readyImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         self.readyImageView.tintColor = APP_ICON_COLOUR
-        self.processImageView.image = self.processImageView.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        self.processImageView.image = self.processImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         self.processImageView.tintColor = APP_ICON_COLOUR
-        */
+ 
     }
     
 
@@ -68,26 +67,37 @@ extension MyOrdersVC:UITableViewDataSource{
         return 5
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = orderTableView.dequeueReusableCell(withIdentifier: ServiceAreaTableViewCell.identifier, for: indexPath)  as? ServiceAreaTableViewCell else { return UITableViewCell() }
-       // cell.serviceArea = serviableAreaViewModel.servicableAreaForIndexPath(indexPath)
+        guard let cell = orderTableView.dequeueReusableCell(withIdentifier: MyOrderCell.identifier, for: indexPath)  as? MyOrderCell else { return UITableViewCell() }
+       
+        
+        
+        
         return cell
     }
 }
 
 extension MyOrdersVC:UITableViewDelegate{
-    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        guard let selectedServiceArea = serviableAreaViewModel.servicableAreaForIndexPath(indexPath) else{
-            return
-        }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //if let orderDetailObj = self.orderArray[indexPath.row] as? QDCOrderDetailModel {
+            
+            
+            guard let navViewController = OrderDetailVC.getStoryboardInstance(),
+                let  viewController = navViewController.topViewController as? OrderDetailVC
+                else { return  }
+           //navViewController.
+            self.navigationController?.pushViewController(viewController, animated: true)
+            
+            
+           // self.performSegueWithIdentifier(SEGUE_ORDER_DETAIL_IDENTIFIER, sender: orderDetailObj)
+      //  }
         
-        QDCUserDefaults.setBranchId(branchId: selectedServiceArea.BranchID ?? "")
-        QDCUserDefaults.setClientID(clientID: selectedServiceArea.ClientID ?? "")
-        let serviceArea = try? JSONEncoder().encode(selectedServiceArea)
-        
-        UserDefaults.standard.set(serviceArea, forKey: "SelectedServiceArea")
-        
-        navigateToSignUpChoice()
-        
-    }*/
+    }
+    
+    func navigateToSignUpChoice()  {
+        guard let navViewController = OrderDetailVC.getStoryboardInstance(),
+            let  viewController = navViewController.topViewController as? OrderDetailVC
+            else { return  }
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }

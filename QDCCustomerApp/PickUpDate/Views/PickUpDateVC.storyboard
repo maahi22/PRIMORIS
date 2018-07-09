@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-292" y="-634"/>
         </scene>
-        <!--Pick Up-->
+        <!--Choose Date /Time-->
         <scene sceneID="VUQ-vE-Fet">
             <objects>
                 <viewController storyboardIdentifier="PickUpDateVC" id="eHl-Mi-ezB" customClass="PickUpDateVC" customModule="QDCCustomerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,6 +114,9 @@
                                         <state key="selected">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="secondButtonClickWithSender:" destination="eHl-Mi-ezB" eventType="touchUpInside" id="NbJ-Ku-ZAW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1rK-Xk-1dO">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="40"/>
@@ -126,6 +129,9 @@
                                         <state key="selected">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="firstButtonClickWithSender:" destination="eHl-Mi-ezB" eventType="touchUpInside" id="M1Z-iv-sVz"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cancel Reason Unselected" highlightedImage="Cancel Reason Selected" translatesAutoresizingMaskIntoConstraints="NO" id="GGC-Jd-Xkn">
                                         <rect key="frame" x="8" y="12" width="15" height="15"/>
@@ -214,7 +220,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p5s-bK-Ifh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pick Up" id="b11-38-wVG">
+                    <navigationItem key="navigationItem" title="Choose Date /Time" id="b11-38-wVG">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Header Icon Notification" id="BNT-bD-a9G"/>
                     </navigationItem>
                     <connections>

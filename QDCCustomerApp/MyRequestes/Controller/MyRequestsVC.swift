@@ -8,7 +8,19 @@
 
 import UIKit
 
-class MyRequestsVC: UIViewController {
+class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate{
+    func didSelectRescheduleButton(obj: AnyObject) {
+        
+    }
+    
+    func didSelectCancelButton(obj: AnyObject) {
+        
+    }
+    
+    func didSelectCancelReason(cancelReason: String) {
+        
+    }
+    
 
     @IBOutlet weak var tableContainerView:UIView!
     @IBOutlet weak var mainScrollView:UIScrollView!

@@ -25,12 +25,12 @@ class DueAmountVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*func setupUI() {
+    func setupUI() {
         
         self.dueAmountLabel.textColor = GRAY_COLOUR_ON_BUTTON
         self.amountTitleLabel.textColor = BUTTON_COLOUR
         self.amountDetailTitleLabel.textColor = GRAY_COLOUR_ON_BUTTON
-    }*/
+    }
     /*
     // MARK: - Navigation
 

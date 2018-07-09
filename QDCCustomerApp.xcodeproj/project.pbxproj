@@ -87,6 +87,34 @@
 		0F2AD3AC20F080E7002B4BF5 /* DateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AD3AA20F080E7002B4BF5 /* DateCollectionViewCell.xib */; };
 		0F2AD3AF20F0810B002B4BF5 /* TimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AD3AD20F0810B002B4BF5 /* TimeCollectionViewCell.swift */; };
 		0F2AD3B020F0810B002B4BF5 /* TimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AD3AE20F0810B002B4BF5 /* TimeCollectionViewCell.xib */; };
+		0F2FE61C20F31C4200F4CC48 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE61A20F31C4200F4CC48 /* OfferCell.swift */; };
+		0F2FE61D20F31C4200F4CC48 /* OfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE61B20F31C4200F4CC48 /* OfferCell.xib */; };
+		0F2FE62120F3201B00F4CC48 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE62020F3201B00F4CC48 /* OfferModel.swift */; };
+		0F2FE62320F320E100F4CC48 /* OffersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE62220F320E100F4CC48 /* OffersViewModel.swift */; };
+		0F2FE62520F320F300F4CC48 /* OffersClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE62420F320F300F4CC48 /* OffersClient.swift */; };
+		0F2FE62920F346F500F4CC48 /* MyRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE62720F346F500F4CC48 /* MyRequestCell.swift */; };
+		0F2FE62A20F346F500F4CC48 /* MyRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE62820F346F500F4CC48 /* MyRequestCell.xib */; };
+		0F2FE62E20F34A2100F4CC48 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE62C20F34A2100F4CC48 /* NotificationCell.swift */; };
+		0F2FE62F20F34A2100F4CC48 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE62D20F34A2100F4CC48 /* NotificationCell.xib */; };
+		0F2FE63320F34B0B00F4CC48 /* MyOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE63120F34B0B00F4CC48 /* MyOrderCell.swift */; };
+		0F2FE63420F34B0B00F4CC48 /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE63220F34B0B00F4CC48 /* MyOrderCell.xib */; };
+		0F2FE63720F34B7700F4CC48 /* OrderDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE63620F34B7700F4CC48 /* OrderDetailModel.swift */; };
+		0F2FE63B20F34D1F00F4CC48 /* OrderDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE63920F34D1F00F4CC48 /* OrderDetailCell.swift */; };
+		0F2FE63C20F34D1F00F4CC48 /* OrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE63A20F34D1F00F4CC48 /* OrderDetailCell.xib */; };
+		0F2FE63E20F34D5700F4CC48 /* OrderSubDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE63D20F34D5700F4CC48 /* OrderSubDetailModel.swift */; };
+		0F2FE64120F34E8E00F4CC48 /* PickupHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE63F20F34E8E00F4CC48 /* PickupHistoryCell.swift */; };
+		0F2FE64220F34E8E00F4CC48 /* PickupHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE64020F34E8E00F4CC48 /* PickupHistoryCell.xib */; };
+		0F2FE64520F34ED700F4CC48 /* DropoffHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE64420F34ED700F4CC48 /* DropoffHistoryModel.swift */; };
+		0F2FE64920F3502F00F4CC48 /* AboutUsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE64720F3502F00F4CC48 /* AboutUsCell.swift */; };
+		0F2FE64A20F3502F00F4CC48 /* AboutUsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE64820F3502F00F4CC48 /* AboutUsCell.xib */; };
+		0F2FE64E20F350DA00F4CC48 /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE64C20F350DA00F4CC48 /* PriceCell.swift */; };
+		0F2FE64F20F350DA00F4CC48 /* PriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE64D20F350DA00F4CC48 /* PriceCell.xib */; };
+		0F2FE65320F3517400F4CC48 /* PriceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE65120F3517400F4CC48 /* PriceCollectionCell.swift */; };
+		0F2FE65420F3517400F4CC48 /* PriceCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE65220F3517400F4CC48 /* PriceCollectionCell.xib */; };
+		0F2FE65720F353BC00F4CC48 /* DueAmountClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE65620F353BC00F4CC48 /* DueAmountClient.swift */; };
+		0F2FE65B20F35D9200F4CC48 /* PriceCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE65920F35D9200F4CC48 /* PriceCategoryCollectionCell.swift */; };
+		0F2FE65C20F35D9200F4CC48 /* PriceCategoryCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE65A20F35D9200F4CC48 /* PriceCategoryCollectionCell.xib */; };
+		0F2FE65F20F360B500F4CC48 /* PriceListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE65E20F360B500F4CC48 /* PriceListModel.swift */; };
 		0F5E423020F0A6EF005CC203 /* DueAmountVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5E422F20F0A6EF005CC203 /* DueAmountVC.storyboard */; };
 		0F5E423520F0AD28005CC203 /* PriceListVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5E423420F0AD28005CC203 /* PriceListVC.storyboard */; };
 		0F5E423720F0AD3B005CC203 /* PriceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E423620F0AD3B005CC203 /* PriceListVC.swift */; };
@@ -225,6 +253,34 @@
 		0F2AD3AA20F080E7002B4BF5 /* DateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCollectionViewCell.xib; sourceTree = "<group>"; };
 		0F2AD3AD20F0810B002B4BF5 /* TimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		0F2AD3AE20F0810B002B4BF5 /* TimeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCollectionViewCell.xib; sourceTree = "<group>"; };
+		0F2FE61A20F31C4200F4CC48 /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
+		0F2FE61B20F31C4200F4CC48 /* OfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferCell.xib; sourceTree = "<group>"; };
+		0F2FE62020F3201B00F4CC48 /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
+		0F2FE62220F320E100F4CC48 /* OffersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewModel.swift; sourceTree = "<group>"; };
+		0F2FE62420F320F300F4CC48 /* OffersClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersClient.swift; sourceTree = "<group>"; };
+		0F2FE62720F346F500F4CC48 /* MyRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestCell.swift; sourceTree = "<group>"; };
+		0F2FE62820F346F500F4CC48 /* MyRequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRequestCell.xib; sourceTree = "<group>"; };
+		0F2FE62C20F34A2100F4CC48 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		0F2FE62D20F34A2100F4CC48 /* NotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
+		0F2FE63120F34B0B00F4CC48 /* MyOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderCell.swift; sourceTree = "<group>"; };
+		0F2FE63220F34B0B00F4CC48 /* MyOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrderCell.xib; sourceTree = "<group>"; };
+		0F2FE63620F34B7700F4CC48 /* OrderDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailModel.swift; sourceTree = "<group>"; };
+		0F2FE63920F34D1F00F4CC48 /* OrderDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailCell.swift; sourceTree = "<group>"; };
+		0F2FE63A20F34D1F00F4CC48 /* OrderDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailCell.xib; sourceTree = "<group>"; };
+		0F2FE63D20F34D5700F4CC48 /* OrderSubDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSubDetailModel.swift; sourceTree = "<group>"; };
+		0F2FE63F20F34E8E00F4CC48 /* PickupHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupHistoryCell.swift; sourceTree = "<group>"; };
+		0F2FE64020F34E8E00F4CC48 /* PickupHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupHistoryCell.xib; sourceTree = "<group>"; };
+		0F2FE64420F34ED700F4CC48 /* DropoffHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropoffHistoryModel.swift; sourceTree = "<group>"; };
+		0F2FE64720F3502F00F4CC48 /* AboutUsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsCell.swift; sourceTree = "<group>"; };
+		0F2FE64820F3502F00F4CC48 /* AboutUsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutUsCell.xib; sourceTree = "<group>"; };
+		0F2FE64C20F350DA00F4CC48 /* PriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
+		0F2FE64D20F350DA00F4CC48 /* PriceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceCell.xib; sourceTree = "<group>"; };
+		0F2FE65120F3517400F4CC48 /* PriceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCollectionCell.swift; sourceTree = "<group>"; };
+		0F2FE65220F3517400F4CC48 /* PriceCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceCollectionCell.xib; sourceTree = "<group>"; };
+		0F2FE65620F353BC00F4CC48 /* DueAmountClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueAmountClient.swift; sourceTree = "<group>"; };
+		0F2FE65920F35D9200F4CC48 /* PriceCategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCategoryCollectionCell.swift; sourceTree = "<group>"; };
+		0F2FE65A20F35D9200F4CC48 /* PriceCategoryCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceCategoryCollectionCell.xib; sourceTree = "<group>"; };
+		0F2FE65E20F360B500F4CC48 /* PriceListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListModel.swift; sourceTree = "<group>"; };
 		0F5E422F20F0A6EF005CC203 /* DueAmountVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DueAmountVC.storyboard; sourceTree = "<group>"; };
 		0F5E423420F0AD28005CC203 /* PriceListVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PriceListVC.storyboard; sourceTree = "<group>"; };
 		0F5E423620F0AD3B005CC203 /* PriceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListVC.swift; sourceTree = "<group>"; };
@@ -801,6 +857,7 @@
 		03FB56E720ECC78A00270859 /* DueAmount */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE65520F3539B00F4CC48 /* ViewModel */,
 				03FB56F020ECC7C900270859 /* Views */,
 				03FB56EF20ECC7C700270859 /* Controllers */,
 			);
@@ -819,6 +876,7 @@
 		03FB56E920ECC79B00270859 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE63020F34AF200F4CC48 /* TableCell */,
 				03FB56F320ECC81400270859 /* MyOrdersVC.storyboard */,
 			);
 			path = Views;
@@ -966,9 +1024,136 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		0F2FE61920F31C1900F4CC48 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE61A20F31C4200F4CC48 /* OfferCell.swift */,
+				0F2FE61B20F31C4200F4CC48 /* OfferCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		0F2FE61E20F31F1700F4CC48 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE62220F320E100F4CC48 /* OffersViewModel.swift */,
+				0F2FE62420F320F300F4CC48 /* OffersClient.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0F2FE61F20F31F2300F4CC48 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE62020F3201B00F4CC48 /* OfferModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0F2FE62620F346AA00F4CC48 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE62720F346F500F4CC48 /* MyRequestCell.swift */,
+				0F2FE62820F346F500F4CC48 /* MyRequestCell.xib */,
+				0F2FE63F20F34E8E00F4CC48 /* PickupHistoryCell.swift */,
+				0F2FE64020F34E8E00F4CC48 /* PickupHistoryCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		0F2FE62B20F349FA00F4CC48 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE62C20F34A2100F4CC48 /* NotificationCell.swift */,
+				0F2FE62D20F34A2100F4CC48 /* NotificationCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		0F2FE63020F34AF200F4CC48 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE63120F34B0B00F4CC48 /* MyOrderCell.swift */,
+				0F2FE63220F34B0B00F4CC48 /* MyOrderCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		0F2FE63520F34B6100F4CC48 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE63620F34B7700F4CC48 /* OrderDetailModel.swift */,
+				0F2FE63D20F34D5700F4CC48 /* OrderSubDetailModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0F2FE63820F34D0700F4CC48 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE63920F34D1F00F4CC48 /* OrderDetailCell.swift */,
+				0F2FE63A20F34D1F00F4CC48 /* OrderDetailCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		0F2FE64320F34EC500F4CC48 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE64420F34ED700F4CC48 /* DropoffHistoryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0F2FE64620F3501600F4CC48 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE64720F3502F00F4CC48 /* AboutUsCell.swift */,
+				0F2FE64820F3502F00F4CC48 /* AboutUsCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		0F2FE64B20F350C200F4CC48 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE64C20F350DA00F4CC48 /* PriceCell.swift */,
+				0F2FE64D20F350DA00F4CC48 /* PriceCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		0F2FE65020F3515800F4CC48 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE65120F3517400F4CC48 /* PriceCollectionCell.swift */,
+				0F2FE65220F3517400F4CC48 /* PriceCollectionCell.xib */,
+				0F2FE65920F35D9200F4CC48 /* PriceCategoryCollectionCell.swift */,
+				0F2FE65A20F35D9200F4CC48 /* PriceCategoryCollectionCell.xib */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		0F2FE65520F3539B00F4CC48 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE65620F353BC00F4CC48 /* DueAmountClient.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0F2FE65D20F3605400F4CC48 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FE65E20F360B500F4CC48 /* PriceListModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0F5E423120F0ACEA005CC203 /* PriceList */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE65D20F3605400F4CC48 /* Models */,
 				0F5E423320F0AD02005CC203 /* Views */,
 				0F5E423220F0ACF9005CC203 /* Controller */,
 			);
@@ -986,6 +1171,8 @@
 		0F5E423320F0AD02005CC203 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE65020F3515800F4CC48 /* CollectionCell */,
+				0F2FE64B20F350C200F4CC48 /* TableCell */,
 				0F5E423420F0AD28005CC203 /* PriceListVC.storyboard */,
 			);
 			path = Views;
@@ -994,6 +1181,7 @@
 		0F5E423820F0AD40005CC203 /* OrderDetails */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE63520F34B6100F4CC48 /* Models */,
 				0F5E423A20F0AD72005CC203 /* Controller */,
 				0F5E423920F0AD64005CC203 /* Views */,
 			);
@@ -1003,6 +1191,7 @@
 		0F5E423920F0AD64005CC203 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE63820F34D0700F4CC48 /* TableCell */,
 				0F5E423D20F0AD9A005CC203 /* OrderDetailVC.storyboard */,
 			);
 			path = Views;
@@ -1028,6 +1217,7 @@
 		0F5E424020F0ADC2005CC203 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE62B20F349FA00F4CC48 /* TableCell */,
 				0F5E424220F0ADDC005CC203 /* NotificationVC.storyboard */,
 			);
 			path = Views;
@@ -1044,6 +1234,7 @@
 		0F5E424620F0B05A005CC203 /* DropOff */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE64320F34EC500F4CC48 /* Models */,
 				0F5E424820F0B063005CC203 /* Views */,
 				0F5E424720F0B05F005CC203 /* Controller */,
 			);
@@ -1129,6 +1320,7 @@
 		0F5E425D20F0B430005CC203 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE64620F3501600F4CC48 /* TableCell */,
 				0F5E425F20F0B44D005CC203 /* AboutUsVC.storyboard */,
 			);
 			path = Views;
@@ -1145,6 +1337,8 @@
 		0F5E426320F0B4B4005CC203 /* OffersView */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE61F20F31F2300F4CC48 /* Models */,
+				0F2FE61E20F31F1700F4CC48 /* ViewModel */,
 				0F5E426520F0B4BC005CC203 /* Views */,
 				0F5E426420F0B4B9005CC203 /* Controller */,
 			);
@@ -1162,6 +1356,7 @@
 		0F5E426520F0B4BC005CC203 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE61920F31C1900F4CC48 /* TableViewCell */,
 				0F5E426A20F0B714005CC203 /* OffersVC.storyboard */,
 			);
 			path = Views;
@@ -1187,6 +1382,7 @@
 		0F5E427020F0B7C1005CC203 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FE62620F346AA00F4CC48 /* TableCell */,
 				0F5E427320F0B7F3005CC203 /* MyRequestsVC.storyboard */,
 			);
 			path = Views;
@@ -1422,6 +1618,7 @@
 				0F5E424320F0ADDC005CC203 /* NotificationVC.storyboard in Resources */,
 				0F2AD39D20F0784D002B4BF5 /* ProfileVC.storyboard in Resources */,
 				0F5E427420F0B7F3005CC203 /* MyRequestsVC.storyboard in Resources */,
+				0F2FE64A20F3502F00F4CC48 /* AboutUsCell.xib in Resources */,
 				0F5E426720F0B552005CC203 /* CancelReasonVC.storyboard in Resources */,
 				0F5E424A20F0B08C005CC203 /* DropOffVC.storyboard in Resources */,
 				03CEBA4F20DC187300A1FAB3 /* LoadingHUD.xib in Resources */,
@@ -1433,12 +1630,19 @@
 				0F5E425820F0B362005CC203 /* FeedBackVC.storyboard in Resources */,
 				0F5E426B20F0B714005CC203 /* OffersVC.storyboard in Resources */,
 				03C2AB8D20DAAFAE0029AAA4 /* LaunchScreen.storyboard in Resources */,
+				0F2FE65C20F35D9200F4CC48 /* PriceCategoryCollectionCell.xib in Resources */,
+				0F2FE61D20F31C4200F4CC48 /* OfferCell.xib in Resources */,
+				0F2FE64F20F350DA00F4CC48 /* PriceCell.xib in Resources */,
 				034B9B2420E6C04D004CFD4D /* MenuItemTableViewCell.xib in Resources */,
 				0F2AD3AC20F080E7002B4BF5 /* DateCollectionViewCell.xib in Resources */,
+				0F2FE63C20F34D1F00F4CC48 /* OrderDetailCell.xib in Resources */,
 				0F5E423520F0AD28005CC203 /* PriceListVC.storyboard in Resources */,
 				0F5E425420F0B298005CC203 /* SettingsVC.storyboard in Resources */,
 				034B9B2720E6C056004CFD4D /* SideMenu.storyboard in Resources */,
+				0F2FE65420F3517400F4CC48 /* PriceCollectionCell.xib in Resources */,
+				0F2FE62F20F34A2100F4CC48 /* NotificationCell.xib in Resources */,
 				030C3C6220E1C64A002DADD2 /* DashboardVC.storyboard in Resources */,
+				0F2FE63420F34B0B00F4CC48 /* MyOrderCell.xib in Resources */,
 				034B9B1420E6BB4A004CFD4D /* CustomMessageVC.storyboard in Resources */,
 				0F2AD3B020F0810B002B4BF5 /* TimeCollectionViewCell.xib in Resources */,
 				03C2AB8A20DAAFAE0029AAA4 /* Assets.xcassets in Resources */,
@@ -1446,12 +1650,14 @@
 				03CEBA3A20DC126B00A1FAB3 /* SelectLocalityVC.storyboard in Resources */,
 				0F5E423E20F0AD9A005CC203 /* OrderDetailVC.storyboard in Resources */,
 				03CEBA4320DC147C00A1FAB3 /* PincodeTVC.storyboard in Resources */,
+				0F2FE64220F34E8E00F4CC48 /* PickupHistoryCell.xib in Resources */,
 				0F5E423020F0A6EF005CC203 /* DueAmountVC.storyboard in Resources */,
 				0F68656D20EFD5B200F95363 /* PickUpDateVC.storyboard in Resources */,
 				03C2AB8520DAAFAC0029AAA4 /* Main.storyboard in Resources */,
 				03E0CB5120E1186200318E32 /* OTPVerifyTVC.storyboard in Resources */,
 				0F5E426020F0B44D005CC203 /* AboutUsVC.storyboard in Resources */,
 				0F5E428420F0BD3C005CC203 /* ExitVC.storyboard in Resources */,
+				0F2FE62A20F346F500F4CC48 /* MyRequestCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1574,16 +1780,24 @@
 				03EE3CD020DE403B005F1A4F /* SignUpClient.swift in Sources */,
 				03FB56F620ECCA8500270859 /* DueAmountVC.swift in Sources */,
 				03CEBA6220DC188300A1FAB3 /* UIImage+Gif.swift in Sources */,
+				0F2FE65F20F360B500F4CC48 /* PriceListModel.swift in Sources */,
 				0338AF9A20F1191E00717D8C /* PickUpDateModel.swift in Sources */,
+				0F2FE62E20F34A2100F4CC48 /* NotificationCell.swift in Sources */,
+				0F2FE65720F353BC00F4CC48 /* DueAmountClient.swift in Sources */,
+				0F2FE62920F346F500F4CC48 /* MyRequestCell.swift in Sources */,
 				03CEBA5220DC187300A1FAB3 /* ParentPushSegue.swift in Sources */,
 				036F54C920F1181400B4D7E0 /* CustomerSummaryModel.swift in Sources */,
 				034B9B1C20E6C025004CFD4D /* Section.swift in Sources */,
 				03E54DF220E356AC00BE948A /* QDCConfigurableConstants.swift in Sources */,
 				03CEBA5D20DC188300A1FAB3 /* AppUtility.swift in Sources */,
+				0F2FE64520F34ED700F4CC48 /* DropoffHistoryModel.swift in Sources */,
 				037745D620DC248500CAB37E /* SignUpTVC.swift in Sources */,
+				0F2FE63320F34B0B00F4CC48 /* MyOrderCell.swift in Sources */,
 				03E54DF020E356A400BE948A /* QDCStringConstants.swift in Sources */,
+				0F2FE63E20F34D5700F4CC48 /* OrderSubDetailModel.swift in Sources */,
 				037745D820DC24DA00CAB37E /* SelectLocalityVC.swift in Sources */,
 				0F5E425620F0B2A4005CC203 /* SettingsVC.swift in Sources */,
+				0F2FE62520F320F300F4CC48 /* OffersClient.swift in Sources */,
 				03CEBA5F20DC188300A1FAB3 /* LazyImage.swift in Sources */,
 				0338AFA520F11BBB00717D8C /* CancelReasonClient.swift in Sources */,
 				0F5E424C20F0B09B005CC203 /* DropOffVC.swift in Sources */,
@@ -1597,6 +1811,7 @@
 				0F2AD3A220F07B7F002B4BF5 /* BaseVC.swift in Sources */,
 				03EE3CC020DE2874005F1A4F /* WebServiceConstant.swift in Sources */,
 				034B9B1E20E6C03B004CFD4D /* MenuItemsTVC.swift in Sources */,
+				0F2FE63B20F34D1F00F4CC48 /* OrderDetailCell.swift in Sources */,
 				0F5E423C20F0AD8F005CC203 /* OrderDetailVC.swift in Sources */,
 				0FA8C68620F2248700F9DC83 /* SchedulePickUpDateClient.swift in Sources */,
 				03C2AB8020DAAFAC0029AAA4 /* AppDelegate.swift in Sources */,
@@ -1605,6 +1820,8 @@
 				0FA8C68420F20FA500F9DC83 /* CommonUtilities.swift in Sources */,
 				03C2AB8820DAAFAC0029AAA4 /* QDCCustomerApp.xcdatamodeld in Sources */,
 				03EE3CC820DE30A4005F1A4F /* ServiableAreaViewModel.swift in Sources */,
+				0F2FE64E20F350DA00F4CC48 /* PriceCell.swift in Sources */,
+				0F2FE62320F320E100F4CC48 /* OffersViewModel.swift in Sources */,
 				03CEBA5120DC187300A1FAB3 /* LoadingHUD.swift in Sources */,
 				0338AFA120F11B4600717D8C /* CancelReasonModel.swift in Sources */,
 				0F5E427D20F0BB41005CC203 /* SuccessfullPickUpVC.swift in Sources */,
@@ -1614,8 +1831,11 @@
 				0338AF9C20F1194000717D8C /* PickUpDateViewModel.swift in Sources */,
 				03CEBA6F20DC18E000A1FAB3 /* Int+HTTPStatusCode.swift in Sources */,
 				0F5E426920F0B55F005CC203 /* CancelReasonVC.swift in Sources */,
+				0F2FE61C20F31C4200F4CC48 /* OfferCell.swift in Sources */,
 				0F2995EC20F25FC800594B21 /* UIColor+QDC.swift in Sources */,
+				0F2FE64120F34E8E00F4CC48 /* PickupHistoryCell.swift in Sources */,
 				03FB56F820ECD0D400270859 /* MyOrdersVC.swift in Sources */,
+				0F2FE63720F34B7700F4CC48 /* OrderDetailModel.swift in Sources */,
 				0F5E423720F0AD3B005CC203 /* PriceListVC.swift in Sources */,
 				03CEBA6420DC188300A1FAB3 /* CustomActivityIndicator.swift in Sources */,
 				03CEBA7120DC18E000A1FAB3 /* UIImageView.swift in Sources */,
@@ -1630,13 +1850,17 @@
 				03CEBA6A20DC18C200A1FAB3 /* NetworkError.swift in Sources */,
 				03EE3CC420DE2FA6005F1A4F /* ServicableAreaModel.swift in Sources */,
 				037745DA20DC259500CAB37E /* SignUpChoiceVC.swift in Sources */,
+				0F2FE64920F3502F00F4CC48 /* AboutUsCell.swift in Sources */,
 				03CEBA6520DC188300A1FAB3 /* UITextField.swift in Sources */,
 				0F68656F20EFD61C00F95363 /* PickUpDateVC.swift in Sources */,
 				0F5E426220F0B461005CC203 /* AboutUsVC.swift in Sources */,
 				03CEBA7220DC18E000A1FAB3 /* UIImageView+URL.swift in Sources */,
 				036F54CB20F1182E00B4D7E0 /* CustomerSummaryClient.swift in Sources */,
 				0F5E425A20F0B371005CC203 /* FeedBackVC.swift in Sources */,
+				0F2FE62120F3201B00F4CC48 /* OfferModel.swift in Sources */,
+				0F2FE65320F3517400F4CC48 /* PriceCollectionCell.swift in Sources */,
 				03CEBA7420DC18F300A1FAB3 /* NetworkClient.swift in Sources */,
+				0F2FE65B20F35D9200F4CC48 /* PriceCategoryCollectionCell.swift in Sources */,
 				03EE3CD220DE5418005F1A4F /* SignUpModel.swift in Sources */,
 				03E54DF420E356F700BE948A /* QDCUserDefaults.swift in Sources */,
 				03EE3CC620DE3083005F1A4F /* ServicableAreaClient.swift in Sources */,

@@ -136,8 +136,8 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="SRx-aK-eUb"/>
-                                <exclude reference="red-wo-eFg"/>
                                 <exclude reference="MeI-9X-OiL"/>
+                                <exclude reference="red-wo-eFg"/>
                                 <exclude reference="hXK-hE-wsN"/>
                                 <exclude reference="Ndt-g9-Mcn"/>
                             </mask>
@@ -179,6 +179,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Header Icon Notification" width="40" height="40"/>
+        <image name="Header Icon Notification" width="22" height="22"/>
     </resources>
 </document>
