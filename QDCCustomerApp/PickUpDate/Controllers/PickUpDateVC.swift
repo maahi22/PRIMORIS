@@ -141,9 +141,9 @@ class PickUpDateVC: UIViewController {
             instruction = inst
         }
         
-     
         
-        schedulePickUpDateClient.getSchedulePickup(pickupDate: self.selectedDate, pickupTime: self.selectedTime, flag: flag, pickupNumber: "", expressDeliveryID: expressId, specialInstruction: instruction, dropOffDate: "", dropOffTime: "", cancelReason: nil) { [weak self](schedulePickUpModel, message) in
+        schedulePickUpDateClient.getSchedulePickup(pickupDate: self.selectedDate, pickupTime: self.selectedTime, flag: flag, pickupNumber: self.pickupNumber, expressDeliveryID: expressId, specialInstruction: instruction, dropOffDate: "", dropOffTime: "", cancelReason: nil) { [weak self](schedulePickUpModel, message) in
+            
             guard let strongSelf = self else{return}
             if let schedulePickUpModel = schedulePickUpModel {
                
@@ -166,6 +166,7 @@ class PickUpDateVC: UIViewController {
                 viewController.selectedPickupTime = strongSelf.selectedTime
                 
                 strongSelf.navigationController?.pushViewController(viewController, animated: true)
+                  // strongSelf.present(navViewController, animated: true, completion: nil)
                 }
             
             }else{
@@ -290,10 +291,6 @@ extension PickUpDateVC:UICollectionViewDelegateFlowLayout{
 
 extension PickUpDateVC:UICollectionViewDataSource{
     
-    
-    
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
             return pickUpDateViewModel.numberOfPickUpDate()
@@ -301,24 +298,16 @@ extension PickUpDateVC:UICollectionViewDataSource{
         
             return pickUpDateViewModel.numberOfPickUpTime(pickUpDate:selectedDate)
         }
-        
-        
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
+
         if collectionView.tag == 1 {
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DateCollectionViewCell.identifier, for: indexPath) as? DateCollectionViewCell else { return UICollectionViewCell() }
             //cell.dateLabel.text = pickUpDateViewModel.pickUpDate(for: indexPath)
         guard let dateStr =  pickUpDateViewModel.pickUpDate(for: indexPath) else {return UICollectionViewCell()  }
         if indexPath.row == 0 || indexPath.row == 1 {
-            
-            
-            
             cell.contentView.backgroundColor = .lightGray
             cell.dayLabel.textColor = .gray
             cell.dateLabel.textColor = .gray

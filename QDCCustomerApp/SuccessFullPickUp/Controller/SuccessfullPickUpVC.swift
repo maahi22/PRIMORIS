@@ -37,7 +37,7 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
     
     
     func setupUI() {
-        
+        navigationItem.setHidesBackButton(true, animated: true)
         self.messageLabel.textColor = TEXT_FIELD_COLOUR
         self.messageLabel.text = self.message
         
@@ -60,8 +60,8 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
    
     @IBAction func rescheduleButtonClick(_ sender: Any) {
     //TODO: check if its coming from pick up or drop off
-        
-        if self.dropOffOrderId.isEmpty { //drop of id will only exist in case the user has drop off order
+        navigationController?.popViewController(animated: true)
+        /*if self.dropOffOrderId.isEmpty { //drop of id will only exist in case the user has drop off order
             
             let navArray = self.navigationController?.viewControllers
             for  viewController in navArray! {
@@ -83,7 +83,7 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
                     break;
                 }
             }
-        }
+        }*/
     }
     
     @IBAction func cancelButtonClick(_ sender: Any) {
@@ -107,18 +107,7 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
     }
     
     @IBAction func dashboardButtonClick(_ sender: Any) {
-    
-        
-        guard let navViewController = DashboardVC.getStoryboardInstance(),
-            let viewController = navViewController.topViewController as? DashboardVC
-            else { return  }
-        navViewController.isNavigationBarHidden = true
-       // self.revealViewController().pushFrontViewController(navigationController, animated: true)
-        
-        
-//        let controller = UIStoryboard.addDashBoardViewController() as QDCDashboardViewController
-//        let navigationController = UINavigationController(rootViewController: controller)
-//        navigationController.navigationBarHidden = true
+     navigationController?.popToRootViewController(animated: true)
         
     }
 
