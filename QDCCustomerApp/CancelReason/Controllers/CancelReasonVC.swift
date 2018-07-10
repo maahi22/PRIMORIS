@@ -17,6 +17,8 @@ protocol CancelReasonDelegate {
 class CancelReasonVC: UIViewController {
 
     
+    
+    
     @IBOutlet weak var reasonTextView: UITextView!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var containerView: UIView!
@@ -30,6 +32,8 @@ class CancelReasonVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.isNavigationBarHidden = true
+        
         self.setupUI()
     }
 
@@ -40,7 +44,7 @@ class CancelReasonVC: UIViewController {
         self.submitButton.backgroundColor = BUTTON_COLOUR
         self.submitButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
         
-        //containerVeiwBottomConstraint.constant = (SCREEN_SIZE.height - self.containerView.frame.size.height)/2
+        containerVeiwBottomConstraint.constant = (SCREEN_SIZE.height - self.containerView.frame.size.height)/2
     }
     
     

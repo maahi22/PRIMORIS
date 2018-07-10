@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Successfull PickUp-->
+        <!--Primoris Laundry-->
         <scene sceneID="KYn-NN-v55">
             <objects>
                 <viewController storyboardIdentifier="SuccessfullPickUpVC" id="Qae-cs-n0r" customClass="SuccessfullPickUpVC" customModule="QDCCustomerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,15 +103,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NAe-b7-51g"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Successfull PickUp" id="uR1-fG-0jr"/>
+                    <navigationItem key="navigationItem" title="Primoris Laundry" id="uR1-fG-0jr"/>
                     <connections>
                         <outlet property="cancelButton" destination="Aq4-bz-HCd" id="FqK-Fn-vy8"/>
                         <outlet property="dashboardButton" destination="std-k7-7ac" id="LYI-zA-zwG"/>
                         <outlet property="messageLabel" destination="KvJ-Ll-0Hg" id="jbq-df-Hk4"/>
                         <outlet property="rescheduleButton" destination="8fO-UI-iEx" id="cRN-Xt-1j6"/>
+                        <outlet property="schedulePickUpDateClient" destination="n2Q-y1-QhV" id="jht-qF-aqu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rig-Bb-mN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="n2Q-y1-QhV" customClass="SchedulePickUpDateClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1076" y="-448.42578710644682"/>
         </scene>
