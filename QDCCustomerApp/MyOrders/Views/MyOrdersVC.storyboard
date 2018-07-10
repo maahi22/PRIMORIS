@@ -213,7 +213,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Cm-fP-ohX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Cm-fP-ohX">
                                 <rect key="frame" x="0.0" y="146" width="375" height="521"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -227,8 +227,8 @@
                             <constraint firstAttribute="trailing" secondItem="5Cm-fP-ohX" secondAttribute="trailing" id="C6j-mm-Wj6"/>
                             <constraint firstItem="bcF-zI-khM" firstAttribute="top" secondItem="5Cm-fP-ohX" secondAttribute="bottom" id="Iic-0I-Ssg"/>
                             <constraint firstItem="5Cm-fP-ohX" firstAttribute="leading" secondItem="G01-is-iwf" secondAttribute="leading" id="JdW-ef-Kau"/>
+                            <constraint firstItem="xG2-fa-e28" firstAttribute="top" secondItem="r23-wo-4on" secondAttribute="bottom" id="NKZ-8C-zmL"/>
                             <constraint firstItem="xG2-fa-e28" firstAttribute="top" secondItem="r23-wo-4on" secondAttribute="bottom" id="VBz-Ce-i3h"/>
-                            <constraint firstItem="xG2-fa-e28" firstAttribute="top" secondItem="G01-is-iwf" secondAttribute="top" constant="64" id="WSN-1D-GL1"/>
                             <constraint firstItem="5Cm-fP-ohX" firstAttribute="top" secondItem="r23-wo-4on" secondAttribute="bottom" id="ZEO-lL-uUt"/>
                             <constraint firstAttribute="trailing" secondItem="xG2-fa-e28" secondAttribute="trailing" id="aK6-tz-Puf"/>
                             <constraint firstItem="5Cm-fP-ohX" firstAttribute="top" secondItem="xG2-fa-e28" secondAttribute="bottom" id="thL-h1-Kjt"/>

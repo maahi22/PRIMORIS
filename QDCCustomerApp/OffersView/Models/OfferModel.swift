@@ -10,12 +10,6 @@ import Foundation
 
 
 struct OfferModel:Codable{
-    let DatabaseName:String?
-    let BranchID:String?
-    let Pincode:String?
-    let Locality:String?
-    let SubLocality:String?
-    let CountryCode:String?
-    let PackageName:String?
-    let ClientID:String?
+    let Title:String?
+    let Descreption:String?
 }

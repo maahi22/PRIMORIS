@@ -41,6 +41,29 @@ class OfferCell: UITableViewCell {
     
     
     
+    var Offers:OfferModel?{
+        didSet{
+            guard let offer = Offers else { return  }
+            titleLabel.text = offer.Title ?? ""
+            descriptionLabel.text = offer.Descreption ?? ""
+            
+            iconImageView.image = self.iconImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            self.iconImageView.tintColor = APP_ICON_COLOUR
+            
+            self.titleLabel.textColor = PRIMARY_COLOUR
+            self.descriptionLabel.textColor = UIColor.black
+            
+        }
+        
+        
+       
+        
+        
+    }
+    
+    
+    
+    
     /*func setupUI(offerDict:NSDictionary) {
         
         self.titleLabel.text = offerDict["Title"] as? String

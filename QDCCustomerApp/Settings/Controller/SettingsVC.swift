@@ -50,4 +50,7 @@ extension SettingsVC:UITableViewDataSource{
 
 extension SettingsVC:UITableViewDelegate{
     
+    
+    
+    
 }

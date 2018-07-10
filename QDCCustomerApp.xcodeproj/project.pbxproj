@@ -87,6 +87,11 @@
 		0F2AD3AC20F080E7002B4BF5 /* DateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AD3AA20F080E7002B4BF5 /* DateCollectionViewCell.xib */; };
 		0F2AD3AF20F0810B002B4BF5 /* TimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AD3AD20F0810B002B4BF5 /* TimeCollectionViewCell.swift */; };
 		0F2AD3B020F0810B002B4BF5 /* TimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AD3AE20F0810B002B4BF5 /* TimeCollectionViewCell.xib */; };
+		0F2C389420F4711E000C48D7 /* SettingsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C389320F4711E000C48D7 /* SettingsClient.swift */; };
+		0F2C389720F471FF000C48D7 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C389620F471FF000C48D7 /* StoreModel.swift */; };
+		0F2C389A20F475AA000C48D7 /* AboutUsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C389920F475AA000C48D7 /* AboutUsModel.swift */; };
+		0F2C389D20F47653000C48D7 /* AboutUsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C389C20F47653000C48D7 /* AboutUsClient.swift */; };
+		0F2C389F20F48302000C48D7 /* AboutUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C389E20F48302000C48D7 /* AboutUsViewModel.swift */; };
 		0F2FE61C20F31C4200F4CC48 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE61A20F31C4200F4CC48 /* OfferCell.swift */; };
 		0F2FE61D20F31C4200F4CC48 /* OfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE61B20F31C4200F4CC48 /* OfferCell.xib */; };
 		0F2FE62120F3201B00F4CC48 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE62020F3201B00F4CC48 /* OfferModel.swift */; };
@@ -253,6 +258,11 @@
 		0F2AD3AA20F080E7002B4BF5 /* DateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCollectionViewCell.xib; sourceTree = "<group>"; };
 		0F2AD3AD20F0810B002B4BF5 /* TimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		0F2AD3AE20F0810B002B4BF5 /* TimeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCollectionViewCell.xib; sourceTree = "<group>"; };
+		0F2C389320F4711E000C48D7 /* SettingsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsClient.swift; sourceTree = "<group>"; };
+		0F2C389620F471FF000C48D7 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
+		0F2C389920F475AA000C48D7 /* AboutUsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsModel.swift; sourceTree = "<group>"; };
+		0F2C389C20F47653000C48D7 /* AboutUsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsClient.swift; sourceTree = "<group>"; };
+		0F2C389E20F48302000C48D7 /* AboutUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewModel.swift; sourceTree = "<group>"; };
 		0F2FE61A20F31C4200F4CC48 /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
 		0F2FE61B20F31C4200F4CC48 /* OfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferCell.xib; sourceTree = "<group>"; };
 		0F2FE62020F3201B00F4CC48 /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
@@ -516,7 +526,6 @@
 				0F5E423F20F0ADA0005CC203 /* Notifications */,
 				0F5E423820F0AD40005CC203 /* OrderDetails */,
 				0F5E423120F0ACEA005CC203 /* PriceList */,
-				0F2AD3A420F07BAC002B4BF5 /* HeaderView */,
 				0F2AD3A020F07B5D002B4BF5 /* BaseView */,
 				0F2AD39920F0780D002B4BF5 /* Profile */,
 				0F68656720EFD55A00F95363 /* PickUpDate */,
@@ -982,37 +991,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		0F2AD3A420F07BAC002B4BF5 /* HeaderView */ = {
-			isa = PBXGroup;
-			children = (
-				0F2AD3A620F07BC2002B4BF5 /* Views */,
-				0F2AD3A520F07BB7002B4BF5 /* Controller */,
-			);
-			path = HeaderView;
-			sourceTree = "<group>";
-		};
-		0F2AD3A520F07BB7002B4BF5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		0F2AD3A620F07BC2002B4BF5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				0F2AD3A720F07F3F002B4BF5 /* CollectionCell */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		0F2AD3A720F07F3F002B4BF5 /* CollectionCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CollectionCell;
-			sourceTree = "<group>";
-		};
 		0F2AD3A820F0806F002B4BF5 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1022,6 +1000,39 @@
 				0F2AD3AE20F0810B002B4BF5 /* TimeCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		0F2C389220F470F8000C48D7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0F2C389320F4711E000C48D7 /* SettingsClient.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0F2C389520F471EC000C48D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F2C389620F471FF000C48D7 /* StoreModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0F2C389820F47596000C48D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F2C389920F475AA000C48D7 /* AboutUsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0F2C389B20F4763A000C48D7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0F2C389C20F47653000C48D7 /* AboutUsClient.swift */,
+				0F2C389E20F48302000C48D7 /* AboutUsViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		0F2FE61920F31C1900F4CC48 /* TableViewCell */ = {
@@ -1260,6 +1271,8 @@
 		0F5E424D20F0B227005CC203 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				0F2C389520F471EC000C48D7 /* Models */,
+				0F2C389220F470F8000C48D7 /* ViewModels */,
 				0F5E425020F0B231005CC203 /* Views */,
 				0F5E424F20F0B22E005CC203 /* Controller */,
 			);
@@ -1311,6 +1324,8 @@
 		0F5E425C20F0B409005CC203 /* AboutUs */ = {
 			isa = PBXGroup;
 			children = (
+				0F2C389B20F4763A000C48D7 /* ViewModels */,
+				0F2C389820F47596000C48D7 /* Models */,
 				0F5E425E20F0B437005CC203 /* Controller */,
 				0F5E425D20F0B430005CC203 /* Views */,
 			);
@@ -1784,10 +1799,12 @@
 				0338AF9A20F1191E00717D8C /* PickUpDateModel.swift in Sources */,
 				0F2FE62E20F34A2100F4CC48 /* NotificationCell.swift in Sources */,
 				0F2FE65720F353BC00F4CC48 /* DueAmountClient.swift in Sources */,
+				0F2C389720F471FF000C48D7 /* StoreModel.swift in Sources */,
 				0F2FE62920F346F500F4CC48 /* MyRequestCell.swift in Sources */,
 				03CEBA5220DC187300A1FAB3 /* ParentPushSegue.swift in Sources */,
 				036F54C920F1181400B4D7E0 /* CustomerSummaryModel.swift in Sources */,
 				034B9B1C20E6C025004CFD4D /* Section.swift in Sources */,
+				0F2C389D20F47653000C48D7 /* AboutUsClient.swift in Sources */,
 				03E54DF220E356AC00BE948A /* QDCConfigurableConstants.swift in Sources */,
 				03CEBA5D20DC188300A1FAB3 /* AppUtility.swift in Sources */,
 				0F2FE64520F34ED700F4CC48 /* DropoffHistoryModel.swift in Sources */,
@@ -1808,6 +1825,7 @@
 				03CEBA6320DC188300A1FAB3 /* UITextView.swift in Sources */,
 				034B9B2320E6C04D004CFD4D /* MenuItemTableViewCell.swift in Sources */,
 				0F2AD3AF20F0810B002B4BF5 /* TimeCollectionViewCell.swift in Sources */,
+				0F2C389420F4711E000C48D7 /* SettingsClient.swift in Sources */,
 				0F2AD3A220F07B7F002B4BF5 /* BaseVC.swift in Sources */,
 				03EE3CC020DE2874005F1A4F /* WebServiceConstant.swift in Sources */,
 				034B9B1E20E6C03B004CFD4D /* MenuItemsTVC.swift in Sources */,
@@ -1849,6 +1867,7 @@
 				0F2AD39F20F0785B002B4BF5 /* ProfileVC.swift in Sources */,
 				03CEBA6A20DC18C200A1FAB3 /* NetworkError.swift in Sources */,
 				03EE3CC420DE2FA6005F1A4F /* ServicableAreaModel.swift in Sources */,
+				0F2C389A20F475AA000C48D7 /* AboutUsModel.swift in Sources */,
 				037745DA20DC259500CAB37E /* SignUpChoiceVC.swift in Sources */,
 				0F2FE64920F3502F00F4CC48 /* AboutUsCell.swift in Sources */,
 				03CEBA6520DC188300A1FAB3 /* UITextField.swift in Sources */,
@@ -1860,6 +1879,7 @@
 				0F2FE62120F3201B00F4CC48 /* OfferModel.swift in Sources */,
 				0F2FE65320F3517400F4CC48 /* PriceCollectionCell.swift in Sources */,
 				03CEBA7420DC18F300A1FAB3 /* NetworkClient.swift in Sources */,
+				0F2C389F20F48302000C48D7 /* AboutUsViewModel.swift in Sources */,
 				0F2FE65B20F35D9200F4CC48 /* PriceCategoryCollectionCell.swift in Sources */,
 				03EE3CD220DE5418005F1A4F /* SignUpModel.swift in Sources */,
 				03E54DF420E356F700BE948A /* QDCUserDefaults.swift in Sources */,

@@ -10,14 +10,33 @@ import UIKit
 
 class OffersVC: UIViewController {
 
+    
+    @IBOutlet var offersViewModel:OffersViewModel!
     @IBOutlet weak var offerTableView: UITableView!
-    var offerArray:NSArray = NSArray()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        offerTableView.register(OfferCell.nib, forCellReuseIdentifier: OfferCell.identifier)
+        
+        
+        
+        //showLoadingHUD()
+        offersViewModel.getOffers {[weak self] (isSuccess, message) in
+            guard let strongSelf = self else{return}
+          //  strongSelf.dismissLoadingHUD()
+            if isSuccess{
+                DispatchQueue.main.async {
+                    strongSelf.offerTableView.reloadData()
+                }
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            }
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,3 +64,40 @@ extension OffersVC{
         return navViewController
     }
 }
+
+
+
+extension OffersVC:UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return offersViewModel.numberOffers()
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: OfferCell.identifier, for: indexPath)  as? OfferCell else { return UITableViewCell() }
+        cell.Offers = offersViewModel.offersAt(for: indexPath)
+        return cell
+    }
+}
+
+extension OffersVC:UITableViewDelegate{
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+       /* guard let selectedServiceArea = serviableAreaViewModel.servicableAreaForIndexPath(indexPath) else{
+            return
+        }
+        
+        QDCUserDefaults.setBranchId(branchId: selectedServiceArea.BranchID ?? "")
+        QDCUserDefaults.setClientID(clientID: selectedServiceArea.ClientID ?? "")
+        let serviceArea = try? JSONEncoder().encode(selectedServiceArea)
+        
+        UserDefaults.standard.set(serviceArea, forKey: "SelectedServiceArea")
+        
+        navigateToSignUpChoice()*/
+        
+    }
+}
+
+
+
+
