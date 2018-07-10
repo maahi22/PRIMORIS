@@ -41,14 +41,17 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
         self.messageLabel.textColor = TEXT_FIELD_COLOUR
         self.messageLabel.text = self.message
         
-        self.rescheduleButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
+        /*self.rescheduleButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
         self.rescheduleButton.backgroundColor = BUTTON_COLOUR
-        
+ 
         self.cancelButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
         self.cancelButton.backgroundColor = BUTTON_COLOUR
         
         self.dashboardButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
-        self.dashboardButton.backgroundColor = BUTTON_COLOUR
+        self.dashboardButton.backgroundColor = BUTTON_COLOUR*/
+        rescheduleButton.setButtonTheme()
+        cancelButton.setButtonTheme()
+        dashboardButton.setButtonTheme()
     }
     
     
