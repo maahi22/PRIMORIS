@@ -25,7 +25,6 @@ class PickUpDateViewModel: NSObject {
             }else{
                 completion(false,message)
             }
-            
         }
     }
     
@@ -47,10 +46,7 @@ class PickUpDateViewModel: NSObject {
         let pickUpTime = pickUpDates.filter({ (pickUpDateModel) -> Bool in
             return pickUpDateModel.PickUpDate == date
         })
-        
         return pickUpTime[0].PickUpTime[0].Slots
-        
-        
     }
     
     
@@ -79,7 +75,5 @@ class PickUpDateViewModel: NSObject {
         return pickUpTime[0].PickUpTime[cellAtIndex.item].Slots
         
     }
-    
-    
-    
+
 }

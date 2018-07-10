@@ -545,7 +545,7 @@
 			children = (
 				0F5E427E20F0BCF5005CC203 /* Exit */,
 				0F5E427520F0BADE005CC203 /* SuccessFullPickUp */,
-				0F5E426E20F0B79B005CC203 /* MyRequestes */,
+				0F5E426E20F0B79B005CC203 /* MyRequests */,
 				0F5E426320F0B4B4005CC203 /* OffersView */,
 				0F5E425C20F0B409005CC203 /* AboutUs */,
 				0F5E424E20F0B22A005CC203 /* FeedBack */,
@@ -1457,7 +1457,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		0F5E426E20F0B79B005CC203 /* MyRequestes */ = {
+		0F5E426E20F0B79B005CC203 /* MyRequests */ = {
 			isa = PBXGroup;
 			children = (
 				0F2C38B020F4E572000C48D7 /* Models */,
@@ -1465,7 +1465,7 @@
 				0F5E427020F0B7C1005CC203 /* Views */,
 				0F5E426F20F0B7BE005CC203 /* Controller */,
 			);
-			path = MyRequestes;
+			path = MyRequests;
 			sourceTree = "<group>";
 		};
 		0F5E426F20F0B7BE005CC203 /* Controller */ = {
@@ -2155,7 +2155,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4DXG3KAS43;
+				DEVELOPMENT_TEAM = 2H9MCN975Q;
 				INFOPLIST_FILE = QDCCustomerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2175,7 +2175,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4DXG3KAS43;
+				DEVELOPMENT_TEAM = 2H9MCN975Q;
 				INFOPLIST_FILE = QDCCustomerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

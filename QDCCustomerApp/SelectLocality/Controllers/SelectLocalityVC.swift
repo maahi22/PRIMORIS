@@ -63,17 +63,21 @@ extension SelectLocalityVC{
     }
 }
 extension SelectLocalityVC:UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return serviableAreaViewModel.numberOfServicableAreas()
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ServiceAreaTableViewCell.identifier, for: indexPath)  as? ServiceAreaTableViewCell else { return UITableViewCell() }
         cell.serviceArea = serviableAreaViewModel.servicableAreaForIndexPath(indexPath)
         return cell
     }
+    
 }
 
 extension SelectLocalityVC:UITableViewDelegate{
+   
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let selectedServiceArea = serviableAreaViewModel.servicableAreaForIndexPath(indexPath) else{
@@ -85,8 +89,8 @@ extension SelectLocalityVC:UITableViewDelegate{
         let serviceArea = try? JSONEncoder().encode(selectedServiceArea)
         
         UserDefaults.standard.set(serviceArea, forKey: "SelectedServiceArea")
-        
-            navigateToSignUpChoice()
+        navigateToSignUpChoice()
         
     }
+    
 }
