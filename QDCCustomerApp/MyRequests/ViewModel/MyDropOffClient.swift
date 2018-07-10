@@ -15,7 +15,7 @@ class MyDropOffClient: NSObject {
     
     
     //get offers
-    func fetchMyDropOff(completion:@escaping ([DropOffModel]?,String)->())  {
+    func fetchMyDropOff(completion:@escaping ([MyRequestDropOffModel]?,String)->())  {
         
         let custID = QDCUserDefaults.getCustomerId()
         let branchName = QDCUserDefaults.getDataBaseName()
@@ -32,8 +32,8 @@ class MyDropOffClient: NSObject {
                                            headers: headers,
                                            success: { (data, httpResponse) in
                                             
-                                            if let dropOffModel = decodeJSON(type: [DropOffModel].self, from: data) {
-                                                completion(dropOffModel, "Success")
+                                            if let reuestdropOffModel = decodeJSON(type: [MyRequestDropOffModel].self, from: data) {
+                                                completion(reuestdropOffModel, "Success")
                                             }else{
                                                 completion(nil,"failed")
                                             }

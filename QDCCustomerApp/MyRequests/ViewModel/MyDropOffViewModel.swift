@@ -12,7 +12,7 @@ class MyDropOffViewModel: NSObject {
 
     
     @IBOutlet private var myDropOffClient:MyDropOffClient!
-    var dropOffModel:[DropOffModel]?
+    var dropOffModel:[MyRequestDropOffModel]?
     
     
     func getDropOff(completion:@escaping(Bool,String)->())  {
@@ -36,7 +36,7 @@ class MyDropOffViewModel: NSObject {
     }
     
     
-    func myRequestAt(for cellAtIndex:IndexPath) -> DropOffModel? {
+    func myRequestAt(for cellAtIndex:IndexPath) -> MyRequestDropOffModel? {
         guard let dropOffModel = dropOffModel else { return nil }
         return dropOffModel[cellAtIndex.item]
         

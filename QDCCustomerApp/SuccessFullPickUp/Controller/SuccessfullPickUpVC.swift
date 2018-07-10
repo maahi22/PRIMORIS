@@ -11,7 +11,7 @@ import UIKit
 class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
 
     @IBOutlet private var schedulePickUpDateClient:SchedulePickUpDateClient!
-   // @IBOutlet private var scheduleDropOffDateClient:ScheduleDropOffDateClient!
+    @IBOutlet private var sheduledDropOffClient:SheduledDropOffClient!
     
     @IBOutlet weak var messageLabel:UILabel!
     @IBOutlet weak var rescheduleButton:UIButton!
@@ -157,7 +157,28 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
     
       func hitCancelDropOffWebService(_ cancelReason:String){
         
-        
+        sheduledDropOffClient.getScheduleDropOff(dropOffDate: self.selectedDropOffDate, dropOffTime: self.selectedDropOffTime, flag: 3, pickupNumber: "", bookingNo: "", dropOffNumber: self.dropOffOrderId, cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
+            
+            guard let strongSelf = self else{return}
+            
+            if let scheduleDropOffModel = scheduleDropOffModel {
+                
+                
+                var message = ""
+                if scheduleDropOffModel.Status == "Done" {
+                    message = "Pick up successfully cancelled"
+                }else{
+                    message = "Something went wrong please try again later"
+                }
+                
+                showAlertMessage(vc: strongSelf, title: .Message, message: message)
+                
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: "Something went wrong please try again later")
+            }
+            
+        }
         
         
     }
