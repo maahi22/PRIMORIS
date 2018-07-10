@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SuccessfullPickUpVC: UIViewController {
+class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
 
     
     @IBOutlet weak var messageLabel:UILabel!
@@ -29,11 +29,112 @@ class SuccessfullPickUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.setupUI()
     }
 
     
+    
+    
+    
+    func setupUI() {
+        
+        self.messageLabel.textColor = TEXT_FIELD_COLOUR
+        self.messageLabel.text = self.message
+        
+        self.rescheduleButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
+        self.rescheduleButton.backgroundColor = BUTTON_COLOUR
+        
+        self.cancelButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
+        self.cancelButton.backgroundColor = BUTTON_COLOUR
+        
+        self.dashboardButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
+        self.dashboardButton.backgroundColor = BUTTON_COLOUR
+    }
+    
+    
+    
+    
+   
+    @IBAction func rescheduleButtonClick(_ sender: Any) {
+    //TODO: check if its coming from pick up or drop off
+        
+        if self.dropOffOrderId.isEmpty { //drop of id will only exist in case the user has drop off order
+            
+            let navArray = self.navigationController?.viewControllers
+            for  viewController in navArray! {
+                
+                if((viewController.isKind(of: PickUpDateVC.self)) == true) {
+                    self.navigationController?.popToViewController(viewController as! PickUpDateVC, animated: true)
+                    break;
+                }
+            }
+            
+        }else{
+            
+            let navArray = self.navigationController?.viewControllers
+            for  viewController in navArray! {
+                
+                
+                if((viewController.isKind(of: DropOffVC.self)) == true){
+                    self.navigationController?.popToViewController(viewController as! DropOffVC, animated: true)
+                    break;
+                }
+            }
+        }
+    }
+    
+    @IBAction func cancelButtonClick(_ sender: Any) {
+    
+        
+        guard let navViewController = CancelReasonVC.getStoryboardInstance(),
+            let viewController = navViewController.topViewController as? CancelReasonVC
+            else { return  }
+        viewController.cancelOrderdelegate = self 
+        self.present(navViewController, animated: true, completion: {})
+       // navigationController?.pushViewController(viewController, animated: true)
+        
+        
+        
+        /*let popup : CancelReasonVC = self.storyboard?.instantiateViewControllerWithIdentifier("QDCCancelReasonViewControllerID") as! QDCCancelReasonViewController
+        popup.cancelOrderdelegate = self
+        let navigationController = UINavigationController(rootViewController: popup)
+        navigationController.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        self.presentViewController(navigationController, animated: true, completion: nil)
+        */
+    }
+    
+    @IBAction func dashboardButtonClick(_ sender: Any) {
+    
+        
+        guard let navViewController = DashboardVC.getStoryboardInstance(),
+            let viewController = navViewController.topViewController as? DashboardVC
+            else { return  }
+        navViewController.isNavigationBarHidden = true
+       // self.revealViewController().pushFrontViewController(navigationController, animated: true)
+        
+        
+//        let controller = UIStoryboard.addDashBoardViewController() as QDCDashboardViewController
+//        let navigationController = UINavigationController(rootViewController: controller)
+//        navigationController.navigationBarHidden = true
+        
+    }
 
+    
+    
+    
+    //Delegate Methods
+    func didSelectCancelReason(_ cancelReason:String) {
+        print("delegate cancel")
+        if self.dropOffOrderId.isEmpty { //drop of id will only exist in case the user has drop off order
+            //self.hitCancelPickupWebService(cancelReason)
+        }else{
+            //self.hitCancelDropOffWebService(cancelReason)
+        }
+    }
+    
+    
+    
+    
 }
 
 

@@ -22,7 +22,7 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
         
     }
     
-    func didSelectCancelReason(cancelReason: String) {
+    func didSelectCancelReason(_ cancelReason: String) {
         
     }
     

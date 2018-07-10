@@ -142,57 +142,37 @@ class PickUpDateVC: UIViewController {
         }
         
      
-        //let dict:NSDictionary? = NSDictionary.init(object: tempDict!, forKey: kWebServicePostParamKey)
+        
         schedulePickUpDateClient.getSchedulePickup(pickupDate: self.selectedDate, pickupTime: self.selectedTime, flag: flag, pickupNumber: "", expressDeliveryID: expressId, specialInstruction: instruction, dropOffDate: "", dropOffTime: "", cancelReason: nil) { [weak self](schedulePickUpModel, message) in
             guard let strongSelf = self else{return}
             if let schedulePickUpModel = schedulePickUpModel {
+               
+                if schedulePickUpModel.Status == "False" {
+                    
+                    showAlertMessage(vc: strongSelf, title: .Error, message: schedulePickUpModel.Reason)
+                    
+                }else{
+                
+                
                 strongSelf.pickupNumber = schedulePickUpModel.Status
                 guard let navViewController = SuccessfullPickUpVC.getStoryboardInstance(),
                     let viewController = navViewController.topViewController as? SuccessfullPickUpVC
                     else { return  }
-                strongSelf.navigationController?.pushViewController(viewController, animated: true)
-            }else{
                 
+                    
+                viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDate), \(strongSelf.selectedTime)"
+                viewController.pickUpOrderId = strongSelf.pickupNumber
+                viewController.selectedPickupDate = strongSelf.selectedDate
+                viewController.selectedPickupTime = strongSelf.selectedTime
+                
+                strongSelf.navigationController?.pushViewController(viewController, animated: true)
+                }
+            
+            }else{
                 showAlertMessage(vc: strongSelf, title: .Error, message: message)
             }
-            
-            
-            
         }
         
-        /*QDCPickUpWebService.hitApi(dict!, responseValue: { (isSuccess, response,header, error) ->
-            Void in
-            if isSuccess{
-                
-                let status = header!["Status"] as! String
-                
-                
-                if status == "False" {
-                    //order failed due to some reason
-                    let reason = header!["Reason"] as! String
-                    let alert:UIAlertView  = UIAlertView.init(title: "", message: reason, delegate: self, cancelButtonTitle: "Ok")
-                    alert.show()
-                }else{
-                    //sucessfull order with order id as status
-                    self.pickupNumber = status
-                    
-                    //send to drop off screen if drop is mendat and user has not selected express delivery
-                    
-                    
-                    if self.selectedExpressDeliveryButton != 0 {
-                        //this means either of the express delivery is selected send to congratulation screen with pick up and drop off message
-                        self.performSegueWithIdentifier(SEGUE_CONGRATULATIONS_SCHEDULE_IDENTIFIER, sender: self)
-                    } else {
-                        //send to congratulations screen with pick up only message
-                        self.performSegueWithIdentifier(SEGUE_CONGRATULATIONS_SCHEDULE_IDENTIFIER, sender: self)
-                    }
-                }
-                
-                
-            }else{
-                
-            }
-        })*/
     }
     
     
