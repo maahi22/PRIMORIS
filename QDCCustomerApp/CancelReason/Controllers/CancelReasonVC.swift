@@ -50,3 +50,12 @@ class CancelReasonVC: UIViewController {
     */
 
 }
+
+extension CancelReasonVC{
+    static func getStoryboardInstance() -> UINavigationController?{
+        let storyborad = UIStoryboard(name: String(describing: self), bundle: nil)
+        guard let navViewController = storyborad.instantiateInitialViewController()  as? UINavigationController else { return nil }
+        return navViewController
+    }
+}
+
