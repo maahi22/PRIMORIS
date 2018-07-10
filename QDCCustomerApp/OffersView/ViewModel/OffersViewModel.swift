@@ -11,38 +11,35 @@ import UIKit
 class OffersViewModel: NSObject {
 
     @IBOutlet private var offersClient:OffersClient!
-    var offers:[OfferModel]?
+    var offersList:[OfferModel]?
     
     
     func getOffers(completion:@escaping(Bool,String)->())  {
-        offersClient.getOffers { [weak self](OfferModel, message) in
+       
+        
+        offersClient.getOffers { [weak self] (offersList, message) in
             guard let strongSelf = self else{return}
-            if let offerModel = OfferModel{
-                //strongSelf.offers = offerModel
-               // let selectedDate = pickUpDateModels[0].PickUpDate
-               // let dates =  CommonUtilities.getTwoPreviousDaysFromString(dateString: selectedDate)
-               // strongSelf.pickUpDates?.insert(dates.dayTwo, at: 0)
-               // strongSelf.pickUpDates?.insert(dates.dayOne, at: 1)
-                
-                completion(true,"Success")
+            if let offersList = offersList{
+                strongSelf.offersList = offersList
+                completion(true,message)
             }else{
                 completion(false,message)
             }
-            
         }
+        
     }
     
     
     
     func numberOffers() -> Int {
-        guard let offers = offers else { return 0 }
+        guard let offers = offersList else { return 0 }
         return offers.count
     }
     
-   /* func offersAt(for cellAtIndex:IndexPath) -> String? {
-        guard let offers = offers else { return nil }
-        return offers[cellAtIndex.item].PickUpDate
+    func offersAt(for cellAtIndex:IndexPath) -> OfferModel? {
+        guard let offers = offersList else { return nil }
+        return offers[cellAtIndex.row]
         
-    }*/
+    }
     
 }

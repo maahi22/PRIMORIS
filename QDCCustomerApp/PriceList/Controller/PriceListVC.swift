@@ -10,6 +10,8 @@ import UIKit
 
 class PriceListVC: UIViewController {
 
+    @IBOutlet var priceListViewModel:PriceListViewModel!
+    
     @IBOutlet weak var categorySelectionCollectionView:UICollectionView!
     @IBOutlet weak var priceCollectionView:UICollectionView!
     @IBOutlet weak var showCategoryButton:UIButton!

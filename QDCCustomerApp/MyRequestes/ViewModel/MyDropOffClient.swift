@@ -1,30 +1,29 @@
 //
-//  OffersClient.swift
+//  MyDropOffClient.swift
 //  QDCCustomerApp
 //
-//  Created by Maahi on 09/07/18.
+//  Created by Maahi on 10/07/18.
 //  Copyright © 2018 QuickDryCleaning. All rights reserved.
 //
 
 import UIKit
-import Alamofire
-import Foundation
 
-class OffersClient: NSObject {
+class MyDropOffClient: NSObject {
+
     // MARK: - Injections
     internal let networkClient = NetworkClient.shared
     
     
     //get offers
-    func getOffers(completion:@escaping ([OfferModel]?,String)->())  {
+    func fetchMyDropOff(completion:@escaping ([DropOffModel]?,String)->())  {
         
+        let custID = QDCUserDefaults.getCustomerId()
         let branchName = QDCUserDefaults.getDataBaseName()
-        let clientID = QDCUserDefaults.getClientID()
         let branchID = QDCUserDefaults.getBranchId()
         let token = QDCUserDefaults.getAccessToken()
         
-        //let apiname = GET_OFFERS_RELATIVE_URL + branchName + "/" + branchID
-        let apiname = GET_OFFERS_RELATIVE_URL + clientID + "/" + branchID
+        
+        let apiname = CUSTOMER_DROPOFFS_RELATIVE_URL + branchName + "/" + branchID + "/" + custID
         let headers = ["token": "\(token)"] as [String:String]
         
         networkClient.callAPIWithAlamofire(apiname: apiname,
@@ -33,8 +32,8 @@ class OffersClient: NSObject {
                                            headers: headers,
                                            success: { (data, httpResponse) in
                                             
-                                            if let offerModel = decodeJSON(type: [OfferModel].self, from: data) {
-                                                completion(offerModel, "Success")
+                                            if let dropOffModel = decodeJSON(type: [DropOffModel].self, from: data) {
+                                                completion(dropOffModel, "Success")
                                             }else{
                                                 completion(nil,"failed")
                                             }
@@ -47,8 +46,6 @@ class OffersClient: NSObject {
         
         
     }
-    
-    
     
     
 }

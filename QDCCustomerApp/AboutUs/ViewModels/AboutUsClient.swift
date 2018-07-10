@@ -1,8 +1,8 @@
 //
-//  OffersClient.swift
+//  AboutUsClient.swift
 //  QDCCustomerApp
 //
-//  Created by Maahi on 09/07/18.
+//  Created by Maahi on 10/07/18.
 //  Copyright © 2018 QuickDryCleaning. All rights reserved.
 //
 
@@ -10,21 +10,23 @@ import UIKit
 import Alamofire
 import Foundation
 
-class OffersClient: NSObject {
+
+class AboutUsClient: NSObject {
+
     // MARK: - Injections
     internal let networkClient = NetworkClient.shared
     
     
     //get offers
-    func getOffers(completion:@escaping ([OfferModel]?,String)->())  {
+    func getAboutUs(completion:@escaping (AboutUsModel?,String)->())  {
         
-        let branchName = QDCUserDefaults.getDataBaseName()
+        //let branchName = QDCUserDefaults.getDataBaseName()
         let clientID = QDCUserDefaults.getClientID()
         let branchID = QDCUserDefaults.getBranchId()
         let token = QDCUserDefaults.getAccessToken()
         
         //let apiname = GET_OFFERS_RELATIVE_URL + branchName + "/" + branchID
-        let apiname = GET_OFFERS_RELATIVE_URL + clientID + "/" + branchID
+        let apiname = ABOUT_US_RELATIVE_URL + clientID + "/" + branchID
         let headers = ["token": "\(token)"] as [String:String]
         
         networkClient.callAPIWithAlamofire(apiname: apiname,
@@ -33,8 +35,8 @@ class OffersClient: NSObject {
                                            headers: headers,
                                            success: { (data, httpResponse) in
                                             
-                                            if let offerModel = decodeJSON(type: [OfferModel].self, from: data) {
-                                                completion(offerModel, "Success")
+                                            if let aboutUsModel = decodeJSON(type: AboutUsModel.self, from: data) {
+                                                completion(aboutUsModel, "Success")
                                             }else{
                                                 completion(nil,"failed")
                                             }
@@ -47,8 +49,6 @@ class OffersClient: NSObject {
         
         
     }
-    
-    
     
     
 }

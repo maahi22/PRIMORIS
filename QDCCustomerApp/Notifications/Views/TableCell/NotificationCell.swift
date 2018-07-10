@@ -36,4 +36,26 @@ class NotificationCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    
+    var notificationModel:NotificationsModel?{
+        didSet{
+            guard let noti = notificationModel else { return  }
+            notifTitleLabel.text = noti.Header ?? ""
+            notifDetailLabel.text = noti.Body ?? ""
+            
+            notifImageView.image = self.notifImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            self.notifImageView.tintColor = APP_ICON_COLOUR
+            notifContainerView.layer.cornerRadius = 10
+           // self.titleLabel.textColor = PRIMARY_COLOUR
+           // self.descriptionLabel.textColor = UIColor.black
+            
+        }
+        
+        
+        
+        
+        
+    }
+    
 }

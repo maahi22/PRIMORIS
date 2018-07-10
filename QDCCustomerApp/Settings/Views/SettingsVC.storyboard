@@ -37,33 +37,42 @@
                             <constraint firstItem="dC9-vg-xa1" firstAttribute="top" secondItem="8VK-Tk-LlV" secondAttribute="bottom" id="7Yu-kJ-3QE"/>
                             <constraint firstItem="dC9-vg-xa1" firstAttribute="top" secondItem="8VK-Tk-LlV" secondAttribute="bottom" id="ARH-oX-zrK"/>
                             <constraint firstItem="dC9-vg-xa1" firstAttribute="top" secondItem="8VK-Tk-LlV" secondAttribute="bottom" id="JgW-83-zxS"/>
+                            <constraint firstItem="dC9-vg-xa1" firstAttribute="top" secondItem="8VK-Tk-LlV" secondAttribute="bottom" id="L7l-OL-iak"/>
                             <constraint firstAttribute="trailing" secondItem="dC9-vg-xa1" secondAttribute="trailing" id="OQ9-Ad-aYc"/>
                             <constraint firstItem="dC9-vg-xa1" firstAttribute="leading" secondItem="K6e-ol-MDb" secondAttribute="leading" id="PuF-1n-ZEQ"/>
                             <constraint firstItem="asW-hA-Wdd" firstAttribute="top" secondItem="dC9-vg-xa1" secondAttribute="bottom" id="Pvq-05-RSA"/>
                             <constraint firstItem="dC9-vg-xa1" firstAttribute="leading" secondItem="K6e-ol-MDb" secondAttribute="leading" id="bHG-pE-Q0p"/>
                             <constraint firstItem="asW-hA-Wdd" firstAttribute="top" secondItem="dC9-vg-xa1" secondAttribute="bottom" id="hbG-Xz-bsz"/>
                             <constraint firstAttribute="trailing" secondItem="dC9-vg-xa1" secondAttribute="trailing" id="iIX-fM-wxn"/>
-                            <constraint firstItem="dC9-vg-xa1" firstAttribute="top" secondItem="K6e-ol-MDb" secondAttribute="top" constant="64" id="sk7-L9-0ZZ"/>
                             <constraint firstItem="asW-hA-Wdd" firstAttribute="top" secondItem="dC9-vg-xa1" secondAttribute="bottom" id="uDe-iF-Yaa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lui-z7-aL4"/>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="6j0-Tz-AQy"/>
+                                <exclude reference="7Yu-kJ-3QE"/>
                                 <exclude reference="ARH-oX-zrK"/>
                                 <exclude reference="JgW-83-zxS"/>
+                                <exclude reference="OQ9-Ad-aYc"/>
                                 <exclude reference="bHG-pE-Q0p"/>
                                 <exclude reference="iIX-fM-wxn"/>
-                                <exclude reference="6j0-Tz-AQy"/>
-                                <exclude reference="OQ9-Ad-aYc"/>
-                                <exclude reference="7Yu-kJ-3QE"/>
                                 <exclude reference="Pvq-05-RSA"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="izD-fh-GvA"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="settingsViewModel" destination="avr-Q5-jGQ" id="ygp-9t-4IJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ben-8t-0EO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="zOh-LP-g9m" customClass="SettingsClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
+                <customObject id="avr-Q5-jGQ" customClass="SettingsViewModel" customModule="QDCCustomerApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="settingsClient" destination="zOh-LP-g9m" id="g6H-2S-Rgf"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="2098.4000000000001" y="1300.2998500749627"/>
         </scene>

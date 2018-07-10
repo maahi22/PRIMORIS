@@ -1,8 +1,8 @@
 //
-//  OffersClient.swift
+//  NotificationClient.swift
 //  QDCCustomerApp
 //
-//  Created by Maahi on 09/07/18.
+//  Created by Maahi on 10/07/18.
 //  Copyright © 2018 QuickDryCleaning. All rights reserved.
 //
 
@@ -10,21 +10,22 @@ import UIKit
 import Alamofire
 import Foundation
 
-class OffersClient: NSObject {
+
+class NotificationClient: NSObject {
+
     // MARK: - Injections
     internal let networkClient = NetworkClient.shared
     
     
-    //get offers
-    func getOffers(completion:@escaping ([OfferModel]?,String)->())  {
+    //get getStoreInfo
+    func getNotificationList(completion:@escaping ([NotificationsModel]?,String)->())  {
         
-        let branchName = QDCUserDefaults.getDataBaseName()
+        let custId = QDCUserDefaults.getCustomerId()
         let clientID = QDCUserDefaults.getClientID()
         let branchID = QDCUserDefaults.getBranchId()
         let token = QDCUserDefaults.getAccessToken()
         
-        //let apiname = GET_OFFERS_RELATIVE_URL + branchName + "/" + branchID
-        let apiname = GET_OFFERS_RELATIVE_URL + clientID + "/" + branchID
+        let apiname = NOTIFICATION_RELATIVE_URL + clientID + "/" + branchID + "/" + custId
         let headers = ["token": "\(token)"] as [String:String]
         
         networkClient.callAPIWithAlamofire(apiname: apiname,
@@ -33,8 +34,8 @@ class OffersClient: NSObject {
                                            headers: headers,
                                            success: { (data, httpResponse) in
                                             
-                                            if let offerModel = decodeJSON(type: [OfferModel].self, from: data) {
-                                                completion(offerModel, "Success")
+                                            if let notificationsModel = decodeJSON(type: [NotificationsModel].self, from: data) {
+                                                completion(notificationsModel, "Success")
                                             }else{
                                                 completion(nil,"failed")
                                             }
@@ -47,8 +48,5 @@ class OffersClient: NSObject {
         
         
     }
-    
-    
-    
     
 }
