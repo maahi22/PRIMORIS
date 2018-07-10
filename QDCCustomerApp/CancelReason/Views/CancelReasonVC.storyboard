@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uXM-KI-gE3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cancel ReasonVC-->
+        <!--Cancel Reason-->
         <scene sceneID="fb1-JQ-GTW">
             <objects>
                 <viewController storyboardIdentifier="CancelReasonVC" id="cGM-tI-JMe" customClass="CancelReasonVC" customModule="QDCCustomerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwA-qX-12k">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -40,7 +40,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9P2-Yu-Yvu">
-                                <rect key="frame" x="37.5" y="56" width="300" height="555"/>
+                                <rect key="frame" x="38" y="120" width="300" height="491"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason for cancellation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dy-it-veh">
                                         <rect key="frame" x="30" y="10" width="240" height="20"/>
@@ -68,10 +68,10 @@
                                             <constraint firstAttribute="width" constant="20" id="k4m-M4-lCD"/>
                                         </constraints>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" backgroundImage="radioUnselected.jpg"/>
+                                        <state key="normal" backgroundImage="radioUnselected"/>
                                         <state key="selected" backgroundImage="radioSelected.png"/>
                                         <connections>
-                                            <action selector="radioButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="2LE-hh-yZ7"/>
+                                            <action selector="radioButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="aX5-Qx-ViO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBT-LB-Djq">
@@ -82,10 +82,10 @@
                                             <constraint firstAttribute="width" constant="20" id="wij-f9-Fbt"/>
                                         </constraints>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" backgroundImage="radioUnselected.jpg"/>
+                                        <state key="normal" backgroundImage="radioUnselected"/>
                                         <state key="selected" backgroundImage="radioSelected.png"/>
                                         <connections>
-                                            <action selector="radioButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="wsf-j3-Vgt"/>
+                                            <action selector="radioButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="T0b-2w-LQ7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYk-Rr-0dU">
@@ -96,10 +96,10 @@
                                             <constraint firstAttribute="width" constant="20" id="njl-Vp-A3d"/>
                                         </constraints>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" backgroundImage="radioUnselected.jpg"/>
+                                        <state key="normal" backgroundImage="radioUnselected"/>
                                         <state key="selected" backgroundImage="radioSelected.png"/>
                                         <connections>
-                                            <action selector="radioButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="rLa-mt-CMf"/>
+                                            <action selector="radioButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="FNV-v8-jla"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eac-Oy-AOz">
@@ -110,10 +110,10 @@
                                             <constraint firstAttribute="width" constant="20" id="Q56-nH-phP"/>
                                         </constraints>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" backgroundImage="radioUnselected.jpg"/>
+                                        <state key="normal" backgroundImage="radioUnselected"/>
                                         <state key="selected" backgroundImage="radioSelected.png"/>
                                         <connections>
-                                            <action selector="radioButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="deU-Qx-xNi"/>
+                                            <action selector="radioButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="GGO-z9-RSl"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M8-fd-c2Z">
@@ -124,10 +124,10 @@
                                             <constraint firstAttribute="height" constant="20" id="VEb-9l-fer"/>
                                         </constraints>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" backgroundImage="radioUnselected.jpg"/>
+                                        <state key="normal" backgroundImage="radioUnselected"/>
                                         <state key="selected" backgroundImage="radioSelected.png"/>
                                         <connections>
-                                            <action selector="radioButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="4LH-SI-XOl"/>
+                                            <action selector="radioButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="Fu3-8G-jGe"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I changed my mind" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci4-tQ-nOo">
@@ -197,7 +197,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="submitButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="0oO-NX-ba2"/>
+                                            <action selector="submitButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="F9y-BW-18N"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TL7-8R-vtM">
@@ -211,7 +211,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="dismissButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="7q3-TG-YzK"/>
+                                            <action selector="dismissButtonClick:" destination="cGM-tI-JMe" eventType="touchUpInside" id="H3i-1b-pC6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -244,7 +244,6 @@
                                     <constraint firstItem="iRr-aa-73L" firstAttribute="top" secondItem="ci4-tQ-nOo" secondAttribute="bottom" constant="10" id="ejN-BA-neC"/>
                                     <constraint firstItem="jGy-De-qNv" firstAttribute="top" secondItem="POv-c3-BDl" secondAttribute="bottom" constant="30" id="gRz-sU-uqT"/>
                                     <constraint firstItem="1dy-it-veh" firstAttribute="top" secondItem="9P2-Yu-Yvu" secondAttribute="top" constant="10" id="gYu-Pj-rhE"/>
-                                    <constraint firstAttribute="height" constant="555" id="hu3-Ls-zfb"/>
                                     <constraint firstAttribute="trailing" secondItem="qGJ-Hv-6zH" secondAttribute="trailing" constant="10" id="jfR-jc-QA2"/>
                                     <constraint firstAttribute="width" constant="240" id="jkX-cJ-iIq"/>
                                     <constraint firstItem="qGJ-Hv-6zH" firstAttribute="leading" secondItem="JYk-Rr-0dU" secondAttribute="trailing" constant="5" id="kjF-kl-VdT"/>
@@ -263,8 +262,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="jkX-cJ-iIq"/>
                                         <exclude reference="ScB-u6-3yW"/>
+                                        <exclude reference="jkX-cJ-iIq"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -273,13 +272,14 @@
                         <constraints>
                             <constraint firstItem="9P2-Yu-Yvu" firstAttribute="centerX" secondItem="uzq-Lh-2fQ" secondAttribute="centerX" id="1kF-vO-Stu"/>
                             <constraint firstAttribute="trailing" secondItem="RwA-qX-12k" secondAttribute="trailing" id="2KM-MV-gZy"/>
+                            <constraint firstItem="9P2-Yu-Yvu" firstAttribute="top" secondItem="7pE-dj-KMp" secondAttribute="bottom" constant="56" id="DqK-Lw-cWr"/>
                             <constraint firstItem="9P2-Yu-Yvu" firstAttribute="centerX" secondItem="uzq-Lh-2fQ" secondAttribute="centerX" id="PJV-yO-9gZ"/>
                             <constraint firstItem="WDr-8s-nUR" firstAttribute="top" secondItem="RwA-qX-12k" secondAttribute="bottom" id="T1G-Gf-2OK"/>
                             <constraint firstAttribute="trailing" secondItem="9P2-Yu-Yvu" secondAttribute="trailing" constant="40" id="Tty-Pc-B6k"/>
                             <constraint firstItem="RwA-qX-12k" firstAttribute="centerY" secondItem="uzq-Lh-2fQ" secondAttribute="centerY" id="Wde-vg-1rP"/>
                             <constraint firstItem="9P2-Yu-Yvu" firstAttribute="leading" secondItem="uzq-Lh-2fQ" secondAttribute="leading" constant="40" id="YP1-qa-cod"/>
                             <constraint firstItem="9P2-Yu-Yvu" firstAttribute="top" secondItem="7pE-dj-KMp" secondAttribute="bottom" constant="8" symbolic="YES" id="ZcP-9O-GnN"/>
-                            <constraint firstItem="WDr-8s-nUR" firstAttribute="top" secondItem="9P2-Yu-Yvu" secondAttribute="bottom" constant="56" id="ZfN-XV-rhS"/>
+                            <constraint firstItem="9P2-Yu-Yvu" firstAttribute="centerY" secondItem="RwA-qX-12k" secondAttribute="centerY" id="epF-sz-ssi"/>
                             <constraint firstItem="9P2-Yu-Yvu" firstAttribute="centerY" secondItem="uzq-Lh-2fQ" secondAttribute="centerY" id="ltE-4u-ypo"/>
                             <constraint firstAttribute="trailing" secondItem="9P2-Yu-Yvu" secondAttribute="trailing" constant="40" id="pyz-i8-nU5"/>
                             <constraint firstItem="9P2-Yu-Yvu" firstAttribute="leading" secondItem="uzq-Lh-2fQ" secondAttribute="leading" constant="40" id="qpV-dh-td8"/>
@@ -302,9 +302,8 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="4Nb-f8-fVj"/>
+                    <navigationItem key="navigationItem" title="Cancel Reason" id="4Nb-f8-fVj"/>
                     <connections>
-                        <outlet property="containerVeiwBottomConstraint" destination="ZfN-XV-rhS" id="xSK-RF-gAc"/>
                         <outlet property="containerView" destination="9P2-Yu-Yvu" id="jri-rs-hX6"/>
                         <outlet property="reasonTextView" destination="z5w-0z-biT" id="SdX-YE-Umb"/>
                         <outlet property="submitButton" destination="wfE-ee-2UK" id="328-mj-hSe"/>
@@ -313,11 +312,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Pb-Zs-rhw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="B6R-y3-WOX"/>
             </objects>
+            <point key="canvasLocation" x="-1436" y="1169.865067466267"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fIN-Dh-Xtk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uXM-KI-gE3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R4i-TZ-4KX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cGM-tI-JMe" kind="relationship" relationship="rootViewController" id="sjA-Dh-cAy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5L4-Rq-eLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="-2375.1999999999998" y="1169.865067466267"/>
         </scene>
     </scenes>
     <resources>
         <image name="radioSelected.png" width="16" height="16"/>
-        <image name="radioUnselected.jpg" width="16" height="16"/>
+        <image name="radioUnselected" width="225" height="225"/>
     </resources>
 </document>

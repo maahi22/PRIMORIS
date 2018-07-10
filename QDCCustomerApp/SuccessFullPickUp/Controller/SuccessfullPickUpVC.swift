@@ -54,8 +54,9 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
     
     
     
-    @IBAction func rescheduleButtonClick(sender: UIButton) {
-        //TODO: check if its coming from pick up or drop off
+   
+    @IBAction func rescheduleButtonClick(_ sender: Any) {
+    //TODO: check if its coming from pick up or drop off
         
         if self.dropOffOrderId.isEmpty { //drop of id will only exist in case the user has drop off order
             
@@ -82,14 +83,14 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
         }
     }
     
-    @IBAction func cancelButtonClick(sender: UIButton) {
-        
+    @IBAction func cancelButtonClick(_ sender: Any) {
+    
         
         guard let navViewController = CancelReasonVC.getStoryboardInstance(),
             let viewController = navViewController.topViewController as? CancelReasonVC
             else { return  }
-        viewController.cancelOrderdelegate = self as! CancelReasonDelegate
-        self.present(viewController, animated: true, completion: {})
+        viewController.cancelOrderdelegate = self 
+        self.present(navViewController, animated: true, completion: {})
        // navigationController?.pushViewController(viewController, animated: true)
         
         
@@ -102,7 +103,8 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
         */
     }
     
-    @IBAction func dashboardButtonClick(sender: UIButton) {
+    @IBAction func dashboardButtonClick(_ sender: Any) {
+    
         
         guard let navViewController = DashboardVC.getStoryboardInstance(),
             let viewController = navViewController.topViewController as? DashboardVC
@@ -121,7 +123,7 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
     
     
     //Delegate Methods
-    func didSelectCancelReason(cancelReason:String) {
+    func didSelectCancelReason(_ cancelReason:String) {
         print("delegate cancel")
         if self.dropOffOrderId.isEmpty { //drop of id will only exist in case the user has drop off order
             //self.hitCancelPickupWebService(cancelReason)

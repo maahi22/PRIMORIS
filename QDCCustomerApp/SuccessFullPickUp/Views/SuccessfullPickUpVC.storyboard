@@ -50,7 +50,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="rescheduleButtonClick:" destination="Qae-cs-n0r" eventType="touchUpInside" id="Dpy-Zh-Puf"/>
+                                    <action selector="rescheduleButtonClick:" destination="Qae-cs-n0r" eventType="touchUpInside" id="YnM-ed-zg7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="std-k7-7ac">
@@ -64,7 +64,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="dashboardButtonClick:" destination="Qae-cs-n0r" eventType="touchUpInside" id="Jcb-aS-Swx"/>
+                                    <action selector="dashboardButtonClick:" destination="Qae-cs-n0r" eventType="touchUpInside" id="7CQ-Rc-i9Z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aq4-bz-HCd">
@@ -78,7 +78,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancelButtonClick:" destination="Qae-cs-n0r" eventType="touchUpInside" id="mdD-o2-5lC"/>
+                                    <action selector="cancelButtonClick:" destination="Qae-cs-n0r" eventType="touchUpInside" id="cXz-zg-cWm"/>
                                 </connections>
                             </button>
                         </subviews>

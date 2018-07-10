@@ -10,7 +10,7 @@ import UIKit
 
 protocol CancelReasonDelegate {
     
-    func didSelectCancelReason(cancelReason:String) ;
+    func didSelectCancelReason(_ cancelReason:String) ;
     
 }
 
@@ -22,7 +22,7 @@ class CancelReasonVC: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var containerVeiwBottomConstraint: NSLayoutConstraint!
     var selectedButton : UIButton!
-    var cancelOrderdelegate:CancelReasonDelegate! = nil
+    var cancelOrderdelegate:CancelReasonDelegate?
     let reasonArray:NSArray = ["I changed my mind","Pickup date already passed","I was just checking it","Will do it later"]
     
     
@@ -30,24 +30,82 @@ class CancelReasonVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.setupUI()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupUI() {
+        
+        self.reasonTextView.delegate = self
+        self.reasonTextView.textColor = TEXT_FIELD_COLOUR
+        self.submitButton.backgroundColor = BUTTON_COLOUR
+        self.submitButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
+        
+        //containerVeiwBottomConstraint.constant = (SCREEN_SIZE.height - self.containerView.frame.size.height)/2
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    
+    
+    @IBAction func radioButtonClick(_ sender: Any) {
+    
+    
+        if self.selectedButton != nil {
+            self.selectedButton.isSelected = false
+        }
+        
+        sender.isSelected = true
+        selectedButton = sender
+        
+        
     }
-    */
+    
+   
+    
+    @IBAction func dismissButtonClick(_ sender: Any) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    @IBAction func submitButtonClick(_ sender: Any) {
+    
+    var reason = ""
+        if self.reasonTextView.text == " reason" {
+            reason = ""
+        }else{
+            reason = self.reasonTextView.text
+        }
+        
+        if self.selectedButton != nil {
+            
+            if self.selectedButton.tag == 5 {
+                
+                if reason.isEmpty {
+                    
+                    showAlertMessage(vc: self, title: .Message, message: "Please provide the reason")
+                    
+                    
+                    return
+                }
+            }else{
+                let indx = self.selectedButton.tag-1
+                reason = self.reasonArray[indx] as! String
+            }
+        }else {
+            
+             showAlertMessage(vc: self, title: .Message, message: "Please select some reason")
+            
+            return
+        }
+        
+        
+        self.navigationController?.dismiss(animated: true, completion: nil)
+        self.cancelOrderdelegate?.didSelectCancelReason(reason)
+    }
+    
+    
+    
 
 }
 
@@ -59,3 +117,27 @@ extension CancelReasonVC{
     }
 }
 
+extension CancelReasonVC:UITextViewDelegate{
+    
+    func textViewDidBeginEditing(_ textView:UITextView) {   //delegate method
+        
+        textView.text = "";
+        containerVeiwBottomConstraint.constant = 250
+        
+    }
+    
+    func textViewDidEndEditing(_ textView:UITextView) {
+        
+        containerVeiwBottomConstraint.constant = (SCREEN_SIZE.height - self.containerView.frame.size.height)/2
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+}
