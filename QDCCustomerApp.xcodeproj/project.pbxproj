@@ -78,6 +78,8 @@
 		03FB56F620ECCA8500270859 /* DueAmountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB56F520ECCA8500270859 /* DueAmountVC.swift */; };
 		03FB56F820ECD0D400270859 /* MyOrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB56F720ECD0D400270859 /* MyOrdersVC.swift */; };
 		03FB56FF20ECEDD100270859 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB56FE20ECEDD100270859 /* DashboardViewModel.swift */; };
+		0F27865520F5300600B14215 /* SheduledDropOffClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F27865420F5300600B14215 /* SheduledDropOffClient.swift */; };
+		0F27865720F532A200B14215 /* DropOffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F27865620F532A200B14215 /* DropOffModel.swift */; };
 		0F2995EC20F25FC800594B21 /* UIColor+QDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2995EB20F25FC800594B21 /* UIColor+QDC.swift */; };
 		0F2995EF20F27FBA00594B21 /* FeedbackClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2995EE20F27FBA00594B21 /* FeedbackClient.swift */; };
 		0F2AD39D20F0784D002B4BF5 /* ProfileVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AD39C20F0784D002B4BF5 /* ProfileVC.storyboard */; };
@@ -98,7 +100,7 @@
 		0F2C38A920F4AC66000C48D7 /* NotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C38A820F4AC66000C48D7 /* NotificationsModel.swift */; };
 		0F2C38AC20F4D860000C48D7 /* PriceListClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C38AB20F4D860000C48D7 /* PriceListClient.swift */; };
 		0F2C38AE20F4D876000C48D7 /* PriceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C38AD20F4D876000C48D7 /* PriceListViewModel.swift */; };
-		0F2C38B220F4E5AC000C48D7 /* DropOffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C38B120F4E5AC000C48D7 /* DropOffModel.swift */; };
+		0F2C38B220F4E5AC000C48D7 /* MyRequestDropOffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C38B120F4E5AC000C48D7 /* MyRequestDropOffModel.swift */; };
 		0F2C38B420F4E5D1000C48D7 /* MyRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C38B320F4E5D1000C48D7 /* MyRequestModel.swift */; };
 		0F2C38B620F4E5E9000C48D7 /* MyRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C38B520F4E5E9000C48D7 /* MyRequestClient.swift */; };
 		0F2C38B820F4E5FB000C48D7 /* MyDropOffClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C38B720F4E5FB000C48D7 /* MyDropOffClient.swift */; };
@@ -263,6 +265,8 @@
 		03FB56F520ECCA8500270859 /* DueAmountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueAmountVC.swift; sourceTree = "<group>"; };
 		03FB56F720ECD0D400270859 /* MyOrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersVC.swift; sourceTree = "<group>"; };
 		03FB56FE20ECEDD100270859 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		0F27865420F5300600B14215 /* SheduledDropOffClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduledDropOffClient.swift; sourceTree = "<group>"; };
+		0F27865620F532A200B14215 /* DropOffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropOffModel.swift; sourceTree = "<group>"; };
 		0F2995EB20F25FC800594B21 /* UIColor+QDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+QDC.swift"; sourceTree = "<group>"; };
 		0F2995EE20F27FBA00594B21 /* FeedbackClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackClient.swift; sourceTree = "<group>"; };
 		0F2AD39C20F0784D002B4BF5 /* ProfileVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileVC.storyboard; sourceTree = "<group>"; };
@@ -283,7 +287,7 @@
 		0F2C38A820F4AC66000C48D7 /* NotificationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsModel.swift; sourceTree = "<group>"; };
 		0F2C38AB20F4D860000C48D7 /* PriceListClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListClient.swift; sourceTree = "<group>"; };
 		0F2C38AD20F4D876000C48D7 /* PriceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListViewModel.swift; sourceTree = "<group>"; };
-		0F2C38B120F4E5AC000C48D7 /* DropOffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropOffModel.swift; sourceTree = "<group>"; };
+		0F2C38B120F4E5AC000C48D7 /* MyRequestDropOffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestDropOffModel.swift; sourceTree = "<group>"; };
 		0F2C38B320F4E5D1000C48D7 /* MyRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestModel.swift; sourceTree = "<group>"; };
 		0F2C38B520F4E5E9000C48D7 /* MyRequestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestClient.swift; sourceTree = "<group>"; };
 		0F2C38B720F4E5FB000C48D7 /* MyDropOffClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDropOffClient.swift; sourceTree = "<group>"; };
@@ -1096,7 +1100,7 @@
 		0F2C38B020F4E572000C48D7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0F2C38B120F4E5AC000C48D7 /* DropOffModel.swift */,
+				0F2C38B120F4E5AC000C48D7 /* MyRequestDropOffModel.swift */,
 				0F2C38B320F4E5D1000C48D7 /* MyRequestModel.swift */,
 			);
 			path = Models;
@@ -1107,6 +1111,7 @@
 			children = (
 				0F2C38BE20F4EC66000C48D7 /* DropOffViewModel.swift */,
 				0F2C38C020F4EC8C000C48D7 /* DropOffClient.swift */,
+				0F27865420F5300600B14215 /* SheduledDropOffClient.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1188,6 +1193,7 @@
 			isa = PBXGroup;
 			children = (
 				0F2FE64420F34ED700F4CC48 /* DropoffHistoryModel.swift */,
+				0F27865620F532A200B14215 /* DropOffModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1905,6 +1911,7 @@
 				0338AFA520F11BBB00717D8C /* CancelReasonClient.swift in Sources */,
 				0F2C38AC20F4D860000C48D7 /* PriceListClient.swift in Sources */,
 				0F5E424C20F0B09B005CC203 /* DropOffVC.swift in Sources */,
+				0F27865520F5300600B14215 /* SheduledDropOffClient.swift in Sources */,
 				03C2AB8220DAAFAC0029AAA4 /* ViewController.swift in Sources */,
 				03E0CB5320E1187300318E32 /* OTPVerifyTVC.swift in Sources */,
 				03FB56FF20ECEDD100270859 /* DashboardViewModel.swift in Sources */,
@@ -1943,7 +1950,7 @@
 				0F2995EC20F25FC800594B21 /* UIColor+QDC.swift in Sources */,
 				0F2FE64120F34E8E00F4CC48 /* PickupHistoryCell.swift in Sources */,
 				03FB56F820ECD0D400270859 /* MyOrdersVC.swift in Sources */,
-				0F2C38B220F4E5AC000C48D7 /* DropOffModel.swift in Sources */,
+				0F2C38B220F4E5AC000C48D7 /* MyRequestDropOffModel.swift in Sources */,
 				0F2FE63720F34B7700F4CC48 /* OrderDetailModel.swift in Sources */,
 				0F5E423720F0AD3B005CC203 /* PriceListVC.swift in Sources */,
 				03CEBA6420DC188300A1FAB3 /* CustomActivityIndicator.swift in Sources */,
@@ -1977,6 +1984,7 @@
 				03CEBA7420DC18F300A1FAB3 /* NetworkClient.swift in Sources */,
 				0F2C389F20F48302000C48D7 /* AboutUsViewModel.swift in Sources */,
 				0F2FE65B20F35D9200F4CC48 /* PriceCategoryCollectionCell.swift in Sources */,
+				0F27865720F532A200B14215 /* DropOffModel.swift in Sources */,
 				03EE3CD220DE5418005F1A4F /* SignUpModel.swift in Sources */,
 				03E54DF420E356F700BE948A /* QDCUserDefaults.swift in Sources */,
 				03EE3CC620DE3083005F1A4F /* ServicableAreaClient.swift in Sources */,

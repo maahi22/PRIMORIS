@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DropOffModel:Codable{
+struct MyRequestDropOffModel:Codable{
     let Title:String?
     let Descreption:String?
 }

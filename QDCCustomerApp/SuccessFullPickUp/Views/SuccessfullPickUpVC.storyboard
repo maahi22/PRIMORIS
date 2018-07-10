@@ -109,9 +109,13 @@
                         <outlet property="dashboardButton" destination="std-k7-7ac" id="LYI-zA-zwG"/>
                         <outlet property="messageLabel" destination="KvJ-Ll-0Hg" id="jbq-df-Hk4"/>
                         <outlet property="rescheduleButton" destination="8fO-UI-iEx" id="cRN-Xt-1j6"/>
+                        <outlet property="schedulePickUpDateClient" destination="n2Q-y1-QhV" id="jht-qF-aqu"/>
+                        <outlet property="sheduledDropOffClient" destination="fCO-Qg-aHd" id="r7l-2q-Rvf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rig-Bb-mN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="fCO-Qg-aHd" customClass="SheduledDropOffClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
+                <customObject id="n2Q-y1-QhV" customClass="SchedulePickUpDateClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1076" y="-448.42578710644682"/>
         </scene>

@@ -272,6 +272,7 @@
                         <constraints>
                             <constraint firstItem="9P2-Yu-Yvu" firstAttribute="centerX" secondItem="uzq-Lh-2fQ" secondAttribute="centerX" id="1kF-vO-Stu"/>
                             <constraint firstAttribute="trailing" secondItem="RwA-qX-12k" secondAttribute="trailing" id="2KM-MV-gZy"/>
+                            <constraint firstItem="WDr-8s-nUR" firstAttribute="top" secondItem="9P2-Yu-Yvu" secondAttribute="bottom" constant="56" id="8fd-Vs-dWH"/>
                             <constraint firstItem="9P2-Yu-Yvu" firstAttribute="top" secondItem="7pE-dj-KMp" secondAttribute="bottom" constant="56" id="DqK-Lw-cWr"/>
                             <constraint firstItem="9P2-Yu-Yvu" firstAttribute="centerX" secondItem="uzq-Lh-2fQ" secondAttribute="centerX" id="PJV-yO-9gZ"/>
                             <constraint firstItem="WDr-8s-nUR" firstAttribute="top" secondItem="RwA-qX-12k" secondAttribute="bottom" id="T1G-Gf-2OK"/>
@@ -304,6 +305,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cancel Reason" id="4Nb-f8-fVj"/>
                     <connections>
+                        <outlet property="containerVeiwBottomConstraint" destination="8fd-Vs-dWH" id="gGn-Pd-vvh"/>
                         <outlet property="containerView" destination="9P2-Yu-Yvu" id="jri-rs-hX6"/>
                         <outlet property="reasonTextView" destination="z5w-0z-biT" id="SdX-YE-Umb"/>
                         <outlet property="submitButton" destination="wfE-ee-2UK" id="328-mj-hSe"/>

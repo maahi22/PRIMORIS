@@ -10,6 +10,8 @@ import UIKit
 
 class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
 
+    @IBOutlet private var schedulePickUpDateClient:SchedulePickUpDateClient!
+    @IBOutlet private var sheduledDropOffClient:SheduledDropOffClient!
     
     @IBOutlet weak var messageLabel:UILabel!
     @IBOutlet weak var rescheduleButton:UIButton!
@@ -94,16 +96,6 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
             else { return  }
         viewController.cancelOrderdelegate = self 
         self.present(navViewController, animated: true, completion: {})
-       // navigationController?.pushViewController(viewController, animated: true)
-        
-        
-        
-        /*let popup : CancelReasonVC = self.storyboard?.instantiateViewControllerWithIdentifier("QDCCancelReasonViewControllerID") as! QDCCancelReasonViewController
-        popup.cancelOrderdelegate = self
-        let navigationController = UINavigationController(rootViewController: popup)
-        navigationController.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
-        self.presentViewController(navigationController, animated: true, completion: nil)
-        */
     }
     
     @IBAction func dashboardButtonClick(_ sender: Any) {
@@ -118,13 +110,67 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
     func didSelectCancelReason(_ cancelReason:String) {
         print("delegate cancel")
         if self.dropOffOrderId.isEmpty { //drop of id will only exist in case the user has drop off order
-            //self.hitCancelPickupWebService(cancelReason)
+            self.hitCancelPickupWebService(cancelReason)
         }else{
-            //self.hitCancelDropOffWebService(cancelReason)
+            self.hitCancelDropOffWebService(cancelReason)
         }
     }
     
     
+    
+    
+    func hitCancelPickupWebService(_ cancelReason:String){
+        
+        schedulePickUpDateClient.getSchedulePickup(pickupDate: self.selectedPickupDate, pickupTime: self.selectedPickupTime, flag: 3, pickupNumber: self.pickUpOrderId, expressDeliveryID: "", specialInstruction: "", dropOffDate: "", dropOffTime: "", cancelReason: cancelReason) { [weak self](schedulePickUpModel, message) in
+            guard let strongSelf = self else{return}
+            if let schedulePickUpModel = schedulePickUpModel {
+                
+                
+                var message = ""
+                if schedulePickUpModel.Status == "Done" {
+                    message = "Pick up successfully cancelled"
+                }else{
+                    message = "Something went wrong please try again later"
+                }
+                
+                showAlertMessage(vc: strongSelf, title: .Message, message: message)
+                
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: "Something went wrong please try again later")
+            }
+        }
+        
+    }
+    
+    
+      func hitCancelDropOffWebService(_ cancelReason:String){
+        
+        sheduledDropOffClient.getScheduleDropOff(dropOffDate: self.selectedDropOffDate, dropOffTime: self.selectedDropOffTime, flag: 3, pickupNumber: "", bookingNo: "", dropOffNumber: self.dropOffOrderId, cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
+            
+            guard let strongSelf = self else{return}
+            
+            if let scheduleDropOffModel = scheduleDropOffModel {
+                
+                
+                var message = ""
+                if scheduleDropOffModel.Status == "Done" {
+                    message = "Pick up successfully cancelled"
+                }else{
+                    message = "Something went wrong please try again later"
+                }
+                
+                showAlertMessage(vc: strongSelf, title: .Message, message: message)
+                
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: "Something went wrong please try again later")
+            }
+            
+        }
+        
+        
+    }
     
     
 }
