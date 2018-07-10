@@ -48,3 +48,13 @@ let GET_LICENSE_RELATIVE_URL             = "License/DryCleanKart/2/1223.26"
 
 
 //enum
+
+
+
+
+let kWebServicePostParamKey =  "postParamKey"
+let kWebServiceUrlParamKey = "urlParamKey"
+
+//DROPOFF DATE AND TIME
+let PICKUP_DATE_REQUEST_KEY = "pickupDateKey"
+let PICKUP_TIME_REQUEST_KEY = "pickupTimeKey"

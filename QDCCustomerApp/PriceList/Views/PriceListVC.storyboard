@@ -152,10 +152,17 @@
                     <connections>
                         <outlet property="categorySelectionCollectionView" destination="729-YQ-qqZ" id="ak1-n8-iic"/>
                         <outlet property="priceCollectionView" destination="twC-lU-Pcb" id="u85-gj-5tl"/>
+                        <outlet property="priceListViewModel" destination="WrZ-8k-hGC" id="hgV-De-9EA"/>
                         <outlet property="showCategoryButton" destination="nCN-2s-XI2" id="97X-rQ-4k4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Cq-hI-E9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="WrZ-8k-hGC" customClass="PriceListViewModel" customModule="QDCCustomerApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="priceListClient" destination="bYG-dm-7Z9" id="ZOU-cy-w61"/>
+                    </connections>
+                </customObject>
+                <customObject id="bYG-dm-7Z9" customClass="PriceListClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="957.60000000000002" y="1300.2998500749627"/>
         </scene>

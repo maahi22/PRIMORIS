@@ -9,6 +9,11 @@
 import UIKit
 
 class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate{
+    
+    @IBOutlet var myRequestViewModel:MyRequestViewModel!
+    @IBOutlet var myDropOffViewModel:MyDropOffViewModel!
+    
+    
     func didSelectRescheduleButton(obj: AnyObject) {
         
     }

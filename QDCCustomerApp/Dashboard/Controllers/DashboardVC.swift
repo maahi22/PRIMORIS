@@ -89,7 +89,22 @@ class DashboardVC: UIViewController {
         let activityViewController = UIActivityViewController(activityItems: [QDCUserDefaults.getAppLink()], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
     }
+    
+    
+    
+    
+    @IBAction func notificationClick(_ sender: Any) {
+        
+        guard let navViewController = NotificationVC.getStoryboardInstance(),
+            let viewController = navViewController.topViewController as? NotificationVC
+            else { return  }
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    
 }
+
+
 extension DashboardVC{
     
     static func getStoryboardInstance() -> UINavigationController?{

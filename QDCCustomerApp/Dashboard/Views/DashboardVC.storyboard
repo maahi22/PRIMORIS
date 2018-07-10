@@ -360,6 +360,9 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="Ees-CW-EQ0"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Header Icon Notification" id="ar7-ID-ORZ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="notificationClick:" destination="R4G-yr-bju" id="MaU-Rd-0CD"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -396,7 +399,7 @@
         <image name="Bill Image 105 px" width="105" height="105"/>
         <image name="Dashboard User Image" width="105" height="105"/>
         <image name="Garment Image 105 px" width="105" height="105"/>
-        <image name="Header Icon Notification" width="37" height="37"/>
+        <image name="Header Icon Notification" width="22" height="22"/>
         <image name="SHare" width="105" height="105"/>
         <image name="Side Request Pick Up Icon" width="105" height="105"/>
     </resources>
