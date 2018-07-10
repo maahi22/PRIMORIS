@@ -10,6 +10,10 @@ import UIKit
 
 class NotificationVC: UIViewController {
 
+    
+    @IBOutlet var notificationViewModel:NotificationViewModel!
+    
+    
     @IBOutlet weak var notificationTableView: UITableView!
     var hideMenuOnNav:Bool = false
     var notificationArr:NSArray = NSArray()
@@ -18,24 +22,33 @@ class NotificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        notificationTableView.register(NotificationCell.nib, forCellReuseIdentifier: NotificationCell.identifier)
+        
+        notificationViewModel.getNotifications { [weak self] (isSuccess, message) in
+            
+            
+            guard let strongSelf = self else{return}
+            //  strongSelf.dismissLoadingHUD()
+            if isSuccess{
+                DispatchQueue.main.async {
+                    strongSelf.notificationTableView.reloadData()
+                }
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            }
+            
+            
+            
+        }
+        
+        
+        
+        
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 extension NotificationVC{
@@ -45,3 +58,28 @@ extension NotificationVC{
         return navViewController
     }
 }
+
+
+extension NotificationVC:UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notificationViewModel.numberOffers()
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationCell.identifier, for: indexPath)  as? NotificationCell else { return UITableViewCell() }
+        cell.notificationModel = notificationViewModel.offersAt(for: indexPath)
+        return cell
+    }
+}
+
+extension NotificationVC:UITableViewDelegate{
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        
+    }
+}
+
+
+

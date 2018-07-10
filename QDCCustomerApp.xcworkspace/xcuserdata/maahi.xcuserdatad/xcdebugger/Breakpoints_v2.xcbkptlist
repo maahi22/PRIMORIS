@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PickUpDate/Controllers/PickUpDateVC.swift"
-            timestampString = "552822562.496181"
+            timestampString = "552904541.6310771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
@@ -266,7 +266,7 @@
                   moduleName = "QDCCustomerApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maahi/Documents/GitHub/PRIMORIS/QDCCustomerApp/PickUpDate/Controllers/PickUpDateVC.swift"
-                  timestampString = "552894384.271437"
+                  timestampString = "552905131.636131"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "146"
@@ -281,7 +281,7 @@
                   moduleName = "QDCCustomerApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maahi/Documents/GitHub/PRIMORIS/QDCCustomerApp/PickUpDate/Controllers/PickUpDateVC.swift"
-                  timestampString = "552894384.274634"
+                  timestampString = "552905131.640442"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "148"
@@ -432,6 +432,22 @@
             startingLineNumber = "92"
             endingLineNumber = "92"
             landmarkName = "callAPIWithAlamofire(apiname:requestType:params:headers:isFilterDataRequired:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QDCCustomerApp/Settings/Controller/SettingsVC.swift"
+            timestampString = "552907218.56958"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -1,5 +1,5 @@
 //
-//  SettingsClient.swift
+//  NotificationClient.swift
 //  QDCCustomerApp
 //
 //  Created by Maahi on 10/07/18.
@@ -11,21 +11,21 @@ import Alamofire
 import Foundation
 
 
-class SettingsClient: NSObject {
+class NotificationClient: NSObject {
 
     // MARK: - Injections
     internal let networkClient = NetworkClient.shared
     
     
     //get getStoreInfo
-    func getStoreInfo(completion:@escaping (StoreModel?,String)->())  {
+    func getNotificationList(completion:@escaping ([NotificationsModel]?,String)->())  {
         
-        
+        let custId = QDCUserDefaults.getCustomerId()
         let clientID = QDCUserDefaults.getClientID()
         let branchID = QDCUserDefaults.getBranchId()
         let token = QDCUserDefaults.getAccessToken()
         
-        let apiname = GET_STORE_DETAIL_RELATIVE_URL + clientID + "/" + branchID
+        let apiname = NOTIFICATION_RELATIVE_URL + clientID + "/" + branchID + "/" + custId
         let headers = ["token": "\(token)"] as [String:String]
         
         networkClient.callAPIWithAlamofire(apiname: apiname,
@@ -34,8 +34,8 @@ class SettingsClient: NSObject {
                                            headers: headers,
                                            success: { (data, httpResponse) in
                                             
-                                            if let storeModel = decodeJSON(type: StoreModel.self, from: data) {
-                                                completion(storeModel, "Success")
+                                            if let notificationsModel = decodeJSON(type: [NotificationsModel].self, from: data) {
+                                                completion(notificationsModel, "Success")
                                             }else{
                                                 completion(nil,"failed")
                                             }
@@ -48,7 +48,5 @@ class SettingsClient: NSObject {
         
         
     }
-    
-    
     
 }
