@@ -47,7 +47,7 @@ class CancelReasonVC: UIViewController {
     
     
     
-    @IBAction func radioButtonClick(_ sender: Any) {
+    @IBAction func radioButtonClick(_ sender: UIButton) {
     
     
         if self.selectedButton != nil {
