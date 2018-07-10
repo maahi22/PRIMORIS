@@ -33,7 +33,8 @@ class CancelReasonVC: UIViewController {
         super.viewDidLoad()
 
         self.navigationController?.isNavigationBarHidden = true
-        
+        view.isOpaque = false
+        view.backgroundColor = .clear
         self.setupUI()
     }
 
