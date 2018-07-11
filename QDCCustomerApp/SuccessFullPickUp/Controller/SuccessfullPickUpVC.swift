@@ -94,7 +94,8 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
         guard let navViewController = CancelReasonVC.getStoryboardInstance(),
             let viewController = navViewController.topViewController as? CancelReasonVC
             else { return  }
-        viewController.cancelOrderdelegate = self 
+        viewController.cancelOrderdelegate = self
+        viewController.modalPresentationStyle = .overFullScreen
         self.present(navViewController, animated: true, completion: {})
     }
     
