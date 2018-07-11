@@ -11,11 +11,12 @@ import Foundation
 
 struct PriceListModel:Codable {
     
+    let Garment:String?
     /*let Garment:String?
     let Dry_Cleaning:String?
     let Steam_Press:String?
     let TINTORERIA:String?*/
-    let PriceListGarment:[PriceListGarmentModel]
+    //let PriceListGarment:[PriceListGarmentModel]
 }
 
 

@@ -12,7 +12,7 @@ class PriceListViewModel: NSObject {
 
     @IBOutlet private var priceListClient:PriceListClient!
     var priceListModel:[PriceListModel]?
-    
+    let servicesArr = NSMutableArray()
     
     
     func getPriceList(completion:@escaping(Bool,String)->())  {

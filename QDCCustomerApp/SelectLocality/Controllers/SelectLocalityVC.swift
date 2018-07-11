@@ -86,6 +86,13 @@ extension SelectLocalityVC:UITableViewDelegate{
         
         QDCUserDefaults.setBranchId(branchId: selectedServiceArea.BranchID ?? "")
         QDCUserDefaults.setClientID(clientID: selectedServiceArea.ClientID ?? "")
+        QDCUserDefaults.setDataBaseName(dbName: selectedServiceArea.DatabaseName ?? "")
+    
+        QDCUserDefaults.setLocality(locality: selectedServiceArea.Locality ?? "")
+        QDCUserDefaults.setSubLocality(locality: selectedServiceArea.SubLocality ?? "" )
+      
+        
+        
         let serviceArea = try? JSONEncoder().encode(selectedServiceArea)
         
         UserDefaults.standard.set(serviceArea, forKey: "SelectedServiceArea")

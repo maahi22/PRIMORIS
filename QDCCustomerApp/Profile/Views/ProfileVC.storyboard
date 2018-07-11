@@ -158,7 +158,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="updateButtonClick:" destination="1k0-cx-XDn" eventType="touchUpInside" id="m3M-w6-ypO"/>
+                                            <action selector="UpdateButtonClicks:" destination="1k0-cx-XDn" eventType="touchUpInside" id="dWN-K4-Esl"/>
                                         </connections>
                                     </button>
                                 </subviews>

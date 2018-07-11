@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Price ListVC-->
+        <!--Price List-->
         <scene sceneID="h2G-l1-Rbc">
             <objects>
                 <viewController storyboardIdentifier="PriceListVC" id="cFW-FW-89c" customClass="PriceListVC" customModule="QDCCustomerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +57,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="showCategoryButtonClick:" destination="cFW-FW-89c" eventType="touchUpInside" id="oIj-5X-PxA"/>
+                                    <action selector="showCategoryButtonClick:" destination="cFW-FW-89c" eventType="touchUpInside" id="XTc-VJ-Bpn"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="729-YQ-qqZ">
@@ -114,21 +114,18 @@
                         <constraints>
                             <constraint firstItem="twC-lU-Pcb" firstAttribute="leading" secondItem="Vq7-Bo-7py" secondAttribute="leading" id="0Kz-8Y-zh7"/>
                             <constraint firstAttribute="trailing" secondItem="twC-lU-Pcb" secondAttribute="trailing" id="DFm-Jo-s9z"/>
-                            <constraint firstItem="nzM-MK-y6w" firstAttribute="top" secondItem="Vq7-Bo-7py" secondAttribute="top" constant="91" id="Ijd-Ma-mG3"/>
                             <constraint firstItem="PHF-KL-vlq" firstAttribute="top" secondItem="twC-lU-Pcb" secondAttribute="bottom" id="KQw-Oh-Kdh"/>
-                            <constraint firstItem="729-YQ-qqZ" firstAttribute="top" secondItem="nCN-2s-XI2" secondAttribute="bottom" constant="2" id="Kh9-Xc-izq"/>
                             <constraint firstItem="twC-lU-Pcb" firstAttribute="top" secondItem="729-YQ-qqZ" secondAttribute="bottom" constant="2" id="L2y-J2-ZRr"/>
                             <constraint firstItem="nCN-2s-XI2" firstAttribute="leading" secondItem="Vq7-Bo-7py" secondAttribute="leading" constant="10" id="M4x-L8-Mat"/>
                             <constraint firstAttribute="trailing" secondItem="nCN-2s-XI2" secondAttribute="trailing" constant="10" id="Me3-1o-Ivp"/>
-                            <constraint firstAttribute="trailing" secondItem="twC-lU-Pcb" secondAttribute="trailing" id="MeI-9X-OiL"/>
-                            <constraint firstItem="PHF-KL-vlq" firstAttribute="top" secondItem="twC-lU-Pcb" secondAttribute="bottom" id="Ndt-g9-Mcn"/>
+                            <constraint firstItem="nzM-MK-y6w" firstAttribute="top" secondItem="jwS-3a-6z9" secondAttribute="bottom" constant="27" id="Opp-OY-v1e"/>
                             <constraint firstItem="a20-F8-AAz" firstAttribute="top" secondItem="jwS-3a-6z9" secondAttribute="bottom" id="SRx-aK-eUb"/>
+                            <constraint firstItem="nCN-2s-XI2" firstAttribute="top" secondItem="a20-F8-AAz" secondAttribute="bottom" id="VwM-WV-4wN"/>
+                            <constraint firstItem="729-YQ-qqZ" firstAttribute="top" secondItem="nCN-2s-XI2" secondAttribute="bottom" constant="2" id="WPX-bF-uxc"/>
                             <constraint firstAttribute="trailing" secondItem="729-YQ-qqZ" secondAttribute="trailing" id="Zk5-92-lXV"/>
-                            <constraint firstItem="nCN-2s-XI2" firstAttribute="top" secondItem="Vq7-Bo-7py" secondAttribute="top" constant="85" id="bcb-Gh-0EQ"/>
                             <constraint firstItem="nzM-MK-y6w" firstAttribute="top" secondItem="jwS-3a-6z9" secondAttribute="bottom" constant="27" id="hXK-hE-wsN"/>
-                            <constraint firstItem="a20-F8-AAz" firstAttribute="top" secondItem="Vq7-Bo-7py" secondAttribute="top" constant="64" id="j1n-Uf-VmR"/>
                             <constraint firstItem="729-YQ-qqZ" firstAttribute="leading" secondItem="Vq7-Bo-7py" secondAttribute="leading" id="n9Z-cM-ggN"/>
-                            <constraint firstItem="twC-lU-Pcb" firstAttribute="leading" secondItem="Vq7-Bo-7py" secondAttribute="leading" id="red-wo-eFg"/>
+                            <constraint firstItem="a20-F8-AAz" firstAttribute="top" secondItem="jwS-3a-6z9" secondAttribute="bottom" id="uV8-MA-y6K"/>
                             <constraint firstItem="a20-F8-AAz" firstAttribute="leading" secondItem="Vq7-Bo-7py" secondAttribute="leading" constant="10" id="xnO-2x-4gX"/>
                             <constraint firstAttribute="trailing" secondItem="nzM-MK-y6w" secondAttribute="trailing" constant="20" id="zp1-Xf-JQs"/>
                         </constraints>
@@ -136,14 +133,11 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="SRx-aK-eUb"/>
-                                <exclude reference="MeI-9X-OiL"/>
-                                <exclude reference="red-wo-eFg"/>
                                 <exclude reference="hXK-hE-wsN"/>
-                                <exclude reference="Ndt-g9-Mcn"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="QUt-6R-Aev">
+                    <navigationItem key="navigationItem" title="Price List" id="QUt-6R-Aev">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Header Icon Notification" id="XWi-Ik-NZq">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
