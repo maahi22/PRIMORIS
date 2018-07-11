@@ -43,6 +43,9 @@
                         <state key="normal" title="Reschedule">
                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="rescheduleButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="n3J-QV-bCp"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rf7-nM-FNR">
                         <rect key="frame" x="230" y="40" width="80" height="25"/>
@@ -55,6 +58,9 @@
                         <state key="normal" title="Cancel">
                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="cancelButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NOH-Lr-kQy"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4PN-ey-7be">
                         <rect key="frame" x="10" y="40" width="180" height="25"/>
@@ -112,7 +118,7 @@
                 <outlet property="cancelButton" destination="Rf7-nM-FNR" id="K0K-uu-EVJ"/>
                 <outlet property="dateLabel" destination="3od-P6-xw1" id="hAI-22-AfZ"/>
                 <outlet property="historyTableView" destination="VDr-my-hbb" id="mHI-TA-nju"/>
-                <outlet property="rescheduleButton" destination="DHk-6a-GLI" id="NAW-Ph-kF3"/>
+                <outlet property="rescheduleButton" destination="DHk-6a-GLI" id="tNL-Lw-5tb"/>
                 <outlet property="separatorView" destination="O92-pU-oD2" id="kwP-Ln-0M0"/>
                 <outlet property="timeLabel" destination="4PN-ey-7be" id="dXM-4Q-u8e"/>
             </connections>

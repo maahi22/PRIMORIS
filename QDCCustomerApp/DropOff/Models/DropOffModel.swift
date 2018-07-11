@@ -11,7 +11,7 @@ import Foundation
 struct DropOffModel:Codable{
     
     let DropOffDate:String
-    let DropOffTime:[PickUpTimeModel]
+    let DropOffTime:[DropOffTimeModel]
     
 }
 

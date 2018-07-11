@@ -37,7 +37,7 @@ class MyRequestViewModel: NSObject {
     
     func myRequestAt(for cellAtIndex:IndexPath) -> MyRequestModel? {
         guard let myRequestModel = myRequestModel else { return nil }
-        return myRequestModel[cellAtIndex.item]
+        return myRequestModel[cellAtIndex.row]
         
     }
     

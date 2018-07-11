@@ -10,8 +10,8 @@ import UIKit
 
 protocol MyRequestCellDelegate {
     
-    func didSelectRescheduleButton(obj:AnyObject) ;
-    func didSelectCancelButton(obj:AnyObject) ;
+    func didSelectRescheduleButton(_ obj:AnyObject) ;
+    func didSelectCancelButton(_ obj:AnyObject) ;
     
 }
 
@@ -28,7 +28,7 @@ class MyRequestCell: UITableViewCell {
     var historyArray:NSArray = NSArray()
     var Obj: AnyObject!
     
-    var requestCelldelegate:MyRequestCellDelegate! = nil
+    var requestCelldelegate:MyRequestCellDelegate?
     
     
     
@@ -42,7 +42,47 @@ class MyRequestCell: UITableViewCell {
     
     
     
+    var serveMyRequest:MyRequestModel?{
+        didSet{
+            guard let serviceArea = serveMyRequest else { return  }
+            dateLabel.text = serviceArea.PickUpDate ?? ""
+            timeLabel.text = serviceArea.PickUpTime ?? ""
+            
+            Obj = serviceArea as AnyObject
+        }
+    }
     
+    var serveMyDropoff:MyRequestDropOffModel?{
+        didSet{
+            guard let serviceArea = serveMyDropoff else { return  }
+            dateLabel.text = serviceArea.pickUpDate ?? ""
+            timeLabel.text = serviceArea.dropOffTime ?? ""
+            Obj = serveMyDropoff as AnyObject
+            
+            
+            
+            
+            if (serviceArea.history?.count)! > 0 {
+                
+               
+                 
+                /*if (serviceArea.history?.count)! > 1 {
+                 cell.arrowLabel.isHidden = false
+                 cell.historyTableView.isHidden = true
+                 }else{
+                 cell.arrowLabel.isHidden = true
+                 cell.historyTableView.isHidden = true
+                 }
+                 
+                 if ((clickedRow != nil) && (clickedRow == indexPath.row)) {
+                 cell.arrowLabel.isHidden = true
+                 cell.historyTableView.isHidden = false
+                 cell.showRescheduleDetail(dropoffModel)
+                 }*/
+            }
+            
+        }
+    }
     
     
     override func awakeFromNib() {
@@ -71,6 +111,23 @@ class MyRequestCell: UITableViewCell {
         self.cancelButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
         self.cancelButton.backgroundColor = BUTTON_COLOUR
     }
+    
+    
+    
+    @IBAction func rescheduleButtonClick(_ sender: Any) {
+        requestCelldelegate?.didSelectRescheduleButton( self.Obj)
+        print("reschedule")
+    }
+    
+    
+    
+    @IBAction func cancelButtonClick(_ sender: Any) {
+        
+        requestCelldelegate?.didSelectCancelButton( self.Obj)
+        print("cancel")
+    }
+    
+    
     
    /* func showRescheduleDetail(dropOffObj:QDCCustomerDropoffModel) {
         
