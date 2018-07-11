@@ -37,6 +37,22 @@ class OrderDetailCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    var myOrderDetailModel:OrderSubDetailModel?{
+        didSet{
+            guard let orderDetailObj = myOrderDetailModel else { return  }
+            
+            
+            garmentNameLabel.text = orderDetailObj.garmentName
+            categoryLabel.text = orderDetailObj.services
+            statusLabel.text = orderDetailObj.status
+            guard  let iconUrl =  orderDetailObj.iconUrl else {
+                return
+            }
+           // iconImageView.text = orderDetailObj.totalAmount
+            
+            
+        }
+    }
     
     
     func setupUI(orderSubDetailObj:OrderSubDetailModel) {
