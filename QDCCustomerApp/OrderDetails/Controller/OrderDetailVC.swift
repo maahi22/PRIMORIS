@@ -11,6 +11,7 @@ import UIKit
 class OrderDetailVC: UIViewController {
 
     
+    @IBOutlet private var orderDetailViewModel:OrderDetailViewModel!
     
     @IBOutlet weak var orderDetailTableView: UITableView!
     
@@ -31,19 +32,69 @@ class OrderDetailVC: UIViewController {
     
     @IBOutlet weak var scheduleButton:UIButton!
     
-   // var orderDetailModelObj:QDCOrderDetailModel!
+    var orderDetailModelObj:MyOrderModel!
     var orderDetailArray:NSArray = NSArray()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.setupUI()
+        
+        orderDetailTableView.register(OrderDetailCell.nib, forCellReuseIdentifier: OrderDetailCell.identifier)
+        
+        
+        
+        orderDetailViewModel.getMyOrder(orderDetailModelObj.orderNumber!, completion: {  [weak self] (isSuccess, message) in
+            
+            guard let strongSelf = self else{return}
+            
+            if isSuccess {
+                DispatchQueue.main.async {
+                    strongSelf.orderDetailTableView.reloadData()
+                    
+                }
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            }
+            
+            
+        })
+        
+        
     }
 
-    
+    func setupUI() {
+        
+        self.view.backgroundColor = PRIMARY_COLOUR
+        self.orderDetailTableView.backgroundColor = UIColor.white
+        
+        self.orderLabel.text = orderDetailModelObj.orderNumber
+        self.dueDateLabel.text = orderDetailModelObj.dueDate
+        self.totalPriceLabel.text = orderDetailModelObj.totalAmount
+        self.totalClothsLabel.text = orderDetailModelObj.totalGarments
+        self.pendingPriceLabel.text = orderDetailModelObj.pendingAmount
+        self.pendingClothsLabel.text = orderDetailModelObj.pendingGarment
+        
+        self.scheduleButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
+        self.scheduleButton.backgroundColor = BUTTON_COLOUR
+        
+        
+        self.totalPriceImageView.image = self.totalPriceImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        self.totalPriceImageView.tintColor = APP_ICON_COLOUR
+        self.totalClothImageView.image = self.totalClothImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        self.totalClothImageView.tintColor = APP_ICON_COLOUR
+        self.pendingPriceImageView.image = self.pendingPriceImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        self.pendingPriceImageView.tintColor = APP_ICON_COLOUR
+        self.pendingClothImageView.image = self.pendingClothImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        self.pendingClothImageView.tintColor = APP_ICON_COLOUR
+    }
 
 }
+
+
+
 
 
 extension OrderDetailVC{
@@ -53,3 +104,45 @@ extension OrderDetailVC{
         return navViewController
     }
 }
+
+
+
+extension OrderDetailVC:UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return orderDetailViewModel.numberOfmyOrder()
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = orderDetailTableView.dequeueReusableCell(withIdentifier: OrderDetailCell.identifier, for: indexPath)  as? OrderDetailCell else { return UITableViewCell() }
+        
+        cell.myOrderDetailModel =  orderDetailViewModel.myOrderForIndexPath(indexPath)
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 0.1))
+        footerView.backgroundColor = UIColor.clear
+        return footerView
+    }
+    
+    
+}
+
+extension OrderDetailVC:UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+
+        
+}
+
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return 82
+    }
+
+}
+

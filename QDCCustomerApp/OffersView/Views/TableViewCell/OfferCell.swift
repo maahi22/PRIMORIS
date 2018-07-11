@@ -63,18 +63,4 @@ class OfferCell: UITableViewCell {
     
     
     
-    
-    /*func setupUI(offerDict:NSDictionary) {
-        
-        self.titleLabel.text = offerDict["Title"] as? String
-        self.descriptionLabel.text = offerDict["Descreption"] as? String
-        
-        self.iconImageView.image = self.iconImageView.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        self.iconImageView.tintColor = APP_ICON_COLOUR
-        
-        self.titleLabel.textColor = PRIMARY_COLOUR
-        self.descriptionLabel.textColor = UIColor.blackColor()
-        
-    }*/
-    
 }

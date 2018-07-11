@@ -95,10 +95,17 @@ class DashboardVC: UIViewController {
     
     @IBAction func notificationClick(_ sender: Any) {
         
-        guard let navViewController = NotificationVC.getStoryboardInstance(),
-            let viewController = navViewController.topViewController as? NotificationVC
+        
+        guard let navViewController = DropOffVC.getStoryboardInstance(),
+            let viewController = navViewController.topViewController as? DropOffVC
             else { return  }
         self.navigationController?.pushViewController(viewController, animated: true)
+        
+        
+//        guard let navViewController = NotificationVC.getStoryboardInstance(),
+//            let viewController = navViewController.topViewController as? NotificationVC
+//            else { return  }
+//        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     

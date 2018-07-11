@@ -9,6 +9,20 @@
 import Foundation
 
 struct MyRequestModel:Codable{
-    let Title:String?
-    let Descreption:String?
+    /*let Title:String?
+    let Descreption:String?*/
+    
+    
+    let ClientID:String?
+    let BranchID:String?
+    let StoreCode:String?
+    let StoreName:String?
+    let PickUpNumber:String?
+    let PickUpDate:String?
+    let PickUpTime:String?
+    let Status:String?
+    let ExpressDeliveryKey:String?
+    let ExpressDeliveryValue:String?
+    let SpecialInstruction:String?
+    
 }

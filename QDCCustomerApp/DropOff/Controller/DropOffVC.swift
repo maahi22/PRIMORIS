@@ -37,9 +37,58 @@ class DropOffVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dateSelectionCollectionView.register(DateCollectionViewCell.nib, forCellWithReuseIdentifier: DateCollectionViewCell.identifier)
+        
+        timeSelectionCollectionView.register(TimeCollectionViewCell.nib, forCellWithReuseIdentifier: TimeCollectionViewCell.identifier)
+        self.setupUI()
+        
+        
+        dropOffViewModel.getDropOff(pickupDateKey: self.selectedPickupDate, pickupTimeKey: self.selectedPickupTime) { [weak self] (isSuccess, message) in
+            
+            guard let strongSelf = self else{return}
+            
+            if isSuccess {
+                DispatchQueue.main.async {
+                    
+                    strongSelf.dateSelectionCollectionView.reloadData()
+                    
+                    guard let dateStr =  strongSelf.dropOffViewModel.dropOffFirstDate() else {return }
+                    strongSelf.selectedPickupDate = dateStr
+                    
+                    
+                    guard let time =  strongSelf.dropOffViewModel.dropOffFirstTime() else {return }
+                    strongSelf.selectedPickupTime = time
+                    
+                    
+                    strongSelf.timeSelectionCollectionView.reloadData()
+                    
+                    
+                }
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            }
+        }
+        
+        
         
     }
 
+    func setupUI() {
+//        self.specialInstructionTextView.textColor = TEXT_FIELD_COLOUR
+//
+//        self.firstButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+//        self.firstButton.backgroundColor = UIColor.white
+//
+//        self.secondButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+//        self.secondButton.backgroundColor = UIColor.white
+//
+//        self.schedulePickupButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
+//        self.schedulePickupButton.backgroundColor = BUTTON_COLOUR
+    }
+    
+    
+    
 }
 
 extension DropOffVC{
@@ -52,7 +101,7 @@ extension DropOffVC{
 
 
 
-/*
+
 extension DropOffVC:UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -62,20 +111,19 @@ extension DropOffVC:UICollectionViewDelegate{
                 return // previos dates
             }
             
-            // let scheduleModel = self.pickUpScheduleArray.objectAtIndex(indexPath.item) as? QDCScheduleModel
-            guard let selDate = dropOffViewModel.pickUpDate(for: indexPath) else{ return }
+            guard let selDate = dropOffViewModel.dropOffDate(for: indexPath) else{ return }
             
-            self.selectedDate = selDate
-            //self.selectedTime = (scheduleModel?.timeArray.objectAtIndex(0))! as! String
+            self.selectedDropOffDate = selDate
+            
             self.selectedDateIndex = indexPath.item
             self.dateSelectionCollectionView.reloadData()
             self.timeSelectionCollectionView.reloadData()
             
         }else{
             
-            //let scheduleModel = self.pickUpScheduleArray.objectAtIndex(selectedDateIndex) as? QDCScheduleModel
-            guard let timeStr = dropOffViewModel.pickUpTime(for: indexPath, pickUpDate: self.selectedDate) else{return}
-            self.selectedTime = timeStr //(scheduleModel?.timeArray.objectAtIndex(indexPath.item))! as! String
+            
+            guard let timeStr = dropOffViewModel.dropOffTime(for: indexPath, dropOffDate: self.selectedDropOffDate) else{return}
+            self.selectedDropOffTime = timeStr
             self.timeSelectionCollectionView.reloadData()
         }
     }
@@ -83,9 +131,9 @@ extension DropOffVC:UICollectionViewDelegate{
     
 }
 
-extension PickUpDateVC:UICollectionViewDelegateFlowLayout{
+extension DropOffVC:UICollectionViewDelegateFlowLayout{
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var cellSize:CGSize!
         
         if collectionView.tag == 1 {
@@ -107,10 +155,11 @@ extension DropOffVC:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
-            return dropOffViewModel.numberDropOffDate()
+            return dropOffViewModel.numberOfDropOffDate()
         }else{
             
-            return dropOffViewModel.numberDropOffTime(pickUpDate:selectedDate)
+            return dropOffViewModel.numberOfDropOffTime(dropOffDate: selectedDropOffDate)
+            
         }
         
         
@@ -124,7 +173,7 @@ extension DropOffVC:UICollectionViewDataSource{
         if collectionView.tag == 1 {
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DateCollectionViewCell.identifier, for: indexPath) as? DateCollectionViewCell else { return UICollectionViewCell() }
-            //cell.dateLabel.text = pickUpDateViewModel.pickUpDate(for: indexPath)
+            
             guard let dateStr =  dropOffViewModel.dropOffDate(for: indexPath) else {return UICollectionViewCell()  }
             if indexPath.row == 0 || indexPath.row == 1 {
                 
@@ -135,8 +184,7 @@ extension DropOffVC:UICollectionViewDataSource{
                 cell.dateLabel.textColor = .gray
                 cell.monthLabel.textColor = .gray
             }else{
-                //let scheduleModel = self.pickUpScheduleArray.objectAtIndex(indexPath.item) as? QDCScheduleModel
-                //dateString = (scheduleModel?.date)!
+                
                 cell.contentView.backgroundColor = UIColor.white
                 cell.dateLabel.textColor = BUTTON_COLOUR
                 cell.dayLabel.textColor = UIColor.darkGray
@@ -148,7 +196,7 @@ extension DropOffVC:UICollectionViewDataSource{
             cell.dateLabel.text = tempArr[0]
             cell.monthLabel.text = tempArr[1]
             
-            if dateStr == self.selectedDate {
+            if dateStr == self.selectedDropOffDate {
                 cell.arrowImageView.isHidden = false
             }else{
                 cell.arrowImageView.isHidden = true
@@ -159,7 +207,7 @@ extension DropOffVC:UICollectionViewDataSource{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TimeCollectionViewCell.identifier, for: indexPath) as? TimeCollectionViewCell else { return UICollectionViewCell() }
             
             
-            guard let timeString = dropOffViewModel.dropOffTime(for: indexPath, pickUpDate: selectedDate) else{return UICollectionViewCell()}
+            guard let timeString = dropOffViewModel.dropOffTime(for: indexPath, dropOffDate: selectedDropOffDate) else{return UICollectionViewCell()}
             
             if timeString.contains("AM") {
                 cell.timeLabel.text = timeString.replacingOccurrences(of: "AM", with: "")
@@ -169,7 +217,7 @@ extension DropOffVC:UICollectionViewDataSource{
                 cell.formatLabel.text = "PM"
             }
             
-            if timeString == self.selectedTime {
+            if timeString == self.selectedDropOffTime {
                 cell.contentView.backgroundColor = BUTTON_COLOUR
                 cell.timeLabel.textColor = UIColor.white
             }else{
@@ -181,4 +229,4 @@ extension DropOffVC:UICollectionViewDataSource{
     }
     
     
-}*/
+}

@@ -65,6 +65,25 @@ class CommonUtilities: NSObject {
     }
     
     
+    class func getTwoPreviousDaysFromStringForDropOFF(dateString:String) -> (dayOne:DropOffModel, dayTwo:DropOffModel) {
+        
+        let calendar = Calendar.current
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        
+        let dateObj = dateFormatter.date(from: dateString)
+        
+        let oneDaysAgo =  calendar.date(byAdding: .day, value: -1, to: dateObj!)
+        let twoDaysAgo = calendar.date(byAdding: .day, value: -2, to: dateObj!)
+        
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        
+        let oneDays = DropOffModel(DropOffDate: dateFormatter.string(from: oneDaysAgo!), DropOffTime: [])
+        let twoDays = DropOffModel(DropOffDate: dateFormatter.string(from: twoDaysAgo!), DropOffTime: [])
+        return (oneDays,twoDays)
+    }
+    
+    
 //    class func isValidEmail(testStr:String) -> Bool {
 //
 //        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"

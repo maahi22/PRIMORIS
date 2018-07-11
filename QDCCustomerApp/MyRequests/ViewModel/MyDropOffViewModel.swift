@@ -30,13 +30,13 @@ class MyDropOffViewModel: NSObject {
     
     
     
-    func numberMyRequest() -> Int {
+    func numberMyRequestDropOff() -> Int {
         guard let dropOffModel = dropOffModel else { return 0 }
         return dropOffModel.count
     }
     
     
-    func myRequestAt(for cellAtIndex:IndexPath) -> MyRequestDropOffModel? {
+    func myRequestDropOffAt(for cellAtIndex:IndexPath) -> MyRequestDropOffModel? {
         guard let dropOffModel = dropOffModel else { return nil }
         return dropOffModel[cellAtIndex.item]
         

@@ -1,8 +1,8 @@
 //
-//  PriceListClient.swift
+//  MyOrderClient.swift
 //  QDCCustomerApp
 //
-//  Created by Maahi on 10/07/18.
+//  Created by Maahi on 11/07/18.
 //  Copyright © 2018 QuickDryCleaning. All rights reserved.
 //
 
@@ -10,21 +10,21 @@ import UIKit
 import Alamofire
 
 
-
-class PriceListClient: NSObject {
+class MyOrderClient: NSObject {
 
     // MARK: - Injections
     internal let networkClient = NetworkClient.shared
     
-    func featchPriceList(completion:@escaping ([PriceListModel]?,String)->())  {
+    func featchMyOrder(completion:@escaping (OrderSummaryModel?,String)->())  {
         
         let branchName = QDCUserDefaults.getDataBaseName()
         let branchID = QDCUserDefaults.getBranchId()
         let clientID = QDCUserDefaults.getClientID()
         let token = QDCUserDefaults.getAccessToken()
+        let custId = QDCUserDefaults.getCustomerId()
         
         
-        let apiname = PRICE_LIST_RELATIVE_URL + "\(clientID)/\(branchID)"//+ branchName + "/" + branchId
+        let apiname = MY_ORDERS_RELATIVE_URL + "\(clientID)/\(branchID)/\(custId)"
         let headers = ["token": "\(token)"] as [String:String]
         
         
@@ -33,8 +33,8 @@ class PriceListClient: NSObject {
                                            params: nil,
                                            headers: headers,
                                            success: { (data, httpResponse) in
-                                            if let priceListModel = decodeJSON(type: [PriceListModel].self, from: data) {
-                                                completion(priceListModel, "Success")
+                                            if let myOrderViewModel = decodeJSON(type: OrderSummaryModel.self, from: data) {
+                                                completion(myOrderViewModel, "Success")
                                             }else{
                                                 completion(nil,"failed")
                                             }

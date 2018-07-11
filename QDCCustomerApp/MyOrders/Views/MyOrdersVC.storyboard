@@ -248,6 +248,7 @@
                         <outlet property="dueImageView" destination="lQp-rY-iA2" id="Z0Z-CY-72f"/>
                         <outlet property="dueLabel" destination="3YH-G0-UbT" id="Ryd-xf-vpM"/>
                         <outlet property="inProcessLabel" destination="asn-dd-obm" id="hcz-Di-qbu"/>
+                        <outlet property="myOrderViewModel" destination="USP-S7-i0W" id="iSt-pc-qWQ"/>
                         <outlet property="orderTableView" destination="5Cm-fP-ohX" id="Ngv-n0-eox"/>
                         <outlet property="pendingOrderLabel" destination="uch-xI-14X" id="Hl4-Kz-9LX"/>
                         <outlet property="processImageView" destination="pkG-v1-qre" id="PKa-Da-Rgz"/>
@@ -256,6 +257,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHJ-Wg-f31" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="USP-S7-i0W" customClass="MyOrderViewModel" customModule="QDCCustomerApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="myOrderClient" destination="9YU-QX-bI1" id="jtX-8c-nAa"/>
+                    </connections>
+                </customObject>
+                <customObject id="9YU-QX-bI1" customClass="MyOrderClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="279.19999999999999" y="1420.8395802098951"/>
         </scene>
