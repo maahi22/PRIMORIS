@@ -11,6 +11,7 @@ import UIKit
 class OrderDetailVC: UIViewController {
 
     
+    @IBOutlet private var orderDetailViewModel:OrderDetailViewModel!
     
     @IBOutlet weak var orderDetailTableView: UITableView!
     
@@ -31,14 +32,31 @@ class OrderDetailVC: UIViewController {
     
     @IBOutlet weak var scheduleButton:UIButton!
     
-   // var orderDetailModelObj:QDCOrderDetailModel!
+    var orderDetailModelObj:MyOrderModel!
     var orderDetailArray:NSArray = NSArray()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        orderDetailViewModel.getMyOrder(orderDetailModelObj.orderNumber!, completion: {  [weak self] (isSuccess, message) in
+            
+            guard let strongSelf = self else{return}
+            
+            if isSuccess {
+                DispatchQueue.main.async {
+                    strongSelf.orderDetailTableView.reloadData()
+                    
+                }
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            }
+            
+            
+        })
+        
+        
     }
 
     

@@ -329,6 +329,7 @@
                     <connections>
                         <outlet property="dueDateLabel" destination="a7t-Dc-Htx" id="xNn-VB-9i8"/>
                         <outlet property="orderDetailTableView" destination="bAb-zN-OBw" id="MMw-y8-vG5"/>
+                        <outlet property="orderDetailViewModel" destination="Tg8-Pa-Wi1" id="Gtd-Xa-HLl"/>
                         <outlet property="orderLabel" destination="2qX-oZ-BMT" id="zuF-fc-Djm"/>
                         <outlet property="pendingClothImageView" destination="SQl-yT-pDF" id="1hf-AL-s69"/>
                         <outlet property="pendingClothsLabel" destination="8Uh-Kv-0QU" id="j0p-Wf-cyO"/>
@@ -342,6 +343,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUk-Wg-swe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Tg8-Pa-Wi1" customClass="OrderDetailViewModel" customModule="QDCCustomerApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="orderDetailClient" destination="lTf-h0-8hx" id="Kei-i4-r91"/>
+                    </connections>
+                </customObject>
+                <customObject id="lTf-h0-8hx" customClass="OrderDetailClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="852" y="1750.9745127436283"/>
         </scene>

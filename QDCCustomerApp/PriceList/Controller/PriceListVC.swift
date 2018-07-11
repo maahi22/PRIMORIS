@@ -27,7 +27,23 @@ class PriceListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        priceListViewModel.getPriceList { [weak self] (isSuccess, message) in
+            
+            guard let strongSelf = self else{return}
+            
+            if isSuccess {
+                DispatchQueue.main.async {
+                    strongSelf.categorySelectionCollectionView.reloadData()
+                    strongSelf.priceCollectionView.reloadData()
+                }
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            }
+            
+            
+        }
     }
 
     

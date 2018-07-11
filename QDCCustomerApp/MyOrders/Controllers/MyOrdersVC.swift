@@ -10,8 +10,12 @@ import UIKit
 
 class MyOrdersVC: UIViewController {
 
-    @IBOutlet weak var orderTableView: UITableView!
     
+    
+    @IBOutlet private var myOrderViewModel:MyOrderViewModel!
+    
+    
+    @IBOutlet weak var orderTableView: UITableView!
     @IBOutlet weak var pendingOrderLabel:UILabel!
     @IBOutlet weak var inProcessLabel:UILabel!
     @IBOutlet weak var dueLabel:UILabel!
@@ -28,7 +32,47 @@ class MyOrdersVC: UIViewController {
 
         self.registerNib()
         self.setupUI()
-        //self.setNavigationBar(MY_ORDER_TITLE, leftHidden: false, rightHidden: false)
+        
+        
+        
+        
+        myOrderViewModel.getMyOrder { [weak self] (isSuccess, message) in
+            guard let strongSelf = self else{return}
+            
+            if isSuccess {
+                DispatchQueue.main.async {
+                    
+                    if let totalord = strongSelf.myOrderViewModel.orderSummaryModel?.totalOrder {
+                         strongSelf.pendingOrderLabel.text = totalord
+                    }
+                    
+                    if let processCloth = strongSelf.myOrderViewModel.orderSummaryModel?.processCloth {
+                        strongSelf.inProcessLabel.text = processCloth
+                    }
+                    
+                    if let totalAmount = strongSelf.myOrderViewModel.orderSummaryModel?.totalAmount {
+                        strongSelf.dueLabel.text = totalAmount
+                    }
+                    
+                    if let readyCloth = strongSelf.myOrderViewModel.orderSummaryModel?.readyCloth {
+                        strongSelf.readyLabel.text = readyCloth
+                    }
+                    
+                    
+                   
+                   
+                    strongSelf.orderTableView.reloadData()
+                    
+                }
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            }
+            
+        }
+        
+        
+        
     }
 
     
@@ -64,14 +108,12 @@ extension MyOrdersVC{
 
 extension MyOrdersVC:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return myOrderViewModel.numberOfmyOrder()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = orderTableView.dequeueReusableCell(withIdentifier: MyOrderCell.identifier, for: indexPath)  as? MyOrderCell else { return UITableViewCell() }
        
-        
-        
-        
+        cell.myOrderModel =  myOrderViewModel.myOrderForIndexPath(indexPath)
         return cell
     }
 }
@@ -79,25 +121,18 @@ extension MyOrdersVC:UITableViewDataSource{
 extension MyOrdersVC:UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //if let orderDetailObj = self.orderArray[indexPath.row] as? QDCOrderDetailModel {
-            
-            
+        
+        if let orderDetailObj = myOrderViewModel.myOrderForIndexPath(indexPath) {
             guard let navViewController = OrderDetailVC.getStoryboardInstance(),
                 let  viewController = navViewController.topViewController as? OrderDetailVC
                 else { return  }
-           //navViewController.
+            viewController.orderDetailModelObj = orderDetailObj
             self.navigationController?.pushViewController(viewController, animated: true)
-            
-            
-           // self.performSegueWithIdentifier(SEGUE_ORDER_DETAIL_IDENTIFIER, sender: orderDetailObj)
-      //  }
-        
+    
     }
     
-    func navigateToSignUpChoice()  {
-        guard let navViewController = OrderDetailVC.getStoryboardInstance(),
-            let  viewController = navViewController.topViewController as? OrderDetailVC
-            else { return  }
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
+}
+    
+    
+    
 }

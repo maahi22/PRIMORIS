@@ -42,7 +42,19 @@ class MyOrderCell: UITableViewCell {
     }
     
     
-    
+    var myOrderModel:MyOrderModel?{
+        didSet{
+            guard let orderDetailObj = myOrderModel else { return  }
+            
+            
+            self.orderLabel.text = orderDetailObj.orderNumber
+            self.dateLabel.text = orderDetailObj.orderDate
+            self.statusLabel.text = orderDetailObj.status
+            self.priceLabel.text = orderDetailObj.totalAmount
+            self.clothLabel.text = orderDetailObj.totalGarments
+            
+        }
+    }
     
     func setupUI(orderDetailObj:OrderDetailModel) {
         
