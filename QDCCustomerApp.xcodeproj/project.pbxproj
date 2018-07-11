@@ -168,6 +168,7 @@
 		0FA43BF220F5FE0B00E64E6E /* MyOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA43BF120F5FE0B00E64E6E /* MyOrderModel.swift */; };
 		0FA43BF520F604E900E64E6E /* OrderDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA43BF420F604E900E64E6E /* OrderDetailViewModel.swift */; };
 		0FA43BF720F604FE00E64E6E /* OrderDetailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA43BF620F604FE00E64E6E /* OrderDetailClient.swift */; };
+		0FA43BFA20F613F800E64E6E /* ProfileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA43BF920F613F800E64E6E /* ProfileClient.swift */; };
 		0FA8C68420F20FA500F9DC83 /* CommonUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8C68320F20FA500F9DC83 /* CommonUtilities.swift */; };
 		0FA8C68620F2248700F9DC83 /* SchedulePickUpDateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8C68520F2248700F9DC83 /* SchedulePickUpDateClient.swift */; };
 		19815D5B28B0965573076D28 /* Pods_QDCCustomerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8206FF962A53EAF360AFEFB3 /* Pods_QDCCustomerAppTests.framework */; };
@@ -360,6 +361,7 @@
 		0FA43BF120F5FE0B00E64E6E /* MyOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderModel.swift; sourceTree = "<group>"; };
 		0FA43BF420F604E900E64E6E /* OrderDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewModel.swift; sourceTree = "<group>"; };
 		0FA43BF620F604FE00E64E6E /* OrderDetailClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailClient.swift; sourceTree = "<group>"; };
+		0FA43BF920F613F800E64E6E /* ProfileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileClient.swift; sourceTree = "<group>"; };
 		0FA8C68320F20FA500F9DC83 /* CommonUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtilities.swift; sourceTree = "<group>"; };
 		0FA8C68520F2248700F9DC83 /* SchedulePickUpDateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePickUpDateClient.swift; sourceTree = "<group>"; };
 		3BF99ED0F81071F3C951EEF4 /* Pods-QDCCustomerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDCCustomerAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDCCustomerAppTests/Pods-QDCCustomerAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -989,6 +991,7 @@
 		0F2AD39920F0780D002B4BF5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				0FA43BF820F613E000E64E6E /* ViewModel */,
 				0F2AD39B20F07833002B4BF5 /* Controller */,
 				0F2AD39A20F0781E002B4BF5 /* Views */,
 			);
@@ -1626,6 +1629,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		0FA43BF820F613E000E64E6E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0FA43BF920F613F800E64E6E /* ProfileClient.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		196AD45EC9F5E5D21E707B01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2019,6 +2030,7 @@
 				0F2C38A920F4AC66000C48D7 /* NotificationsModel.swift in Sources */,
 				0F68656F20EFD61C00F95363 /* PickUpDateVC.swift in Sources */,
 				0F5E426220F0B461005CC203 /* AboutUsVC.swift in Sources */,
+				0FA43BFA20F613F800E64E6E /* ProfileClient.swift in Sources */,
 				03CEBA7220DC18E000A1FAB3 /* UIImageView+URL.swift in Sources */,
 				036F54CB20F1182E00B4D7E0 /* CustomerSummaryClient.swift in Sources */,
 				0F5E425A20F0B371005CC203 /* FeedBackVC.swift in Sources */,
