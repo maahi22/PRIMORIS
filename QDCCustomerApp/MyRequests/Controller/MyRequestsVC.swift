@@ -13,8 +13,8 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
     @IBOutlet var myRequestViewModel:MyRequestViewModel!
     @IBOutlet var myDropOffViewModel:MyDropOffViewModel!
     
-    @IBOutlet private var schedulePickUpDateClient:SchedulePickUpDateClient!
-    @IBOutlet private var sheduledDropOffClient:SheduledDropOffClient!
+    @IBOutlet  var schedulePickUpDateClient:SchedulePickUpDateClient!
+    @IBOutlet  var sheduledDropOffClient:SheduledDropOffClient!
     
    
     
@@ -32,8 +32,10 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
     
     var isPickUpSelected:Bool = true
     //var dropOffModelArr:NSArray = NSArray()
-    var modelObj:AnyObject!
-    var clickedRow:Int!
+    var selectedMyRequestModel:MyRequestModel?
+    var selectedMyRequestDropOffModel:MyRequestDropOffModel?
+    
+    var clickedRow:Int?
     
     
     
@@ -187,14 +189,18 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
     
     func didSelectCancelButton(_ obj: AnyObject) {
         
-        self.modelObj = obj
+        //self.modelObj = obj
         
+       
+        
+    }
+    func didSelectCancelButton(_ objMyRequestModel: MyRequestModel?) {
+        self.selectedMyRequestModel = objMyRequestModel
         guard let navViewController = CancelReasonVC.getStoryboardInstance(),
             let viewController = navViewController.topViewController as? CancelReasonVC
             else { return  }
         viewController.cancelOrderdelegate = self
         self.present(navViewController, animated: true, completion: {})
-        
     }
     
     func didSelectCancelReason(_ cancelReason: String) {
@@ -216,24 +222,22 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
       
         
         
-        guard let dropOffObj = modelObj as? MyRequestDropOffModel else {
-            return
-        }
-        
-        guard let dropoffUpDate = dropOffObj.DropDate else {
-            return
-        }
-        guard let dropOffTime = dropOffObj.DropOffTime else {
-            return
-        }
-        guard let dropOffNumber = dropOffObj.DropOffNumber else {
+        guard let dropOffObj = selectedMyRequestDropOffModel,
+            let dropoffUpDate = dropOffObj.DropDate,
+            let dropOffTime = dropOffObj.DropOffTime,
+        let dropOffNumber = dropOffObj.DropOffNumber
+        else {
             return
         }
         
         
-        
-        
-        sheduledDropOffClient.getScheduleDropOff(dropOffDate: dropoffUpDate, dropOffTime: dropOffTime, flag: 3, pickupNumber: "", bookingNo: "", dropOffNumber: dropOffNumber, cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
+        sheduledDropOffClient.getScheduleDropOff(dropOffDate: dropoffUpDate,
+                                                 dropOffTime: dropOffTime,
+                                                 flag: 3,
+                                                 pickupNumber: "",
+                                                 bookingNo: "",
+                                                 dropOffNumber: dropOffNumber,
+                                                 cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
             
             guard let strongSelf = self else{return}
             
@@ -261,22 +265,23 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
         
         
         
-        guard let pickUpObj = modelObj as? MyRequestModel else {
+        guard let pickUpObj = selectedMyRequestModel,
+            let pickUpDate = pickUpObj.PickUpDate,
+        let pickUpTime = pickUpObj.PickUpTime,
+        let pickUpNumber = pickUpObj.PickUpNumber
+        else {
             return
         }
         
-        guard let pickUpDate = pickUpObj.PickUpDate else {
-            return
-        }
-        guard let pickUpTime = pickUpObj.PickUpTime else {
-            return
-        }
-        guard let pickUpNumber = pickUpObj.PickUpNumber else {
-            return
-        }
-        
-        
-        schedulePickUpDateClient.getSchedulePickup(pickupDate:pickUpDate , pickupTime:pickUpTime , flag: 3, pickupNumber:pickUpNumber , expressDeliveryID: "", specialInstruction: "", dropOffDate: "", dropOffTime: "", cancelReason: cancelReason) { [weak self](schedulePickUpModel, message) in
+        schedulePickUpDateClient.getSchedulePickup(pickupDate:pickUpDate ,
+                                                   pickupTime:pickUpTime ,
+                                                   flag: 3,
+                                                   pickupNumber:pickUpNumber ,
+                                                   expressDeliveryID: "",
+                                                   specialInstruction: "",
+                                                   dropOffDate: "",
+                                                   dropOffTime: "",
+                                                   cancelReason: cancelReason) { [weak self](schedulePickUpModel, message) in
             guard let strongSelf = self else{return}
             if let schedulePickUpModel = schedulePickUpModel {
                 

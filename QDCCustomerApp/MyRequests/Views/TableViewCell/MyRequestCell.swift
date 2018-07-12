@@ -8,10 +8,10 @@
 
 import UIKit
 
-protocol MyRequestCellDelegate {
+protocol MyRequestCellDelegate:class {
     
     func didSelectRescheduleButton(_ obj:AnyObject) ;
-    func didSelectCancelButton(_ obj:AnyObject) ;
+    func didSelectCancelButton(_ objMyRequestModel:MyRequestModel?) ;
     
 }
 
@@ -29,7 +29,7 @@ class MyRequestCell: UITableViewCell {
     var Obj: AnyObject!
     var dropOffModel: MyRequestDropOffModel?
     
-    var requestCelldelegate:MyRequestCellDelegate?
+    weak var requestCelldelegate:MyRequestCellDelegate?
     
     
     
@@ -105,7 +105,7 @@ class MyRequestCell: UITableViewCell {
     
     @IBAction func cancelButtonClick(_ sender: Any) {
         
-        requestCelldelegate?.didSelectCancelButton( self.Obj)
+        requestCelldelegate?.didSelectCancelButton(serveMyRequest)
         print("cancel")
     }
     
@@ -133,7 +133,7 @@ class MyRequestCell: UITableViewCell {
     }
     
     @IBAction func cancelButtonClick(sender: AnyObject) {
-        requestCelldelegate?.didSelectCancelButton(self.Obj)
+        requestCelldelegate?.didSelectCancelButton(serveMyRequest)
         print("cancel")
     }
     
