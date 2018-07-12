@@ -17,7 +17,7 @@ class PriceListViewModel: NSObject {
     
     func getPriceList(completion:@escaping(Bool,String)->())  {
         
-        priceListClient.featchPriceList { [weak self] (priceListModel, message) in
+        priceListClient.fetchPriceList { [weak self] (priceListModel, message) in
             guard let strongSelf = self else{return}
             if let priceListModel = priceListModel{
                 strongSelf.priceListModel = priceListModel

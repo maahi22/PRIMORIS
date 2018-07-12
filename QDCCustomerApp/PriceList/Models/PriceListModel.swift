@@ -10,16 +10,18 @@ import Foundation
 
 
 struct PriceListModel:Codable {
-    
     let Garment:String?
-    /*let Garment:String?
-    let Dry_Cleaning:String?
-    let Steam_Press:String?
-    let TINTORERIA:String?*/
-    //let PriceListGarment:[PriceListGarmentModel]
+    let Dry_Cleaning:Int
+    let Steam_Press:Int
+    let TINTORERIA:Int
+    
+    enum CodingKeys:String,CodingKey {
+        case Garment
+        case Dry_Cleaning = "Dry Cleaning"
+        case Steam_Press = "Steam Press"
+        case TINTORERIA
+    }
 }
 
 
-struct PriceListGarmentModel:Codable {
-    let Garment:String
-}
+

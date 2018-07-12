@@ -96,7 +96,7 @@ class PriceListVC: UIViewController {
     
     func registerNib() {
         
-    categorySelectionCollectionView.register(PriceCategoryCollectionCell.nib, forCellWithReuseIdentifier: PriceCategoryCollectionCell.identifier)
+        categorySelectionCollectionView.register(PriceCategoryCollectionCell.nib, forCellWithReuseIdentifier: PriceCategoryCollectionCell.identifier)
         
         priceCollectionView.register(PriceCollectionCell.nib, forCellWithReuseIdentifier: PriceCollectionCell.identifier)
     }

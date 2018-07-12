@@ -16,9 +16,9 @@ class PriceListClient: NSObject {
     // MARK: - Injections
     internal let networkClient = NetworkClient.shared
     
-    func featchPriceList(completion:@escaping ([PriceListModel]?,String)->())  {
+    func fetchPriceList(completion:@escaping ([PriceListModel]?,String)->())  {
         
-        let branchName = QDCUserDefaults.getDataBaseName()
+        //let branchName = QDCUserDefaults.getDataBaseName()
         let branchID = QDCUserDefaults.getBranchId()
         let clientID = QDCUserDefaults.getClientID()
         let token = QDCUserDefaults.getAccessToken()
