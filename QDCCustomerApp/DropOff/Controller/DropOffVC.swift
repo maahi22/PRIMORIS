@@ -53,11 +53,10 @@ class DropOffVC: UIViewController {
                     strongSelf.dateSelectionCollectionView.reloadData()
                     
                     guard let dateStr =  strongSelf.dropOffViewModel.dropOffFirstDate() else {return }
-                    strongSelf.selectedPickupDate = dateStr
-                    
-                    
+                    strongSelf.selectedDropOffDate = dateStr
+                
                     guard let time =  strongSelf.dropOffViewModel.dropOffFirstTime() else {return }
-                    strongSelf.selectedPickupTime = time
+                    strongSelf.selectedDropOffTime = time
                     
                     
                     strongSelf.timeSelectionCollectionView.reloadData()

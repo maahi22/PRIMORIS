@@ -69,10 +69,12 @@
                     <connections>
                         <outlet property="amountDetailTitleLabel" destination="0mB-gv-5Qa" id="dIF-Cn-sDJ"/>
                         <outlet property="amountTitleLabel" destination="beK-8f-FJm" id="F4z-SK-HV4"/>
+                        <outlet property="dueAmountClient" destination="KOs-lG-L77" id="k5O-Ko-cBq"/>
                         <outlet property="dueAmountLabel" destination="c5d-U0-NEm" id="KC6-BY-CT6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Aq-c7-jtl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="KOs-lG-L77" customClass="DueAmountClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="2732" y="1145.577211394303"/>
         </scene>
