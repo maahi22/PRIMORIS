@@ -46,7 +46,7 @@ class OfferCell: UITableViewCell {
             guard let offer = Offers else { return  }
             titleLabel.text = offer.Title ?? ""
             descriptionLabel.text = offer.Descreption ?? ""
-            
+            descriptionLabel.numberOfLines = 2
             iconImageView.image = self.iconImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
             self.iconImageView.tintColor = APP_ICON_COLOUR
             
