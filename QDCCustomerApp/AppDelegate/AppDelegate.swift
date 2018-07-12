@@ -132,7 +132,7 @@ extension AppDelegate{
                 return
         }
         newWindow.rootViewController = mainView*/
-        if QDCUserDefaults.getCustomerId().count > 0 {
+        if  UserDefaults.standard.bool(forKey: USER_DEFAULT_OTP_CORRECT_KEY) {
             
             guard let mainView = UIStoryboard(name: Screens.SideMenu.rawValue, bundle: nil).instantiateInitialViewController() as? CustomSideMenuViewController
                 else{

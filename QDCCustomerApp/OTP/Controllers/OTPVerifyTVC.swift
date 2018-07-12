@@ -121,7 +121,8 @@ class OTPVerifyTVC: UITableViewController {
             guard let strongSelf = self else{return}
             strongSelf.dismissLoadingHUD()
             if let otpCheckModel = otpCheckModel, otpCheckModel.OTPMatch.lowercased() == "true"{
-                
+                UserDefaults.standard.set(true, forKey: USER_DEFAULT_OTP_CORRECT_KEY)
+                UserDefaults.standard.synchronize()
                 guard let mainView = UIStoryboard(name: Screens.SideMenu.rawValue, bundle: nil).instantiateInitialViewController() as? CustomSideMenuViewController
                     else{
                         return
@@ -130,7 +131,8 @@ class OTPVerifyTVC: UITableViewController {
                 //guard let navViewController = DashboardVC.getStoryboardInstance() else{return}
                 strongSelf.present(mainView, animated: true, completion: nil)
             }else{
-                showAlertMessage(vc: strongSelf, title: .Message, message: message)
+                
+                showAlertMessage(vc: strongSelf, title: .Message, message: "Incorrect OTP please try again.")
             }
         }
     }
@@ -148,4 +150,17 @@ extension OTPVerifyTVC{
         guard let navViewController = storyborad.instantiateInitialViewController()  as? UINavigationController else { return nil }
         return navViewController
     }
+}
+
+
+extension OTPVerifyTVC:UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let maxLength = 4
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
+    }
+
 }

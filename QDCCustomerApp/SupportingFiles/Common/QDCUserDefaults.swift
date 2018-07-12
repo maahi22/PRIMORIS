@@ -10,6 +10,8 @@ import UIKit
 
 class QDCUserDefaults: NSObject {
 
+    
+    
     class func setPinCode(pin:String){
         
         UserDefaults.standard.set(pin, forKey: USER_DEFAULT_PIN_CODE_KEY)
