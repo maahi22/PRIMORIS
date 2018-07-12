@@ -20,7 +20,7 @@ class DropOffViewModel: NSObject {
             guard let strongSelf = self else{return}
             if let dropOffDateModels = dropOffDateModels{
                 strongSelf.dropOffDates = dropOffDateModels
-                let selectedDate = dropOffDateModels[0].DropOffDate
+                let selectedDate = dropOffDateModels[0].DropDateDate
                 let dates =  CommonUtilities.getTwoPreviousDaysFromStringForDropOFF(dateString: selectedDate)
                 strongSelf.dropOffDates?.insert(dates.dayTwo, at: 0)
                 strongSelf.dropOffDates?.insert(dates.dayOne, at: 1)
@@ -41,15 +41,15 @@ class DropOffViewModel: NSObject {
     
     func dropOffFirstDate() -> String? {
         guard let dropOffDates = dropOffDates else { return nil }
-        return dropOffDates[2].DropOffDate
+        return dropOffDates[2].DropDateDate
     }
     
     func dropOffFirstTime() -> String? {
         guard let dropOffDates = dropOffDates else { return nil }
-        let date =  dropOffDates[2].DropOffDate
+        let date =  dropOffDates[2].DropDateDate
         
         let dropOffTime = dropOffDates.filter({ (dropOffDateModels) -> Bool in
-            return dropOffDateModels.DropOffDate == date
+            return dropOffDateModels.DropDateDate == date
         })
         return dropOffTime[0].DropOffTime[0].Slots
     }
@@ -57,14 +57,19 @@ class DropOffViewModel: NSObject {
     
     func dropOffDate(for cellAtIndex:IndexPath) -> String? {
         guard let dropOffDates = dropOffDates else { return nil }
-        return dropOffDates[cellAtIndex.item].DropOffDate
+        return dropOffDates[cellAtIndex.item].DropDateDate
         
     }
     
     func numberOfDropOffTime(dropOffDate:String) -> Int {
+        
+        if dropOffDate == "" {
+            return 0
+        }
+        
         guard let dropOffDates = dropOffDates else { return 0 }
         let dropOffTime = dropOffDates.filter({ (dropOffDateModels) -> Bool in
-            return dropOffDateModels.DropOffDate == dropOffDate
+            return dropOffDateModels.DropDateDate == dropOffDate
         })
         
         return dropOffTime[0].DropOffTime.count
@@ -74,7 +79,7 @@ class DropOffViewModel: NSObject {
         guard let dropOffDates = dropOffDates else { return nil }
         
         let dropOffTime = dropOffDates.filter({ (dropOffDateModels) -> Bool in
-            return dropOffDateModels.DropOffDate == dropOffDate
+            return dropOffDateModels.DropDateDate == dropOffDate
         })
         
         return dropOffTime[0].DropOffTime[cellAtIndex.item].Slots

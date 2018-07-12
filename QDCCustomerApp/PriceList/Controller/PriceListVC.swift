@@ -28,6 +28,10 @@ class PriceListVC: UIViewController {
         super.viewDidLoad()
 
         
+        self.setupUI()
+        self.registerNib()
+        
+        
         priceListViewModel.getPriceList { [weak self] (isSuccess, message) in
             
             guard let strongSelf = self else{return}
@@ -56,22 +60,24 @@ class PriceListVC: UIViewController {
     }
     
     
-    @IBAction func showCategoryButtonClick(sender: AnyObject) {
+    @IBAction func showCategoryButtonClick(_ sender: Any) {
+    
         
-//        if self.garmentServicesArray.count > 0 {
-//
-//            let tempArr = NSMutableArray.init(array:self.garmentServicesArray)
+        /*if self.garmentServicesArray.count > 0 {
+
+            let tempArr = NSMutableArray.init(array:self.garmentServicesArray)
         
-//            let actionSheet = UIActionSheet(title: "Please select service", delegate: self, cancelButtonTitle:nil, destructiveButtonTitle: nil, otherButtonTitles:self.garmentServicesArray[0] as! String)
-//            tempArr.removeObjectAtIndex(0)
-//
-//            for buttonTitle in tempArr {
-//                actionSheet.addButtonWithTitle(buttonTitle as? String)
-//            }
-//
-//            actionSheet.showInView(self.view)
+            let actionSheet = UIActionSheet(title: "Please select service", delegate: self, cancelButtonTitle:nil, destructiveButtonTitle: nil, otherButtonTitles:self.garmentServicesArray[0] as! String)
+            tempArr.removeObjectAtIndex(0)
+
+            for buttonTitle in tempArr {
+                actionSheet.addButtonWithTitle(buttonTitle as? String)
+            }
+
+            actionSheet.showInView(self.view)
         
-       // }
+        }*/
+    
     }
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
@@ -85,24 +91,16 @@ class PriceListVC: UIViewController {
     }
     
     
+    
+    
+    
     func registerNib() {
         
-//        let priceCollectionCell = UINib(nibName: "QDCPriceCollectionViewCell", bundle:nil)
-//        priceCollectionView!.registerNib(priceCollectionCell, forCellWithReuseIdentifier: PRICE_COLLECTION_CELL_IDENTIFIER)
-//
-//        let categorySelectionCell = UINib(nibName: "QDCPriceCategoryCollectionViewCell", bundle:nil)
-//        categorySelectionCollectionView!.registerNib(categorySelectionCell, forCellWithReuseIdentifier: PRICE_CATEGORY_COLLECTION_CELL_IDENTIFIER)
+    categorySelectionCollectionView.register(PriceCategoryCollectionCell.nib, forCellWithReuseIdentifier: PriceCategoryCollectionCell.identifier)
         
+        priceCollectionView.register(PriceCollectionCell.nib, forCellWithReuseIdentifier: PriceCollectionCell.identifier)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-
+  
 }
 
 extension PriceListVC{
@@ -167,7 +165,7 @@ extension PriceListVC : UICollectionViewDataSource {
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PriceCollectionCell.identifier, for: indexPath as IndexPath) as? PriceCollectionCell else { return UICollectionViewCell() }
             
-            
+           
 //
 //            let dictKey:String = self.categoryArr[indexPath.row] as! String
 //            let arr:NSArray = self.responseGarmentDict[dictKey] as! NSArray

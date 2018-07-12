@@ -43,9 +43,29 @@ class ProfileVC: UIViewController {
     }
     
     
-    func hitUpdateUserWebService() {
+    
+    @IBAction func UpdateButtonClicks(_ sender: Any) {
         
-        profileClient.updateProfile(areaLocation: self.pickupAddressTextField.text!, name: self.nameTextField.text!, address: self.addressTextField.text!) {  [weak self] (isSuccess, message)  in
+        guard
+            let name = nameTextField.text, !name.isEmpty,
+            let areaLocation = pickupAddressTextField.text, !areaLocation.isEmpty,
+            let add = addressTextField.text, !add.isEmpty
+            else {
+                //doneBarButton.isEnabled = false
+                
+                showAlertMessage(vc: self, title: .Error, message: "Fill All mandatory fields")
+                return
+        }
+        
+        
+        self.hitUpdateUserWebService(name, address: add, addressLocation: areaLocation)
+    }
+    
+    
+    
+    func hitUpdateUserWebService(_ name:String , address:String,addressLocation:String) {
+        
+        profileClient.updateProfile(areaLocation: address, name: name, address: address) {  [weak self] (isSuccess, message)  in
             
             guard let strongSelf = self else{return}
             //  strongSelf.dismissLoadingHUD()

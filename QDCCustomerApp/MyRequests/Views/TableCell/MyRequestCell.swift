@@ -25,8 +25,9 @@ class MyRequestCell: UITableViewCell {
     @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var arrowLabel: UILabel!
     @IBOutlet weak var historyTableView: UITableView!
-    var historyArray:NSArray = NSArray()
+    
     var Obj: AnyObject!
+    var dropOffModel: MyRequestDropOffModel?
     
     var requestCelldelegate:MyRequestCellDelegate?
     
@@ -55,31 +56,12 @@ class MyRequestCell: UITableViewCell {
     var serveMyDropoff:MyRequestDropOffModel?{
         didSet{
             guard let serviceArea = serveMyDropoff else { return  }
-            dateLabel.text = serviceArea.pickUpDate ?? ""
-            timeLabel.text = serviceArea.dropOffTime ?? ""
+            dateLabel.text = serviceArea.PickUpDate ?? ""
+            timeLabel.text = serviceArea.DropOffTime ?? ""
             Obj = serveMyDropoff as AnyObject
+            dropOffModel = serveMyDropoff
             
             
-            
-            
-            if (serviceArea.history?.count)! > 0 {
-                
-               
-                 
-                /*if (serviceArea.history?.count)! > 1 {
-                 cell.arrowLabel.isHidden = false
-                 cell.historyTableView.isHidden = true
-                 }else{
-                 cell.arrowLabel.isHidden = true
-                 cell.historyTableView.isHidden = true
-                 }
-                 
-                 if ((clickedRow != nil) && (clickedRow == indexPath.row)) {
-                 cell.arrowLabel.isHidden = true
-                 cell.historyTableView.isHidden = false
-                 cell.showRescheduleDetail(dropoffModel)
-                 }*/
-            }
             
         }
     }
@@ -129,62 +111,102 @@ class MyRequestCell: UITableViewCell {
     
     
     
-   /* func showRescheduleDetail(dropOffObj:QDCCustomerDropoffModel) {
+    
+    
+    
+    //History cell
+    
+    func showRescheduleDetail(dropOffObj : MyRequestDropOffModel) {
         
-        historyArray = dropOffObj.history
-        self.registerCell()
-        self.historyTableView.reloadData()
+        historyTableView.delegate = self
+        historyTableView.dataSource = self
         
+            self.registerCell()
+            self.historyTableView.reloadData()
+    
     }
     
     @IBAction func rescheduleButtonClick(sender: AnyObject) {
         
-        requestCelldelegate.didSelectRescheduleButton(self.Obj)
+        requestCelldelegate?.didSelectRescheduleButton(self.Obj)
         print("reschedule")
     }
     
     @IBAction func cancelButtonClick(sender: AnyObject) {
-        requestCelldelegate.didSelectCancelButton(self.Obj)
+        requestCelldelegate?.didSelectCancelButton(self.Obj)
         print("cancel")
     }
     
+    
+    
+    
+    
     func registerCell() {
-        let cellName = UINib(nibName: "QDCPickupHistoryTableViewCell", bundle:nil)
-        historyTableView.registerNib(cellName, forCellReuseIdentifier: historyCellIdentier)
+        historyTableView.register(PickupHistoryCell.nib, forCellReuseIdentifier: PickupHistoryCell.identifier)
     }
+    
+    
+    
+    
+    
+    
+}
+
+
+extension MyRequestCell: UITableViewDelegate,UITableViewDataSource {
+   
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
+        
+        guard let offerCell = historyTableView.dequeueReusableCell(withIdentifier: PickupHistoryCell.identifier, for: indexPath as IndexPath)  as? PickupHistoryCell else { return UITableViewCell() }
+        
+        
+        
+        if (dropOffModel?.History?.count)! > 0 {
+            
+            if let list =  dropOffModel?.History{
+                
+                let dropOffHistory = list[indexPath.row]
+                offerCell.setupUI(dropOffHistory: dropOffHistory)
+                self.separatorView.isHidden = true
+                
+            }else{
+                self.separatorView.isHidden = false
+            }
+            
+            
+            
+            
+        }else{
+            self.separatorView.isHidden = false
+        }
+        return offerCell
+    }
+    
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      
-     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     
-     return self.historyArray.count
-     
+        if let list =  dropOffModel?.History{
+            return list.count
+        }else{
+            return 0
+        }
      }
+    
+
+    
      
-     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-     
-     let offerCell = historyTableView.dequeueReusableCellWithIdentifier(historyCellIdentier) as!  QDCPickupHistoryTableViewCell
-     
-     if self.historyArray.count > 0 {
-     
-     let dropOffHistory:QDCDropoffHistoryModel = self.historyArray[indexPath.row] as! QDCDropoffHistoryModel
-     offerCell.setupUI(dropOffHistory)
-     self.separatorView.hidden = true
-     
-     }else{
-     self.separatorView.hidden = false
-     }
-     return offerCell
-     }
-     
-     
-     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-     
-     if indexPath.row == 0 {
-     return 22
-     }
-     return 63
-     
-     }
-    */
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == 0 {
+            return 22
+        }
+        return 63
+        
+    }
+    
     
     
     

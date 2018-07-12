@@ -78,8 +78,8 @@ class CommonUtilities: NSObject {
         
         dateFormatter.dateFormat = "dd MMM yyyy"
         
-        let oneDays = DropOffModel(DropOffDate: dateFormatter.string(from: oneDaysAgo!), DropOffTime: [])
-        let twoDays = DropOffModel(DropOffDate: dateFormatter.string(from: twoDaysAgo!), DropOffTime: [])
+        let oneDays = DropOffModel(DropDateDate: dateFormatter.string(from: oneDaysAgo!), DropOffTime: [])
+        let twoDays = DropOffModel(DropDateDate: dateFormatter.string(from: twoDaysAgo!), DropOffTime: [])
         return (oneDays,twoDays)
     }
     

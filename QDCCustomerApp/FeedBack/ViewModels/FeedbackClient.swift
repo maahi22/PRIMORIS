@@ -20,17 +20,19 @@ class FeedbackClient: NSObject {
     func sendFeedBack( messageString:String,
                             completion:@escaping (Bool,String)->())  {
         
-//        let clientID = QDCUserDefaults.getClientID()
+       let clientID = QDCUserDefaults.getClientID()
         let branchID = QDCUserDefaults.getBranchId()
         let customerCode = QDCUserDefaults.getCustomerId()
         let token = QDCUserDefaults.getAccessToken()
+        let dbName = QDCUserDefaults.getDataBaseName()
+        
         let apiname = FEEDBACK_RELATIVE_URL
         
         
         let params = ["Message": messageString,
                       "BranchID":branchID,
                       "CustomerCode": customerCode,
-                      "DatabaseName" :QDCUserDefaults.getDataBaseName()] as [String:Any]
+                      "DatabaseName" :dbName] as [String:Any]
         
         let headers = ["token": "\(token)", "Content-Type": "application/json"] as [String:String]
         
@@ -40,7 +42,7 @@ class FeedbackClient: NSObject {
                                            headers: headers,
                                            success: { (data, httpResponse) in
                                             
-                                            if let scheduleDetailsModel = decodeJSON(type: SchedulePickupModel.self, from: data) {
+                                            if httpResponse.statusCode == 200 {
                                                 completion(true, "Success")
                                             }else{
                                                 completion(false,"failed")

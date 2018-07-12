@@ -38,7 +38,7 @@ class MyDropOffViewModel: NSObject {
     
     func myRequestDropOffAt(for cellAtIndex:IndexPath) -> MyRequestDropOffModel? {
         guard let dropOffModel = dropOffModel else { return nil }
-        return dropOffModel[cellAtIndex.item]
+        return dropOffModel[cellAtIndex.row]
         
     }
     

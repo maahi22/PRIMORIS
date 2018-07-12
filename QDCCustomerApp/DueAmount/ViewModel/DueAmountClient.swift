@@ -13,7 +13,7 @@ class DueAmountClient: NSObject {
     // MARK: - Injections
     internal let networkClient = NetworkClient.shared
     
-    func getCustomerSummary(completion:@escaping (CustomerSummaryModel?,String)->())  {
+    func getDueAmount(completion:@escaping (CustomerSummaryModel?,String)->())  {
         
         let clientID = QDCUserDefaults.getClientID()
         let branchID = QDCUserDefaults.getBranchId()

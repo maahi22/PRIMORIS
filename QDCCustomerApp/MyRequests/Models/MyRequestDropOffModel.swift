@@ -9,14 +9,19 @@
 import Foundation
 
 struct MyRequestDropOffModel:Codable{
-//    let Title:String?
-//    let Descreption:String?
-    var dropOffNumber : String?
-    var dropOffDate : String?
-    var dropOffTime : String?
-    var status : String?
-    var pickUpNumber : String?
-    var pickUpDate : String?
-    var history : [DropoffHistoryModel]? //this will be the array of dropoffHistory model
+
+    let ClientID:String?
+    let BranchID:String?
+    let StoreCode:String?
+    let StoreName:String?
+    
+    var DropOffNumber : String?
+    var DropDate : String?
+    var DropOffTime : String?
+    var Status : String?
+    var PickUpNumber : String?
+    var PickUpDate : String?
+    var PickUpTime : String?
+    var History : [HistoryModel]? //this will be the array of dropoffHistory model
     
 }

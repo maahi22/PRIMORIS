@@ -10,6 +10,9 @@ import UIKit
 
 class DueAmountVC: UIViewController {
 
+    @IBOutlet private var dueAmountClient:DueAmountClient!
+    //private var customerSummaryModel:CustomerSummaryModel
+    
     @IBOutlet weak var dueAmountLabel:UILabel!
     @IBOutlet weak var amountTitleLabel:UILabel!
     @IBOutlet weak var amountDetailTitleLabel:UILabel!
@@ -17,7 +20,33 @@ class DueAmountVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        
+        
+        dueAmountClient.getDueAmount { [weak self] (customerSummaryModel, message) in
+            guard let strongSelf = self else{return}
+            
+            if let customerSummaryModel = customerSummaryModel {
+                DispatchQueue.main.async {
+                    
+                    //if let amount = customerSummaryModel.PendingAmount {
+                        strongSelf.self.amountTitleLabel.text = customerSummaryModel.PendingAmount
+                   // }
+                    
+                    
+                }
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            }
+            
+        }
+        
+        
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

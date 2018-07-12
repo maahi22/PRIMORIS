@@ -82,7 +82,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="scheduleDropOffButtonClick:" destination="GC7-y6-kS7" eventType="touchUpInside" id="UdZ-Ls-BPu"/>
+                                    <action selector="scheduleDropOffButtonClick:" destination="GC7-y6-kS7" eventType="touchUpInside" id="s2F-FH-96X"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9to-sH-MSV">
@@ -95,7 +95,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="skipDropOffButtonClick:" destination="GC7-y6-kS7" eventType="touchUpInside" id="Uwi-Uc-ybe"/>
+                                    <action selector="skipDropOffButtonClick:" destination="GC7-y6-kS7" eventType="touchUpInside" id="D71-fc-aRM"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghb-DP-ELC">
@@ -139,11 +139,15 @@
                         <outlet property="dateSelectionCollectionView" destination="gBg-zN-cXo" id="emO-Gh-5Ph"/>
                         <outlet property="dropOffViewModel" destination="DTC-hS-CWh" id="aiy-Ql-4dN"/>
                         <outlet property="scheduleDropOffButton" destination="gZj-Kt-LRP" id="mPM-9W-7Us"/>
+                        <outlet property="schedulePickUpDateClient" destination="5Hp-te-O9w" id="crf-4D-bRh"/>
+                        <outlet property="sheduledDropOffClient" destination="842-bd-Kc0" id="PPX-TA-nYB"/>
                         <outlet property="skipDropOffButton" destination="9to-sH-MSV" id="JhS-xJ-kow"/>
                         <outlet property="timeSelectionCollectionView" destination="6ge-jE-S89" id="29g-ND-8OW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cO-uU-txJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="842-bd-Kc0" customClass="SheduledDropOffClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
+                <customObject id="5Hp-te-O9w" customClass="SchedulePickUpDateClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
                 <customObject id="DTC-hS-CWh" customClass="DropOffViewModel" customModule="QDCCustomerApp" customModuleProvider="target">
                     <connections>
                         <outlet property="dropOffClient" destination="jxP-2q-l24" id="Ouz-mC-bWJ"/>

@@ -24,9 +24,7 @@ class DropOffClient: NSObject {
         let token = QDCUserDefaults.getAccessToken()
         
         let dbName = QDCUserDefaults.getDataBaseName()
-        //let apiname = PICKUP_DATE_RELATIVE_URL + "\(clientID)/\(branchID)"
         
-       // var params = [PICKUP_DATE_REQUEST_KEY: pickupDateKey,PICKUP_TIME_REQUEST_KEY:pickupTimeKey] as [String:Any]
         
         
      var encodedPickupDate = ""
@@ -40,7 +38,7 @@ class DropOffClient: NSObject {
         }
         
         
-        let apiname  = DROPOFF_DATE_AND_TIME_RELATIVE_URL + "DatabaseName=\(dbName)&BranchID=\(branchID)&PickUpDate=\(encodedPickupDate)&PickUpTime=\(encodedPickupTime)"
+        let apiname  = DROPOFF_DATE_AND_TIME_RELATIVE_URL + "ClientID=\(clientID)&BranchID=\(branchID)&PickUpDate=\(encodedPickupDate)&PickUpTime=\(encodedPickupTime)"
             
             
         let headers = ["token": "\(token)"] as [String:String]

@@ -46,8 +46,8 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXb-Nk-svh">
-                        <rect key="frame" x="50" y="40" width="265" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZXb-Nk-svh">
+                        <rect key="frame" x="50" y="35" width="265" height="16"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="wJc-bp-zgC"/>
@@ -69,9 +69,9 @@
                     <constraint firstAttribute="bottom" secondItem="Shs-UA-fd6" secondAttribute="bottom" constant="1" id="6Zz-DH-LVH"/>
                     <constraint firstAttribute="trailing" secondItem="yRh-V2-dLj" secondAttribute="trailing" constant="5" id="8wh-je-7ZM"/>
                     <constraint firstItem="yRh-V2-dLj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="AFz-Tp-Kem"/>
-                    <constraint firstItem="Shs-UA-fd6" firstAttribute="top" secondItem="ZXb-Nk-svh" secondAttribute="bottom" constant="8" id="CCB-Zc-Fs5"/>
+                    <constraint firstItem="Shs-UA-fd6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZXb-Nk-svh" secondAttribute="bottom" constant="3" id="CCB-Zc-Fs5"/>
                     <constraint firstItem="Rcj-80-0Rf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="heo-Zi-cYy"/>
-                    <constraint firstItem="ZXb-Nk-svh" firstAttribute="top" secondItem="yRh-V2-dLj" secondAttribute="bottom" constant="10" id="jLh-nt-lg8"/>
+                    <constraint firstItem="ZXb-Nk-svh" firstAttribute="top" secondItem="yRh-V2-dLj" secondAttribute="bottom" constant="5" id="jLh-nt-lg8"/>
                     <constraint firstItem="yRh-V2-dLj" firstAttribute="leading" secondItem="Rcj-80-0Rf" secondAttribute="trailing" constant="10" id="sFK-Ep-qyj"/>
                     <constraint firstAttribute="trailing" secondItem="ZXb-Nk-svh" secondAttribute="trailing" constant="5" id="t9s-Q8-hSo"/>
                     <constraint firstItem="Shs-UA-fd6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yLJ-ff-96R"/>

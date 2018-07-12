@@ -26,7 +26,7 @@ class MyRequestClient: NSObject {
         let token = QDCUserDefaults.getAccessToken()
         let clientID = QDCUserDefaults.getClientID()
         
-        let apiname = MY_REQUESTS_RELATIVE_URL + "\(clientID)/\(branchID)/\(custID)"//+ branchName + "\/" + branchID + "\/" + custID
+        let apiname = MY_REQUESTS_RELATIVE_URL + "\(clientID)/\(branchID)/\(custID)"
         let headers = ["token": "\(token)"] as [String:String]
         
         networkClient.callAPIWithAlamofire(apiname: apiname,

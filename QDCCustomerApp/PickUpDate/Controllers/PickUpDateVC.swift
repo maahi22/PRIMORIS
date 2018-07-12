@@ -46,6 +46,63 @@ class PickUpDateVC: UIViewController {
 
         self.setupUI()
         
+        
+        
+        
+        schedulePickUpDateClient.getScheduleDetails { [weak self](scheduleDetailModel, message) in
+            guard let strongSelf = self else{return}
+            if let scheduleDetailModel = scheduleDetailModel {
+                
+                if scheduleDetailModel.ShowDropOff == "False" {
+                    strongSelf.showDropOff = true
+                    
+                    //strongSelf.timeCollectionBottomConstraint.constant = 120
+                    
+                    
+                    if let arr = scheduleDetailModel.ExpressDelivery1 as? NSArray {
+                        if arr.count > 0 {
+                            
+                            let dic = arr[0] as! ExpressDelivery
+                            
+                            if let val = dic.Value as? String {
+                                strongSelf.firstButton.setTitle(val, for: UIControlState.normal)
+                                strongSelf.firstButton.tag = Int((dic.Key as? String)!)! //tag will be used as key
+                                
+                            }
+                        }
+                    }
+                    if let arr = scheduleDetailModel.ExpressDelivery2 as? NSArray {
+                        if arr.count > 0 {
+                            let dic = arr[0] as! ExpressDelivery
+                            
+                            if let val = dic.Value as? String {
+                                strongSelf.secondButton.setTitle(val, for: UIControlState.normal)
+                                strongSelf.secondButton.tag = Int((dic.Key as? String)!)! //tag will be used as key
+                            }
+                        }
+                    }
+                    
+                    
+                    
+                }else{
+                    strongSelf.showDropOff = false
+                   // strongSelf.timeCollectionBottomConstraint.constant = 80
+                }
+            
+            
+                if scheduleDetailModel.DropOffRequired == "False" {
+                    strongSelf.requireDropOff = true
+                }
+            
+               // strongSelf.view.layoutIfNeeded()
+            }else{
+               // showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            }
+            
+        }
+        
+        
+        
         pickUpDateViewModel.getPickUpDate { [weak self] (isSuccess, message) in
             guard let strongSelf = self else{return}
             
@@ -74,6 +131,15 @@ class PickUpDateVC: UIViewController {
             
             
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -94,11 +160,25 @@ class PickUpDateVC: UIViewController {
         
         if self.selectedExpressDeliveryButton == 0 && self.showDropOff == true {
             //none of them is selected and user can select drop then send to drop off controller
-            //self.performSegueWithIdentifier(SEGUE_DROPOFF_IDENTIFIER, sender: self)
+            
             
             guard let navViewController = DropOffVC.getStoryboardInstance(),
                 let viewController = navViewController.topViewController as? DropOffVC
                 else { return  }
+            
+            var instruction = ""
+            if self.specialInstructionTextView.text != "Special Instruction"{
+                instruction = self.specialInstructionTextView.text
+            }
+            viewController.requireDropOff = self.requireDropOff
+            viewController.pickupNumber = self.pickupNumber
+            viewController.selectedPickupDate = self.selectedDate
+            viewController.selectedPickupTime = self.selectedTime
+            viewController.pickUpInstruction = instruction
+            viewController.isComingFromPickUp = true
+            
+            
+            
             self.navigationController?.pushViewController(viewController, animated: true)
             
             

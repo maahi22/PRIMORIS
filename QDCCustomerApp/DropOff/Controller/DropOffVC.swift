@@ -11,6 +11,10 @@ import UIKit
 class DropOffVC: UIViewController {
 
     @IBOutlet private var dropOffViewModel:DropOffViewModel!
+    @IBOutlet private var sheduledDropOffClient:SheduledDropOffClient!
+    @IBOutlet private var schedulePickUpDateClient:SchedulePickUpDateClient!
+    
+    
     
     @IBOutlet weak var timeSelectionCollectionView:UICollectionView!
     @IBOutlet weak var dateSelectionCollectionView:UICollectionView!
@@ -53,11 +57,10 @@ class DropOffVC: UIViewController {
                     strongSelf.dateSelectionCollectionView.reloadData()
                     
                     guard let dateStr =  strongSelf.dropOffViewModel.dropOffFirstDate() else {return }
-                    strongSelf.selectedPickupDate = dateStr
-                    
-                    
+                    strongSelf.selectedDropOffDate = dateStr
+                
                     guard let time =  strongSelf.dropOffViewModel.dropOffFirstTime() else {return }
-                    strongSelf.selectedPickupTime = time
+                    strongSelf.selectedDropOffTime = time
                     
                     
                     strongSelf.timeSelectionCollectionView.reloadData()
@@ -87,6 +90,132 @@ class DropOffVC: UIViewController {
 //        self.schedulePickupButton.backgroundColor = BUTTON_COLOUR
     }
     
+    
+    
+    @IBAction func scheduleDropOffButtonClick(_ sender: Any) {
+        if isComingFromPickUp {
+            //hit request pick up api
+            if self.pickupNumber.isEmpty {
+                //Fresh Pick Up hence flag = 1
+                self.hitRequestPickupWebService(1)
+            }else{
+                //Reschedule hence flag = 2
+                self.hitRequestPickupWebService(2)
+            }
+            
+        }else{
+            //hit request drop off api
+            if self.dropoffNumber.isEmpty {
+                //Fresh drop off hence flag = 1
+                self.hitRequesDropOffWebService(1)
+            }else{
+                //Reschedule hence flag = 2
+                self.hitRequesDropOffWebService(2)
+            }
+        }
+    }
+    
+    @IBAction func skipDropOffButtonClick(_ sender: Any) {
+        
+        self.selectedDropOffDate = ""
+        self.selectedDropOffTime = ""
+        
+        if self.pickupNumber.isEmpty {
+            //Fresh Pick Up hence flag = 1
+            self.hitRequestPickupWebService(1)
+        }else{
+            //Reschedule hence flag = 2
+            self.hitRequestPickupWebService(2)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func hitRequestPickupWebService(_ flag:Int) {
+        //flag 1 for request new pick up and 2 for reschedule
+        
+        
+        schedulePickUpDateClient.getSchedulePickup(pickupDate: self.selectedPickupDate, pickupTime: self.selectedPickupTime, flag: flag, pickupNumber: self.pickupNumber, expressDeliveryID: "", specialInstruction: self.pickUpInstruction, dropOffDate: self.selectedDropOffDate, dropOffTime: self.selectedDropOffTime, cancelReason: nil) { [weak self](schedulePickUpModel, message) in
+            guard let strongSelf = self else{return}
+            if let schedulePickUpModel = schedulePickUpModel {
+                
+                if schedulePickUpModel.Status == "False" {
+                    
+                    showAlertMessage(vc: strongSelf, title: .Error, message: schedulePickUpModel.Reason)
+                    
+                }else{
+                    
+                    
+                    strongSelf.pickupNumber = schedulePickUpModel.Status
+                    guard let navViewController = SuccessfullPickUpVC.getStoryboardInstance(),
+                        let viewController = navViewController.topViewController as? SuccessfullPickUpVC
+                        else { return  }
+                    
+                    
+                    viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDropOffDate), \(strongSelf.selectedDropOffTime)"
+                    viewController.pickUpOrderId = strongSelf.pickupNumber
+                    viewController.selectedPickupDate = strongSelf.selectedDropOffDate
+                    viewController.selectedPickupTime = strongSelf.selectedDropOffTime
+                    
+                    strongSelf.navigationController?.pushViewController(viewController, animated: true)
+                }
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            }
+        }
+        
+        
+    }
+    
+    
+    
+    
+    func hitRequesDropOffWebService(_ flag:Int) {
+        
+        
+        
+        
+        sheduledDropOffClient.getScheduleDropOff(dropOffDate: self.selectedDropOffDate, dropOffTime: self.selectedDropOffTime, flag: flag, pickupNumber: self.pickupNumber, bookingNo: self.bookingId, dropOffNumber: self.dropoffNumber, cancelReason: nil) { [weak self](scheduleDropOffModel, message) in
+            
+            
+            guard let strongSelf = self else{return}
+            if let schedulePickUpModel = scheduleDropOffModel {
+                
+                if schedulePickUpModel.Status == "False" {
+                    
+                    showAlertMessage(vc: strongSelf, title: .Error, message: schedulePickUpModel.Reason)
+                    
+                }else{
+                    
+                    
+                    strongSelf.pickupNumber = schedulePickUpModel.Status
+                    guard let navViewController = SuccessfullPickUpVC.getStoryboardInstance(),
+                        let viewController = navViewController.topViewController as? SuccessfullPickUpVC
+                        else { return  }
+                    
+                    
+                    viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDropOffDate), \(strongSelf.selectedDropOffTime)"
+                    viewController.pickUpOrderId = strongSelf.pickupNumber
+                    viewController.selectedPickupDate = strongSelf.selectedDropOffDate
+                    viewController.selectedPickupTime = strongSelf.selectedDropOffTime
+                    
+                    strongSelf.navigationController?.pushViewController(viewController, animated: true)
+                }
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            }
+        }
+    }
     
     
 }
