@@ -213,9 +213,27 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
     
     func hitCancelDropOffWebService(_ cancelReason:String) {
         
-        let dropOffObj:MyRequestDropOffModel = modelObj as! MyRequestDropOffModel
+      
         
-        sheduledDropOffClient.getScheduleDropOff(dropOffDate: dropOffObj.PickUpDate!, dropOffTime: dropOffObj.DropOffTime!, flag: 3, pickupNumber: "", bookingNo: "", dropOffNumber: dropOffObj.DropOffNumber!, cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
+        
+        guard let dropOffObj = modelObj as? MyRequestDropOffModel else {
+            return
+        }
+        
+        guard let dropoffUpDate = dropOffObj.DropDate else {
+            return
+        }
+        guard let dropOffTime = dropOffObj.DropOffTime else {
+            return
+        }
+        guard let dropOffNumber = dropOffObj.DropOffNumber else {
+            return
+        }
+        
+        
+        
+        
+        sheduledDropOffClient.getScheduleDropOff(dropOffDate: dropoffUpDate, dropOffTime: dropOffTime, flag: 3, pickupNumber: "", bookingNo: "", dropOffNumber: dropOffNumber, cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
             
             guard let strongSelf = self else{return}
             
@@ -241,10 +259,24 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
     
      func hitCancelPickupWebService(_ cancelReason:String) {
         
-        let pickUpObj:MyRequestModel = modelObj as! MyRequestModel
         
         
-        schedulePickUpDateClient.getSchedulePickup(pickupDate: pickUpObj.PickUpDate!, pickupTime: pickUpObj.PickUpTime!, flag: 3, pickupNumber: pickUpObj.PickUpNumber!, expressDeliveryID: "", specialInstruction: "", dropOffDate: "", dropOffTime: "", cancelReason: cancelReason) { [weak self](schedulePickUpModel, message) in
+        guard let pickUpObj = modelObj as? MyRequestModel else {
+            return
+        }
+        
+        guard let pickUpDate = pickUpObj.PickUpDate else {
+            return
+        }
+        guard let pickUpTime = pickUpObj.PickUpTime else {
+            return
+        }
+        guard let pickUpNumber = pickUpObj.PickUpNumber else {
+            return
+        }
+        
+        
+        schedulePickUpDateClient.getSchedulePickup(pickupDate:pickUpDate , pickupTime:pickUpTime , flag: 3, pickupNumber:pickUpNumber , expressDeliveryID: "", specialInstruction: "", dropOffDate: "", dropOffTime: "", cancelReason: cancelReason) { [weak self](schedulePickUpModel, message) in
             guard let strongSelf = self else{return}
             if let schedulePickUpModel = schedulePickUpModel {
                 
