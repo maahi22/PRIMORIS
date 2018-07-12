@@ -81,6 +81,7 @@ class DashboardVC: UIViewController {
         else { return  }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
     @IBAction func detailsButtonClick(sender: AnyObject) {
         guard let navViewController = MyOrdersVC.getStoryboardInstance(),
             let viewController = navViewController.topViewController as? MyOrdersVC

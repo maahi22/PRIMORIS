@@ -1160,7 +1160,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0F2FE62620F346AA00F4CC48 /* TableCell */ = {
+		0F2FE62620F346AA00F4CC48 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				0F2FE62720F346F500F4CC48 /* MyRequestCell.swift */,
@@ -1168,7 +1168,7 @@
 				0F2FE63F20F34E8E00F4CC48 /* PickupHistoryCell.swift */,
 				0F2FE64020F34E8E00F4CC48 /* PickupHistoryCell.xib */,
 			);
-			path = TableCell;
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		0F2FE62B20F349FA00F4CC48 /* TableCell */ = {
@@ -1504,7 +1504,7 @@
 		0F5E427020F0B7C1005CC203 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0F2FE62620F346AA00F4CC48 /* TableCell */,
+				0F2FE62620F346AA00F4CC48 /* TableViewCell */,
 				0F5E427320F0B7F3005CC203 /* MyRequestsVC.storyboard */,
 			);
 			path = Views;

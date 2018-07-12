@@ -149,6 +149,24 @@ class SignUpTVC: UITableViewController {
                         let custCode = response.CustCode
                 {
                     QDCUserDefaults.setCustomerId(customerId: custCode)
+                    
+                    
+                    
+                    
+                    if let name = response.CustomerName {
+                        QDCUserDefaults.setUserName(userName: name)
+                    }
+                    
+                    if let add = response.CustomerAddress {
+                        QDCUserDefaults.setUserAddress(adress: add)
+                    }
+                    if let email = response.CustomerEmailId {
+                        QDCUserDefaults.setUserEmail(email: email)
+                    }
+                    
+                    
+                    
+                    
                     QDCUserDefaults.setClientID(clientID: clientID)
                     guard let viewController = CustomMessageVC.getStoryboardInstance() as? CustomMessageVC
                         else { return  }

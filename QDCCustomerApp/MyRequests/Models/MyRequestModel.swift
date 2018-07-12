@@ -9,9 +9,6 @@
 import Foundation
 
 struct MyRequestModel:Codable{
-    /*let Title:String?
-    let Descreption:String?*/
-    
     
     let ClientID:String?
     let BranchID:String?
@@ -26,3 +23,4 @@ struct MyRequestModel:Codable{
     let SpecialInstruction:String?
     
 }
+

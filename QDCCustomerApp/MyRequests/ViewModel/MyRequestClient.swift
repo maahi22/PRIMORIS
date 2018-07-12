@@ -21,7 +21,7 @@ class MyRequestClient: NSObject {
     func fetchMyRequest(completion:@escaping ([MyRequestModel]?,String)->())  {
         
         let custID = QDCUserDefaults.getCustomerId()
-        let branchName = QDCUserDefaults.getDataBaseName()
+        //let branchName = QDCUserDefaults.getDataBaseName()
         let branchID = QDCUserDefaults.getBranchId()
         let token = QDCUserDefaults.getAccessToken()
         let clientID = QDCUserDefaults.getClientID()
