@@ -17,13 +17,14 @@ class MyDropOffClient: NSObject {
     //get offers
     func fetchMyDropOff(completion:@escaping ([MyRequestDropOffModel]?,String)->())  {
         
+        
         let custID = QDCUserDefaults.getCustomerId()
-        let branchName = QDCUserDefaults.getDataBaseName()
+       // let branchName = QDCUserDefaults.getDataBaseName()
         let branchID = QDCUserDefaults.getBranchId()
         let token = QDCUserDefaults.getAccessToken()
+        let clientID = QDCUserDefaults.getClientID()
         
-        
-        let apiname = CUSTOMER_DROPOFFS_RELATIVE_URL + branchName + "/" + branchID + "/" + custID
+        let apiname = CUSTOMER_DROPOFFS_RELATIVE_URL  + "\(clientID)/\(branchID)/\(custID)"
         let headers = ["token": "\(token)"] as [String:String]
         
         networkClient.callAPIWithAlamofire(apiname: apiname,

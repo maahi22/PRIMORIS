@@ -80,6 +80,7 @@
 		03FB56FF20ECEDD100270859 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB56FE20ECEDD100270859 /* DashboardViewModel.swift */; };
 		0F27865520F5300600B14215 /* SheduledDropOffClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F27865420F5300600B14215 /* SheduledDropOffClient.swift */; };
 		0F27865720F532A200B14215 /* DropOffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F27865620F532A200B14215 /* DropOffModel.swift */; };
+		0F290FA120F73DE2000C9650 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F290FA020F73DE2000C9650 /* HistoryModel.swift */; };
 		0F2995EC20F25FC800594B21 /* UIColor+QDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2995EB20F25FC800594B21 /* UIColor+QDC.swift */; };
 		0F2995EF20F27FBA00594B21 /* FeedbackClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2995EE20F27FBA00594B21 /* FeedbackClient.swift */; };
 		0F2AD39D20F0784D002B4BF5 /* ProfileVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AD39C20F0784D002B4BF5 /* ProfileVC.storyboard */; };
@@ -273,6 +274,7 @@
 		03FB56FE20ECEDD100270859 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		0F27865420F5300600B14215 /* SheduledDropOffClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduledDropOffClient.swift; sourceTree = "<group>"; };
 		0F27865620F532A200B14215 /* DropOffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropOffModel.swift; sourceTree = "<group>"; };
+		0F290FA020F73DE2000C9650 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		0F2995EB20F25FC800594B21 /* UIColor+QDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+QDC.swift"; sourceTree = "<group>"; };
 		0F2995EE20F27FBA00594B21 /* FeedbackClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackClient.swift; sourceTree = "<group>"; };
 		0F2AD39C20F0784D002B4BF5 /* ProfileVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileVC.storyboard; sourceTree = "<group>"; };
@@ -1117,6 +1119,7 @@
 			children = (
 				0F2C38B120F4E5AC000C48D7 /* MyRequestDropOffModel.swift */,
 				0F2C38B320F4E5D1000C48D7 /* MyRequestModel.swift */,
+				0F290FA020F73DE2000C9650 /* HistoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1982,6 +1985,7 @@
 				03C2AB8020DAAFAC0029AAA4 /* AppDelegate.swift in Sources */,
 				03CEBA5020DC187300A1FAB3 /* UIViewController+LoadingHUD.swift in Sources */,
 				030C3C6420E1C65F002DADD2 /* DashboardVC.swift in Sources */,
+				0F290FA120F73DE2000C9650 /* HistoryModel.swift in Sources */,
 				0FA8C68420F20FA500F9DC83 /* CommonUtilities.swift in Sources */,
 				03C2AB8820DAAFAC0029AAA4 /* QDCCustomerApp.xcdatamodeld in Sources */,
 				0FA43BF520F604E900E64E6E /* OrderDetailViewModel.swift in Sources */,

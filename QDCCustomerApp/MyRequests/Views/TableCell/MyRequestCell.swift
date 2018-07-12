@@ -25,7 +25,7 @@ class MyRequestCell: UITableViewCell {
     @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var arrowLabel: UILabel!
     @IBOutlet weak var historyTableView: UITableView!
-    var historyArray:NSArray = NSArray()
+    
     var Obj: AnyObject!
     
     var requestCelldelegate:MyRequestCellDelegate?
@@ -55,14 +55,14 @@ class MyRequestCell: UITableViewCell {
     var serveMyDropoff:MyRequestDropOffModel?{
         didSet{
             guard let serviceArea = serveMyDropoff else { return  }
-            dateLabel.text = serviceArea.pickUpDate ?? ""
-            timeLabel.text = serviceArea.dropOffTime ?? ""
+            dateLabel.text = serviceArea.PickUpDate ?? ""
+            timeLabel.text = serviceArea.DropOffTime ?? ""
             Obj = serveMyDropoff as AnyObject
             
             
+            self.backgroundView?.backgroundColor = .red
             
-            
-            if (serviceArea.history?.count)! > 0 {
+           /* if (serviceArea.History?.count)! > 0 {
                 
                
                  
@@ -79,7 +79,7 @@ class MyRequestCell: UITableViewCell {
                  cell.historyTableView.isHidden = false
                  cell.showRescheduleDetail(dropoffModel)
                  }*/
-            }
+            }*/
             
         }
     }

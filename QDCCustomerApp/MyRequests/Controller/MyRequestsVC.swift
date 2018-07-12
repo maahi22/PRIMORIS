@@ -91,8 +91,7 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
     
     @IBAction func myDropOffsButtonClick(_ sender: Any) {
         
-        myPickUpsTableView.isHidden = true
-        myDropOffsTableView.isHidden = false
+        
         
         self.isPickUpSelected = false
         self.myPickUpsButton.isSelected = false
@@ -100,6 +99,9 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
         self.mainScrollView.contentOffset = CGPoint(x:SCREEN_SIZE.width,y:0)
         self.viewUnderDropoff.backgroundColor = PRIMARY_COLOUR
         self.viewUnderPickup.backgroundColor = UIColor.white
+        
+        myPickUpsTableView.isHidden = true
+        myDropOffsTableView.isHidden = false
         
         self.hitMyDropOffRequestWebService()
         
@@ -174,7 +176,7 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
             guard let navViewController = DropOffVC.getStoryboardInstance(),
                 let viewController = navViewController.topViewController as? DropOffVC
                 else { return  }
-            if let picNo = dropOffObj.pickUpNumber{
+            if let picNo = dropOffObj.PickUpNumber{
                 viewController.pickupNumber = picNo
             }
             
@@ -215,7 +217,7 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
         
         let dropOffObj:MyRequestDropOffModel = modelObj as! MyRequestDropOffModel
         
-        sheduledDropOffClient.getScheduleDropOff(dropOffDate: dropOffObj.pickUpDate!, dropOffTime: dropOffObj.dropOffTime!, flag: 3, pickupNumber: "", bookingNo: "", dropOffNumber: dropOffObj.dropOffNumber!, cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
+        sheduledDropOffClient.getScheduleDropOff(dropOffDate: dropOffObj.PickUpDate!, dropOffTime: dropOffObj.DropOffTime!, flag: 3, pickupNumber: "", bookingNo: "", dropOffNumber: dropOffObj.DropOffNumber!, cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
             
             guard let strongSelf = self else{return}
             
@@ -310,15 +312,6 @@ extension MyRequestsVC:UITableViewDataSource{
             cell.requestCelldelegate = self
             cell.setupUI()
             cell.serveMyRequest = myRequestViewModel.myRequestAt(for: indexPath)
-            /*if self.pickUpModelArr.count > 0 {
-                
-                let pickupModel:QDCCustomerPickupModel = self.pickUpModelArr[indexPath.row] as! QDCCustomerPickupModel
-                cell.dateLabel.text = pickupModel.pickUpDate
-                cell.timeLabel.text = pickupModel.PickUpTime
-                cell.Obj = pickupModel
-                
-            }
-            */
             cell.arrowLabel.isHidden = true
             cell.historyTableView.isHidden = true
             
@@ -329,34 +322,35 @@ extension MyRequestsVC:UITableViewDataSource{
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MyRequestCell.identifier, for: indexPath)  as? MyRequestCell else { return UITableViewCell() }
             
-            
-            
             cell.selectionStyle = .none
             cell.requestCelldelegate = self
             cell.setupUI()
-            cell.arrowLabel.isHidden = true
             cell.serveMyDropoff = myDropOffViewModel.myRequestDropOffAt(for: indexPath)
-            if self.dropOffModelArr.count > 0 {
-                
-                /*let dropoffModel:QDCCustomerDropoffModel = self.dropOffModelArr[indexPath.row] as! QDCCustomerDropoffModel
-                cell.dateLabel.text = dropoffModel.dropOffDate
-                cell.timeLabel.text = dropoffModel.dropOffTime
-                cell.Obj = dropoffModel
-                
-                if dropoffModel.history.count > 1 {
-                    cell.arrowLabel.isHidden = false
-                    cell.historyTableView.isHidden = true
-                }else{
-                    cell.arrowLabel.isHidden = true
-                    cell.historyTableView.isHidden = true
-                }
-                
-                if ((clickedRow != nil) && (clickedRow == indexPath.row)) {
-                    cell.arrowLabel.isHidden = true
-                    cell.historyTableView.isHidden = false
-                    cell.showRescheduleDetail(dropoffModel)
-                }*/
-            }
+            
+            //
+ //           cell.arrowLabel.isHidden = true
+            
+//            if self.dropOffModelArr.count > 0 {
+//
+//                /*let dropoffModel:QDCCustomerDropoffModel = self.dropOffModelArr[indexPath.row] as! QDCCustomerDropoffModel
+//                cell.dateLabel.text = dropoffModel.dropOffDate
+//                cell.timeLabel.text = dropoffModel.dropOffTime
+//                cell.Obj = dropoffModel
+//
+//                if dropoffModel.history.count > 1 {
+//                    cell.arrowLabel.isHidden = false
+//                    cell.historyTableView.isHidden = true
+//                }else{
+//                    cell.arrowLabel.isHidden = true
+//                    cell.historyTableView.isHidden = true
+//                }
+//
+//                if ((clickedRow != nil) && (clickedRow == indexPath.row)) {
+//                    cell.arrowLabel.isHidden = true
+//                    cell.historyTableView.isHidden = false
+//                    cell.showRescheduleDetail(dropoffModel)
+//                }*/
+//            }
             
             
             return cell
@@ -369,27 +363,29 @@ extension MyRequestsVC:UITableViewDataSource{
 
 extension MyRequestsVC:UITableViewDelegate{
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         
         if tableView.tag == 1 { //pickup table
             return 85
         }
         
-        if self.dropOffModelArr.count > indexPath.row {
-           /* let dropoffModel:QDCCustomerDropoffModel = self.dropOffModelArr[indexPath.row] as! QDCCustomerDropoffModel
-            if ((clickedRow != nil) && (clickedRow == indexPath.row)){
-                return CGFloat(80 + (dropoffModel.history.count - 1)*63 + 22)
-            } else {
-                return 80
-            }*/
-        }else{
-            return 80
-        }
+//        if self.dropOffModelArr.count > indexPath.row {
+//           /* let dropoffModel:QDCCustomerDropoffModel = self.dropOffModelArr[indexPath.row] as! QDCCustomerDropoffModel
+//            if ((clickedRow != nil) && (clickedRow == indexPath.row)){
+//                return CGFloat(80 + (dropoffModel.history.count - 1)*63 + 22)
+//            } else {
+//                return 80
+//            }*/
+//
+//            return 80
+//        }else{
+//            return 80
+//        }
         
         return 80
     }

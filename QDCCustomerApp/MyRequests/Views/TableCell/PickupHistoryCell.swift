@@ -47,11 +47,11 @@ class PickupHistoryCell: UITableViewCell {
     
     
     
-    func setupUI(dropOffHistory:DropoffHistoryModel) {
+    func setupUI(dropOffHistory:HistoryModel) {
         
-        self.eventTypeLabel.text = dropOffHistory.eventType
-        self.eventDateLabel.text = dropOffHistory.eventDate
-        self.eventTimeLabel.text = dropOffHistory.eventTime
+        self.eventTypeLabel.text = dropOffHistory.EventType
+        self.eventDateLabel.text = dropOffHistory.EventDate
+        self.eventTimeLabel.text = dropOffHistory.EventTime
         self.fromDateLabel.text = dropOffHistory.FromDate
         self.fromTimeLabel.text = dropOffHistory.FromTime
         self.toDateLabel.text = dropOffHistory.ToDate
