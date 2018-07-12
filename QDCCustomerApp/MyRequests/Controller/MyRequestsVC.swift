@@ -20,7 +20,7 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
     
 
     @IBOutlet weak var tableContainerView:UIView!
-    @IBOutlet weak var mainScrollView:UIScrollView!
+   // @IBOutlet weak var mainScrollView:UIScrollView!
     @IBOutlet weak var myPickUpsTableView:UITableView!
     @IBOutlet weak var myDropOffsTableView:UITableView!
     @IBOutlet weak var myPickUpsButton:UIButton!
@@ -28,14 +28,10 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
     @IBOutlet weak var viewUnderPickup:UIView!
     @IBOutlet weak var viewUnderDropoff:UIView!
     
-    @IBOutlet weak var tableContainerViewWidthConstraint:NSLayoutConstraint!
-    @IBOutlet weak var pickUpTableWidthConstraint:NSLayoutConstraint!
-    @IBOutlet weak var dropOffTableWidthConstraint:NSLayoutConstraint!
     
     
     var isPickUpSelected:Bool = true
-    var pickUpModelArr:NSArray = NSArray()
-    var dropOffModelArr:NSArray = NSArray()
+    //var dropOffModelArr:NSArray = NSArray()
     var modelObj:AnyObject!
     var clickedRow:Int!
     
@@ -77,7 +73,7 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
         self.isPickUpSelected = true
         self.myPickUpsButton.isSelected = true
         self.myDropOffsButton.isSelected = false
-        self.mainScrollView.contentOffset = CGPoint(x: 0, y: 0)
+        //self.mainScrollView.contentOffset = CGPoint(x: 0, y: 0)
         self.viewUnderPickup.backgroundColor = PRIMARY_COLOUR
         self.viewUnderDropoff.backgroundColor = UIColor.white
         
@@ -96,7 +92,7 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
         self.isPickUpSelected = false
         self.myPickUpsButton.isSelected = false
         self.myDropOffsButton.isSelected = true
-        self.mainScrollView.contentOffset = CGPoint(x:SCREEN_SIZE.width,y:0)
+       // self.mainScrollView.contentOffset = CGPoint(x:SCREEN_SIZE.width,y:0)
         self.viewUnderDropoff.backgroundColor = PRIMARY_COLOUR
         self.viewUnderPickup.backgroundColor = UIColor.white
         
@@ -137,6 +133,8 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
             
             if isSuccess {
                 DispatchQueue.main.async {
+                    strongSelf.myPickUpsTableView.isHidden = true
+                    strongSelf.myDropOffsTableView.isHidden = false
                     strongSelf.myDropOffsTableView.reloadData()
                 }
             }else{
@@ -325,32 +323,29 @@ extension MyRequestsVC:UITableViewDataSource{
             cell.selectionStyle = .none
             cell.requestCelldelegate = self
             cell.setupUI()
+    
             cell.serveMyDropoff = myDropOffViewModel.myRequestDropOffAt(for: indexPath)
+            cell.arrowLabel.isHidden = true
             
-            //
- //           cell.arrowLabel.isHidden = true
-            
-//            if self.dropOffModelArr.count > 0 {
-//
-//                /*let dropoffModel:QDCCustomerDropoffModel = self.dropOffModelArr[indexPath.row] as! QDCCustomerDropoffModel
-//                cell.dateLabel.text = dropoffModel.dropOffDate
-//                cell.timeLabel.text = dropoffModel.dropOffTime
-//                cell.Obj = dropoffModel
-//
-//                if dropoffModel.history.count > 1 {
-//                    cell.arrowLabel.isHidden = false
-//                    cell.historyTableView.isHidden = true
-//                }else{
-//                    cell.arrowLabel.isHidden = true
-//                    cell.historyTableView.isHidden = true
-//                }
-//
-//                if ((clickedRow != nil) && (clickedRow == indexPath.row)) {
-//                    cell.arrowLabel.isHidden = true
-//                    cell.historyTableView.isHidden = false
-//                    cell.showRescheduleDetail(dropoffModel)
-//                }*/
-//            }
+            if let list = cell.dropOffModel?.History {
+                
+                if list.count > 0 {
+                    
+                    if list.count > 1 {
+                        cell.arrowLabel.isHidden = false
+                        cell.historyTableView.isHidden = true
+                    }else{
+                        cell.arrowLabel.isHidden = true
+                        cell.historyTableView.isHidden = true
+                    }
+                    
+                    if ((clickedRow != nil) && (clickedRow == indexPath.row)) {
+                        cell.arrowLabel.isHidden = true
+                        cell.historyTableView.isHidden = false
+                        cell.showRescheduleDetail(dropOffObj: cell.dropOffModel!)
+                    }
+                }
+            }
             
             
             return cell
@@ -374,20 +369,33 @@ extension MyRequestsVC:UITableViewDelegate{
             return 85
         }
         
-//        if self.dropOffModelArr.count > indexPath.row {
-//           /* let dropoffModel:QDCCustomerDropoffModel = self.dropOffModelArr[indexPath.row] as! QDCCustomerDropoffModel
-//            if ((clickedRow != nil) && (clickedRow == indexPath.row)){
-//                return CGFloat(80 + (dropoffModel.history.count - 1)*63 + 22)
-//            } else {
-//                return 80
-//            }*/
-//
-//            return 80
-//        }else{
-//            return 80
-//        }
         
-        return 80
+        if let listitem = myDropOffViewModel.dropOffModel {
+        
+        if listitem.count  > indexPath.row {
+            
+            let dropOffModel = myDropOffViewModel.myRequestDropOffAt(for: indexPath)
+            
+            if ((clickedRow != nil) && (clickedRow == indexPath.row)){
+               
+                if let list = dropOffModel?.History {
+                  return CGFloat(80 + (list.count - 1) * 63 + 22)
+                }else{
+                   return 80
+                }
+                
+                
+            } else {
+                return 80
+            }
+
+            //return 80
+        }else{
+            return 80
+        }
+        }else{
+            return 80
+        }
     }
     
     
