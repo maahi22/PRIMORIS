@@ -149,6 +149,24 @@ class SignUpTVC: UITableViewController {
                         let custCode = response.CustCode
                 {
                     QDCUserDefaults.setCustomerId(customerId: custCode)
+                    
+                    
+                    
+                    
+                    if let name = response.CustomerName {
+                        QDCUserDefaults.setUserName(userName: name)
+                    }
+                    
+                    if let add = response.CustomerAddress {
+                        QDCUserDefaults.setUserAddress(adress: add)
+                    }
+                    if let email = response.CustomerEmailId {
+                        QDCUserDefaults.setUserEmail(email: email)
+                    }
+                    
+                    
+                    
+                    
                     guard let viewController = CustomMessageVC.getStoryboardInstance() as? CustomMessageVC
                         else { return  }
                     strongSelf.present(viewController, animated: true, completion: nil)
@@ -202,7 +220,25 @@ class SignUpTVC: UITableViewController {
                                                                         let custCode = message
                                                                         
                                                                         QDCUserDefaults.setCustomerId(customerId: custCode)
-                                                                         
+                                                                        
+                                                                        if let name = customerCreationModel.Name {
+                                                                            QDCUserDefaults.setUserName(userName: name)
+                                                                        }
+                                                                        
+                                                                        if let add = customerCreationModel.Address {
+                                                                            QDCUserDefaults.setUserAddress(adress: add)
+                                                                        }
+                                                                        if let email = customerCreationModel.EmailId {
+                                                                            QDCUserDefaults.setUserEmail(email: email)
+                                                                        }
+                                                                        if let pin = customerCreationModel.Pincode {
+                                                                            QDCUserDefaults.setPinCode(pin: pin)
+                                                                        }
+                                                                        if let dbName = customerCreationModel.DataBaseName {
+                                                                            QDCUserDefaults.setDataBaseName(dbName: dbName)
+                                                                        }
+                                                                        
+                                                                        
                                                                         strongSelf.signUpClient.getCustomerToken(clientID, BranchID: branchID, CustomerCode: custCode, completion: { (isSuccess, message) in
                                                   strongSelf.dismissLoadingHUD()
                                                                             if isSuccess{
