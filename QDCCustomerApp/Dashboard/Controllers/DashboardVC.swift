@@ -57,6 +57,19 @@ class DashboardVC: UIViewController {
             
             
         }
+        
+        
+        /*if let name = QDCUserDefaults.getUserName(){
+            self.userNameLabel.text = name
+        }
+        
+        if let Add = QDCUserDefaults.getUserAddress(){
+            self.userAddressLabel.text = Add
+        }*/
+        
+        
+        self.userNameLabel.text = QDCUserDefaults.getUserName()
+        self.userAddressLabel.text = QDCUserDefaults.getUserAddress()
        
     }
     
@@ -95,17 +108,10 @@ class DashboardVC: UIViewController {
     
     @IBAction func notificationClick(_ sender: Any) {
         
-        
-        guard let navViewController = DropOffVC.getStoryboardInstance(),
-            let viewController = navViewController.topViewController as? DropOffVC
+        guard let navViewController = NotificationVC.getStoryboardInstance(),
+            let viewController = navViewController.topViewController as? NotificationVC
             else { return  }
         self.navigationController?.pushViewController(viewController, animated: true)
-        
-        
-//        guard let navViewController = NotificationVC.getStoryboardInstance(),
-//            let viewController = navViewController.topViewController as? NotificationVC
-//            else { return  }
-//        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     

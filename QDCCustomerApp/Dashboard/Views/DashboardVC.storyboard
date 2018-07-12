@@ -369,6 +369,10 @@
                         <outlet property="customerSummaryClient" destination="fHf-WK-mt0" id="S9U-xg-VOT"/>
                         <outlet property="garmentDueLabel" destination="Doa-5G-cxh" id="hwI-EZ-VOR"/>
                         <outlet property="payAmountLabel" destination="NiV-rf-mEm" id="F4o-k4-0BB"/>
+                        <outlet property="summaryLabel" destination="FI7-IW-QXS" id="Ctt-s2-2cz"/>
+                        <outlet property="userAddressLabel" destination="odf-lx-aN5" id="9cV-pE-K6X"/>
+                        <outlet property="userImageView" destination="Ojy-HT-jDs" id="J9W-ck-hxK"/>
+                        <outlet property="userNameLabel" destination="ZKF-xS-gNW" id="QAp-86-V8g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRQ-Z6-iWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
