@@ -149,6 +149,7 @@ class SignUpTVC: UITableViewController {
                         let custCode = response.CustCode
                 {
                     QDCUserDefaults.setCustomerId(customerId: custCode)
+                    QDCUserDefaults.setClientID(clientID: clientID)
                     guard let viewController = CustomMessageVC.getStoryboardInstance() as? CustomMessageVC
                         else { return  }
                     strongSelf.present(viewController, animated: true, completion: nil)
