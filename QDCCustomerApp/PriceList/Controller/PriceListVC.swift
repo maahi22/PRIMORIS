@@ -116,17 +116,21 @@ extension PriceListVC{
 extension PriceListVC :UICollectionViewDelegate{
     // MARK: - UICollectionViewDelegate protocol
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView.tag == 1 {
             
-            self.selectedCategory = self.categoryArr[indexPath.row] as! String
-            self.priceCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.left, animated: true)
-            self.categorySelectionCollectionView.reloadData()
+            guard let selCat = priceListViewModel.priceListItemsForIndexPath(indexPath as IndexPath) else{ return }
+            
+            
+            self.selectedCategory = selCat
+           // self.priceCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.left, animated: true)
+            self.priceCollectionView.reloadData()
             
         }
     }
 }
+
 
 
 extension PriceListVC : UICollectionViewDataSource {
@@ -135,18 +139,21 @@ extension PriceListVC : UICollectionViewDataSource {
     // MARK: - UICollectionViewDataSource protocol
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return self.categoryArr.count //items
+        if collectionView.tag == 1 {
+        return priceListViewModel.numberOfPriceItemsList() //items
+        }else{
+            return 1//priceListViewModel.numberOfPriceList(self.selectedCategory)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView.tag == 1 {
 
+           
+            guard let cell = categorySelectionCollectionView.dequeueReusableCell(withReuseIdentifier: PriceCategoryCollectionCell.identifier, for: indexPath ) as? PriceCategoryCollectionCell else { return UICollectionViewCell() }
             
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PriceCategoryCollectionCell.identifier, for: indexPath as IndexPath) as? PriceCategoryCollectionCell else { return UICollectionViewCell() }
-            
-            
+            cell.categoryLabel.text = priceListViewModel.priceListItemsForIndexPath(indexPath)
 //            let str = self.categoryArr[indexPath.row] as? String
 //            cell.categoryLabel.text = str
 //            cell.categoryLabel.textColor = UIColor.whiteColor()
@@ -163,9 +170,14 @@ extension PriceListVC : UICollectionViewDataSource {
             
         }else{
             
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PriceCollectionCell.identifier, for: indexPath as IndexPath) as? PriceCollectionCell else { return UICollectionViewCell() }
+            guard let cell = priceCollectionView.dequeueReusableCell(withReuseIdentifier: PriceCollectionCell.identifier, for: indexPath as IndexPath) as? PriceCollectionCell else { return UICollectionViewCell() }
+          
+            cell.selectedCat = self.selectedCategory
+            cell.priceListViewModel = priceListViewModel
+            cell.registerCell()
             
-           
+            // cell.categoryLabel.text = priceListViewModel.priceListForIndexPath(self.selectedCategory, indexPath: indexPath)
+          // cell.categoryLabel.text = priceListViewModel.priceListItemsForIndexPath(indexPath)
 //
 //            let dictKey:String = self.categoryArr[indexPath.row] as! String
 //            let arr:NSArray = self.responseGarmentDict[dictKey] as! NSArray
