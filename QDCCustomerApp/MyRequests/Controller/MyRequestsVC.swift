@@ -14,7 +14,7 @@ class MyRequestsVC: UIViewController{
     
     
     @IBOutlet  var schedulePickUpDateClient:SchedulePickUpDateClient!
-    @IBOutlet  var sheduledDropOffClient:SheduledDropOffClient!
+    @IBOutlet  var ScheduleDropOffClient:ScheduleDropOffClient!
     
    
     
@@ -222,10 +222,14 @@ extension MyRequestsVC:MyRequestCellDelegate{
           
         }
         
+        
+        //Add cancel view
         guard let navViewController = CancelReasonVC.getStoryboardInstance(),
             let viewController = navViewController.topViewController as? CancelReasonVC
             else { return  }
         viewController.cancelOrderdelegate = self
+        viewController.modalPresentationStyle = .overCurrentContext
+        navViewController.modalPresentationStyle = .overCurrentContext
         self.present(navViewController, animated: true, completion: {})
         
     }

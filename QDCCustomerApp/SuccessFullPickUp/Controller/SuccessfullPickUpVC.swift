@@ -11,7 +11,7 @@ import UIKit
 class SuccessfullPickUpVC: UIViewController {
 
     @IBOutlet private var schedulePickUpDateClient:SchedulePickUpDateClient!
-    @IBOutlet private var sheduledDropOffClient:SheduledDropOffClient!
+    @IBOutlet private var ScheduleDropOffClient:ScheduleDropOffClient!
     
     @IBOutlet weak var messageLabel:UILabel!
     @IBOutlet weak var rescheduleButton:UIButton!
@@ -87,7 +87,9 @@ class SuccessfullPickUpVC: UIViewController {
             let viewController = navViewController.topViewController as? CancelReasonVC
             else { return  }
         viewController.cancelOrderdelegate = self
-        viewController.modalPresentationStyle = .overFullScreen
+        //viewController.modalPresentationStyle = .overFullScreen
+        viewController.modalPresentationStyle = .overCurrentContext
+        navViewController.modalPresentationStyle = .overCurrentContext
         self.present(navViewController, animated: true, completion: {})
     }
     
@@ -152,7 +154,7 @@ extension SuccessfullPickUpVC: CancelReasonDelegate{
     
     func hitCancelDropOffWebService(_ cancelReason:String){
         
-        sheduledDropOffClient.getScheduleDropOff(dropOffDate: self.selectedDropOffDate, dropOffTime: self.selectedDropOffTime, flag: 3, pickupNumber: "", bookingNo: "", dropOffNumber: self.dropOffOrderId, cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
+        ScheduleDropOffClient.getScheduleDropOff(dropOffDate: self.selectedDropOffDate, dropOffTime: self.selectedDropOffTime, flag: 3, pickupNumber: "", bookingNo: "", dropOffNumber: self.dropOffOrderId, cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
             
             guard let strongSelf = self else{return}
             

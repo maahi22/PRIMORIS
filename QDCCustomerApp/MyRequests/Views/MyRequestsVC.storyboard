@@ -173,26 +173,26 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ScheduleDropOffClient" destination="vAX-ao-jY8" id="KhP-Qp-alF"/>
                         <outlet property="myDropOffsButton" destination="KO1-mV-wtB" id="D4J-G6-MD0"/>
                         <outlet property="myDropOffsTableView" destination="nH0-D7-icP" id="Y6b-S6-MfA"/>
                         <outlet property="myPickUpsButton" destination="ZFE-j5-dGD" id="PK5-Ik-JPz"/>
                         <outlet property="myPickUpsTableView" destination="550-HQ-yUe" id="3G4-Hg-tEY"/>
                         <outlet property="myRequestViewModel" destination="cFJ-rL-dI0" id="R0D-Nf-Yhb"/>
                         <outlet property="schedulePickUpDateClient" destination="uwc-oW-RMa" id="Lit-do-rYy"/>
-                        <outlet property="sheduledDropOffClient" destination="vAX-ao-jY8" id="KhP-Qp-alF"/>
                         <outlet property="viewUnderDropoff" destination="9pc-YS-JIC" id="OUn-6R-0fI"/>
                         <outlet property="viewUnderPickup" destination="djj-zE-Mq8" id="6La-IQ-pL9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02P-BY-UDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="uwc-oW-RMa" customClass="SchedulePickUpDateClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
-                <customObject id="vAX-ao-jY8" customClass="SheduledDropOffClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
+                <customObject id="vAX-ao-jY8" customClass="ScheduleDropOffClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
                 <customObject id="cFJ-rL-dI0" customClass="MyRequestViewModel" customModule="QDCCustomerApp" customModuleProvider="target">
                     <connections>
+                        <outlet property="ScheduleDropOffClient" destination="vAX-ao-jY8" id="WUA-lD-X0R"/>
                         <outlet property="myDropOffClient" destination="deW-re-a0D" id="NDN-b7-3Ae"/>
                         <outlet property="myRequestClient" destination="0Q5-LK-hxc" id="ugK-tw-ywp"/>
                         <outlet property="schedulePickUpDateClient" destination="uwc-oW-RMa" id="LNV-p9-14V"/>
-                        <outlet property="sheduledDropOffClient" destination="vAX-ao-jY8" id="WUA-lD-X0R"/>
                     </connections>
                 </customObject>
                 <customObject id="0Q5-LK-hxc" customClass="MyRequestClient" customModule="QDCCustomerApp" customModuleProvider="target"/>

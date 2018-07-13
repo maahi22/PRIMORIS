@@ -32,9 +32,12 @@ class CancelReasonVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.isNavigationBarHidden = true
         view.isOpaque = false
         view.backgroundColor = .clear
+        
+        
+        self.navigationController?.isNavigationBarHidden = true
+        
         self.setupUI()
     }
 

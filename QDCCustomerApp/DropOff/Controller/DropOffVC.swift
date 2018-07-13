@@ -11,7 +11,7 @@ import UIKit
 class DropOffVC: UIViewController {
 
     @IBOutlet private var dropOffViewModel:DropOffViewModel!
-    @IBOutlet private var sheduledDropOffClient:SheduledDropOffClient!
+    @IBOutlet private var ScheduleDropOffClient:ScheduleDropOffClient!
     @IBOutlet private var schedulePickUpDateClient:SchedulePickUpDateClient!
     
     
@@ -184,7 +184,7 @@ class DropOffVC: UIViewController {
         
         
         
-        sheduledDropOffClient.getScheduleDropOff(dropOffDate: self.selectedDropOffDate, dropOffTime: self.selectedDropOffTime, flag: flag, pickupNumber: self.pickupNumber, bookingNo: self.bookingId, dropOffNumber: self.dropoffNumber, cancelReason: nil) { [weak self](scheduleDropOffModel, message) in
+        ScheduleDropOffClient.getScheduleDropOff(dropOffDate: self.selectedDropOffDate, dropOffTime: self.selectedDropOffTime, flag: flag, pickupNumber: self.pickupNumber, bookingNo: self.bookingId, dropOffNumber: self.dropoffNumber, cancelReason: nil) { [weak self](scheduleDropOffModel, message) in
             
             
             guard let strongSelf = self else{return}

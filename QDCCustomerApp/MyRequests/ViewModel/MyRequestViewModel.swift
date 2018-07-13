@@ -12,7 +12,7 @@ class MyRequestViewModel: NSObject {
 
     
     @IBOutlet  var schedulePickUpDateClient:SchedulePickUpDateClient!
-    @IBOutlet  var sheduledDropOffClient:SheduledDropOffClient!
+    @IBOutlet  var ScheduleDropOffClient:ScheduleDropOffClient!
     
     @IBOutlet private var myRequestClient:MyRequestClient!
     var myRequestModel:[MyRequestModel]?
@@ -152,7 +152,7 @@ class MyRequestViewModel: NSObject {
         }
         
         
-        sheduledDropOffClient.getScheduleDropOff(dropOffDate: dropoffUpDate,
+        ScheduleDropOffClient.getScheduleDropOff(dropOffDate: dropoffUpDate,
                                                  dropOffTime: dropOffTime,
                                                  flag: 3,
                                                  pickupNumber: "",
