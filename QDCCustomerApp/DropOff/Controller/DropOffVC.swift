@@ -160,7 +160,7 @@ class DropOffVC: UIViewController {
                         else { return  }
                     
                     
-                    viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDropOffDate), \(strongSelf.selectedDropOffTime)"
+                    viewController.message = "Your DropOff has been scheduled for \n \(strongSelf.selectedDropOffDate), \(strongSelf.selectedDropOffTime)"
                     viewController.pickUpOrderId = strongSelf.pickupNumber
                     viewController.selectedPickupDate = strongSelf.selectedDropOffDate
                     viewController.selectedPickupTime = strongSelf.selectedDropOffTime
@@ -203,7 +203,7 @@ class DropOffVC: UIViewController {
                         else { return  }
                     
                     
-                    viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDropOffDate), \(strongSelf.selectedDropOffTime)"
+                    viewController.message = "Your DropOff has been scheduled for \n \(strongSelf.selectedDropOffDate), \(strongSelf.selectedDropOffTime)"
                     viewController.pickUpOrderId = strongSelf.pickupNumber
                     viewController.selectedPickupDate = strongSelf.selectedDropOffDate
                     viewController.selectedPickupTime = strongSelf.selectedDropOffTime

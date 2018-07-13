@@ -8,10 +8,10 @@
 
 import UIKit
 
-class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate{
+class MyRequestsVC: UIViewController{
     
     @IBOutlet var myRequestViewModel:MyRequestViewModel!
-    @IBOutlet var myDropOffViewModel:MyDropOffViewModel!
+    
     
     @IBOutlet  var schedulePickUpDateClient:SchedulePickUpDateClient!
     @IBOutlet  var sheduledDropOffClient:SheduledDropOffClient!
@@ -34,7 +34,7 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
     //var dropOffModelArr:NSArray = NSArray()
     var selectedMyRequestModel:MyRequestModel?
     var selectedMyRequestDropOffModel:MyRequestDropOffModel?
-    
+    var cancelIndexPath:IndexPath?
     var clickedRow:Int?
     
     
@@ -130,7 +130,7 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
     func hitMyDropOffRequestWebService(){
         //Load data
         
-        myDropOffViewModel.getDropOff { [weak self] (isSuccess, message)  in
+        myRequestViewModel.getDropOff { [weak self] (isSuccess, message)  in
             guard let strongSelf = self else{return}
             
             if isSuccess {
@@ -151,18 +151,34 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
     
     
     
-   //Delegate methods
-    func didSelectRescheduleButton(_ obj: AnyObject) {
-        
-          if self.isPickUpSelected  {
+   
+    
+    
+    
+}
+
+extension MyRequestsVC{
+    static func getStoryboardInstance() -> UINavigationController?{
+        let storyborad = UIStoryboard(name: String(describing: self), bundle: nil)
+        guard let navViewController = storyborad.instantiateInitialViewController()  as? UINavigationController else { return nil }
+        return navViewController
+    }
+}
+
+extension MyRequestsVC:MyRequestCellDelegate{
+    func didSelectRescheduleButton(_ Index: IndexPath) {
+        if self.isPickUpSelected  {
             
-            let pickUpObj:MyRequestModel = obj as! MyRequestModel
+            guard  let pickUpObj = myRequestViewModel.myRequestAt(for: Index) else{
+                return
+            }
+            
             
             guard let navViewController = PickUpDateVC.getStoryboardInstance(),
                 let viewController = navViewController.topViewController as? PickUpDateVC
                 else { return  }
             if let picNo = pickUpObj.PickUpNumber{
-              viewController.pickupNumber = picNo
+                viewController.pickupNumber = picNo
             }
             
             self.navigationController?.pushViewController(viewController, animated: true)
@@ -171,7 +187,9 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
         }else{
             
             
-            let dropOffObj:MyRequestDropOffModel = obj as! MyRequestDropOffModel
+            guard  let dropOffObj = myRequestViewModel.myRequestDropOffAt(for: Index) else{
+                return
+            }
             
             guard let navViewController = DropOffVC.getStoryboardInstance(),
                 let viewController = navViewController.topViewController as? DropOffVC
@@ -184,137 +202,94 @@ class MyRequestsVC: UIViewController ,CancelReasonDelegate,MyRequestCellDelegate
             
             
         }
-        
     }
     
-    func didSelectCancelButton(_ obj: AnyObject) {
+    func didSelectCancelButton(_ Index: IndexPath) {
         
-        //self.modelObj = obj
+        cancelIndexPath = Index
+        if self.isPickUpSelected  {
+            
+            guard  let pickUpObj = myRequestViewModel.myRequestAt(for: Index) else{
+                return
+            }
+            selectedMyRequestModel = pickUpObj
+            
+        }else{
+            guard  let dropOffObj = myRequestViewModel.myRequestDropOffAt(for: Index) else{
+                return
+            }
+         selectedMyRequestDropOffModel = dropOffObj
+          
+        }
         
-       
-        
-    }
-    func didSelectCancelButton(_ objMyRequestModel: MyRequestModel?) {
-        self.selectedMyRequestModel = objMyRequestModel
         guard let navViewController = CancelReasonVC.getStoryboardInstance(),
             let viewController = navViewController.topViewController as? CancelReasonVC
             else { return  }
         viewController.cancelOrderdelegate = self
         self.present(navViewController, animated: true, completion: {})
+        
     }
+    
+    
+}
+
+extension MyRequestsVC:CancelReasonDelegate{
     
     func didSelectCancelReason(_ cancelReason: String) {
         if self.isPickUpSelected {
-            self.hitCancelPickupWebService(cancelReason)
+            
+            if let indexPath = cancelIndexPath{
+                
+                myRequestViewModel.cancelPickUpRequest(cancelReason, index: indexPath) {  [weak self] (isSuccess, message) in
+                    
+                    guard let strongSelf = self else{return}
+                    
+                    if isSuccess {
+                        //remove Cell code
+                        DispatchQueue.main.async {
+                            strongSelf.myPickUpsTableView.deleteRows(at: [indexPath], with: .automatic)
+                        }
+                        
+                        
+                        
+                    }else{
+                        
+                        showAlertMessage(vc: strongSelf, title: .Message, message: message)
+                    }
+                }
+            }
+            
         }else{
             
-            self.hitCancelDropOffWebService(cancelReason)
-        }
-        
-        
-    }
-    
-    
-    
-    
-    func hitCancelDropOffWebService(_ cancelReason:String) {
-        
-      
-        
-        
-        guard let dropOffObj = selectedMyRequestDropOffModel,
-            let dropoffUpDate = dropOffObj.DropDate,
-            let dropOffTime = dropOffObj.DropOffTime,
-        let dropOffNumber = dropOffObj.DropOffNumber
-        else {
-            return
-        }
-        
-        
-        sheduledDropOffClient.getScheduleDropOff(dropOffDate: dropoffUpDate,
-                                                 dropOffTime: dropOffTime,
-                                                 flag: 3,
-                                                 pickupNumber: "",
-                                                 bookingNo: "",
-                                                 dropOffNumber: dropOffNumber,
-                                                 cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
+            if let indexPath = cancelIndexPath{
             
-            guard let strongSelf = self else{return}
-            
-            if let scheduleDropOffModel = scheduleDropOffModel {
+            myRequestViewModel.cancelDropOffRequest(cancelReason, index: indexPath) {  [weak self] (isSuccess, message) in
+               
+                guard let strongSelf = self else{return}
                 
-                
-                var message = ""
-                if scheduleDropOffModel.Status == "Done" {
-                    message = "Pick up successfully cancelled"
+                if isSuccess {
+                    //remove Cell code
+                    DispatchQueue.main.async {
+                        strongSelf.myDropOffsTableView.deleteRows(at: [indexPath], with: .automatic)
+                    }
                 }else{
-                    message = "Something went wrong please try again later"
+                    
+                    showAlertMessage(vc: strongSelf, title: .Message, message: message)
                 }
+                    
                 
-                showAlertMessage(vc: strongSelf, title: .Message, message: message)
-                
-                
-            }else{
-                showAlertMessage(vc: strongSelf, title: .Error, message: "Something went wrong please try again later")
+            }
             }
             
         }
+        
+        
     }
     
-     func hitCancelPickupWebService(_ cancelReason:String) {
-        
-        
-        
-        guard let pickUpObj = selectedMyRequestModel,
-            let pickUpDate = pickUpObj.PickUpDate,
-        let pickUpTime = pickUpObj.PickUpTime,
-        let pickUpNumber = pickUpObj.PickUpNumber
-        else {
-            return
-        }
-        
-        schedulePickUpDateClient.getSchedulePickup(pickupDate:pickUpDate ,
-                                                   pickupTime:pickUpTime ,
-                                                   flag: 3,
-                                                   pickupNumber:pickUpNumber ,
-                                                   expressDeliveryID: "",
-                                                   specialInstruction: "",
-                                                   dropOffDate: "",
-                                                   dropOffTime: "",
-                                                   cancelReason: cancelReason) { [weak self](schedulePickUpModel, message) in
-            guard let strongSelf = self else{return}
-            if let schedulePickUpModel = schedulePickUpModel {
-                
-                
-                var message = ""
-                if schedulePickUpModel.Status == "Done" {
-                    message = "Pick up successfully cancelled"
-                }else{
-                    message = "Something went wrong please try again later"
-                }
-                
-                showAlertMessage(vc: strongSelf, title: .Message, message: message)
-                
-                
-            }else{
-                showAlertMessage(vc: strongSelf, title: .Error, message: "Something went wrong please try again later")
-            }
-        }
-    }
     
-}
-
-extension MyRequestsVC{
-    static func getStoryboardInstance() -> UINavigationController?{
-        let storyborad = UIStoryboard(name: String(describing: self), bundle: nil)
-        guard let navViewController = storyborad.instantiateInitialViewController()  as? UINavigationController else { return nil }
-        return navViewController
-    }
-}
-
-
-
-
+    
+    
+   }
 
 
 extension MyRequestsVC:UITableViewDataSource{
@@ -331,7 +306,7 @@ extension MyRequestsVC:UITableViewDataSource{
         if tableView.tag == 1 {
             return myRequestViewModel.numberMyRequest()
         }else{
-            return myDropOffViewModel.numberMyRequestDropOff()
+            return myRequestViewModel.numberMyRequestDropOff()
         }
     }
     
@@ -346,6 +321,7 @@ extension MyRequestsVC:UITableViewDataSource{
             cell.selectionStyle = .none
             cell.requestCelldelegate = self
             cell.setupUI()
+            cell.indexPath = indexPath
             cell.serveMyRequest = myRequestViewModel.myRequestAt(for: indexPath)
             cell.arrowLabel.isHidden = true
             cell.historyTableView.isHidden = true
@@ -360,8 +336,8 @@ extension MyRequestsVC:UITableViewDataSource{
             cell.selectionStyle = .none
             cell.requestCelldelegate = self
             cell.setupUI()
-    
-            cell.serveMyDropoff = myDropOffViewModel.myRequestDropOffAt(for: indexPath)
+            cell.indexPath = indexPath
+            cell.serveMyDropoff = myRequestViewModel.myRequestDropOffAt(for: indexPath)
             cell.arrowLabel.isHidden = true
             
             if let list = cell.dropOffModel?.History {
@@ -407,11 +383,11 @@ extension MyRequestsVC:UITableViewDelegate{
         }
         
         
-        if let listitem = myDropOffViewModel.dropOffModel {
+        if let listitem = myRequestViewModel.dropOffModel {
         
         if listitem.count  > indexPath.row {
             
-            let dropOffModel = myDropOffViewModel.myRequestDropOffAt(for: indexPath)
+            let dropOffModel = myRequestViewModel.myRequestDropOffAt(for: indexPath)
             
             if ((clickedRow != nil) && (clickedRow == indexPath.row)){
                

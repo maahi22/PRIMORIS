@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
+class SuccessfullPickUpVC: UIViewController {
 
     @IBOutlet private var schedulePickUpDateClient:SchedulePickUpDateClient!
     @IBOutlet private var sheduledDropOffClient:SheduledDropOffClient!
@@ -43,14 +43,6 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
         self.messageLabel.textColor = TEXT_FIELD_COLOUR
         self.messageLabel.text = self.message
         
-        /*self.rescheduleButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
-        self.rescheduleButton.backgroundColor = BUTTON_COLOUR
- 
-        self.cancelButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
-        self.cancelButton.backgroundColor = BUTTON_COLOUR
-        
-        self.dashboardButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
-        self.dashboardButton.backgroundColor = BUTTON_COLOUR*/
         rescheduleButton.setButtonTheme()
         cancelButton.setButtonTheme()
         dashboardButton.setButtonTheme()
@@ -105,8 +97,21 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
     }
 
     
-    
-    
+}
+
+
+
+
+
+extension SuccessfullPickUpVC{
+    static func getStoryboardInstance() -> UINavigationController?{
+        let storyborad = UIStoryboard(name: String(describing: self), bundle: nil)
+        guard let navViewController = storyborad.instantiateInitialViewController()  as? UINavigationController else { return nil }
+        return navViewController
+    }
+}
+
+extension SuccessfullPickUpVC: CancelReasonDelegate{
     //Delegate Methods
     func didSelectCancelReason(_ cancelReason:String) {
         print("delegate cancel")
@@ -145,7 +150,7 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
     }
     
     
-      func hitCancelDropOffWebService(_ cancelReason:String){
+    func hitCancelDropOffWebService(_ cancelReason:String){
         
         sheduledDropOffClient.getScheduleDropOff(dropOffDate: self.selectedDropOffDate, dropOffTime: self.selectedDropOffTime, flag: 3, pickupNumber: "", bookingNo: "", dropOffNumber: self.dropOffOrderId, cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
             
@@ -156,7 +161,7 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
                 
                 var message = ""
                 if scheduleDropOffModel.Status == "Done" {
-                    message = "Pick up successfully cancelled"
+                    message = "Drop off successfully cancelled"
                 }else{
                     message = "Something went wrong please try again later"
                 }
@@ -171,16 +176,5 @@ class SuccessfullPickUpVC: UIViewController,CancelReasonDelegate {
         }
         
         
-    }
-    
-    
-}
-
-
-extension SuccessfullPickUpVC{
-    static func getStoryboardInstance() -> UINavigationController?{
-        let storyborad = UIStoryboard(name: String(describing: self), bundle: nil)
-        guard let navViewController = storyborad.instantiateInitialViewController()  as? UINavigationController else { return nil }
-        return navViewController
     }
 }

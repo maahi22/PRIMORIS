@@ -10,8 +10,8 @@ import UIKit
 
 protocol MyRequestCellDelegate:class {
     
-    func didSelectRescheduleButton(_ obj:AnyObject) ;
-    func didSelectCancelButton(_ objMyRequestModel:MyRequestModel?) ;
+    func didSelectRescheduleButton(_ Index:IndexPath )
+    func didSelectCancelButton(_ Index:IndexPath )
     
 }
 
@@ -28,7 +28,7 @@ class MyRequestCell: UITableViewCell {
     
     var Obj: AnyObject!
     var dropOffModel: MyRequestDropOffModel?
-    
+    var indexPath :IndexPath?
     weak var requestCelldelegate:MyRequestCellDelegate?
     
     
@@ -97,15 +97,18 @@ class MyRequestCell: UITableViewCell {
     
     
     @IBAction func rescheduleButtonClick(_ sender: Any) {
-        requestCelldelegate?.didSelectRescheduleButton( self.Obj)
+        
+        guard let index = indexPath else{ return }
+        
+        requestCelldelegate?.didSelectRescheduleButton( index )
         print("reschedule")
     }
     
     
     
     @IBAction func cancelButtonClick(_ sender: Any) {
-        
-        requestCelldelegate?.didSelectCancelButton(serveMyRequest)
+        guard let index = indexPath else{ return }
+        requestCelldelegate?.didSelectCancelButton(index)
         print("cancel")
     }
     
@@ -126,16 +129,7 @@ class MyRequestCell: UITableViewCell {
     
     }
     
-    @IBAction func rescheduleButtonClick(sender: AnyObject) {
-        
-        requestCelldelegate?.didSelectRescheduleButton(self.Obj)
-        print("reschedule")
-    }
-    
-    @IBAction func cancelButtonClick(sender: AnyObject) {
-        requestCelldelegate?.didSelectCancelButton(serveMyRequest)
-        print("cancel")
-    }
+   
     
     
     
