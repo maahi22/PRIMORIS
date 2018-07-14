@@ -78,11 +78,11 @@ class PriceListViewModel: NSObject {
         
         guard let priceListModel = priceListModel else { return nil }
         
-//        let sortedArr = priceListModel.sorted { (id1, id2) -> Bool in
-//            return id1.Garment!.lowercased() > id2.Garment!.lowercased() // Use > for Descending order
-//        }
+        let sortedArr = priceListModel.sorted { (id1, id2) -> Bool in
+            return id1.Garment!.lowercased() > id2.Garment!.lowercased() // Use > for Descending order
+        }
         
-        for priceModel in priceListModel{
+        for priceModel in sortedArr{
             
             if let garment = priceModel.Garment{
                 let arr = garment.components(separatedBy: "-")
