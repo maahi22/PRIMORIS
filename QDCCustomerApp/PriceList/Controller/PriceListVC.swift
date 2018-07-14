@@ -17,7 +17,7 @@ class PriceListVC: UIViewController {
     @IBOutlet weak var showCategoryButton:UIButton!
     
   //  var garmentServicesArray = [];
-    var selectedService:String = ""
+    var selectedService:String = "Dry Cleaning"
     var selectedCategory:String = ""
     var responseGarmentDict:NSDictionary = [String:[NSDictionary]]() as NSDictionary
     var categoryArr = NSArray()
@@ -77,9 +77,9 @@ class PriceListVC: UIViewController {
             self.present(alertController, animated: true, completion: nil)//Are you sure you want to logout?
             
             for buttonTitle in tempArr {
-                //if let titleStr = buttonTitle  {
-                    
-                let btnAlwaysShow:UIAlertAction  = (UIAlertAction(title: buttonTitle as? String, style: .default, handler: {[weak self] action in
+                if let titleStr = buttonTitle as? String {
+                    let title = titleStr.replacingOccurrences(of: "_", with: " ")
+                let btnAlwaysShow:UIAlertAction  = (UIAlertAction(title: title, style: .default, handler: {[weak self] action in
                     
                     guard let strongSelf = self else{return}
                     if let titleStr = action.title{
@@ -91,7 +91,7 @@ class PriceListVC: UIViewController {
                     strongSelf.priceCollectionView.reloadData()
                     }))
                     alertController.addAction(btnAlwaysShow)
-                //}
+                }
             }
             
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
@@ -141,6 +141,10 @@ class PriceListVC: UIViewController {
         guard let selCat = priceListViewModel.priceListItemsForIndexPath(indexPath as IndexPath) else{ return }
         
         self.selectedCategory = selCat
+        if let selectedService = priceListViewModel.servicesArr[0] as? String{
+                self.selectedService = selectedService
+        }
+        
         // self.priceCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.left, animated: true)
         self.priceCollectionView.reloadData()
     }
@@ -171,11 +175,6 @@ extension PriceListVC :UICollectionViewDelegate{
             
         }
     }
-    
-    
-    
-    
-    
     
 }
 
@@ -221,6 +220,7 @@ extension PriceListVC : UICollectionViewDataSource {
             guard let cell = priceCollectionView.dequeueReusableCell(withReuseIdentifier: PriceCollectionCell.identifier, for: indexPath as IndexPath) as? PriceCollectionCell else { return UICollectionViewCell() }
           
             cell.selectedCat = self.selectedCategory
+            cell.service = self.selectedService
             cell.priceListViewModel = priceListViewModel
             cell.registerCell()
             

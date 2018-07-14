@@ -94,9 +94,6 @@ class PriceListViewModel: NSObject {
     }
     
     
-    
-    
-    
     func numberOfPriceList(_ selectCat:String) -> Int {
         let mutableArray = NSMutableArray()
         //let garmentCategorySet = NSMutableSet()
@@ -120,7 +117,7 @@ class PriceListViewModel: NSObject {
     
     
    // func priceListForIndexPath(_ selectCat:String, serviceType:PriceListModel.CodingKeys, Index:IndexPath) -> (item:String? ,qty:String?){
-    func priceListForIndexPath(_ selectCat:String,  Index:IndexPath) -> (item:String? ,qty:String?){
+    func priceListForIndexPath(_ selectCat:String, selectedService:String,  Index:IndexPath) -> (item:String? ,qty:String?){
         
         let mutableArray = NSMutableArray()
         let mutableArray2 = NSMutableArray()
@@ -135,10 +132,19 @@ class PriceListViewModel: NSObject {
                 
                 if (catName == selectCat){
                     mutableArray.add(arr[1])
-                    mutableArray2.add(arr[1])
+                    if selectedService.lowercased().hasPrefix("dry")  {
+                        mutableArray2.add(priceModel.Dry_Cleaning ?? 0)
+                    }
+                    else if selectedService.lowercased().hasPrefix("steam") {
+                        mutableArray2.add(priceModel.Steam_Press ?? 0)
+                    }
+                        
+                    else if selectedService.lowercased().hasPrefix("tint") {
+                        mutableArray2.add(priceModel.TINTORERIA ?? 0)
+                    }
                 }
                 
-                
+               
 //                if (catName == selectCat){
 //
 //                    if let grepos = priceModel.encode(to: ser) {
@@ -151,7 +157,8 @@ class PriceListViewModel: NSObject {
         }
         
         let item = mutableArray[Index.row] as? String
-        let qty = mutableArray2[Index.row] as? String
+        let iQty = mutableArray2[Index.row] as? Int
+        let qty = "\(iQty ?? 0)"
         
         return  (item,qty)//Amit Please check
     }

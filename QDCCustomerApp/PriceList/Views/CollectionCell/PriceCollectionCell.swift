@@ -70,7 +70,7 @@ extension  PriceCollectionCell:UITableViewDataSource{
         }
         
         
-          let garment = priceListViewModel.priceListForIndexPath(selectedCat, Index: indexPath as IndexPath) //else {return UITableViewCell()}
+          let garment = priceListViewModel.priceListForIndexPath(selectedCat, selectedService: service,Index: indexPath as IndexPath) //else {return UITableViewCell()}
         if let text = garment.item{
         cell.titleLabel?.text = text
         }
