@@ -346,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/SuccessFullPickUp/Controller/SuccessfullPickUpVC.swift"
-            timestampString = "553166178.631206"
+            timestampString = "553233838.3987271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -394,7 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/DropOff/ViewModel/DropOffViewModel.swift"
-            timestampString = "553106188.500788"
+            timestampString = "553182926.645358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -442,7 +442,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/ViewModel/MyRequestViewModel.swift"
-            timestampString = "553166178.631433"
+            timestampString = "553233838.399423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -570,7 +570,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/DropOff/ViewModel/DropOffViewModel.swift"
-            timestampString = "553106188.501308"
+            timestampString = "553182926.645588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -618,7 +618,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/Controller/MyRequestsVC.swift"
-            timestampString = "553166178.631861"
+            timestampString = "553233838.400254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "341"
@@ -650,7 +650,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/Controller/MyRequestsVC.swift"
-            timestampString = "553166178.632017"
+            timestampString = "553233838.400558"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "323"
@@ -666,7 +666,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/Controller/MyRequestsVC.swift"
-            timestampString = "553166178.6320961"
+            timestampString = "553233838.4007421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "335"
@@ -698,7 +698,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/Controller/MyRequestsVC.swift"
-            timestampString = "553166178.63219"
+            timestampString = "553233838.401103"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "354"
@@ -714,7 +714,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/Controller/MyRequestsVC.swift"
-            timestampString = "553166178.632244"
+            timestampString = "553233838.401334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "355"
@@ -986,7 +986,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/Controller/MyRequestsVC.swift"
-            timestampString = "553166178.632586"
+            timestampString = "553233838.402491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
@@ -1018,7 +1018,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/ViewModel/MyRequestViewModel.swift"
-            timestampString = "553166178.632666"
+            timestampString = "553233838.4029731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -1066,7 +1066,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/Views/TableViewCell/MyRequestCell.swift"
-            timestampString = "553166178.632726"
+            timestampString = "553233838.403219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -1082,7 +1082,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/Views/TableViewCell/MyRequestCell.swift"
-            timestampString = "553166178.632771"
+            timestampString = "553233838.403535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
@@ -1098,7 +1098,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/ViewModel/MyRequestViewModel.swift"
-            timestampString = "553166178.632813"
+            timestampString = "553233838.403723"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "155"
@@ -1114,7 +1114,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/ViewModel/MyRequestViewModel.swift"
-            timestampString = "553166178.632861"
+            timestampString = "553233838.403906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
@@ -1130,7 +1130,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/MyRequests/ViewModel/MyRequestViewModel.swift"
-            timestampString = "553166178.632907"
+            timestampString = "553233838.404152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "163"
@@ -1146,7 +1146,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/DropOff/ViewModel/SheduledDropOffClient.swift"
-            timestampString = "553166178.632955"
+            timestampString = "553233838.4044369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -1162,7 +1162,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/DropOff/ViewModel/SheduledDropOffClient.swift"
-            timestampString = "553166178.633002"
+            timestampString = "553233838.405008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -1174,15 +1174,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/Controller/PriceListVC.swift"
-            timestampString = "553166178.633049"
+            timestampString = "553233838.405462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1190,15 +1190,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/Controller/PriceListVC.swift"
-            timestampString = "553166178.633095"
+            timestampString = "553233838.412091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1206,15 +1206,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/Controller/PriceListVC.swift"
-            timestampString = "553166178.6331379"
+            timestampString = "553233838.412611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1222,15 +1222,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/Controller/PriceListVC.swift"
-            timestampString = "553166178.633181"
+            timestampString = "553233838.41299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1238,11 +1238,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/Views/CollectionCell/PriceCollectionCell.swift"
-            timestampString = "553166178.633226"
+            timestampString = "553233838.4134049"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -1254,11 +1254,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/Views/CollectionCell/PriceCollectionCell.swift"
-            timestampString = "553166178.6332721"
+            timestampString = "553233838.413534"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -1270,11 +1270,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/Views/CollectionCell/PriceCollectionCell.swift"
-            timestampString = "553166178.633314"
+            timestampString = "553233838.413632"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -1286,11 +1286,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/Views/CollectionCell/PriceCollectionCell.swift"
-            timestampString = "553166178.633357"
+            timestampString = "553233838.413741"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
@@ -1306,7 +1306,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/Views/CollectionCell/PriceCollectionCell.swift"
-            timestampString = "553166178.6333981"
+            timestampString = "553233838.413834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -1322,11 +1322,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/ViewModel/PriceListViewModel.swift"
-            timestampString = "553166178.633444"
+            timestampString = "553233838.4140019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "numberOfPriceList(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1338,11 +1338,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/ViewModel/PriceListViewModel.swift"
-            timestampString = "553166178.6335649"
+            timestampString = "553233838.414137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "numberOfPriceList(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1354,27 +1354,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/ViewModel/PriceListViewModel.swift"
-            timestampString = "553166178.6336221"
+            timestampString = "553233838.414264"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "numberOfPriceList(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/PriceList/ViewModel/PriceListViewModel.swift"
-            timestampString = "553166178.633673"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "numberOfPriceList(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1386,7 +1370,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/Views/CollectionCell/PriceCollectionCell.swift"
-            timestampString = "553166178.633725"
+            timestampString = "553233838.414367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -1398,31 +1382,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/PriceList/Views/CollectionCell/PriceCollectionCell.swift"
-            timestampString = "553166178.633769"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/ViewModel/PriceListViewModel.swift"
-            timestampString = "553166178.633812"
+            timestampString = "553233838.414565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "priceListForIndexPath(_:Index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1434,12 +1402,108 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PriceList/ViewModel/PriceListViewModel.swift"
-            timestampString = "553166178.633871"
+            timestampString = "553233838.414651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "priceListForIndexPath(_:Index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QDCCustomerApp/PriceList/Controller/PriceListVC.swift"
+            timestampString = "553233838.41478"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "loadItemsInTable(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QDCCustomerApp/PriceList/Controller/PriceListVC.swift"
+            timestampString = "553233838.415242"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "loadItemsInTable(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QDCCustomerApp/PriceList/Views/CollectionCell/PriceCollectionCell.swift"
+            timestampString = "553233838.415596"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QDCCustomerApp/PriceList/ViewModel/PriceListViewModel.swift"
+            timestampString = "553233838.415684"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "priceListForIndexPath(_:Index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QDCCustomerApp/PriceList/ViewModel/PriceListViewModel.swift"
+            timestampString = "553233838.415809"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "priceListForIndexPath(_:Index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QDCCustomerApp/PriceList/ViewModel/PriceListViewModel.swift"
+            timestampString = "553233838.415912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getPriceList(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

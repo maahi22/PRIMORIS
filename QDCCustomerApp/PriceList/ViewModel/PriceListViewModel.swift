@@ -22,10 +22,24 @@ class PriceListViewModel: NSObject {
             if let priceListModel = priceListModel{
                 strongSelf.priceListModel = priceListModel
                
-//               guard let priceList = strongSelf.priceListModel else { return  }
-//                let model = priceList[0]
-//                  for strKey in
-//
+              guard let priceList = strongSelf.priceListModel else { return  }
+                let model  = priceList[0]
+                
+                
+                let mirror = Mirror(reflecting: model)
+                for child in mirror.children  {
+                    // print("key: \(child.label), value: \(child.value)")
+                    if !((child.label)?.contains("Garment"))! {
+                        
+                        if let val = child.label{
+                            strongSelf.servicesArr.add(val)
+                        }
+                        
+                    }
+                }
+                
+                
+                
                 
                 
                 completion(true,message)
@@ -105,11 +119,13 @@ class PriceListViewModel: NSObject {
     
     
     
-    func priceListForIndexPath(_ selectCat:String, Index:IndexPath) -> String? {
+   // func priceListForIndexPath(_ selectCat:String, serviceType:PriceListModel.CodingKeys, Index:IndexPath) -> (item:String? ,qty:String?){
+    func priceListForIndexPath(_ selectCat:String,  Index:IndexPath) -> (item:String? ,qty:String?){
         
         let mutableArray = NSMutableArray()
+        let mutableArray2 = NSMutableArray()
         
-        guard let priceListModel = priceListModel else { return nil }
+        guard let priceListModel = priceListModel else { return (nil, nil) }
         for priceModel in priceListModel{
             
             if let garment = priceModel.Garment{
@@ -119,10 +135,24 @@ class PriceListViewModel: NSObject {
                 
                 if (catName == selectCat){
                     mutableArray.add(arr[1])
+                    mutableArray2.add(arr[1])
                 }
+                
+                
+//                if (catName == selectCat){
+//
+//                    if let grepos = priceModel.encode(to: ser) {
+//                        self.blog.text = String(grepos)
+//                    }
+//
+//                    mutableArray2.add(priceModel.encode(to: <#T##Encoder#>))
+//                }
             }
         }
         
-        return mutableArray[Index.row] as? String//Amit Please check
+        let item = mutableArray[Index.row] as? String
+        let qty = mutableArray2[Index.row] as? String
+        
+        return  (item,qty)//Amit Please check
     }
 }

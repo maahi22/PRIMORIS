@@ -70,10 +70,13 @@ extension  PriceCollectionCell:UITableViewDataSource{
         }
         
         
-        guard  let garment = priceListViewModel.priceListForIndexPath(selectedCat, Index: indexPath as IndexPath) else {
-            return UITableViewCell()
+          let garment = priceListViewModel.priceListForIndexPath(selectedCat, Index: indexPath as IndexPath) //else {return UITableViewCell()}
+        if let text = garment.item{
+        cell.titleLabel?.text = text
         }
-        cell.textLabel?.text = garment
+        if let qty = garment.qty{
+            cell.priceLabel?.text = qty
+        }
         
 //        if let val = garmentDict["Garment"] as? String{
 //            let garmentNameCategoryArray = val.components(separatedBy: "-") // Household - Bed Sheet Single
