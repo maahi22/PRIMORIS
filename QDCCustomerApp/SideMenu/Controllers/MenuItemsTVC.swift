@@ -30,6 +30,7 @@ class MenuItemsTVC: UITableViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         tableView.rowHeight = 35
+        tableView.backgroundColor = mainColor
         //tableView.setTableViewBackgroundGradient(#colorLiteral(red: 0.8705882353, green: 0.8509803922, blue: 0.7882352941, alpha: 1), #colorLiteral(red: 0.09929890186, green: 0.1892752349, blue: 0.70184201, alpha: 1))
         //tableView.separatorStyle = .none
         /*if let userImageData = UserDefaults.standard.data(forKey: "empayUserImageData"), let image = UIImage(data: userImageData) {
@@ -69,20 +70,20 @@ extension MenuItemsTVC{
     //MARK: - Menu Items Model
     fileprivate func getMenuItems(completion:([Section])->())  {
         let menuItems = [
-            Section(name: "DASHBOARD", items: [], image: "sidebar_home", selImage: "", expanded: false,itemType:MenuItemType.home),
-            Section(name: "REQUEST PICKUP", items: [], image: "sidebar_wallet", selImage: "", expanded: false,itemType:MenuItemType.pickUp),
-            Section(name: "MY REQUEST", items: [], image: "sidebar_moneytransfer", selImage: "", expanded: false,itemType:MenuItemType.myRequest),
+            Section(name: "DASHBOARD", items: [], image:"Side Offer Icons", selImage: "", expanded: false,itemType:MenuItemType.home),
+            Section(name: "REQUEST PICKUP", items: [], image: "Side My PickupsIcon", selImage: "", expanded: false,itemType:MenuItemType.pickUp),
+            Section(name: "MY REQUEST", items: [], image: "Side Request Pick Up Icon", selImage: "", expanded: false,itemType:MenuItemType.myRequest),
             // Section(name: "Fee Payment History", items: [], image: "", selImage: "", expanded: false,itemType:MenuItemType.feepaymenthistory),
             
-            Section(name: "DUE AMOUNT", items: [], image: "sidebar_food", selImage: "", expanded: false,itemType:MenuItemType.dueAmount),
-            Section(name: "MY ORDERS", items: [], image: "sidebar_education", selImage: "", expanded: false,itemType:MenuItemType.myOrder),
-            Section(name: "PRICE LIST", items: [], image: "sidebar_govermentpayments", selImage: "", expanded: false,itemType:MenuItemType.priceList),
-            Section(name: "OFFERS", items: [], image: "sidebar_sdcardactivation", selImage: "", expanded: false,itemType:MenuItemType.offers),
-            Section(name: "FEEDBACK", items: ["A","B"], image: "contact_us", selImage: "", expanded: true,itemType:MenuItemType.feedback),
-            Section(name: "SETTING", items: [], image: "user_profile", selImage: "", expanded: false,itemType:MenuItemType.settings),
+            Section(name: "DUE AMOUNT", items: [], image: "Side Due Amount Icon", selImage: "", expanded: false,itemType:MenuItemType.dueAmount),
+            Section(name: "MY ORDERS", items: [], image: "Side My Order Icon", selImage: "", expanded: false,itemType:MenuItemType.myOrder),
+            Section(name: "PRICE LIST", items: [], image: "Side Price List Icon", selImage: "", expanded: false,itemType:MenuItemType.priceList),
+            Section(name: "OFFERS", items: [], image: "Offer Icon", selImage: "", expanded: false,itemType:MenuItemType.offers),
+            Section(name: "FEEDBACK", items: [], image: "Side Feedback Icon", selImage: "", expanded: true,itemType:MenuItemType.feedback),
+            Section(name: "SETTING", items: [], image: "Setting.png", selImage: "", expanded: false,itemType:MenuItemType.settings),
             
             
-            Section(name: "ABOUT US", items: [], image: "sidebar_signout", selImage: "", expanded: false,itemType:MenuItemType.aboutUs)
+            Section(name: "ABOUT US", items: [], image: "Side Request Pick Up Icon", selImage: "", expanded: false,itemType:MenuItemType.aboutUs)
         ]
         
         

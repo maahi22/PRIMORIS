@@ -90,16 +90,7 @@ class MyRequestViewModel: NSObject {
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   
     
     //DropOff
     @IBOutlet private var myDropOffClient:MyDropOffClient!
