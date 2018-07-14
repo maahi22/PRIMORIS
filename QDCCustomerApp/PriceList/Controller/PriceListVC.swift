@@ -144,7 +144,8 @@ class PriceListVC: UIViewController {
         if let selectedService = priceListViewModel.servicesArr[0] as? String{
                 self.selectedService = selectedService
         }
-        
+        let title = self.selectedService.replacingOccurrences(of: "_", with: " ")
+        self.showCategoryButton.setTitle(title, for: .normal)
         // self.priceCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.left, animated: true)
         self.priceCollectionView.reloadData()
     }
@@ -172,7 +173,7 @@ extension PriceListVC :UICollectionViewDelegate{
         if collectionView.tag == 1 {
             
             loadItemsInTable(indexPath)
-            
+            self.categorySelectionCollectionView.reloadData()
         }
     }
     
@@ -201,17 +202,17 @@ extension PriceListVC : UICollectionViewDataSource {
             guard let cell = categorySelectionCollectionView.dequeueReusableCell(withReuseIdentifier: PriceCategoryCollectionCell.identifier, for: indexPath ) as? PriceCategoryCollectionCell else { return UICollectionViewCell() }
             
             cell.categoryLabel.text = priceListViewModel.priceListItemsForIndexPath(indexPath)
-//            let str = self.categoryArr[indexPath.row] as? String
+            let str = priceListViewModel.priceListItemsForIndexPath(indexPath)
 //            cell.categoryLabel.text = str
-//            cell.categoryLabel.textColor = UIColor.whiteColor()
-//
-//            if str == self.selectedCategory {
-//                cell.selectedView.backgroundColor = PRIMARY_COLOUR
-//                cell.categoryLabel.textColor = UIColor.blackColor()
-//            }else{
-//                cell.categoryLabel.textColor = UIColor.grayColor()
-//                cell.selectedView.backgroundColor = UIColor.clearColor()
-//            }
+            cell.categoryLabel.textColor = UIColor.white
+
+            if str == self.selectedCategory {
+                cell.selectedView.backgroundColor = PRIMARY_COLOUR
+                cell.categoryLabel.textColor = UIColor.black
+            }else{
+                cell.categoryLabel.textColor = UIColor.gray
+                cell.selectedView.backgroundColor = UIColor.clear
+            }
             
             return cell
             

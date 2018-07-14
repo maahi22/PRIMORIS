@@ -77,6 +77,11 @@ class PriceListViewModel: NSObject {
         let mutableArray = NSMutableArray()
         
         guard let priceListModel = priceListModel else { return nil }
+        
+//        let sortedArr = priceListModel.sorted { (id1, id2) -> Bool in
+//            return id1.Garment!.lowercased() > id2.Garment!.lowercased() // Use > for Descending order
+//        }
+        
         for priceModel in priceListModel{
             
             if let garment = priceModel.Garment{
@@ -92,6 +97,12 @@ class PriceListViewModel: NSObject {
         
         return mutableArray[indexPath.item] as? String//Amit Please check
     }
+    
+    
+    
+    
+    
+    
     
     
     func numberOfPriceList(_ selectCat:String) -> Int {
@@ -145,14 +156,7 @@ class PriceListViewModel: NSObject {
                 }
                 
                
-//                if (catName == selectCat){
-//
-//                    if let grepos = priceModel.encode(to: ser) {
-//                        self.blog.text = String(grepos)
-//                    }
-//
-//                    mutableArray2.add(priceModel.encode(to: <#T##Encoder#>))
-//                }
+
             }
         }
         
