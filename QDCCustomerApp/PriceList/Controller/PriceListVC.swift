@@ -27,10 +27,8 @@ class PriceListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         self.setupUI()
         self.registerNib()
-        
         
         priceListViewModel.getPriceList { [weak self] (isSuccess, message) in
             
@@ -51,8 +49,6 @@ class PriceListVC: UIViewController {
             }else{
                 showAlertMessage(vc: strongSelf, title: .Error, message: message)
             }
-            
-            
         }
     }
 
