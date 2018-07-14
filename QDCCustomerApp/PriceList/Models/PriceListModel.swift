@@ -11,9 +11,9 @@ import Foundation
 
 struct PriceListModel:Codable {
     let Garment:String?
-    let Dry_Cleaning:Int
-    let Steam_Press:Int
-    let TINTORERIA:Int
+    let Dry_Cleaning:Int?
+    let Steam_Press:Int?
+    let TINTORERIA:Int?
     
     enum CodingKeys:String,CodingKey {
         case Garment

@@ -268,7 +268,7 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9P2-Yu-Yvu" firstAttribute="centerX" secondItem="uzq-Lh-2fQ" secondAttribute="centerX" id="1kF-vO-Stu"/>
                             <constraint firstAttribute="trailing" secondItem="RwA-qX-12k" secondAttribute="trailing" id="2KM-MV-gZy"/>

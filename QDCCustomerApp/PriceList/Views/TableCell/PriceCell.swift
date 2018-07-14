@@ -40,14 +40,14 @@ class PriceCell: UITableViewCell {
     
     func setupUI() {
         
-        var rct = self.priceContainerView.bounds
-        rct.size.width = SCREEN_SIZE.width-20
-        priceContainerView.layer.shadowColor = UIColor.black.cgColor
-        priceContainerView.layer.shadowOpacity = 0.5
-        priceContainerView.layer.shadowOffset = CGSize.zero
-        priceContainerView.layer.shadowRadius = 3
-        priceContainerView.layer.shadowPath = UIBezierPath(rect: rct).cgPath
-        priceContainerView.layer.shouldRasterize = true
+//        var rct = self.priceContainerView.bounds
+//        rct.size.width = SCREEN_SIZE.width-20
+//        priceContainerView.layer.shadowColor = UIColor.black.cgColor
+//        priceContainerView.layer.shadowOpacity = 0.5
+//        priceContainerView.layer.shadowOffset = CGSize.zero
+//        priceContainerView.layer.shadowRadius = 3
+//        priceContainerView.layer.shadowPath = UIBezierPath(rect: rct).cgPath
+//        priceContainerView.layer.shouldRasterize = true
         
     }
 }

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YeA-du-mgm">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YeA-du-mgm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="sXc-Gy-RjB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cgq-pu-aXM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgO-8E-0v8">
-                                <rect key="frame" x="20" y="124" width="335" height="21"/>
+                                <rect key="frame" x="20" y="124" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="zz7-TR-9bh"/>
                                 </constraints>
@@ -31,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-Ll-0Hg">
-                                <rect key="frame" x="20" y="150" width="335" height="16"/>
+                                <rect key="frame" x="20" y="150" width="560" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="600" id="yAw-nX-LLW"/>
                                 </constraints>
@@ -40,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-UI-iEx">
-                                <rect key="frame" x="20" y="176" width="162.5" height="40"/>
+                                <rect key="frame" x="20" y="176" width="275" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9hP-Wc-Hi1"/>
@@ -54,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="std-k7-7ac">
-                                <rect key="frame" x="20" y="226" width="335" height="40"/>
+                                <rect key="frame" x="20" y="226" width="560" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="VIO-Co-Sbu"/>
@@ -68,7 +65,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aq4-bz-HCd">
-                                <rect key="frame" x="192.5" y="176" width="162.5" height="40"/>
+                                <rect key="frame" x="305" y="176" width="275" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="aD5-Qh-gX5"/>
@@ -105,16 +102,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="QDC - On Demand" id="uR1-fG-0jr"/>
                     <connections>
+                        <outlet property="ScheduleDropOffClient" destination="fCO-Qg-aHd" id="r7l-2q-Rvf"/>
                         <outlet property="cancelButton" destination="Aq4-bz-HCd" id="FqK-Fn-vy8"/>
                         <outlet property="dashboardButton" destination="std-k7-7ac" id="LYI-zA-zwG"/>
                         <outlet property="messageLabel" destination="KvJ-Ll-0Hg" id="jbq-df-Hk4"/>
                         <outlet property="rescheduleButton" destination="8fO-UI-iEx" id="cRN-Xt-1j6"/>
                         <outlet property="schedulePickUpDateClient" destination="n2Q-y1-QhV" id="jht-qF-aqu"/>
-                        <outlet property="sheduledDropOffClient" destination="fCO-Qg-aHd" id="r7l-2q-Rvf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rig-Bb-mN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="fCO-Qg-aHd" customClass="SheduledDropOffClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
+                <customObject id="fCO-Qg-aHd" customClass="ScheduleDropOffClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
                 <customObject id="n2Q-y1-QhV" customClass="SchedulePickUpDateClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1076" y="-448.42578710644682"/>

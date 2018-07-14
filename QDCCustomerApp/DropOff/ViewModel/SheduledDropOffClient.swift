@@ -1,5 +1,5 @@
 //
-//  SheduledDropOffClient.swift
+//  ScheduleDropOffClient.swift
 //  QDCCustomerApp
 //
 //  Created by Maahi on 10/07/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SheduledDropOffClient: NSObject {
+class ScheduleDropOffClient: NSObject {
     // MARK: - Injections
     internal let networkClient = NetworkClient.shared
     

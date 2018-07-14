@@ -24,7 +24,7 @@ struct DropOffTimeModel:Codable {
 struct ScheduleDropOffModel:Codable {
     let Status:String
     let Reason:String
-    let DropOffDateAndTimeSlot:String
+    //let DropOffDateAndTimeSlot:String
 }
 
 /*struct ScheduleDetailsModel:Codable {
