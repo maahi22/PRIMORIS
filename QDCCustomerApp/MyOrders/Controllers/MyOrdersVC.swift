@@ -36,13 +36,17 @@ class MyOrdersVC: UIViewController {
         
         
         
-        myOrderViewModel.getMyOrder { [weak self] (isSuccess, message) in
+        myOrderViewModel.getMyOrder { [weak self] (orderSummary, message) in
             guard let strongSelf = self else{return}
             
-            if isSuccess {
+            if let orderSummary = orderSummary {
                 DispatchQueue.main.async {
                     
-                    if let totalord = strongSelf.myOrderViewModel.orderModel {
+                    strongSelf.pendingOrderLabel.text = orderSummary.TotalOrder
+                    strongSelf.inProcessLabel.text = orderSummary.ProcessCloth
+                    strongSelf.dueLabel.text = orderSummary.TotalAmount
+                    strongSelf.readyLabel.text = orderSummary.ReadyCloth
+                    /*if let totalord = strongSelf.myOrderViewModel.orderModel {
                         if let val = totalord[0].OrderSummary{
                             strongSelf.pendingOrderLabel.text = val[0].TotalOrder
                         }
@@ -70,7 +74,7 @@ class MyOrdersVC: UIViewController {
                         
                     }
                     
-                    
+                    */
                     
                     
                     

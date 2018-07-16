@@ -17,15 +17,15 @@ class MyOrderViewModel: NSObject {
     
     
     
-    func getMyOrder(completion:@escaping(Bool,String)->())  {
+    func getMyOrder(completion:@escaping(OrderSummaryModel?,String)->())  {
         
         myOrderClient.featchMyOrder { [weak self] (orderModel, message) in
             guard let strongSelf = self else{return}
-            if let orderModel = orderModel{
+            if let orderModel = orderModel, let orderSummary = orderModel.first{
                 strongSelf.orderModel = orderModel
-                completion(true,message)
+                completion(orderSummary,message)
             }else{
-                completion(false,message)
+                completion(nil,message)
             }
         }
         
