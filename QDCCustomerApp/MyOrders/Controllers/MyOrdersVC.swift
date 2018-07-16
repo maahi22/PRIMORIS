@@ -33,9 +33,6 @@ class MyOrdersVC: UIViewController {
         self.registerNib()
         self.setupUI()
         
-        
-        
-        
         myOrderViewModel.getMyOrder { [weak self] (orderSummary, message) in
             guard let strongSelf = self else{return}
             
@@ -46,53 +43,6 @@ class MyOrdersVC: UIViewController {
                     strongSelf.inProcessLabel.text = orderSummary.ProcessCloth
                     strongSelf.dueLabel.text = orderSummary.TotalAmount
                     strongSelf.readyLabel.text = orderSummary.ReadyCloth
-                    /*if let totalord = strongSelf.myOrderViewModel.orderModel {
-                     if let val = totalord[0].OrderSummary{
-                     strongSelf.pendingOrderLabel.text = val[0].TotalOrder
-                     }
-                     
-                     }
-                     
-                     if let totalord = strongSelf.myOrderViewModel.orderModel {
-                     if let val = totalord[0].OrderSummary{
-                     strongSelf.pendingOrderLabel.text = val[0].ProcessCloth
-                     }
-                     
-                     }
-                     
-                     if let totalord = strongSelf.myOrderViewModel.orderModel {
-                     if let val = totalord[0].OrderSummary{
-                     strongSelf.pendingOrderLabel.text = val[0].TotalAmount
-                     }
-                     
-                     }
-                     
-                     if let totalord = strongSelf.myOrderViewModel.orderModel {
-                     if let val = totalord[0].OrderSummary{
-                     strongSelf.pendingOrderLabel.text = val[0].ReadyCloth
-                     }
-                     
-                     }
-                     
-                     */
-                    
-                    
-                    
-                    /*if let processCloth = strongSelf.myOrderViewModel.orderSummaryModel?.ProcessCloth {
-                     strongSelf.inProcessLabel.text = processCloth
-                     }
-                     
-                     if let totalAmount = strongSelf.myOrderViewModel.orderSummaryModel?.TotalAmount {
-                     strongSelf.dueLabel.text = totalAmount
-                     }
-                     
-                     if let readyCloth = strongSelf.myOrderViewModel.orderSummaryModel?.ReadyCloth {
-                     strongSelf.readyLabel.text = readyCloth
-                     }*/
-                    
-                    
-                    
-                    
                     strongSelf.orderTableView.reloadData()
                     
                 }
@@ -102,9 +52,6 @@ class MyOrdersVC: UIViewController {
             }
             
         }
-        
-        
-        
     }
     
     
