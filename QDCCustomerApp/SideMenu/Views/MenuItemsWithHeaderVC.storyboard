@@ -17,26 +17,26 @@
         <scene sceneID="nwW-Fv-MV5">
             <objects>
                 <tableViewController storyboardIdentifier="MenuItemsTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pLn-yF-Ikw" customClass="MenuItemsTVC" customModule="QDCCustomerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ze8-E3-crh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ze8-E3-crh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="0.80372431509999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="hR8-g8-8gF">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="eVX-Y3-egU">
-                                    <rect key="frame" x="152.5" y="5" width="70" height="70"/>
+                                    <rect key="frame" x="162.5" y="5" width="50" height="50"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="70" id="Crw-Wf-50Z"/>
-                                        <constraint firstAttribute="width" constant="70" id="YnB-N3-3zn"/>
+                                        <constraint firstAttribute="height" constant="50" id="Crw-Wf-50Z"/>
+                                        <constraint firstAttribute="width" constant="50" id="YnB-N3-3zn"/>
                                     </constraints>
                                 </imageView>
-                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="EMPAY" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQM-58-ffY">
-                                    <rect key="frame" x="162.5" y="85" width="49.5" height="17.5"/>
-                                    <fontDescription key="fontDescription" name="Geometria-Medium" family="Geometria" pointSize="15"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="QDC - On Demand" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQM-58-ffY">
+                                    <rect key="frame" x="114.5" y="65" width="147" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -73,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="123" width="375" height="2"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gzb-lb-8Gd" id="RXV-OO-ZlI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableViewCellContentView>

@@ -539,11 +539,11 @@ func setAppNavigationBar() {
     
 }
 func setStatusBar() {
-    UIApplication.shared.statusBarStyle = .lightContent
+    UIApplication.shared.statusBarStyle = .default
     
     /*let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
      if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
-     statusBar.backgroundColor = mainColor
+     statusBar.backgroundColor = .white
      }*/
     
 }
