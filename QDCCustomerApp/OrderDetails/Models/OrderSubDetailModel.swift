@@ -10,9 +10,9 @@ import Foundation
 
 struct OrderSubDetailModel:Codable{
     
-    var iconUrl : String?
-    var garmentName : String?
-    var status : String?
-    var services : String?
+    var IconUrl : String?
+    var GarmentName : String?
+    var Status : String?
+    var Services : String?
     
 }

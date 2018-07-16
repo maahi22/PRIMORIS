@@ -150,9 +150,6 @@ class SignUpTVC: UITableViewController {
                 {
                     QDCUserDefaults.setCustomerId(customerId: custCode)
                     
-                    
-                    
-                    
                     if let name = response.CustomerName {
                         QDCUserDefaults.setUserName(userName: name)
                     }
@@ -163,7 +160,9 @@ class SignUpTVC: UITableViewController {
                     if let email = response.CustomerEmailId {
                         QDCUserDefaults.setUserEmail(email: email)
                     }
-                    
+                    if let mobNo = response.CustomerMobile {
+                        QDCUserDefaults.setUserMobile(mobile: mobNo)
+                    }
                     
                     
                     
@@ -238,7 +237,12 @@ class SignUpTVC: UITableViewController {
                                                                         if let dbName = customerCreationModel.DataBaseName {
                                                                             QDCUserDefaults.setDataBaseName(dbName: dbName)
                                                                         }
-                                                                        
+                                                                        if let mobNo = customerCreationModel.Mobile {
+                                                                            QDCUserDefaults.setUserMobile(mobile: mobNo)
+                                                                        }
+                                                                        if let mobNo = customerCreationModel.Mobile {
+                                                                            QDCUserDefaults.setUserMobile(mobile: mobNo)
+                                                                        }
                                                                         
                                                                         strongSelf.signUpClient.getCustomerToken(clientID, BranchID: branchID, CustomerCode: custCode, completion: { (isSuccess, message) in
                                                   strongSelf.dismissLoadingHUD()

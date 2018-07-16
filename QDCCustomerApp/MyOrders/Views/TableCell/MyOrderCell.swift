@@ -42,32 +42,32 @@ class MyOrderCell: UITableViewCell {
     }
     
     
-    var myOrderModel:MyOrderModel?{
+    var myOrderModel:OrderDetailsModel?{
         didSet{
             guard let orderDetailObj = myOrderModel else { return  }
             
             
-            self.orderLabel.text = orderDetailObj.orderNumber
-            self.dateLabel.text = orderDetailObj.orderDate
-            self.statusLabel.text = orderDetailObj.status
-            self.priceLabel.text = orderDetailObj.totalAmount
-            self.clothLabel.text = orderDetailObj.totalGarments
+            self.orderLabel.text = orderDetailObj.OrderNo
+            self.dateLabel.text = orderDetailObj.OrderDate
+            self.statusLabel.text = orderDetailObj.Status
+            self.priceLabel.text = orderDetailObj.TotalAmount
+            self.clothLabel.text = orderDetailObj.TotalGarments
             
         }
     }
     
-    func setupUI(orderDetailObj:OrderDetailModel) {
+    func setupUI(orderDetailObj:OrderDetailsModel) {
         
         self.clothImageView.image = self.clothImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         self.clothImageView.tintColor = APP_ICON_COLOUR
         self.priceImageView.image = self.priceImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         self.priceImageView.tintColor = APP_ICON_COLOUR
         
-        self.orderLabel.text = orderDetailObj.orderNumber
-        self.dateLabel.text = orderDetailObj.orderDate
-        self.statusLabel.text = orderDetailObj.status
-        self.priceLabel.text = orderDetailObj.totalAmount
-        self.clothLabel.text = orderDetailObj.totalGarments
+        self.orderLabel.text = orderDetailObj.OrderNo
+        self.dateLabel.text = orderDetailObj.OrderDate
+        self.statusLabel.text = orderDetailObj.Status
+        self.priceLabel.text = orderDetailObj.TotalAmount
+        self.clothLabel.text = orderDetailObj.TotalGarments
         
     }
     

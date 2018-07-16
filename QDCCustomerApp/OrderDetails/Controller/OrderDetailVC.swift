@@ -32,7 +32,7 @@ class OrderDetailVC: UIViewController {
     
     @IBOutlet weak var scheduleButton:UIButton!
     
-    var orderDetailModelObj:MyOrderModel!
+    var orderDetailModelObj:OrderDetailsModel!
     var orderDetailArray:NSArray = NSArray()
     
     
@@ -45,7 +45,7 @@ class OrderDetailVC: UIViewController {
         
         
         
-        orderDetailViewModel.getMyOrder(orderDetailModelObj.orderNumber!, completion: {  [weak self] (isSuccess, message) in
+        orderDetailViewModel.getMyOrder(orderDetailModelObj.OrderNo!, completion: {  [weak self] (isSuccess, message) in
             
             guard let strongSelf = self else{return}
             
@@ -70,12 +70,12 @@ class OrderDetailVC: UIViewController {
         self.view.backgroundColor = PRIMARY_COLOUR
         self.orderDetailTableView.backgroundColor = UIColor.white
         
-        self.orderLabel.text = orderDetailModelObj.orderNumber
-        self.dueDateLabel.text = orderDetailModelObj.dueDate
-        self.totalPriceLabel.text = orderDetailModelObj.totalAmount
-        self.totalClothsLabel.text = orderDetailModelObj.totalGarments
-        self.pendingPriceLabel.text = orderDetailModelObj.pendingAmount
-        self.pendingClothsLabel.text = orderDetailModelObj.pendingGarment
+        self.orderLabel.text = orderDetailModelObj.OrderNo
+        self.dueDateLabel.text = orderDetailModelObj.OrderDate
+        self.totalPriceLabel.text = orderDetailModelObj.TotalAmount
+        self.totalClothsLabel.text = orderDetailModelObj.TotalGarments
+        self.pendingPriceLabel.text = orderDetailModelObj.PendingAmount
+        self.pendingClothsLabel.text = orderDetailModelObj.PendingGarment
         
         self.scheduleButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
         self.scheduleButton.backgroundColor = BUTTON_COLOUR
@@ -90,6 +90,26 @@ class OrderDetailVC: UIViewController {
         self.pendingClothImageView.image = self.pendingClothImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         self.pendingClothImageView.tintColor = APP_ICON_COLOUR
     }
+    
+    
+    @IBAction func scheduleButtonClick(_ sender: Any) {
+    
+        guard let navViewController = DropOffVC.getStoryboardInstance(),
+            let  viewController = navViewController.topViewController as? DropOffVC
+            else { return  }
+        if let OrdNo = orderDetailModelObj.OrderNo{
+            viewController.bookingId = OrdNo
+            
+        }
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+    }
+    
+    
+    
+    
+    
+    
 
 }
 
@@ -118,7 +138,7 @@ extension OrderDetailVC:UITableViewDataSource{
         return cell
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    private func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 0.1))
         footerView.backgroundColor = UIColor.clear
         return footerView
@@ -131,15 +151,13 @@ extension OrderDetailVC:UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
 
-        
-}
-
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    private func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: IndexPath) -> CGFloat {
         
         return 82
     }

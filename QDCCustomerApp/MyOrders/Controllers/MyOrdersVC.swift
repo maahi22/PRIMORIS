@@ -42,21 +42,49 @@ class MyOrdersVC: UIViewController {
             if isSuccess {
                 DispatchQueue.main.async {
                     
-                    if let totalord = strongSelf.myOrderViewModel.orderSummaryModel?.totalOrder {
-                         strongSelf.pendingOrderLabel.text = totalord
+                    if let totalord = strongSelf.myOrderViewModel.orderModel {
+                        if let val = totalord[0].OrderSummary{
+                            strongSelf.pendingOrderLabel.text = val[0].TotalOrder
+                        }
+                        
                     }
                     
-                    if let processCloth = strongSelf.myOrderViewModel.orderSummaryModel?.processCloth {
+                    if let totalord = strongSelf.myOrderViewModel.orderModel {
+                        if let val = totalord[0].OrderSummary{
+                            strongSelf.pendingOrderLabel.text = val[0].ProcessCloth
+                        }
+                        
+                    }
+                    
+                    if let totalord = strongSelf.myOrderViewModel.orderModel {
+                        if let val = totalord[0].OrderSummary{
+                            strongSelf.pendingOrderLabel.text = val[0].TotalAmount
+                        }
+                        
+                    }
+                    
+                    if let totalord = strongSelf.myOrderViewModel.orderModel {
+                        if let val = totalord[0].OrderSummary{
+                            strongSelf.pendingOrderLabel.text = val[0].ReadyCloth
+                        }
+                        
+                    }
+                    
+                    
+                    
+                    
+                    
+                    /*if let processCloth = strongSelf.myOrderViewModel.orderSummaryModel?.ProcessCloth {
                         strongSelf.inProcessLabel.text = processCloth
                     }
                     
-                    if let totalAmount = strongSelf.myOrderViewModel.orderSummaryModel?.totalAmount {
+                    if let totalAmount = strongSelf.myOrderViewModel.orderSummaryModel?.TotalAmount {
                         strongSelf.dueLabel.text = totalAmount
                     }
                     
-                    if let readyCloth = strongSelf.myOrderViewModel.orderSummaryModel?.readyCloth {
+                    if let readyCloth = strongSelf.myOrderViewModel.orderSummaryModel?.ReadyCloth {
                         strongSelf.readyLabel.text = readyCloth
-                    }
+                    }*/
                     
                     
                    

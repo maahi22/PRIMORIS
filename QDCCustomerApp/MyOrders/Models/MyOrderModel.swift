@@ -9,29 +9,48 @@
 import Foundation
 
 
-struct OrderSummaryModel:Codable {
+struct OrderModel:Codable {
     
-    var totalOrder : String?
-    var totalAmount : String?
-    var processCloth : String?
-    var readyCloth : String?
-    var myOrderModel : [MyOrderModel]? //this will be the array of QDCOrderDetailModel
+    let OrderSummary : [OrderSummaryModel]?
+    let OrderDetails : [OrderDetailsModel]? //this will be the array of QDCOrderDetailModel
+    
+    
     
 }
 
+struct OrderSummaryModel:Codable {
+    let TotalOrder : String?
+    let TotalAmount : String?
+    let ProcessCloth : String?
+    let ReadyCloth : String?
+}
 
 
-
-struct MyOrderModel:Codable {
+struct OrderDetailsModel:Codable {
     
-    var orderNumber : String?
+    
+    /*var orderNumber : String?
     var orderDate : String?
     var dueDate : String?
     var totalGarments : String?
     var totalAmount : String?
     var pendingGarment : String?
     var pendingAmount : String?
-    var status : String?
+    var status : String?*/
+    
+    var BranchID : String?
+    var StoreCode : String?
+    var StoreName : String?
+    var OrderNo : String?
+    var OrderDate : String?
+    var DueDate : String?
+    var TotalGarments : String?
+    var TotalAmount : String?
+    var PendingGarment : String?
+    var PendingAmount : String?
+    var Status : String?
     
     
 }
+
+

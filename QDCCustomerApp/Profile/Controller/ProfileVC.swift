@@ -38,6 +38,8 @@ class ProfileVC: UIViewController {
         self.emailTextField.text = QDCUserDefaults.getUserEmail()
         self.mobileTextField.text = QDCUserDefaults.getUserMobile()
         self.addressTextField.text = QDCUserDefaults.getUserAddress()
+        
+       // self.pickupAddressTextField.text = QDCUserDefaults.getLocality()
         self.updateButton.layer.cornerRadius = 10
         
     }
