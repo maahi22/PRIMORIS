@@ -21,7 +21,7 @@ class MyOrderViewModel: NSObject {
         
         myOrderClient.featchMyOrder { [weak self] (orderModel, message) in
             guard let strongSelf = self else{return}
-            if let orderModel = orderModel, let orderSummary = orderModel.first{
+            if let orderModel = orderModel, let orderSummary = orderModel.first?.OrderSummary?.first{
                 strongSelf.orderModel = orderModel
                 completion(orderSummary,message)
             }else{
