@@ -90,6 +90,26 @@ class OrderDetailVC: UIViewController {
         self.pendingClothImageView.image = self.pendingClothImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         self.pendingClothImageView.tintColor = APP_ICON_COLOUR
     }
+    
+    
+    @IBAction func scheduleButtonClick(_ sender: Any) {
+    
+        guard let navViewController = DropOffVC.getStoryboardInstance(),
+            let  viewController = navViewController.topViewController as? DropOffVC
+            else { return  }
+        if let OrdNo = orderDetailModelObj.OrderNo{
+            viewController.bookingId = OrdNo
+            
+        }
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+    }
+    
+    
+    
+    
+    
+    
 
 }
 

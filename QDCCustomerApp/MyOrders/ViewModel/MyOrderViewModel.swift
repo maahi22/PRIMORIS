@@ -34,13 +34,13 @@ class MyOrderViewModel: NSObject {
     func numberOfmyOrder() -> Int {
         guard let orderModel = orderModel else { return 0 }
         //guard let orderModel = orderModel.orderDetailsModel else { return 0 }
-        guard let myOrderdetailModel = orderModel[0].orderDetailsModel else { return 0 }
+        guard let myOrderdetailModel = orderModel[0].OrderDetails else { return 0 }
         return myOrderdetailModel.count
     }
     
     func myOrderForIndexPath(_ indexPath:IndexPath) -> OrderDetailsModel? {
         guard let orderModel = orderModel else { return nil }
-        guard let myOrderdetailModel = orderModel[0].orderDetailsModel else { return nil }
+        guard let myOrderdetailModel = orderModel[0].OrderDetails else { return nil }
         return myOrderdetailModel[indexPath.row]
     }
     

@@ -11,18 +11,18 @@ import Foundation
 
 struct OrderModel:Codable {
     
-    var orderSummaryModel : [OrderSummaryModel]?
-    var orderDetailsModel : [OrderDetailsModel]? //this will be the array of QDCOrderDetailModel
+    let OrderSummary : [OrderSummaryModel]?
+    let OrderDetails : [OrderDetailsModel]? //this will be the array of QDCOrderDetailModel
     
     
     
 }
 
 struct OrderSummaryModel:Codable {
-    var TotalOrder : String?
-    var TotalAmount : String?
-    var ProcessCloth : String?
-    var ReadyCloth : String?
+    let TotalOrder : String?
+    let TotalAmount : String?
+    let ProcessCloth : String?
+    let ReadyCloth : String?
 }
 
 

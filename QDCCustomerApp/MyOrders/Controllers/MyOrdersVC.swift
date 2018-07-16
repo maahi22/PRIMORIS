@@ -43,28 +43,28 @@ class MyOrdersVC: UIViewController {
                 DispatchQueue.main.async {
                     
                     if let totalord = strongSelf.myOrderViewModel.orderModel {
-                        if let val = totalord[0].orderSummaryModel{
+                        if let val = totalord[0].OrderSummary{
                             strongSelf.pendingOrderLabel.text = val[0].TotalOrder
                         }
                         
                     }
                     
                     if let totalord = strongSelf.myOrderViewModel.orderModel {
-                        if let val = totalord[0].orderSummaryModel{
+                        if let val = totalord[0].OrderSummary{
                             strongSelf.pendingOrderLabel.text = val[0].ProcessCloth
                         }
                         
                     }
                     
                     if let totalord = strongSelf.myOrderViewModel.orderModel {
-                        if let val = totalord[0].orderSummaryModel{
+                        if let val = totalord[0].OrderSummary{
                             strongSelf.pendingOrderLabel.text = val[0].TotalAmount
                         }
                         
                     }
                     
                     if let totalord = strongSelf.myOrderViewModel.orderModel {
-                        if let val = totalord[0].orderSummaryModel{
+                        if let val = totalord[0].OrderSummary{
                             strongSelf.pendingOrderLabel.text = val[0].ReadyCloth
                         }
                         
