@@ -30,7 +30,6 @@
 		037745DA20DC259500CAB37E /* SignUpChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037745D920DC259500CAB37E /* SignUpChoiceVC.swift */; };
 		03C2AB8020DAAFAC0029AAA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2AB7F20DAAFAC0029AAA4 /* AppDelegate.swift */; };
 		03C2AB8220DAAFAC0029AAA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2AB8120DAAFAC0029AAA4 /* ViewController.swift */; };
-		03C2AB8520DAAFAC0029AAA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C2AB8320DAAFAC0029AAA4 /* Main.storyboard */; };
 		03C2AB8820DAAFAC0029AAA4 /* QDCCustomerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03C2AB8620DAAFAC0029AAA4 /* QDCCustomerApp.xcdatamodeld */; };
 		03C2AB8A20DAAFAE0029AAA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03C2AB8920DAAFAE0029AAA4 /* Assets.xcassets */; };
 		03C2AB8D20DAAFAE0029AAA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C2AB8B20DAAFAE0029AAA4 /* LaunchScreen.storyboard */; };
@@ -217,7 +216,6 @@
 		03C2AB7C20DAAFAC0029AAA4 /* QDCCustomerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QDCCustomerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C2AB7F20DAAFAC0029AAA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03C2AB8120DAAFAC0029AAA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		03C2AB8420DAAFAC0029AAA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03C2AB8720DAAFAC0029AAA4 /* QDCCustomerApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QDCCustomerApp.xcdatamodel; sourceTree = "<group>"; };
 		03C2AB8920DAAFAE0029AAA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03C2AB8C20DAAFAE0029AAA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -588,7 +586,6 @@
 				03CEBA3520DC11FB00A1FAB3 /* NetworkClient */,
 				03CEBA4720DC181E00A1FAB3 /* SupportingFiles */,
 				03CEBA3420DC11F300A1FAB3 /* Resources */,
-				03C2AB8320DAAFAC0029AAA4 /* Main.storyboard */,
 				03C2AB8120DAAFAC0029AAA4 /* ViewController.swift */,
 				03C2AB8E20DAAFAE0029AAA4 /* Info.plist */,
 			);
@@ -1803,7 +1800,6 @@
 				0F2FE64220F34E8E00F4CC48 /* PickupHistoryCell.xib in Resources */,
 				0F5E423020F0A6EF005CC203 /* DueAmountVC.storyboard in Resources */,
 				0F68656D20EFD5B200F95363 /* PickUpDateVC.storyboard in Resources */,
-				03C2AB8520DAAFAC0029AAA4 /* Main.storyboard in Resources */,
 				03E0CB5120E1186200318E32 /* OTPVerifyTVC.storyboard in Resources */,
 				0F5E426020F0B44D005CC203 /* AboutUsVC.storyboard in Resources */,
 				0F5E428420F0BD3C005CC203 /* ExitVC.storyboard in Resources */,
@@ -2076,14 +2072,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		03C2AB8320DAAFAC0029AAA4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03C2AB8420DAAFAC0029AAA4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		03C2AB8B20DAAFAE0029AAA4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

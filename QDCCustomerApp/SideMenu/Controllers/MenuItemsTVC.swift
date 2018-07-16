@@ -29,7 +29,7 @@ class MenuItemsTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        tableView.rowHeight = 35
+        tableView.rowHeight = 50
         tableView.backgroundColor = mainColor
         //tableView.setTableViewBackgroundGradient(#colorLiteral(red: 0.8705882353, green: 0.8509803922, blue: 0.7882352941, alpha: 1), #colorLiteral(red: 0.09929890186, green: 0.1892752349, blue: 0.70184201, alpha: 1))
         //tableView.separatorStyle = .none
