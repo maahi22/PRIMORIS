@@ -15,13 +15,13 @@ class MyOrderClient: NSObject {
     // MARK: - Injections
     internal let networkClient = NetworkClient.shared
     
-    func featchMyOrder(completion:@escaping (OrderSummaryModel?,String)->())  {
+    func featchMyOrder(completion:@escaping ([OrderModel]?,String)->())  {
         
         let branchName = QDCUserDefaults.getDataBaseName()
         let branchID = QDCUserDefaults.getBranchId()
         let clientID = QDCUserDefaults.getClientID()
         let token = QDCUserDefaults.getAccessToken()
-        let custId = QDCUserDefaults.getCustomerId()
+        let custId = "Cust1076"//QDCUserDefaults.getCustomerId()
         
         
         let apiname = MY_ORDERS_RELATIVE_URL + "\(clientID)/\(branchID)/\(custId)"
@@ -33,8 +33,8 @@ class MyOrderClient: NSObject {
                                            params: nil,
                                            headers: headers,
                                            success: { (data, httpResponse) in
-                                            if let myOrderViewModel = decodeJSON(type: OrderSummaryModel.self, from: data) {
-                                                completion(myOrderViewModel, "Success")
+                                            if let orderModel = decodeJSON(type: [OrderModel].self, from: data) {
+                                                completion(orderModel, "Success")
                                             }else{
                                                 completion(nil,"failed")
                                             }

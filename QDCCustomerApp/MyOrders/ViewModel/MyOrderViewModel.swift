@@ -11,7 +11,7 @@ import UIKit
 class MyOrderViewModel: NSObject {
 
     @IBOutlet private var myOrderClient:MyOrderClient!
-    var orderSummaryModel:OrderSummaryModel?
+    var orderModel:[OrderModel]?
     
     
     
@@ -19,10 +19,10 @@ class MyOrderViewModel: NSObject {
     
     func getMyOrder(completion:@escaping(Bool,String)->())  {
         
-        myOrderClient.featchMyOrder { [weak self] (orderSummaryModel, message) in
+        myOrderClient.featchMyOrder { [weak self] (orderModel, message) in
             guard let strongSelf = self else{return}
-            if let orderSummaryModel = orderSummaryModel{
-                strongSelf.orderSummaryModel = orderSummaryModel
+            if let orderModel = orderModel{
+                strongSelf.orderModel = orderModel
                 completion(true,message)
             }else{
                 completion(false,message)
@@ -32,15 +32,16 @@ class MyOrderViewModel: NSObject {
     }
     
     func numberOfmyOrder() -> Int {
-        guard let orderSummaryModel = orderSummaryModel else { return 0 }
-        guard let orderModel = orderSummaryModel.myOrderModel else { return 0 }
-        return orderModel.count
+        guard let orderModel = orderModel else { return 0 }
+        //guard let orderModel = orderModel.orderDetailsModel else { return 0 }
+        guard let myOrderdetailModel = orderModel[0].orderDetailsModel else { return 0 }
+        return myOrderdetailModel.count
     }
     
-    func myOrderForIndexPath(_ indexPath:IndexPath) -> MyOrderModel? {
-        guard let orderSummaryModel = orderSummaryModel else { return nil }
-        guard let myOrderModel = orderSummaryModel.myOrderModel else { return nil }
-        return myOrderModel[indexPath.row]
+    func myOrderForIndexPath(_ indexPath:IndexPath) -> OrderDetailsModel? {
+        guard let orderModel = orderModel else { return nil }
+        guard let myOrderdetailModel = orderModel[0].orderDetailsModel else { return nil }
+        return myOrderdetailModel[indexPath.row]
     }
     
     

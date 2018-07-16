@@ -119,7 +119,6 @@
 		0F2FE62F20F34A2100F4CC48 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE62D20F34A2100F4CC48 /* NotificationCell.xib */; };
 		0F2FE63320F34B0B00F4CC48 /* MyOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE63120F34B0B00F4CC48 /* MyOrderCell.swift */; };
 		0F2FE63420F34B0B00F4CC48 /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE63220F34B0B00F4CC48 /* MyOrderCell.xib */; };
-		0F2FE63720F34B7700F4CC48 /* OrderDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE63620F34B7700F4CC48 /* OrderDetailModel.swift */; };
 		0F2FE63B20F34D1F00F4CC48 /* OrderDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE63920F34D1F00F4CC48 /* OrderDetailCell.swift */; };
 		0F2FE63C20F34D1F00F4CC48 /* OrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FE63A20F34D1F00F4CC48 /* OrderDetailCell.xib */; };
 		0F2FE63E20F34D5700F4CC48 /* OrderSubDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FE63D20F34D5700F4CC48 /* OrderSubDetailModel.swift */; };
@@ -312,7 +311,6 @@
 		0F2FE62D20F34A2100F4CC48 /* NotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
 		0F2FE63120F34B0B00F4CC48 /* MyOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderCell.swift; sourceTree = "<group>"; };
 		0F2FE63220F34B0B00F4CC48 /* MyOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrderCell.xib; sourceTree = "<group>"; };
-		0F2FE63620F34B7700F4CC48 /* OrderDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailModel.swift; sourceTree = "<group>"; };
 		0F2FE63920F34D1F00F4CC48 /* OrderDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailCell.swift; sourceTree = "<group>"; };
 		0F2FE63A20F34D1F00F4CC48 /* OrderDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailCell.xib; sourceTree = "<group>"; };
 		0F2FE63D20F34D5700F4CC48 /* OrderSubDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSubDetailModel.swift; sourceTree = "<group>"; };
@@ -1189,7 +1187,6 @@
 		0F2FE63520F34B6100F4CC48 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0F2FE63620F34B7700F4CC48 /* OrderDetailModel.swift */,
 				0F2FE63D20F34D5700F4CC48 /* OrderSubDetailModel.swift */,
 			);
 			path = Models;
@@ -2006,7 +2003,6 @@
 				03FB56F820ECD0D400270859 /* MyOrdersVC.swift in Sources */,
 				0F2C38B220F4E5AC000C48D7 /* MyRequestDropOffModel.swift in Sources */,
 				0FA43BF720F604FE00E64E6E /* OrderDetailClient.swift in Sources */,
-				0F2FE63720F34B7700F4CC48 /* OrderDetailModel.swift in Sources */,
 				0F5E423720F0AD3B005CC203 /* PriceListVC.swift in Sources */,
 				03CEBA6420DC188300A1FAB3 /* CustomActivityIndicator.swift in Sources */,
 				03CEBA7120DC18E000A1FAB3 /* UIImageView.swift in Sources */,

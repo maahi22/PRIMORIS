@@ -42,10 +42,10 @@ class OrderDetailCell: UITableViewCell {
             guard let orderDetailObj = myOrderDetailModel else { return  }
             
             
-            garmentNameLabel.text = orderDetailObj.garmentName
-            categoryLabel.text = orderDetailObj.services
-            statusLabel.text = orderDetailObj.status
-            guard  let iconUrl =  orderDetailObj.iconUrl else {
+            garmentNameLabel.text = orderDetailObj.GarmentName
+            categoryLabel.text = orderDetailObj.Services
+            statusLabel.text = orderDetailObj.Status
+            guard  let iconUrl =  orderDetailObj.IconUrl else {
                 return
             }
            // iconImageView.text = orderDetailObj.totalAmount
@@ -57,11 +57,11 @@ class OrderDetailCell: UITableViewCell {
     
     func setupUI(orderSubDetailObj:OrderSubDetailModel) {
         
-        self.garmentNameLabel.text = orderSubDetailObj.garmentName
-        self.categoryLabel.text = orderSubDetailObj.services
-        self.statusLabel.text = orderSubDetailObj.status
+        self.garmentNameLabel.text = orderSubDetailObj.GarmentName
+        self.categoryLabel.text = orderSubDetailObj.Services
+        self.statusLabel.text = orderSubDetailObj.Status
         
-        guard  let iconUrl =  orderSubDetailObj.iconUrl else {
+        guard  let iconUrl =  orderSubDetailObj.IconUrl else {
             return
         }
         
