@@ -9,7 +9,7 @@
 import UIKit
 
 class MyOrdersVC: UIViewController {
-
+    
     
     
     @IBOutlet private var myOrderViewModel:MyOrderViewModel!
@@ -29,7 +29,7 @@ class MyOrdersVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.registerNib()
         self.setupUI()
         
@@ -47,52 +47,52 @@ class MyOrdersVC: UIViewController {
                     strongSelf.dueLabel.text = orderSummary.TotalAmount
                     strongSelf.readyLabel.text = orderSummary.ReadyCloth
                     /*if let totalord = strongSelf.myOrderViewModel.orderModel {
-                        if let val = totalord[0].OrderSummary{
-                            strongSelf.pendingOrderLabel.text = val[0].TotalOrder
-                        }
-                        
-                    }
-                    
-                    if let totalord = strongSelf.myOrderViewModel.orderModel {
-                        if let val = totalord[0].OrderSummary{
-                            strongSelf.pendingOrderLabel.text = val[0].ProcessCloth
-                        }
-                        
-                    }
-                    
-                    if let totalord = strongSelf.myOrderViewModel.orderModel {
-                        if let val = totalord[0].OrderSummary{
-                            strongSelf.pendingOrderLabel.text = val[0].TotalAmount
-                        }
-                        
-                    }
-                    
-                    if let totalord = strongSelf.myOrderViewModel.orderModel {
-                        if let val = totalord[0].OrderSummary{
-                            strongSelf.pendingOrderLabel.text = val[0].ReadyCloth
-                        }
-                        
-                    }
-                    
-                    */
+                     if let val = totalord[0].OrderSummary{
+                     strongSelf.pendingOrderLabel.text = val[0].TotalOrder
+                     }
+                     
+                     }
+                     
+                     if let totalord = strongSelf.myOrderViewModel.orderModel {
+                     if let val = totalord[0].OrderSummary{
+                     strongSelf.pendingOrderLabel.text = val[0].ProcessCloth
+                     }
+                     
+                     }
+                     
+                     if let totalord = strongSelf.myOrderViewModel.orderModel {
+                     if let val = totalord[0].OrderSummary{
+                     strongSelf.pendingOrderLabel.text = val[0].TotalAmount
+                     }
+                     
+                     }
+                     
+                     if let totalord = strongSelf.myOrderViewModel.orderModel {
+                     if let val = totalord[0].OrderSummary{
+                     strongSelf.pendingOrderLabel.text = val[0].ReadyCloth
+                     }
+                     
+                     }
+                     
+                     */
                     
                     
                     
                     /*if let processCloth = strongSelf.myOrderViewModel.orderSummaryModel?.ProcessCloth {
-                        strongSelf.inProcessLabel.text = processCloth
-                    }
+                     strongSelf.inProcessLabel.text = processCloth
+                     }
+                     
+                     if let totalAmount = strongSelf.myOrderViewModel.orderSummaryModel?.TotalAmount {
+                     strongSelf.dueLabel.text = totalAmount
+                     }
+                     
+                     if let readyCloth = strongSelf.myOrderViewModel.orderSummaryModel?.ReadyCloth {
+                     strongSelf.readyLabel.text = readyCloth
+                     }*/
                     
-                    if let totalAmount = strongSelf.myOrderViewModel.orderSummaryModel?.TotalAmount {
-                        strongSelf.dueLabel.text = totalAmount
-                    }
-                    
-                    if let readyCloth = strongSelf.myOrderViewModel.orderSummaryModel?.ReadyCloth {
-                        strongSelf.readyLabel.text = readyCloth
-                    }*/
                     
                     
-                   
-                   
+                    
                     strongSelf.orderTableView.reloadData()
                     
                 }
@@ -106,7 +106,7 @@ class MyOrdersVC: UIViewController {
         
         
     }
-
+    
     
     func registerNib() {
         orderTableView.register(MyOrderCell.nib, forCellReuseIdentifier: MyOrderCell.identifier)
@@ -123,10 +123,10 @@ class MyOrdersVC: UIViewController {
         self.readyImageView.tintColor = APP_ICON_COLOUR
         self.processImageView.image = self.processImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         self.processImageView.tintColor = APP_ICON_COLOUR
- 
+        
     }
     
-
+    
 }
 
 extension MyOrdersVC{
@@ -139,12 +139,14 @@ extension MyOrdersVC{
 
 
 extension MyOrdersVC:UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myOrderViewModel.numberOfmyOrder()
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = orderTableView.dequeueReusableCell(withIdentifier: MyOrderCell.identifier, for: indexPath)  as? MyOrderCell else { return UITableViewCell() }
-       
+        
         cell.myOrderModel =  myOrderViewModel.myOrderForIndexPath(indexPath)
         return cell
     }
@@ -160,11 +162,9 @@ extension MyOrdersVC:UITableViewDelegate{
                 else { return  }
             viewController.orderDetailModelObj = orderDetailObj
             self.navigationController?.pushViewController(viewController, animated: true)
-    
+            
+        }
+        
     }
-    
 }
-    
-    
-    
-}
+
