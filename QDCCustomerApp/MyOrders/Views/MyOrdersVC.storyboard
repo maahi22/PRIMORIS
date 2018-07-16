@@ -228,10 +228,10 @@
                             <constraint firstItem="bcF-zI-khM" firstAttribute="top" secondItem="5Cm-fP-ohX" secondAttribute="bottom" id="Iic-0I-Ssg"/>
                             <constraint firstItem="5Cm-fP-ohX" firstAttribute="leading" secondItem="G01-is-iwf" secondAttribute="leading" id="JdW-ef-Kau"/>
                             <constraint firstItem="xG2-fa-e28" firstAttribute="top" secondItem="r23-wo-4on" secondAttribute="bottom" id="NKZ-8C-zmL"/>
+                            <constraint firstItem="5Cm-fP-ohX" firstAttribute="top" secondItem="xG2-fa-e28" secondAttribute="bottom" id="SsG-Pt-aPt"/>
                             <constraint firstItem="xG2-fa-e28" firstAttribute="top" secondItem="r23-wo-4on" secondAttribute="bottom" id="VBz-Ce-i3h"/>
                             <constraint firstItem="5Cm-fP-ohX" firstAttribute="top" secondItem="r23-wo-4on" secondAttribute="bottom" id="ZEO-lL-uUt"/>
                             <constraint firstAttribute="trailing" secondItem="xG2-fa-e28" secondAttribute="trailing" id="aK6-tz-Puf"/>
-                            <constraint firstItem="5Cm-fP-ohX" firstAttribute="top" secondItem="xG2-fa-e28" secondAttribute="bottom" id="thL-h1-Kjt"/>
                             <constraint firstItem="xG2-fa-e28" firstAttribute="leading" secondItem="G01-is-iwf" secondAttribute="leading" id="zWP-fW-GbS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IdB-Fy-e3Y"/>
@@ -242,7 +242,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="My Order" id="pTl-59-MTx"/>
+                    <navigationItem key="navigationItem" title="My Order" id="pTl-59-MTx">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Header Icon Notification" id="qRN-Um-sie"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="dueImageView" destination="lQp-rY-iA2" id="Z0Z-CY-72f"/>
@@ -287,6 +289,7 @@
     </scenes>
     <resources>
         <image name="Due or Payment Icon" width="45" height="45"/>
+        <image name="Header Icon Notification" width="22" height="22"/>
         <image name="Pending or Ready Garment Icons" width="45" height="45"/>
     </resources>
 </document>

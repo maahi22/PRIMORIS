@@ -12,7 +12,7 @@ import Foundation
 struct OrderModel:Codable {
     
     let OrderSummary : [OrderSummaryModel]?
-    let OrderDetails : [OrderDetailsModel]? //this will be the array of QDCOrderDetailModel
+    let OrderDetails : [OrderDetailsModel]? 
     
     
     
@@ -27,28 +27,17 @@ struct OrderSummaryModel:Codable {
 
 
 struct OrderDetailsModel:Codable {
-    
-    
-    /*var orderNumber : String?
-    var orderDate : String?
-    var dueDate : String?
-    var totalGarments : String?
-    var totalAmount : String?
-    var pendingGarment : String?
-    var pendingAmount : String?
-    var status : String?*/
-    
-    var BranchID : String?
-    var StoreCode : String?
-    var StoreName : String?
-    var OrderNo : String?
-    var OrderDate : String?
-    var DueDate : String?
-    var TotalGarments : String?
-    var TotalAmount : String?
-    var PendingGarment : String?
-    var PendingAmount : String?
-    var Status : String?
+    let BranchID : String?
+    let StoreCode : String?
+    let StoreName : String?
+    let OrderNo : String?
+    let OrderDate : String?
+    let DueDate : String?
+    let TotalGarments : String?
+    let TotalAmount : String?
+    let PendingGarment : String?
+    let PendingAmount : String?
+    let Status : String?
     
     
 }

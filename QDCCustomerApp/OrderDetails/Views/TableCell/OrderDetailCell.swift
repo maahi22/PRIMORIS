@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+
 
 class OrderDetailCell: UITableViewCell {
 
@@ -46,9 +49,14 @@ class OrderDetailCell: UITableViewCell {
             categoryLabel.text = orderDetailObj.Services
             statusLabel.text = orderDetailObj.Status
             guard  let iconUrl =  orderDetailObj.IconUrl else {
+               
                 return
             }
-           // iconImageView.text = orderDetailObj.totalAmount
+            
+            let imageUrl = URL(string: iconUrl)
+            if let urlStr = imageUrl{
+            self.iconImageView.af_setImage(withURL: urlStr )
+            }
             
             
         }
