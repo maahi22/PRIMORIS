@@ -12,11 +12,7 @@ class MyOrderViewModel: NSObject {
 
     @IBOutlet private var myOrderClient:MyOrderClient!
     var orderModel:[OrderModel]?
-    
-    
-    
-    
-    
+  
     func getMyOrder(completion:@escaping(OrderSummaryModel?,String)->())  {
         
         myOrderClient.featchMyOrder { [weak self] (orderModel, message) in

@@ -11,6 +11,7 @@ import UIKit
 protocol MyRequestCellDelegate:class {
     
     func didSelectRescheduleButton(_ Index:IndexPath )
+    func didSelectCancelButton(_ myRequestModel:MyRequestModel? )
     func didSelectCancelButton(_ Index:IndexPath )
     
 }
@@ -43,9 +44,9 @@ class MyRequestCell: UITableViewCell {
     
     
     
-    var serveMyRequest:MyRequestModel?{
+    var myRequestModel:MyRequestModel?{
         didSet{
-            guard let serviceArea = serveMyRequest else { return  }
+            guard let serviceArea = myRequestModel else { return  }
             dateLabel.text = serviceArea.PickUpDate ?? ""
             timeLabel.text = serviceArea.PickUpTime ?? ""
             

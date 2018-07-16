@@ -114,8 +114,7 @@ extension SuccessfullPickUpVC{
 }
 
 extension SuccessfullPickUpVC: CancelReasonDelegate{
-    //Delegate Methods
-    func didSelectCancelReason(_ cancelReason:String) {
+    func didSelectCancelReason(_ cancelReason: String, indexPath: IndexPath?) {
         print("delegate cancel")
         if self.dropOffOrderId.isEmpty { //drop of id will only exist in case the user has drop off order
             self.hitCancelPickupWebService(cancelReason)
@@ -123,6 +122,16 @@ extension SuccessfullPickUpVC: CancelReasonDelegate{
             self.hitCancelDropOffWebService(cancelReason)
         }
     }
+    
+    //Delegate Methods
+    /*func didSelectCancelReason(_ cancelReason:String) {
+        print("delegate cancel")
+        if self.dropOffOrderId.isEmpty { //drop of id will only exist in case the user has drop off order
+            self.hitCancelPickupWebService(cancelReason)
+        }else{
+            self.hitCancelDropOffWebService(cancelReason)
+        }
+    }*/
     
     
     

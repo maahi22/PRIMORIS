@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol CancelReasonDelegate {
+protocol CancelReasonDelegate:class {
     
-    func didSelectCancelReason(_ cancelReason:String) ;
+    func didSelectCancelReason(_ cancelReason:String,indexPath:IndexPath?) ;
     
 }
 
@@ -24,7 +24,8 @@ class CancelReasonVC: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var containerVeiwBottomConstraint: NSLayoutConstraint!
     var selectedButton : UIButton!
-    var cancelOrderdelegate:CancelReasonDelegate?
+    weak var cancelOrderdelegate:CancelReasonDelegate?
+    var indexPath:IndexPath?
     let reasonArray:NSArray = ["I changed my mind","Pickup date already passed","I was just checking it","Will do it later"]
     
     
@@ -109,7 +110,7 @@ class CancelReasonVC: UIViewController {
         
         
         self.navigationController?.dismiss(animated: true, completion: nil)
-        self.cancelOrderdelegate?.didSelectCancelReason(reason)
+        self.cancelOrderdelegate?.didSelectCancelReason(reason, indexPath: indexPath)
     }
     
     

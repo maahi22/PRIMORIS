@@ -144,17 +144,6 @@ class MyRequestsVC: UIViewController{
             }
         }
     }
-
-    
-    
-    
-    
-    
-    
-   
-    
-    
-    
 }
 
 extension MyRequestsVC{
@@ -166,6 +155,21 @@ extension MyRequestsVC{
 }
 
 extension MyRequestsVC:MyRequestCellDelegate{
+    func didSelectCancelButton(_ myRequestModel: MyRequestModel?) {
+        if self.isPickUpSelected  {
+            selectedMyRequestModel = myRequestModel
+            //Add cancel view
+            guard let navViewController = CancelReasonVC.getStoryboardInstance(),
+                let viewController = navViewController.topViewController as? CancelReasonVC
+                else { return  }
+            viewController.cancelOrderdelegate = self
+            viewController.modalPresentationStyle = .overCurrentContext
+            navViewController.modalPresentationStyle = .overCurrentContext
+            self.present(navViewController, animated: true, completion: {})
+        }
+    }
+    
+    
     func didSelectRescheduleButton(_ Index: IndexPath) {
         if self.isPickUpSelected  {
             
@@ -204,18 +208,19 @@ extension MyRequestsVC:MyRequestCellDelegate{
         }
     }
     
-    func didSelectCancelButton(_ Index: IndexPath) {
+    
+    func didSelectCancelButton(_ index: IndexPath) {
         
-        cancelIndexPath = Index
+        cancelIndexPath = index
         if self.isPickUpSelected  {
             
-            guard  let pickUpObj = myRequestViewModel.myRequestAt(for: Index) else{
+            guard  let pickUpObj = myRequestViewModel.myRequestAt(for: index) else{
                 return
             }
             selectedMyRequestModel = pickUpObj
             
         }else{
-            guard  let dropOffObj = myRequestViewModel.myRequestDropOffAt(for: Index) else{
+            guard  let dropOffObj = myRequestViewModel.myRequestDropOffAt(for: index) else{
                 return
             }
          selectedMyRequestDropOffModel = dropOffObj
@@ -228,6 +233,7 @@ extension MyRequestsVC:MyRequestCellDelegate{
             let viewController = navViewController.topViewController as? CancelReasonVC
             else { return  }
         viewController.cancelOrderdelegate = self
+        viewController.indexPath = index
         viewController.modalPresentationStyle = .overCurrentContext
         navViewController.modalPresentationStyle = .overCurrentContext
         self.present(navViewController, animated: true, completion: {})
@@ -238,8 +244,54 @@ extension MyRequestsVC:MyRequestCellDelegate{
 }
 
 extension MyRequestsVC:CancelReasonDelegate{
+    func didSelectCancelReason(_ cancelReason: String, indexPath: IndexPath?) {
+        if self.isPickUpSelected {
+            
+            if let indexPath = indexPath{
+                
+                myRequestViewModel.cancelPickUpRequest(cancelReason, index: indexPath) {  [weak self] (isSuccess, message) in
+                    
+                    guard let strongSelf = self else{return}
+                    
+                    if isSuccess {
+                        //remove Cell code
+                        DispatchQueue.main.async {
+                            strongSelf.myPickUpsTableView.deleteRows(at: [indexPath], with: .automatic)
+                            //strongSelf.myPickUpsTableView.reloadData()
+                        }
+                    }
+                    else{
+                        
+                        showAlertMessage(vc: strongSelf, title: .Message, message: message)
+                    }
+                }
+            }
+            
+        }else{
+            
+            if let indexPath = indexPath{
+                
+                myRequestViewModel.cancelDropOffRequest(cancelReason, index: indexPath) {  [weak self] (isSuccess, message) in
+                    
+                    guard let strongSelf = self else{return}
+                    
+                    if isSuccess {
+                        //remove Cell code
+                        DispatchQueue.main.async {
+                            strongSelf.myDropOffsTableView.deleteRows(at: [indexPath], with: .automatic)
+                        }
+                    }else{
+                        
+                        showAlertMessage(vc: strongSelf, title: .Message, message: message)
+                    }
+                }
+            }
+            
+        }
+    }
     
-    func didSelectCancelReason(_ cancelReason: String) {
+    
+    /*func didSelectCancelReason(_ cancelReason: String) {
         if self.isPickUpSelected {
             
             if let indexPath = cancelIndexPath{
@@ -252,11 +304,10 @@ extension MyRequestsVC:CancelReasonDelegate{
                         //remove Cell code
                         DispatchQueue.main.async {
                             strongSelf.myPickUpsTableView.deleteRows(at: [indexPath], with: .automatic)
+                            //strongSelf.myPickUpsTableView.reloadData()
                         }
-                        
-                        
-                        
-                    }else{
+                    }
+                    else{
                         
                         showAlertMessage(vc: strongSelf, title: .Message, message: message)
                     }
@@ -266,29 +317,27 @@ extension MyRequestsVC:CancelReasonDelegate{
         }else{
             
             if let indexPath = cancelIndexPath{
-            
-            myRequestViewModel.cancelDropOffRequest(cancelReason, index: indexPath) {  [weak self] (isSuccess, message) in
-               
-                guard let strongSelf = self else{return}
                 
-                if isSuccess {
-                    //remove Cell code
-                    DispatchQueue.main.async {
-                        strongSelf.myDropOffsTableView.deleteRows(at: [indexPath], with: .automatic)
+                myRequestViewModel.cancelDropOffRequest(cancelReason, index: indexPath) {  [weak self] (isSuccess, message) in
+                    
+                    guard let strongSelf = self else{return}
+                    
+                    if isSuccess {
+                        //remove Cell code
+                        DispatchQueue.main.async {
+                            strongSelf.myDropOffsTableView.deleteRows(at: [indexPath], with: .automatic)
+                        }
+                    }else{
+                        
+                        showAlertMessage(vc: strongSelf, title: .Message, message: message)
                     }
-                }else{
-                    
-                    showAlertMessage(vc: strongSelf, title: .Message, message: message)
                 }
-                    
-                
-            }
             }
             
         }
         
         
-    }
+    }*/
     
     
     
@@ -326,7 +375,7 @@ extension MyRequestsVC:UITableViewDataSource{
             cell.requestCelldelegate = self
             cell.setupUI()
             cell.indexPath = indexPath
-            cell.serveMyRequest = myRequestViewModel.myRequestAt(for: indexPath)
+            cell.myRequestModel = myRequestViewModel.myRequestAt(for: indexPath)
             cell.arrowLabel.isHidden = true
             cell.historyTableView.isHidden = true
             
