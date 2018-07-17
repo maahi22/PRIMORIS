@@ -20,7 +20,7 @@ class MenuItemTableViewCell: UITableViewCell {
         
         menuItemImageView.image = UIImage(named: menuItem.image)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         menuItemImageView.tintColor = .white
-        menuItemImageView.highlightedImage = UIImage(named: menuItem.selImage)
+       // menuItemImageView.highlightedImage = UIImage(named: menuItem.selImage)
         
         menuItemNameLabel.highlightedTextColor = mainNavBarColor
         let backgroundView = UIView()
@@ -42,10 +42,12 @@ class MenuItemTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        menuItemImageView.highlightedImage = UIImage(named: (menuItem?.selImage)!)
         
-        menuItemImageView.tintColor = mainNavBarColor
+        if selected {
+            menuItemImageView.tintColor = mainNavBarColor
+        }else{
+            menuItemImageView.tintColor = .white
+        }
         // Configure the view for the selected state
     }
     
