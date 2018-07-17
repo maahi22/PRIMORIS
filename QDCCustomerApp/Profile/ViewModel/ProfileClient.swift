@@ -31,7 +31,7 @@ class ProfileClient: NSObject {
                       "Name":name,
                       "Address": address,
                       "CustomerCode" :customerCode,
-                      "DatabaseName" : clientID,
+                      "DatabaseName" : dbName,
                       "BranchID":branchID ] as [String:Any]
         
         let headers = ["token": "\(token)", "Content-Type": "application/json"] as [String:String]

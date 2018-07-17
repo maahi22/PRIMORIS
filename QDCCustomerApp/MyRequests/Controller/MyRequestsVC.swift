@@ -256,8 +256,13 @@ extension MyRequestsVC:CancelReasonDelegate{
                     if isSuccess {
                         //remove Cell code
                         DispatchQueue.main.async {
-                            strongSelf.myPickUpsTableView.deleteRows(at: [indexPath], with: .automatic)
+                            
                             //strongSelf.myPickUpsTableView.reloadData()
+                            
+                            strongSelf.myPickUpsTableView.beginUpdates()
+                            strongSelf.myPickUpsTableView.deleteRows(at: [indexPath], with: .automatic)
+                            strongSelf.myPickUpsTableView.endUpdates()
+                            strongSelf.myPickUpsTableView.reloadRows(at: [indexPath], with: .automatic)
                         }
                     }
                     else{
@@ -278,7 +283,14 @@ extension MyRequestsVC:CancelReasonDelegate{
                     if isSuccess {
                         //remove Cell code
                         DispatchQueue.main.async {
+                            //strongSelf.myDropOffsTableView.deleteRows(at: [indexPath], with: .automatic)
+                        
+                            strongSelf.myDropOffsTableView.beginUpdates()
                             strongSelf.myDropOffsTableView.deleteRows(at: [indexPath], with: .automatic)
+                            strongSelf.myDropOffsTableView.endUpdates()
+                            strongSelf.myDropOffsTableView.reloadRows(at: [indexPath], with: .automatic)
+                        
+                        
                         }
                     }else{
                         

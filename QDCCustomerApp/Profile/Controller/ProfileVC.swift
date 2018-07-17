@@ -47,7 +47,7 @@ class ProfileVC: UIViewController {
     
     
     @IBAction func UpdateButtonClicks(_ sender: Any) {
-        
+
         guard
             let name = nameTextField.text, !name.isEmpty,
             let areaLocation = pickupAddressTextField.text, !areaLocation.isEmpty,
@@ -67,18 +67,22 @@ class ProfileVC: UIViewController {
     
     func hitUpdateUserWebService(_ name:String , address:String,addressLocation:String) {
         
-        profileClient.updateProfile(areaLocation: address, name: name, address: address) {  [weak self] (isSuccess, message)  in
+        profileClient.updateProfile(areaLocation: address, name: name, address: address) {  [weak self] (customerModel, message)  in
             
             guard let strongSelf = self else{return}
             //  strongSelf.dismissLoadingHUD()
-           /* if isSuccess{
+            
+            if let cus = customerModel {
+            
+                print(cus.Name)
+           // if isSuccess{
                 DispatchQueue.main.async {
                     showAlertMessage(vc: strongSelf, title: .Error, message: message)
                 }
                 
             }else{
                 showAlertMessage(vc: strongSelf, title: .Error, message: message)
-            }*/
+            }
             
             
         }
