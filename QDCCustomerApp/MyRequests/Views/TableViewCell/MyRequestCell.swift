@@ -100,26 +100,51 @@ class MyRequestCell: UITableViewCell {
     
     @IBAction func rescheduleButtonClick(_ sender: UIButton) {
         
-        guard let index = indexPath else{ return }
+    //    guard let index = indexPath else{ return }
+        var superview = sender.superview
+        while let view = superview, !(view is MyRequestCell) {
+            superview = view.superview
+        }
+        guard let cell = superview as? MyRequestCell else {
+            print("button is not contained in a table view cell")
+            return
+        }
         guard let tbl = tblView else{ return }
+        guard let indexPath = tbl.indexPath(for: cell) else {
+            print("failed to get index path for cell containing button")
+            return
+        }
         
-//        var buttonPosition = sender.convertPoint(CGPointZero, to: tbl)
-//        var indexPath = tbl.indexPathForRow(atPoint: buttonPosition)!
-//        print("reschedule \(indexPath)")
-        requestCelldelegate?.didSelectRescheduleButton( index )
+        
+        requestCelldelegate?.didSelectRescheduleButton( indexPath )
         
     }
     
     
     
     @IBAction func cancelButtonClick(_ sender: UIButton) {
-        guard let index = indexPath else{ return }
+       // guard let index = indexPath else{ return }
         
-//        guard let tbl = tblView else{ return }
-//        let buttonPosition = sender.convert(.zero, to: tbl)//convertPoint(CGPointZero, to: tbl)
-//        guard let  indexPath = tbl.indexPathForRow(atPoint: buttonPosition)else{ return }
+      //  guard let tbl = tblView else{ return }
+      //  let buttonPosition = sender.convert(.zero, to: tbl)//convertPoint(CGPointZero, to: tbl)
+      //  guard let  indexPath = tbl.indexPathForRow(atPoint: buttonPosition)else{ return }
 //        print("cancel   \(indexPath)")
-        requestCelldelegate?.didSelectCancelButton(index)
+        
+        var superview = sender.superview
+        while let view = superview, !(view is MyRequestCell) {
+            superview = view.superview
+        }
+        guard let cell = superview as? MyRequestCell else {
+            print("button is not contained in a table view cell")
+            return
+        }
+        guard let tbl = tblView else{ return }
+        guard let indexPath = tbl.indexPath(for: cell) else {
+            print("failed to get index path for cell containing button")
+            return
+        }
+        
+        requestCelldelegate?.didSelectCancelButton(indexPath)
         
     }
     

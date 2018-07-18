@@ -233,7 +233,7 @@ extension MyRequestsVC:MyRequestCellDelegate{
             let viewController = navViewController.topViewController as? CancelReasonVC
             else { return  }
         viewController.cancelOrderdelegate = self
-        viewController.indexPath = index
+        viewController.indexP = index
         viewController.modalPresentationStyle = .overCurrentContext
         navViewController.modalPresentationStyle = .overCurrentContext
         self.present(navViewController, animated: true, completion: {})
@@ -244,6 +244,8 @@ extension MyRequestsVC:MyRequestCellDelegate{
 }
 
 extension MyRequestsVC:CancelReasonDelegate{
+  
+    
     func didSelectCancelReason(_ cancelReason: String, indexPath: IndexPath?) {
         if self.isPickUpSelected {
             
@@ -262,7 +264,7 @@ extension MyRequestsVC:CancelReasonDelegate{
                             strongSelf.myPickUpsTableView.beginUpdates()
                             strongSelf.myPickUpsTableView.deleteRows(at: [indexPath], with: .automatic)
                             strongSelf.myPickUpsTableView.endUpdates()
-                            strongSelf.myPickUpsTableView.reloadRows(at: [indexPath], with: .automatic)
+                          //  strongSelf.myPickUpsTableView.reloadRows(at: [indexPath], with: .automatic)
                         }
                     }
                     else{
@@ -288,8 +290,8 @@ extension MyRequestsVC:CancelReasonDelegate{
                             strongSelf.myDropOffsTableView.beginUpdates()
                             strongSelf.myDropOffsTableView.deleteRows(at: [indexPath], with: .automatic)
                             strongSelf.myDropOffsTableView.endUpdates()
-                            strongSelf.myDropOffsTableView.reloadRows(at: [indexPath], with: .automatic)
-                            strongSelf.myDropOffsTableView.reloadData()
+                            //strongSelf.myDropOffsTableView.reloadRows(at: [indexPath], with: .automatic)
+                            //strongSelf.myDropOffsTableView.reloadData()
                         
                         }
                     }else{
