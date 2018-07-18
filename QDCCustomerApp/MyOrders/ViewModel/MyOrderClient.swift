@@ -21,7 +21,7 @@ class MyOrderClient: NSObject {
         let branchID = QDCUserDefaults.getBranchId()
         let clientID = QDCUserDefaults.getClientID()
         let token = QDCUserDefaults.getAccessToken()
-        let custId = "Cust1076"//QDCUserDefaults.getCustomerId()
+        let custId = QDCUserDefaults.getCustomerId()//"Cust1076"//
         
         
         let apiname = MY_ORDERS_RELATIVE_URL + "\(clientID)/\(branchID)/\(custId)"

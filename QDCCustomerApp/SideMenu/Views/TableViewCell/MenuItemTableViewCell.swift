@@ -15,10 +15,17 @@ class MenuItemTableViewCell: UITableViewCell {
   
   var menuItem:Section?{
     didSet{
-      guard let menuItem = menuItem else { return  }
-      menuItemNameLabel.text = menuItem.name
-      menuItemImageView.image = UIImage(named: menuItem.image)
-      menuItemImageView.highlightedImage = UIImage(named: menuItem.selImage)
+        guard let menuItem = menuItem else { return  }
+        menuItemNameLabel.text = menuItem.name
+        
+        menuItemImageView.image = UIImage(named: menuItem.image)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        menuItemImageView.tintColor = .white
+       // menuItemImageView.highlightedImage = UIImage(named: menuItem.selImage)
+        
+        menuItemNameLabel.highlightedTextColor = mainNavBarColor
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .white
+        self.selectedBackgroundView = backgroundView
     }
   }
   static var nib:UINib {
@@ -35,7 +42,12 @@ class MenuItemTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
+        if selected {
+            menuItemImageView.tintColor = mainNavBarColor
+        }else{
+            menuItemImageView.tintColor = .white
+        }
         // Configure the view for the selected state
     }
     
