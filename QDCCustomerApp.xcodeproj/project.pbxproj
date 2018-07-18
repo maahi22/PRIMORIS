@@ -82,6 +82,8 @@
 		0F290FA120F73DE2000C9650 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F290FA020F73DE2000C9650 /* HistoryModel.swift */; };
 		0F2995EC20F25FC800594B21 /* UIColor+QDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2995EB20F25FC800594B21 /* UIColor+QDC.swift */; };
 		0F2995EF20F27FBA00594B21 /* FeedbackClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2995EE20F27FBA00594B21 /* FeedbackClient.swift */; };
+		0F2AB5D620FF123100A4ECB7 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AB5D420FF123100A4ECB7 /* SettingCell.swift */; };
+		0F2AB5D720FF123100A4ECB7 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AB5D520FF123100A4ECB7 /* SettingCell.xib */; };
 		0F2AD39D20F0784D002B4BF5 /* ProfileVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AD39C20F0784D002B4BF5 /* ProfileVC.storyboard */; };
 		0F2AD39F20F0785B002B4BF5 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AD39E20F0785B002B4BF5 /* ProfileVC.swift */; };
 		0F2AD3A220F07B7F002B4BF5 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AD3A120F07B7F002B4BF5 /* BaseVC.swift */; };
@@ -273,6 +275,8 @@
 		0F290FA020F73DE2000C9650 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		0F2995EB20F25FC800594B21 /* UIColor+QDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+QDC.swift"; sourceTree = "<group>"; };
 		0F2995EE20F27FBA00594B21 /* FeedbackClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackClient.swift; sourceTree = "<group>"; };
+		0F2AB5D420FF123100A4ECB7 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		0F2AB5D520FF123100A4ECB7 /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
 		0F2AD39C20F0784D002B4BF5 /* ProfileVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileVC.storyboard; sourceTree = "<group>"; };
 		0F2AD39E20F0785B002B4BF5 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		0F2AD3A120F07B7F002B4BF5 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
@@ -983,6 +987,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		0F2AB5D320FF121400A4ECB7 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AB5D420FF123100A4ECB7 /* SettingCell.swift */,
+				0F2AB5D520FF123100A4ECB7 /* SettingCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
 		0F2AD39920F0780D002B4BF5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1396,6 +1409,7 @@
 		0F5E425020F0B231005CC203 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F2AB5D320FF121400A4ECB7 /* TableCell */,
 				0F5E425320F0B298005CC203 /* SettingsVC.storyboard */,
 			);
 			path = Views;
@@ -1785,6 +1799,7 @@
 				0F2FE63C20F34D1F00F4CC48 /* OrderDetailCell.xib in Resources */,
 				0F5E423520F0AD28005CC203 /* PriceListVC.storyboard in Resources */,
 				0F5E425420F0B298005CC203 /* SettingsVC.storyboard in Resources */,
+				0F2AB5D720FF123100A4ECB7 /* SettingCell.xib in Resources */,
 				034B9B2720E6C056004CFD4D /* SideMenu.storyboard in Resources */,
 				0F2FE65420F3517400F4CC48 /* PriceCollectionCell.xib in Resources */,
 				0F2FE62F20F34A2100F4CC48 /* NotificationCell.xib in Resources */,
@@ -2021,6 +2036,7 @@
 				0F2C38B420F4E5D1000C48D7 /* MyRequestModel.swift in Sources */,
 				0F2C38A920F4AC66000C48D7 /* NotificationsModel.swift in Sources */,
 				0F68656F20EFD61C00F95363 /* PickUpDateVC.swift in Sources */,
+				0F2AB5D620FF123100A4ECB7 /* SettingCell.swift in Sources */,
 				0F5E426220F0B461005CC203 /* AboutUsVC.swift in Sources */,
 				0FA43BFA20F613F800E64E6E /* ProfileClient.swift in Sources */,
 				03CEBA7220DC18E000A1FAB3 /* UIImageView+URL.swift in Sources */,

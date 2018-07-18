@@ -11,7 +11,7 @@ import UIKit
 protocol MyRequestCellDelegate:class {
     
     func didSelectRescheduleButton(_ Index:IndexPath )
-    func didSelectCancelButton(_ myRequestModel:MyRequestModel? )
+    //func didSelectCancelButton(_ myRequestModel:MyRequestModel? )
     func didSelectCancelButton(_ Index:IndexPath )
     
 }
@@ -30,6 +30,7 @@ class MyRequestCell: UITableViewCell {
     var Obj: AnyObject!
     var dropOffModel: MyRequestDropOffModel?
     var indexPath :IndexPath?
+    var tblView :UITableView?
     weak var requestCelldelegate:MyRequestCellDelegate?
     
     
@@ -97,20 +98,29 @@ class MyRequestCell: UITableViewCell {
     
     
     
-    @IBAction func rescheduleButtonClick(_ sender: Any) {
+    @IBAction func rescheduleButtonClick(_ sender: UIButton) {
         
         guard let index = indexPath else{ return }
+        guard let tbl = tblView else{ return }
         
+//        var buttonPosition = sender.convertPoint(CGPointZero, to: tbl)
+//        var indexPath = tbl.indexPathForRow(atPoint: buttonPosition)!
+//        print("reschedule \(indexPath)")
         requestCelldelegate?.didSelectRescheduleButton( index )
-        print("reschedule")
+        
     }
     
     
     
-    @IBAction func cancelButtonClick(_ sender: Any) {
+    @IBAction func cancelButtonClick(_ sender: UIButton) {
         guard let index = indexPath else{ return }
+        
+//        guard let tbl = tblView else{ return }
+//        let buttonPosition = sender.convert(.zero, to: tbl)//convertPoint(CGPointZero, to: tbl)
+//        guard let  indexPath = tbl.indexPathForRow(atPoint: buttonPosition)else{ return }
+//        print("cancel   \(indexPath)")
         requestCelldelegate?.didSelectCancelButton(index)
-        print("cancel")
+        
     }
     
     

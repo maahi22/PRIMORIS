@@ -19,7 +19,8 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        settingTableView.register(SettingCell.nib, forCellReuseIdentifier: SettingCell.identifier)
+
        // self.settingTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         settingsViewModel.getSettingsinformation { [weak self] (isSuccess, message) in
@@ -59,30 +60,28 @@ extension SettingsVC:UITableViewDataSource{
         return settingArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var settingCell = tableView.dequeueReusableCell(withIdentifier: "CELL") as UITableViewCell?
+        
        
-        if settingCell == nil {
-            settingCell = UITableViewCell(style:.default, reuseIdentifier: "CELL")
-        }
+        
+        guard let settingCell = tableView.dequeueReusableCell(withIdentifier: SettingCell.identifier, for: indexPath)  as? SettingCell else { return UITableViewCell() }
+        
         
         if indexPath.row == 2 {
-            settingCell?.selectionStyle = UITableViewCellSelectionStyle.none
-            settingCell?.contentView.backgroundColor = UIColor.lightGray
-            settingCell?.contentView.alpha = 0.5
+            settingCell.selectionStyle = UITableViewCellSelectionStyle.none
+            settingCell.contentView.backgroundColor = UIColor.lightGray
+            settingCell.contentView.alpha = 0.5
         }else{
-            settingCell?.selectionStyle = UITableViewCellSelectionStyle.none
-            settingCell?.contentView.backgroundColor = UIColor.clear
+            settingCell.selectionStyle = UITableViewCellSelectionStyle.none
+            settingCell.contentView.backgroundColor = UIColor.clear
         }
         
-        settingCell?.textLabel?.text = self.settingArray[indexPath.row]
-        
-        
-        
-        settingCell?.textLabel?.text = settingArray[indexPath.row]
-        return settingCell!
+    
+        settingCell.textLabel?.backgroundColor = .clear
+        settingCell.textLabel?.text = settingArray[indexPath.row]
+        return settingCell
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    private func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 0.1))
         footerView.backgroundColor = UIColor.clear
         return footerView

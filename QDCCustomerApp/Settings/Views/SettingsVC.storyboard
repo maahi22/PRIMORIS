@@ -63,6 +63,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="izD-fh-GvA"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="settingTableView" destination="dC9-vg-xa1" id="M6k-AQ-vBg"/>
                         <outlet property="settingsViewModel" destination="avr-Q5-jGQ" id="ygp-9t-4IJ"/>
                     </connections>
                 </viewController>
