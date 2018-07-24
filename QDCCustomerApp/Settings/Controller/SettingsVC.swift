@@ -75,13 +75,10 @@ extension SettingsVC:UITableViewDataSource{
             settingCell.contentView.backgroundColor = UIColor.clear
         }
         
-        settingCell?.textLabel?.text = self.settingArray[indexPath.row]
-        
-        
-        
-        settingCell?.textLabel?.text = settingArray[indexPath.row]
-        settingCell?.accessoryType = .disclosureIndicator
-        return settingCell!
+    
+        settingCell.textLabel?.backgroundColor = .clear
+        settingCell.textLabel?.text = settingArray[indexPath.row]
+        return settingCell
     }
     
     private func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
