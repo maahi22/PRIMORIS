@@ -25,7 +25,7 @@ class CancelReasonVC: UIViewController {
     @IBOutlet weak var containerVeiwBottomConstraint: NSLayoutConstraint!
     var selectedButton : UIButton!
     weak var cancelOrderdelegate:CancelReasonDelegate?
-    var indexPath:IndexPath?
+    var indexP:IndexPath?
     let reasonArray:NSArray = ["I changed my mind","Pickup date already passed","I was just checking it","Will do it later"]
     
     
@@ -110,7 +110,7 @@ class CancelReasonVC: UIViewController {
         
         
         self.navigationController?.dismiss(animated: true, completion: nil)
-        self.cancelOrderdelegate?.didSelectCancelReason(reason, indexPath: indexPath)
+        self.cancelOrderdelegate?.didSelectCancelReason(reason, indexPath: self.indexP)
     }
     
     
