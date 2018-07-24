@@ -545,4 +545,6 @@ enum HttpRequestType:String {
     case POST, GET, PUT
 }
 
-
+struct MessageModel:Codable{
+    let Message:String?
+}

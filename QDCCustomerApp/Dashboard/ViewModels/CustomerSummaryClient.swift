@@ -31,7 +31,12 @@ class CustomerSummaryClient: NSObject {
                                             
                                             if let customerSummaryModel = decodeJSON(type: CustomerSummaryModel.self, from: data) {
                                                 completion(customerSummaryModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

@@ -36,7 +36,12 @@ class NotificationClient: NSObject {
                                             
                                             if let notificationsModel = decodeJSON(type: [NotificationsModel].self, from: data) {
                                                 completion(notificationsModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

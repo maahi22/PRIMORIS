@@ -33,7 +33,12 @@ class SchedulePickUpDateClient: NSObject {
                                             
                                             if let scheduleDetailsModel = decodeJSON(type: ScheduleDetailsModel.self, from: data) {
                                                 completion(scheduleDetailsModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             
@@ -88,7 +93,12 @@ class SchedulePickUpDateClient: NSObject {
                                             
                                             if let schedulePickupModel = decodeJSON(type: SchedulePickupModel.self, from: data) {
                                                 completion(schedulePickupModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

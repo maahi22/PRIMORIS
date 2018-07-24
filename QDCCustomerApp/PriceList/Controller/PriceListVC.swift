@@ -29,11 +29,11 @@ class PriceListVC: UIViewController {
 
         self.setupUI()
         self.registerNib()
-        
+        showLoadingHUD()
         priceListViewModel.getPriceList { [weak self] (isSuccess, message) in
             
             guard let strongSelf = self else{return}
-            
+            strongSelf.dismissLoadingHUD()
             if isSuccess {
                 DispatchQueue.main.async {
                     strongSelf.categorySelectionCollectionView.reloadData()
@@ -42,10 +42,7 @@ class PriceListVC: UIViewController {
                     let indexPath = IndexPath(row: 0, section: 0)
 
                     strongSelf.loadItemsInTable(indexPath)
-                    
-                    
                 }
-                
             }else{
                 showAlertMessage(vc: strongSelf, title: .Error, message: message)
             }

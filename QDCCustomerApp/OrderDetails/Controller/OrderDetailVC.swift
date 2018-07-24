@@ -44,11 +44,11 @@ class OrderDetailVC: UIViewController {
         orderDetailTableView.register(OrderDetailCell.nib, forCellReuseIdentifier: OrderDetailCell.identifier)
         
         
-        
+        showLoadingHUD()
         orderDetailViewModel.getMyOrder(orderDetailModelObj.OrderNo!, completion: {  [weak self] (isSuccess, message) in
             
             guard let strongSelf = self else{return}
-            
+            strongSelf.dismissLoadingHUD()
             if isSuccess {
                 DispatchQueue.main.async {
                     strongSelf.orderDetailTableView.reloadData()

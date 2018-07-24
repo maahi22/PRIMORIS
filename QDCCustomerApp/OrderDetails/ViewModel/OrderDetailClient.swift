@@ -33,7 +33,12 @@ class OrderDetailClient: NSObject {
                                            success: { (data, httpResponse) in
                                             if let myOrderViewModel = decodeJSON(type: [OrderSubDetailModel].self, from: data) {
                                                 completion(myOrderViewModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

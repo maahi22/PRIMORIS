@@ -44,7 +44,12 @@ class FeedbackClient: NSObject {
                                             
                                             if httpResponse.statusCode == 200 {
                                                 completion(true, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(false, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(false,"failed")
                                             }
                                             

@@ -35,7 +35,12 @@ class PriceListClient: NSObject {
                                            success: { (data, httpResponse) in
                                             if let priceListModel = decodeJSON(type: [PriceListModel].self, from: data) {
                                                 completion(priceListModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

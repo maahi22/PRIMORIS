@@ -36,7 +36,12 @@ class SettingsClient: NSObject {
                                             
                                             if let storeModel = decodeJSON(type: StoreModel.self, from: data) {
                                                 completion(storeModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

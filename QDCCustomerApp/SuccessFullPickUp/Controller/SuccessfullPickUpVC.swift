@@ -137,9 +137,10 @@ extension SuccessfullPickUpVC: CancelReasonDelegate{
     
     
     func hitCancelPickupWebService(_ cancelReason:String){
-        
+        showLoadingHUD()
         schedulePickUpDateClient.getSchedulePickup(pickupDate: self.selectedPickupDate, pickupTime: self.selectedPickupTime, flag: 3, pickupNumber: self.pickUpOrderId, expressDeliveryID: "", specialInstruction: "", dropOffDate: "", dropOffTime: "", cancelReason: cancelReason) { [weak self](schedulePickUpModel, message) in
             guard let strongSelf = self else{return}
+            strongSelf.dismissLoadingHUD()
             if let schedulePickUpModel = schedulePickUpModel {
                 
                 
@@ -162,11 +163,11 @@ extension SuccessfullPickUpVC: CancelReasonDelegate{
     
     
     func hitCancelDropOffWebService(_ cancelReason:String){
-        
+        showLoadingHUD()
         ScheduleDropOffClient.getScheduleDropOff(dropOffDate: self.selectedDropOffDate, dropOffTime: self.selectedDropOffTime, flag: 3, pickupNumber: "", bookingNo: "", dropOffNumber: self.dropOffOrderId, cancelReason: cancelReason) {[weak self] (scheduleDropOffModel, message) in
             
             guard let strongSelf = self else{return}
-            
+            strongSelf.dismissLoadingHUD()
             if let scheduleDropOffModel = scheduleDropOffModel {
                 
                 

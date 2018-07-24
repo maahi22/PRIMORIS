@@ -37,7 +37,12 @@ class AboutUsClient: NSObject {
                                             
                                             if let aboutUsModel = decodeJSON(type: AboutUsModel.self, from: data) {
                                                 completion(aboutUsModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

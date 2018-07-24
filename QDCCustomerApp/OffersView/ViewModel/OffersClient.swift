@@ -35,7 +35,12 @@ class OffersClient: NSObject {
                                             
                                             if let offerModel = decodeJSON(type: [OfferModel].self, from: data) {
                                                 completion(offerModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             
@@ -44,11 +49,5 @@ class OffersClient: NSObject {
             completion(nil,message)
             
         }
-        
-        
     }
-    
-    
-    
-    
 }

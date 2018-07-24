@@ -109,11 +109,11 @@ class MyRequestsVC: UIViewController{
     
     
     func hitMyRequestWebService(){
-        
+        showLoadingHUD()
         myRequestViewModel.getMyRequest { [weak self] (isSuccess, message)  in
             
             guard let strongSelf = self else{return}
-            
+            strongSelf.dismissLoadingHUD()
             if isSuccess {
                 DispatchQueue.main.async {
                     strongSelf.myPickUpsTableView.reloadData()
@@ -129,10 +129,10 @@ class MyRequestsVC: UIViewController{
     
     func hitMyDropOffRequestWebService(){
         //Load data
-        
+        showLoadingHUD()
         myRequestViewModel.getDropOff { [weak self] (isSuccess, message)  in
             guard let strongSelf = self else{return}
-            
+            strongSelf.dismissLoadingHUD()
             if isSuccess {
                 DispatchQueue.main.async {
                     strongSelf.myPickUpsTableView.isHidden = true
@@ -248,21 +248,21 @@ extension MyRequestsVC:CancelReasonDelegate{
         if self.isPickUpSelected {
             
             if let indexPath = indexPath{
-                
+                showLoadingHUD()
                 myRequestViewModel.cancelPickUpRequest(cancelReason, index: indexPath) {  [weak self] (isSuccess, message) in
                     
                     guard let strongSelf = self else{return}
-                    
+                    strongSelf.dismissLoadingHUD()
                     if isSuccess {
                         //remove Cell code
                         DispatchQueue.main.async {
                             
-                            //strongSelf.myPickUpsTableView.reloadData()
+                            strongSelf.myPickUpsTableView.reloadData()
                             
-                            strongSelf.myPickUpsTableView.beginUpdates()
+                            /*strongSelf.myPickUpsTableView.beginUpdates()
                             strongSelf.myPickUpsTableView.deleteRows(at: [indexPath], with: .automatic)
                             strongSelf.myPickUpsTableView.endUpdates()
-                            strongSelf.myPickUpsTableView.reloadRows(at: [indexPath], with: .automatic)
+                            strongSelf.myPickUpsTableView.reloadRows(at: [indexPath], with: .automatic)*/
                         }
                     }
                     else{
@@ -275,21 +275,21 @@ extension MyRequestsVC:CancelReasonDelegate{
         }else{
             
             if let indexPath = indexPath{
-                
+                showLoadingHUD()
                 myRequestViewModel.cancelDropOffRequest(cancelReason, index: indexPath) {  [weak self] (isSuccess, message) in
                     
                     guard let strongSelf = self else{return}
-                    
+                    strongSelf.dismissLoadingHUD()
                     if isSuccess {
                         //remove Cell code
                         DispatchQueue.main.async {
                             //strongSelf.myDropOffsTableView.deleteRows(at: [indexPath], with: .automatic)
-                        
-                            strongSelf.myDropOffsTableView.beginUpdates()
+                            strongSelf.myDropOffsTableView.reloadData()
+                            /*strongSelf.myDropOffsTableView.beginUpdates()
                             strongSelf.myDropOffsTableView.deleteRows(at: [indexPath], with: .automatic)
                             strongSelf.myDropOffsTableView.endUpdates()
                             strongSelf.myDropOffsTableView.reloadRows(at: [indexPath], with: .automatic)
-                        
+                            */
                         
                         }
                     }else{

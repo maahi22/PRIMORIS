@@ -22,7 +22,12 @@ class SignUpClient: NSObject {
                                            success: { (data, httpResponse) in
                                             if let checkExistingCustomerModel = decodeJSON(type: CheckExistingCustomerModel.self, from: data) {
                                                 completion(checkExistingCustomerModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             
@@ -75,7 +80,12 @@ class SignUpClient: NSObject {
                                                 let customerCode = httpResponse.allHeaderFields["CustomerCode"] as? String
                                                 {
                                                  completion(customerCreationModel, customerCode)
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             
@@ -105,6 +115,10 @@ class SignUpClient: NSObject {
                                                 
                                                 completion(true, "\(token)")
                                             }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(false, messageModel.Message ?? "")
+                                            }
+                                                
                                            else{
                                                 completion(false,"failed")
                                             }
@@ -130,7 +144,13 @@ class SignUpClient: NSObject {
                                             
                                             if let otpCheckModel = decodeJSON(type: OTPCheckModel.self, from: data) {
                                                 completion(otpCheckModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             
@@ -163,6 +183,11 @@ class SignUpClient: NSObject {
                                                 
                                                 completion(true, "Success")
                                             }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(false, messageModel.Message ?? "")
+                                            }
+                                                
+                                                
                                             else{
                                                 completion(false,"failed")
                                             }

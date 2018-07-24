@@ -28,7 +28,12 @@ class CancelReasonClient: NSObject {
                                             
                                             if let cancelReasonModel = decodeJSON(type: [CancelReasonModel].self, from: data) {
                                                 completion(cancelReasonModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

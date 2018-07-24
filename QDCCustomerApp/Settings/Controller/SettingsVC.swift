@@ -79,6 +79,7 @@ extension SettingsVC:UITableViewDataSource{
         
         
         settingCell?.textLabel?.text = settingArray[indexPath.row]
+        settingCell?.accessoryType = .disclosureIndicator
         return settingCell!
     }
     

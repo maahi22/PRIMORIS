@@ -22,10 +22,10 @@ class OffersVC: UIViewController {
         
         
         
-        //showLoadingHUD()
+        showLoadingHUD()
         offersViewModel.getOffers {[weak self] (isSuccess, message) in
             guard let strongSelf = self else{return}
-          //  strongSelf.dismissLoadingHUD()
+            strongSelf.dismissLoadingHUD()
             if isSuccess{
                 DispatchQueue.main.async {
                     strongSelf.offerTableView.reloadData()

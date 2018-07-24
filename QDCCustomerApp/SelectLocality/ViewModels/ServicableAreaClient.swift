@@ -28,7 +28,12 @@ class ServicableAreaClient: NSObject {
                                           success: { (data, httpResponse) in
                                             if let servicableAreaModels = decodeJSON(type: [ServicableAreaModel].self, from: data) {
                                                 completion(servicableAreaModels, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

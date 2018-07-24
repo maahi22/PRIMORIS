@@ -62,7 +62,11 @@ class ScheduleDropOffClient: NSObject {
                                             
                                             if let scheduleDropOffModel = decodeJSON(type: ScheduleDropOffModel.self, from: data) {
                                                 completion(scheduleDropOffModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

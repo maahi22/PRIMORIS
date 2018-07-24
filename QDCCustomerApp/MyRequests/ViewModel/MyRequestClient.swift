@@ -37,7 +37,12 @@ class MyRequestClient: NSObject {
                                             
                                             if let myRequestModel = decodeJSON(type: [MyRequestModel].self, from: data) {
                                                 completion(myRequestModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

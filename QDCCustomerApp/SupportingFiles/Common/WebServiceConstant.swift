@@ -10,8 +10,8 @@ import Foundation
 
 //http://quickdrycleaningclients.com:9002/api/7.1/LicenseDetails/45454/drygreen
 let PINCODE = "111111"
-let APPSLUG = "drycleaningondemand/"
-let QDC_BASE_URL                         = "http://quickdrycleaningclients.com:9002/api/7.1/"
+let APPSLUG = "qdctesting/"//"cleankart/"//drycleaningondemand
+let QDC_BASE_URL                         = "http://quickdrycleaningclients.com:9002/api/testing/"//"http://quickdrycleaningclients.com:9002/api/7.1/"
 let QDC_NOTIFICATION_BASE_URL            = "http://quickdrycleaningclients.com:9005/CleankartAPI/"
 let GET_LICENSE_DETAIL_RELATIVE_URL      = "LicenseDetails/"
 let INSERT_PINCODE_RELATIVE_URL          = "InsertPincode"

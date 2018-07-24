@@ -46,7 +46,12 @@ class ProfileClient: NSObject {
                                             
                                             if let customerCreationModel = decodeJSON(type: CustomerCreationModel.self, from: data) {
                                                 completion(customerCreationModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

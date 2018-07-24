@@ -35,7 +35,12 @@ class MyDropOffClient: NSObject {
                                             
                                             if let reuestdropOffModel = decodeJSON(type: [MyRequestDropOffModel].self, from: data) {
                                                 completion(reuestdropOffModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             

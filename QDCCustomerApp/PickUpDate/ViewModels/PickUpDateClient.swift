@@ -30,7 +30,12 @@ class PickUpDateClient: NSObject {
                                             
                                             if let pickUpDateModel = decodeJSON(type: [PickUpDateModel].self, from: data) {
                                                 completion(pickUpDateModel, "Success")
-                                            }else{
+                                            }
+                                            else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                completion(nil, messageModel.Message ?? "")
+                                            }
+                                                
+                                            else{
                                                 completion(nil,"failed")
                                             }
                                             
