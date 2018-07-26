@@ -216,6 +216,30 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
         // Print full message.
         print(userInfo)
         
+       /* let aps = userInfo["aps"] as! [String: AnyObject]
+        let alertDict = aps["alert"] as! [String: AnyObject]
+        var title = ""
+        var message = ""
+        if let titleStr = alertDict["title"]{
+            title = (titleStr as? String)!
+        }
+        if let msg = alertDict["body"]{
+            message = (msg as? String)!
+        }
+        
+        
+        
+        let alert = UIAlertController(title: title, message:message, preferredStyle: UIAlertControllerStyle.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        // show the alert
+        self.window?.rootViewController?.present(alert, animated: true, completion: nil)*/
+ //       showAlertMessage(vc: self.window, title: title, message: message)
+        
+//        let alert:UIAlertView  = UIAlertView.init(title: alertDict["title"] as? String, message: alertDict["body"] as? String, delegate: self, cancelButtonTitle: "Ok")
+//        alert.show()
+        
+        
         completionHandler(UIBackgroundFetchResult.newData)
     }
     
