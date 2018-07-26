@@ -235,18 +235,53 @@ class PickUpDateVC: UIViewController {
                 
                 
                 strongSelf.pickupNumber = schedulePickUpModel.Status
-                guard let navViewController = SuccessfullPickUpVC.getStoryboardInstance(),
-                    let viewController = navViewController.topViewController as? SuccessfullPickUpVC
-                    else { return  }
                 
                     
-                viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDate), \(strongSelf.selectedTime)"
-                viewController.pickUpOrderId = strongSelf.pickupNumber
-                viewController.selectedPickupDate = strongSelf.selectedDate
-                viewController.selectedPickupTime = strongSelf.selectedTime
-                
-                strongSelf.navigationController?.pushViewController(viewController, animated: true)
-                  // strongSelf.present(navViewController, animated: true, completion: nil)
+                    
+                    if strongSelf.selectedExpressDeliveryButton != 0 {
+                        //this means either of the express delivery is selected send to congratulation screen with pick up and drop off message
+                        //self.performSegueWithIdentifier(SEGUE_CONGRATULATIONS_SCHEDULE_IDENTIFIER, sender: self)
+                        
+                        guard let navViewController = DropOffVC.getStoryboardInstance(),
+                            let viewController = navViewController.topViewController as? DropOffVC
+                            else { return  }
+                        
+                        var instruction = ""
+                        if strongSelf.specialInstructionTextView.text != "Special Instruction"{
+                            instruction = strongSelf.specialInstructionTextView.text
+                        }
+                        viewController.requireDropOff = strongSelf.requireDropOff
+                        viewController.pickupNumber = strongSelf.pickupNumber
+                        viewController.selectedPickupDate = strongSelf.selectedDate
+                        viewController.selectedPickupTime = strongSelf.selectedTime
+                        viewController.pickUpInstruction = instruction
+                        viewController.isComingFromPickUp = true
+                         strongSelf.navigationController?.pushViewController(viewController, animated: true)
+                        
+                        
+                    } else {
+                        //send to congratulations screen with pick up only message
+                        //self.performSegueWithIdentifier(SEGUE_CONGRATULATIONS_SCHEDULE_IDENTIFIER, sender: self)
+                        
+                        guard let navViewController = SuccessfullPickUpVC.getStoryboardInstance(),
+                            let viewController = navViewController.topViewController as? SuccessfullPickUpVC
+                            else { return  }
+                        viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDate), \(strongSelf.selectedTime)"
+                        viewController.pickUpOrderId = strongSelf.pickupNumber
+                        viewController.selectedPickupDate = strongSelf.selectedDate
+                        viewController.selectedPickupTime = strongSelf.selectedTime
+                        strongSelf.navigationController?.pushViewController(viewController, animated: true)
+                    }
+                    
+//                    guard let navViewController = SuccessfullPickUpVC.getStoryboardInstance(),
+//                        let viewController = navViewController.topViewController as? SuccessfullPickUpVC
+//                        else { return  }
+//                    viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDate), \(strongSelf.selectedTime)"
+//                    viewController.pickUpOrderId = strongSelf.pickupNumber
+//                    viewController.selectedPickupDate = strongSelf.selectedDate
+//                    viewController.selectedPickupTime = strongSelf.selectedTime
+//                    strongSelf.navigationController?.pushViewController(viewController, animated: true)
+                    
                 }
             
             }else{
