@@ -289,12 +289,12 @@ enum BGPatternColor {
 }
 //MARK: - Theme
 
-let mainColor: UIColor = #colorLiteral(red: 0.9843137255, green: 0.4666666667, blue: 0.02352941176, alpha: 1)
-let buttonBGColor: UIColor = #colorLiteral(red: 0.9843137255, green: 0.4666666667, blue: 0.02352941176, alpha: 1)
+let mainColor: UIColor = #colorLiteral(red: 0.541176470588235, green: 0.756862745098039, blue: 0.227450980392157, alpha: 1)//#colorLiteral(red: 0.9843137255, green: 0.4666666667, blue: 0.02352941176, alpha: 1)//
+let buttonBGColor: UIColor = #colorLiteral(red: 0.541176470588235, green: 0.756862745098039, blue: 0.227450980392157, alpha: 1)//#colorLiteral(red: 0.9843137255, green: 0.4666666667, blue: 0.02352941176, alpha: 1)
 let menuBGColor: UIColor = #colorLiteral(red: 0.1411764706, green: 0, blue: 0.6392156863, alpha: 1)
-let mainNavBarColor:UIColor = #colorLiteral(red: 0.9843137255, green: 0.4666666667, blue: 0.02352941176, alpha: 1)
+let mainNavBarColor:UIColor = #colorLiteral(red: 0.541176470588235, green: 0.756862745098039, blue: 0.227450980392157, alpha: 1)//#colorLiteral(red: 0.9843137255, green: 0.4666666667, blue: 0.02352941176, alpha: 1)
 
-
+//138,193,58
 ///
 let heightForHeaderInSection:CGFloat = 180.0
 //78,113,33
