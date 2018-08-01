@@ -153,7 +153,7 @@ class PickUpDateVC: UIViewController {
         self.secondButton.backgroundColor = UIColor.white
         
         self.schedulePickupButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
-        self.schedulePickupButton.backgroundColor = BUTTON_COLOUR
+        self.schedulePickupButton.setButtonTheme()
     }
     
     @IBAction func schedulePickupButtonClick(sender: AnyObject) {

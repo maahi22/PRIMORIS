@@ -70,6 +70,34 @@ class DashboardVC: UIViewController {
         
         self.userNameLabel.text = QDCUserDefaults.getUserName()
         self.userAddressLabel.text = QDCUserDefaults.getUserAddress()
+        
+        
+        
+        
+        
+        
+       
+       // self.garmentLabel.textColor = PRIMARY_COLOUR
+        billsLabel.textColor = PRIMARY_COLOUR
+        garmentLabel.textColor = PRIMARY_COLOUR
+        payAmountLabel.textColor = PRIMARY_COLOUR
+        garmentDueLabel.textColor = PRIMARY_COLOUR
+        
+        billsImageView.image = billsImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        billsImageView.tintColor = PRIMARY_COLOUR
+        
+        garmentImageView.image = garmentImageView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        garmentImageView.tintColor = PRIMARY_COLOUR
+        
+        self.infoView.backgroundColor = PRIMARY_COLOUR
+       // self.shareButton.tintColor = COLOUR_ON_BUTTON
+       // self.shareButton.backgroundColor = GRAY_COLOUR_ON_BUTTON
+       // self.pickUpButton.tintColor = COLOUR_ON_BUTTON
+        self.pickUpButton.setButtonTheme()
+//        self.payButton.tintColor = COLOUR_ON_BUTTON
+//        self.payButton.backgroundColor = GRAY_COLOUR_ON_BUTTON
+//        self.detailsButton.tintColor = COLOUR_ON_BUTTON
+//        self.detailsButton.backgroundColor = GRAY_COLOUR_ON_BUTTON
        
     }
     

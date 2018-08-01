@@ -33,7 +33,7 @@ class ProfileVC: UIViewController {
         
         self.userImageView.layer.cornerRadius = self.userImageView.frame.size.height/2
         self.updateButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
-        self.updateButton.backgroundColor = BUTTON_COLOUR
+        self.updateButton.setButtonTheme()
         self.nameTextField.text = QDCUserDefaults.getUserName()
         self.emailTextField.text = QDCUserDefaults.getUserEmail()
         self.mobileTextField.text = QDCUserDefaults.getUserMobile()

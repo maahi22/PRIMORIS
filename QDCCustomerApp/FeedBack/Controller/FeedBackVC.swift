@@ -30,7 +30,7 @@ class FeedBackVC: UIViewController {
         
         self.sendButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
         self.sendButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.selected)
-        self.sendButton.backgroundColor = BUTTON_COLOUR
+        self.sendButton.setButtonTheme()
         
     }
     
