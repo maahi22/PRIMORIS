@@ -142,14 +142,17 @@ extension AppDelegate{
             newWindow.rootViewController = mainView 
         }
         else if isForcePinCodeEnabled{
-            guard let viewNavController = PincodeTVC.getStoryboardInstance()
+            QDCUserDefaults.setPinCode(pin: PINCODE)
+            guard let viewNavController = SelectLocalityVC.getStoryboardInstance()
                 else{
                     return
             }
             
             newWindow.rootViewController = viewNavController
+            
+            
         }else{
-          guard let viewNavController = SelectLocalityVC.getStoryboardInstance()
+            guard let viewNavController = PincodeTVC.getStoryboardInstance()
                 else{
                     return
             }

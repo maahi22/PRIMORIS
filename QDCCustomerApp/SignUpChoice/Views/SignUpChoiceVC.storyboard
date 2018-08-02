@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -21,9 +20,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locality View Left Icon" translatesAutoresizingMaskIntoConstraints="NO" id="W6O-4w-ktp">
-                                <rect key="frame" x="112.5" y="92" width="150" height="150"/>
+                                <rect key="frame" x="107.5" y="87" width="160" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="M0P-Ef-Poo"/>
+                                    <constraint firstAttribute="width" constant="160" id="M0P-Ef-Poo"/>
                                     <constraint firstAttribute="width" secondItem="W6O-4w-ktp" secondAttribute="height" multiplier="1:1" id="gjp-EK-nbk"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -33,7 +32,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAA-yY-W43">
-                                <rect key="frame" x="20" y="352.5" width="335" height="50"/>
+                                <rect key="frame" x="20" y="357.5" width="335" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="PCK-5V-mB8"/>
                                 </constraints>
@@ -55,7 +54,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7b-Q1-1NJ">
-                                <rect key="frame" x="20" y="272.5" width="335" height="50"/>
+                                <rect key="frame" x="20" y="277.5" width="335" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JV5-q1-UcN"/>
                                 </constraints>

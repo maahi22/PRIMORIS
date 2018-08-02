@@ -30,13 +30,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your locality" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOC-57-IfS">
-                                <rect key="frame" x="20" y="249" width="335" height="20.5"/>
+                                <rect key="frame" x="20" y="244" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eef-kG-lIT">
-                                <rect key="frame" x="0.0" y="284.5" width="375" height="362.5"/>
+                                <rect key="frame" x="0.0" y="279.5" width="375" height="367.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="ohB-hF-Aq8">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -49,9 +49,10 @@
                                 </connections>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locality View Left Icon" translatesAutoresizingMaskIntoConstraints="NO" id="OoT-RI-VrF">
-                                <rect key="frame" x="127" y="104" width="120" height="120"/>
+                                <rect key="frame" x="107.5" y="74" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OoT-RI-VrF" secondAttribute="height" multiplier="1:1" id="0le-Sq-ehj"/>
+                                    <constraint firstAttribute="height" constant="160" id="biH-0e-I8z"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -65,11 +66,11 @@
                             <constraint firstItem="eef-kG-lIT" firstAttribute="leading" secondItem="BGE-Mp-ufE" secondAttribute="leading" id="EER-jw-cj2"/>
                             <constraint firstItem="BGE-Mp-ufE" firstAttribute="trailing" secondItem="vOC-57-IfS" secondAttribute="trailing" constant="20" id="GLH-AH-XZA"/>
                             <constraint firstItem="vOC-57-IfS" firstAttribute="leading" secondItem="BGE-Mp-ufE" secondAttribute="leading" constant="20" id="JhI-if-zD7"/>
-                            <constraint firstItem="OoT-RI-VrF" firstAttribute="top" secondItem="BGE-Mp-ufE" secondAttribute="top" constant="40" id="LyL-tV-34B"/>
+                            <constraint firstItem="OoT-RI-VrF" firstAttribute="top" secondItem="BGE-Mp-ufE" secondAttribute="top" constant="10" id="LyL-tV-34B"/>
                             <constraint firstItem="eef-kG-lIT" firstAttribute="top" secondItem="vOC-57-IfS" secondAttribute="bottom" constant="15" id="PXG-8D-LSI"/>
                             <constraint firstItem="fgw-UQ-lE1" firstAttribute="leading" secondItem="BGE-Mp-ufE" secondAttribute="leading" constant="16" id="R2M-pO-j3n"/>
                             <constraint firstItem="BGE-Mp-ufE" firstAttribute="bottom" secondItem="eef-kG-lIT" secondAttribute="bottom" constant="20" id="YBB-cg-hue"/>
-                            <constraint firstItem="vOC-57-IfS" firstAttribute="top" secondItem="OoT-RI-VrF" secondAttribute="bottom" constant="25" id="dQd-Qb-dm1"/>
+                            <constraint firstItem="vOC-57-IfS" firstAttribute="top" secondItem="OoT-RI-VrF" secondAttribute="bottom" constant="10" id="dQd-Qb-dm1"/>
                             <constraint firstItem="fgw-UQ-lE1" firstAttribute="top" secondItem="BGE-Mp-ufE" secondAttribute="top" constant="10" id="p65-oC-Ifl"/>
                             <constraint firstItem="OoT-RI-VrF" firstAttribute="centerX" secondItem="qvp-al-MTO" secondAttribute="centerX" id="uwu-gy-Rg1"/>
                             <constraint firstItem="eef-kG-lIT" firstAttribute="trailing" secondItem="BGE-Mp-ufE" secondAttribute="trailing" id="zsH-P6-CCO"/>

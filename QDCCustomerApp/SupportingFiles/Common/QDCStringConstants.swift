@@ -9,7 +9,7 @@
 import UIKit
 
 let SCREEN_SIZE: CGRect = UIScreen.main.bounds
-let isForcePinCodeEnabled = true
+
 
 
 

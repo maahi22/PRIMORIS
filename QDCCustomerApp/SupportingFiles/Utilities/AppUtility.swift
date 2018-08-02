@@ -5,11 +5,6 @@ import UIKit
 import RNCryptor
 
 
-
-
-let portalIdentifier = "EMCITY"//"MYCITY123"//EMCITY
-
-
 //MARK: - global functions
 //load mainview
 /*func loadMainView()   {

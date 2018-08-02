@@ -56,11 +56,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locality View Left Icon" translatesAutoresizingMaskIntoConstraints="NO" id="vto-Id-2yl">
-                                                    <rect key="frame" x="112.5" y="15" width="150" height="150.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locality View Left Icon" translatesAutoresizingMaskIntoConstraints="NO" id="vto-Id-2yl">
+                                                    <rect key="frame" x="107.5" y="10" width="160" height="160.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="vto-Id-2yl" secondAttribute="height" multiplier="1:1" id="1t2-xC-h6y"/>
-                                                        <constraint firstAttribute="width" constant="150" id="8Zl-gw-3Jw"/>
+                                                        <constraint firstAttribute="width" constant="160" id="8Zl-gw-3Jw"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
