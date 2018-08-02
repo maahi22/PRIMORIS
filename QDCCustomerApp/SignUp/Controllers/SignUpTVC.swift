@@ -218,7 +218,7 @@ class SignUpTVC: UITableViewController {
                                                              Address: address,
                                                              ClientID: clientID,
                                                              BranchID: branchID,
-                                                             FaceBookID: "",
+                                                             FaceBookID: strongSelf.fbId,
                                                              EmailId: emailId,
                                                              Mobile: mobile,
                                                              DeviceToken: "",
