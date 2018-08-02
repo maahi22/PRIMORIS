@@ -222,7 +222,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Choose Date /Time" id="b11-38-wVG">
                         <barButtonItem key="backBarButtonItem" title="    " id="W6Q-3w-Qmd"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="Header Icon Notification" id="BNT-bD-a9G"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Header Icon Notification" id="BNT-bD-a9G">
+                            <connections>
+                                <action selector="notificationClick:" destination="eHl-Mi-ezB" id="4zJ-Ye-uDy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateSelectionCollectionView" destination="e3E-RH-DF8" id="Srq-SR-06e"/>

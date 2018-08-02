@@ -143,6 +143,20 @@ class PickUpDateVC: UIViewController {
     }
 
     
+    
+    
+    
+    @IBAction func notificationClick(_ sender: Any) {
+        
+        guard let navViewController = NotificationVC.getStoryboardInstance(),
+            let viewController = navViewController.topViewController as? NotificationVC
+            else { return  }
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+    }
+    
+    
+    
     func setupUI() {
         self.specialInstructionTextView.textColor = TEXT_FIELD_COLOUR
         
@@ -153,7 +167,7 @@ class PickUpDateVC: UIViewController {
         self.secondButton.backgroundColor = UIColor.white
         
         self.schedulePickupButton.setTitleColor(COLOUR_ON_BUTTON, for: UIControlState.normal)
-        self.schedulePickupButton.backgroundColor = BUTTON_COLOUR
+        self.schedulePickupButton.setButtonTheme()
     }
     
     @IBAction func schedulePickupButtonClick(sender: AnyObject) {

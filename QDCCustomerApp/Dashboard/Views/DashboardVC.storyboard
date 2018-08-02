@@ -366,9 +366,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="billsImageView" destination="MHK-ot-W9q" id="MOo-yb-NHc"/>
+                        <outlet property="billsLabel" destination="IVh-Rb-3SY" id="YXI-IU-mOi"/>
                         <outlet property="customerSummaryClient" destination="fHf-WK-mt0" id="S9U-xg-VOT"/>
                         <outlet property="garmentDueLabel" destination="Doa-5G-cxh" id="hwI-EZ-VOR"/>
+                        <outlet property="garmentImageView" destination="Tik-BE-hHT" id="7do-h5-khc"/>
+                        <outlet property="garmentLabel" destination="zLR-WT-cy6" id="kWl-kl-L2o"/>
+                        <outlet property="infoView" destination="Eha-Bj-a9S" id="6wY-Q2-ATv"/>
                         <outlet property="payAmountLabel" destination="NiV-rf-mEm" id="F4o-k4-0BB"/>
+                        <outlet property="pickUpButton" destination="kjd-R2-4dg" id="uTQ-WV-yWR"/>
                         <outlet property="summaryLabel" destination="FI7-IW-QXS" id="Ctt-s2-2cz"/>
                         <outlet property="userAddressLabel" destination="odf-lx-aN5" id="9cV-pE-K6X"/>
                         <outlet property="userImageView" destination="Ojy-HT-jDs" id="J9W-ck-hxK"/>
