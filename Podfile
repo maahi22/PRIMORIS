@@ -19,6 +19,8 @@ target 'QDCCustomerApp' do
   pod 'Swinject'
   pod 'SDWebImage', '~> 4.0'
   pod 'SideMenuController'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
   target 'QDCCustomerAppTests' do
     inherit! :search_paths
     # Pods for testing
