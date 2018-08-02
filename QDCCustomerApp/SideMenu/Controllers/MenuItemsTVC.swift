@@ -40,6 +40,18 @@ class MenuItemsTVC: UITableViewController {
        /* if let user = getLoggedUser(), let userName = user.Name{
             menuHeaderTitleLabel.text = userName.capitalized
         }*/
+        let imgurl = QDCUserDefaults.getUserImgUrl()
+        if imgurl != nil || imgurl != ""{
+            let img = UIImage(named: "User_Placeholder")
+            menuHeaderImageView.loadImageUsingCacheWithURLString(imgurl, placeHolder: img)
+            
+            menuHeaderImageView.contentMode = .scaleAspectFill
+            menuHeaderImageView.layer.cornerRadius = menuHeaderImageView.frame.size.width / 2
+            menuHeaderImageView.layer.masksToBounds = true
+            
+        }
+        
+        
         tableView.register(MenuItemTableViewCell.nib, forCellReuseIdentifier: MenuItemTableViewCell.identifier)
     }
     
