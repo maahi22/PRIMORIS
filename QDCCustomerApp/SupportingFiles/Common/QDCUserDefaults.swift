@@ -140,7 +140,7 @@ class QDCUserDefaults: NSObject {
         return tempStr as! String
     }
     
-    class func setUserImgUrl(image:String){
+    class func setUserImgUrl(_ image:String){
         
         UserDefaults.standard.set(image, forKey: USER_DEFAULT_USER_IMAGE_URL_KEY)
         UserDefaults.standard.synchronize()

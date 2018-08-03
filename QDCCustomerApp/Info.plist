@@ -18,8 +18,30 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.1</string>
+<key>LSApplicationQueriesSchemes</key>
+<array>
+  <string>fbapi</string>
+  <string>fb-messenger-share-api</string>
+  <string>fbauth2</string>
+  <string>fbshareextension</string>
+</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb198675004329057</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>198675004329057</string>
+	<key>FacebookDisplayName</key>
+	<string>Dry Green</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

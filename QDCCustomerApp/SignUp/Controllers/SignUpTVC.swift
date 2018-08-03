@@ -15,9 +15,17 @@ class SignUpTVC: UITableViewController {
     @IBOutlet weak var mobileTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var emailIdTextField: UITextField!
-   @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var signUpButon: UIButton!
    
+    var email:String = ""
+    var name:String = ""
+    var fbId:String = ""
+    var phoneNumber : String = ""
+    var imgUrl:String = ""
+    var isCustExisting = false //if customer is new hit otp otherwise dont.
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         signUpButon.setButtonTheme()
@@ -29,6 +37,10 @@ class SignUpTVC: UITableViewController {
         addressTextField.addDoneButtonToKeyboard(myAction:#selector(addressTextField.resignFirstResponder))
         emailIdTextField.addDoneButtonToKeyboard(myAction:#selector(emailIdTextField.resignFirstResponder))
         
+        
+        self.nameTextField.text = self.name
+        self.emailIdTextField.text = self.email
+        self.mobileTextField.text = self.phoneNumber
        
     }
 
@@ -139,7 +151,7 @@ class SignUpTVC: UITableViewController {
         
         
         showLoadingHUD()
-        signUpClient.checkExistingCustomer(clientID, branchid: branchID, FaceBookID: "", EmailID: emailId, MobileNo: mobile) { [weak self](response, message) in
+        signUpClient.checkExistingCustomer(clientID, branchid: branchID, FaceBookID: fbId, EmailID: emailId, MobileNo: mobile) { [weak self](response, message) in
             guard let strongSelf = self else{return}
            
             if let response = response{
@@ -206,7 +218,7 @@ class SignUpTVC: UITableViewController {
                                                              Address: address,
                                                              ClientID: clientID,
                                                              BranchID: branchID,
-                                                             FaceBookID: "",
+                                                             FaceBookID: strongSelf.fbId,
                                                              EmailId: emailId,
                                                              Mobile: mobile,
                                                              DeviceToken: "",
