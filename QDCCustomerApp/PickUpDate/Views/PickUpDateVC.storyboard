@@ -98,7 +98,10 @@
                                     <constraint firstAttribute="height" constant="40" id="YXu-7u-age"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eHl-Mi-ezB" id="wpj-cK-vTn"/>
+                                </connections>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qK2-oe-tO2">
                                 <rect key="frame" x="0.0" y="542" width="375" height="40"/>
