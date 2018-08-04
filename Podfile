@@ -21,6 +21,8 @@ target 'QDCCustomerApp' do
   pod 'SideMenuController'
   pod 'FacebookCore'
   pod 'FacebookLogin'
+  pod 'IQKeyboardManager'
+  
   target 'QDCCustomerAppTests' do
     inherit! :search_paths
     # Pods for testing

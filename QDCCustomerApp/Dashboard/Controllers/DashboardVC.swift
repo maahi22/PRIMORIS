@@ -80,12 +80,6 @@ class DashboardVC: UIViewController {
         self.userNameLabel.text = QDCUserDefaults.getUserName()
         self.userAddressLabel.text = QDCUserDefaults.getUserAddress()
         
-        
-        
-        
-        
-        
-       
        // self.garmentLabel.textColor = PRIMARY_COLOUR
         billsLabel.textColor = PRIMARY_COLOUR
         garmentLabel.textColor = PRIMARY_COLOUR
