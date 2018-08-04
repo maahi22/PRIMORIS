@@ -489,3 +489,21 @@ extension PickUpDateVC:UICollectionViewDataSource{
     
     
 }
+
+
+extension PickUpDateVC:UITextViewDelegate{
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        print("print1")
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        print("print2")
+    }
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        
+        return true
+    }
+}
+
