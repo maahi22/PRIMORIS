@@ -16,7 +16,7 @@ let APPSLUG = "drygreen"
 let QDC_BASE_URL                         = "http://quickdrycleaningclients.com:9002/api/7.0/"
 //for testing
 //"http://quickdrycleaningclients.com:9002/api/testing/"
-let QDC_NOTIFICATION_BASE_URL            = "http://quickdrycleaningclients.com:9005/CleankartAPI/"
+let QDC_NOTIFICATION_BASE_URL            = "http://quickdrycleaningclients.com:9002/api/7.0/drygreen/"
 let GET_LICENSE_DETAIL_RELATIVE_URL      = "LicenseDetails/"
 let INSERT_PINCODE_RELATIVE_URL          = "InsertPincode"
 let GET_CUSTOMER_TOKEN_RELATIVE_URL      = "GetCustomerToken"
