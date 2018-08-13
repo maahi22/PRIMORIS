@@ -23,7 +23,8 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.33.0):
     - FBSDKCoreKit
-  - IQKeyboardManager (6.0.3)
+  - IQKeyboardManager (6.1.1)
+  - razorpay-pod (1.0.18)
   - ReachabilitySwift (4.1.0)
   - RNCryptor (5.0.2)
   - SDWebImage (4.3.0):
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - IQKeyboardManager
+  - razorpay-pod
   - ReachabilitySwift
   - RNCryptor (~> 5.0)
   - SDWebImage (~> 4.0)
@@ -62,6 +64,7 @@ SPEC REPOS:
     - FBSDKCoreKit
     - FBSDKLoginKit
     - IQKeyboardManager
+    - razorpay-pod
     - ReachabilitySwift
     - RNCryptor
     - SDWebImage
@@ -80,7 +83,8 @@ SPEC CHECKSUMS:
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
   FBSDKCoreKit: 572b047a7e029bc44542bcf8a59414e7ff2b543e
   FBSDKLoginKit: 88cb456349cfb3b554427ce4f8b43729d85dfb40
-  IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
+  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
+  razorpay-pod: 6303688cc069f872a1250b600dcade5a0f11de3a
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   RNCryptor: 59b9f92e9fa8a1af74c32dc6b1af5e30ff5e1b64
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
@@ -89,6 +93,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   Swinject: 4ca48bca7de5f398229a26abe1ac902b9f3ee541
 
-PODFILE CHECKSUM: ab2a4bb9d623920fcb15640eb27ee92def92e0ec
+PODFILE CHECKSUM: ad60171f71391f0b084c2d3a16567108c8e96299
 
 COCOAPODS: 1.5.2

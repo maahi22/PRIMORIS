@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ou4-Rk-l23">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ou4-Rk-l23">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,15 +30,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are in a process of integrating Credit card / Debit card /Online Payment, Look for this space in next version." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mB-gv-5Qa">
-                                <rect key="frame" x="10" y="368" width="355" height="77"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="77" id="Sbs-WY-dgi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Due:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-U0-NEm">
                                 <rect key="frame" x="20" y="267" width="335" height="21"/>
                                 <constraints>
@@ -48,29 +39,39 @@
                                 <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIM-Lc-qvp">
+                                <rect key="frame" x="50" y="370" width="275" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1az-nW-zBL"/>
+                                </constraints>
+                                <state key="normal" title="PAY NOW"/>
+                                <connections>
+                                    <action selector="payNowPressed:" destination="Rrq-Pn-b61" eventType="touchUpInside" id="zWs-95-X1b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="pIM-Lc-qvp" firstAttribute="top" secondItem="beK-8f-FJm" secondAttribute="bottom" constant="20" id="6Rf-Fk-QFp"/>
                             <constraint firstItem="beK-8f-FJm" firstAttribute="leading" secondItem="Lju-Zv-8P5" secondAttribute="leading" constant="20" id="ApB-7J-ow8"/>
                             <constraint firstAttribute="trailing" secondItem="c5d-U0-NEm" secondAttribute="trailing" constant="20" id="Jr5-Wi-MIm"/>
                             <constraint firstItem="c5d-U0-NEm" firstAttribute="leading" secondItem="Lju-Zv-8P5" secondAttribute="leading" constant="20" id="UOg-3e-mES"/>
                             <constraint firstItem="c5d-U0-NEm" firstAttribute="centerX" secondItem="Lju-Zv-8P5" secondAttribute="centerX" id="Ytq-cO-3Zx"/>
-                            <constraint firstItem="0mB-gv-5Qa" firstAttribute="leading" secondItem="Lju-Zv-8P5" secondAttribute="leading" constant="10" id="ZLV-Gz-n8B"/>
-                            <constraint firstAttribute="trailing" secondItem="0mB-gv-5Qa" secondAttribute="trailing" constant="10" id="axe-1N-8eT"/>
+                            <constraint firstItem="pIM-Lc-qvp" firstAttribute="leading" secondItem="bQR-NR-h1V" secondAttribute="leading" constant="50" id="dSf-1c-e31"/>
                             <constraint firstItem="beK-8f-FJm" firstAttribute="centerY" secondItem="Lju-Zv-8P5" secondAttribute="centerY" id="dqd-ze-Ch2"/>
                             <constraint firstAttribute="trailing" secondItem="beK-8f-FJm" secondAttribute="trailing" constant="20" id="hyU-7y-w8Q"/>
                             <constraint firstItem="beK-8f-FJm" firstAttribute="centerX" secondItem="Lju-Zv-8P5" secondAttribute="centerX" id="mcw-NA-vKx"/>
-                            <constraint firstItem="0mB-gv-5Qa" firstAttribute="top" secondItem="beK-8f-FJm" secondAttribute="bottom" constant="18" id="rw2-Ci-9qR"/>
+                            <constraint firstItem="bQR-NR-h1V" firstAttribute="trailing" secondItem="pIM-Lc-qvp" secondAttribute="trailing" constant="50" id="nqZ-GY-T1q"/>
                             <constraint firstItem="beK-8f-FJm" firstAttribute="top" secondItem="c5d-U0-NEm" secondAttribute="bottom" constant="29" id="xcb-OO-pMH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bQR-NR-h1V"/>
                     </view>
                     <navigationItem key="navigationItem" title="Due Amount" id="JV6-38-wmE"/>
                     <connections>
-                        <outlet property="amountDetailTitleLabel" destination="0mB-gv-5Qa" id="dIF-Cn-sDJ"/>
                         <outlet property="amountTitleLabel" destination="beK-8f-FJm" id="F4z-SK-HV4"/>
                         <outlet property="dueAmountClient" destination="KOs-lG-L77" id="k5O-Ko-cBq"/>
                         <outlet property="dueAmountLabel" destination="c5d-U0-NEm" id="KC6-BY-CT6"/>
+                        <outlet property="payNowButton" destination="pIM-Lc-qvp" id="7e6-Ft-3ID"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Aq-c7-jtl" userLabel="First Responder" sceneMemberID="firstResponder"/>

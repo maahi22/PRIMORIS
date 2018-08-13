@@ -67,7 +67,7 @@ class DashboardVC: UIViewController {
             self.userAddressLabel.text = Add
         }*/
         
-        let imgurl = QDCUserDefaults.getUserImgUrl()
+        /*let imgurl = QDCUserDefaults.getUserImgUrl()
         if imgurl != nil || imgurl != ""{
             let img = UIImage(named: "User_Placeholder")
             userImageView.loadImageUsingCacheWithURLString(imgurl, placeHolder: img)
@@ -76,7 +76,7 @@ class DashboardVC: UIViewController {
             userImageView.layer.masksToBounds = true
             
         }
-        
+        */
         self.userNameLabel.text = QDCUserDefaults.getUserName()
         self.userAddressLabel.text = QDCUserDefaults.getUserAddress()
         

@@ -8,12 +8,13 @@
 
 import Foundation
 
-let isForcePinCodeEnabled = true
-let PINCODE = "133301"
-let APPSLUG = "drygreen"
+let isForcePinCodeEnabled = false
+let PINCODE = "123456"//"133301"
+let APPSLUG = "qdctesting"//"drygreen"
 //For testing
 //"qdctesting/"
-let QDC_BASE_URL                         = "http://quickdrycleaningclients.com:9002/api/7.0/"
+let QDC_BASE_URL                         = "http://quickdrycleaningclients.com:9002/api/testing/"
+//"http://quickdrycleaningclients.com:9002/api/7.0/"
 //for testing
 //"http://quickdrycleaningclients.com:9002/api/testing/"
 let QDC_NOTIFICATION_BASE_URL            = "http://quickdrycleaningclients.com:9002/api/7.0/drygreen/"

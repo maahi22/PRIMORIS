@@ -22,6 +22,7 @@ target 'QDCCustomerApp' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'IQKeyboardManager'
+  pod 'razorpay-pod'
   
   target 'QDCCustomerAppTests' do
     inherit! :search_paths

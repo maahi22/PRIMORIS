@@ -124,9 +124,16 @@ class SignUpTVC: UITableViewController {
             showAlertMessage(vc: self, title: .Message, message: "Enter a valid mobile number.")
             return
         }
-        guard let emailId = emailIdTextField.text, emailId.count  > 0, emailId.isValidEmail() else{
-            showAlertMessage(vc: self, title: .Message, message: "Enter a valid email id.")
-            return
+        
+        var email = ""
+        if let emailId = emailIdTextField.text, emailId.count  > 0{
+            if emailId.isValidEmail()
+            {
+                email = emailId
+            }
+            else{
+                showAlertMessage(vc: self, title: .Message, message: "Enter a valid email id.")
+            }
         }
         guard let address = addressTextField.text, address.count  > 0 else{
             showAlertMessage(vc: self, title: .Message, message: "Enter a valid address.")
@@ -151,7 +158,7 @@ class SignUpTVC: UITableViewController {
         
         
         showLoadingHUD()
-        signUpClient.checkExistingCustomer(clientID, branchid: branchID, FaceBookID: fbId, EmailID: emailId, MobileNo: mobile) { [weak self](response, message) in
+        signUpClient.checkExistingCustomer(clientID, branchid: branchID, FaceBookID: fbId, EmailID: email, MobileNo: mobile) { [weak self](response, message) in
             guard let strongSelf = self else{return}
            
             if let response = response{
@@ -219,7 +226,7 @@ class SignUpTVC: UITableViewController {
                                                              ClientID: clientID,
                                                              BranchID: branchID,
                                                              FaceBookID: strongSelf.fbId,
-                                                             EmailId: emailId,
+                                                             EmailId: email,
                                                              Mobile: mobile,
                                                              DeviceToken: "",
                                                              completion: { (customerCreationModel, message) in

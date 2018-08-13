@@ -7,22 +7,27 @@
 //
 
 import UIKit
+import Razorpay
 
-class DueAmountVC: UIViewController {
+class DueAmountVC: UIViewController, RazorpayPaymentCompletionProtocol {
 
     @IBOutlet private var dueAmountClient:DueAmountClient!
     //private var customerSummaryModel:CustomerSummaryModel
     
     @IBOutlet weak var dueAmountLabel:UILabel!
     @IBOutlet weak var amountTitleLabel:UILabel!
-    @IBOutlet weak var amountDetailTitleLabel:UILabel!
+    @IBOutlet weak var payNowButton:UIButton!
+    
+    var razorpayTestKey = "rzp_test_UWsFTZ8whOaHyK"
+    var razorpay: Razorpay!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-        
-        
+        payNowButton.setButtonTheme()
+        razorpay = Razorpay.initWithKey(razorpayTestKey, andDelegate: self)
         dueAmountClient.getDueAmount { [weak self] (customerSummaryModel, message) in
             guard let strongSelf = self else{return}
             
@@ -30,7 +35,7 @@ class DueAmountVC: UIViewController {
                 DispatchQueue.main.async {
                     
                     //if let amount = customerSummaryModel.PendingAmount {
-                        strongSelf.self.amountTitleLabel.text = customerSummaryModel.PendingAmount
+                        strongSelf.amountTitleLabel.text = customerSummaryModel.PendingAmount
                    // }
                     
                     
@@ -41,12 +46,6 @@ class DueAmountVC: UIViewController {
             }
             
         }
-        
-        
-        
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,7 +57,7 @@ class DueAmountVC: UIViewController {
         
         self.dueAmountLabel.textColor = GRAY_COLOUR_ON_BUTTON
         self.amountTitleLabel.textColor = BUTTON_COLOUR
-        self.amountDetailTitleLabel.textColor = GRAY_COLOUR_ON_BUTTON
+        //self.amountDetailTitleLabel.textColor = GRAY_COLOUR_ON_BUTTON
     }
     /*
     // MARK: - Navigation
@@ -70,6 +69,48 @@ class DueAmountVC: UIViewController {
     }
     */
 
+    internal func showPaymentForm(amount:String){
+        let options: [String:Any] = [
+            "amount" : "\(amount)", //mandatory in paise
+            "description": "",
+            "image": "",
+            "name": "QDC - On Demand",
+            "prefill": [
+            "contact": "",
+            "email": ""
+            ],
+            "theme": [
+                "color": "#F37254"
+            ]
+        ]
+        razorpay.open(options)
+    }
+
+    public func onPaymentError(_ code: Int32, description str: String){
+        let alertController = UIAlertController(title: "FAILURE", message: str, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        self.view.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    public func onPaymentSuccess(_ payment_id: String){
+        let alertController = UIAlertController(title: "SUCCESS", message: "Payment Id \(payment_id)", preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        self.view.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func payNowPressed(_ sender: UIButton) {
+        guard let dueAmount = amountTitleLabel.text else { return  }
+        let arrAmt = dueAmount.components(separatedBy: " ")
+        
+        if arrAmt.count == 2 {
+            let payAmt = (Int(arrAmt[0]) ?? 0) * 100
+            showPaymentForm(amount: "\(payAmt)")
+        }
+        
+        
+    }
 }
 
 extension DueAmountVC{
