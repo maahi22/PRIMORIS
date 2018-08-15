@@ -15,7 +15,7 @@ class PickUpDateVC: UIViewController {
     
     @IBOutlet weak var timeSelectionCollectionView:UICollectionView!
     @IBOutlet weak var dateSelectionCollectionView:UICollectionView!
-    @IBOutlet weak var specialInstructionTextView:UITextView!
+    @IBOutlet weak var specialInstructionTextView:UITextField!
     @IBOutlet weak var firstButton:UIButton!
     @IBOutlet weak var secondButton:UIButton!
     @IBOutlet weak var firstButtonRadioImage:UIImageView!
@@ -182,7 +182,7 @@ class PickUpDateVC: UIViewController {
             
             var instruction = ""
             if self.specialInstructionTextView.text != "Special Instruction"{
-                instruction = self.specialInstructionTextView.text
+                instruction = self.specialInstructionTextView.text!
             }
             viewController.requireDropOff = self.requireDropOff
             viewController.pickupNumber = self.pickupNumber
@@ -235,17 +235,20 @@ class PickUpDateVC: UIViewController {
             instruction = inst
         }
         
-        
+        showLoadingHUD()
         schedulePickUpDateClient.getSchedulePickup(pickupDate: self.selectedDate, pickupTime: self.selectedTime, flag: flag, pickupNumber: self.pickupNumber, expressDeliveryID: expressId, specialInstruction: instruction, dropOffDate: "", dropOffTime: "", cancelReason: nil) { [weak self](schedulePickUpModel, message) in
             
             guard let strongSelf = self else{return}
+            
+            strongSelf.dismissLoadingHUD()
             if let schedulePickUpModel = schedulePickUpModel {
                
                 if schedulePickUpModel.Status == "False" {
                     
                     showAlertMessage(vc: strongSelf, title: .Error, message: schedulePickUpModel.Reason)
                     
-                }else{
+                }
+                else{
                 
                 
                 strongSelf.pickupNumber = schedulePickUpModel.Status
@@ -262,7 +265,7 @@ class PickUpDateVC: UIViewController {
                         
                         var instruction = ""
                         if strongSelf.specialInstructionTextView.text != "Special Instruction"{
-                            instruction = strongSelf.specialInstructionTextView.text
+                            instruction = strongSelf.specialInstructionTextView.text!
                         }
                         viewController.requireDropOff = strongSelf.requireDropOff
                         viewController.pickupNumber = strongSelf.pickupNumber

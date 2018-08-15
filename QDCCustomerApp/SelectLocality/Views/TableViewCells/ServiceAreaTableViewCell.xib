@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="286" height="70.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locality View Left Icon" translatesAutoresizingMaskIntoConstraints="NO" id="UXP-B1-Kcv">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashImg" translatesAutoresizingMaskIntoConstraints="NO" id="UXP-B1-Kcv">
                         <rect key="frame" x="10" y="5.5" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="777-dj-sf0"/>
@@ -62,6 +61,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Locality View Left Icon" width="120" height="120"/>
+        <image name="splashImg" width="512" height="512"/>
     </resources>
 </document>

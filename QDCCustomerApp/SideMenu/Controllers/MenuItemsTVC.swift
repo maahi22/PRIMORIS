@@ -77,7 +77,10 @@ extension MenuItemsTVC{
     
     
     class func getSideMenuImageArray() -> NSArray {
-        return ["Side Offer Icons","Side My PickupsIcon","Side Request Pick Up Icon","Side Due Amount Icon","Side My Order Icon","Side Price List Icon","Offer Icon","Side Feedback Icon","Setting.png","Side Request Pick Up Icon"]
+        return ["Side Offer Icons","Side My PickupsIcon","Side Request Pick Up Icon","Side Due Amount Icon","Side My Order Icon","Side Price List Icon",
+                //"Offer Icon",
+                
+                "Side Feedback Icon","Setting.png","Side Request Pick Up Icon"]
     }
     //MARK: - Menu Items Model
     fileprivate func getMenuItems(completion:([Section])->())  {
@@ -90,7 +93,7 @@ extension MenuItemsTVC{
             Section(name: "DUE AMOUNT", items: [], image: "Side Due Amount Icon", selImage: "", expanded: false,itemType:MenuItemType.dueAmount),
             Section(name: "MY ORDERS", items: [], image: "Side My Order Icon", selImage: "", expanded: false,itemType:MenuItemType.myOrder),
             Section(name: "PRICE LIST", items: [], image: "Side Price List Icon", selImage: "", expanded: false,itemType:MenuItemType.priceList),
-            Section(name: "OFFERS", items: [], image: "Offer Icon", selImage: "", expanded: false,itemType:MenuItemType.offers),
+            //Section(name: "OFFERS", items: [], image: "Offer Icon", selImage: "", expanded: false,itemType:MenuItemType.offers),
             Section(name: "FEEDBACK", items: [], image: "Side Feedback Icon", selImage: "", expanded: true,itemType:MenuItemType.feedback),
             Section(name: "SETTING", items: [], image: "Setting.png", selImage: "", expanded: false,itemType:MenuItemType.settings),
             

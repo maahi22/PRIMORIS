@@ -375,6 +375,7 @@
                         <outlet property="infoView" destination="Eha-Bj-a9S" id="6wY-Q2-ATv"/>
                         <outlet property="payAmountLabel" destination="NiV-rf-mEm" id="F4o-k4-0BB"/>
                         <outlet property="pickUpButton" destination="kjd-R2-4dg" id="uTQ-WV-yWR"/>
+                        <outlet property="settingsViewModel" destination="q8w-CF-Rn5" id="pmI-AS-Vax"/>
                         <outlet property="summaryLabel" destination="FI7-IW-QXS" id="Ctt-s2-2cz"/>
                         <outlet property="userAddressLabel" destination="odf-lx-aN5" id="9cV-pE-K6X"/>
                         <outlet property="userImageView" destination="Ojy-HT-jDs" id="J9W-ck-hxK"/>
@@ -383,6 +384,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRQ-Z6-iWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="fHf-WK-mt0" customClass="CustomerSummaryClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
+                <customObject id="q8w-CF-Rn5" customClass="SettingsViewModel" customModule="QDCCustomerApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="settingsClient" destination="bCR-Rv-iMG" id="pmm-dy-jHs"/>
+                    </connections>
+                </customObject>
+                <customObject id="bCR-Rv-iMG" customClass="SettingsClient" customModule="QDCCustomerApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1256.8" y="-165.06746626686657"/>
         </scene>

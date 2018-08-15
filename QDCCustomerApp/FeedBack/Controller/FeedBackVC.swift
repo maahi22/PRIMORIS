@@ -43,8 +43,14 @@ class FeedBackVC: UIViewController {
         feedbackClient.sendFeedBack(messageString: feedback) { [weak self]  (status, message) in
             
             guard let strongSelf = self else{return}
-            
-            showAlertMessage(vc: strongSelf, title: .Error, message: message)
+            showAlertMessage(vc: strongSelf,
+                             title: "Message",
+                             message: message,
+                             actionTitle: "Ok",
+                             handler: { (action) in
+                            strongSelf.sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showHome.rawValue, sender: nil)
+            })
+            //showAlertMessage(vc: strongSelf, title: .Message, message: message)
             
         }
     }

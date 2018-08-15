@@ -48,7 +48,7 @@
                                     <outlet property="delegate" destination="LMD-f1-Wva" id="rRe-Fm-T8J"/>
                                 </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locality View Left Icon" translatesAutoresizingMaskIntoConstraints="NO" id="OoT-RI-VrF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashImg" translatesAutoresizingMaskIntoConstraints="NO" id="OoT-RI-VrF">
                                 <rect key="frame" x="107.5" y="74" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OoT-RI-VrF" secondAttribute="height" multiplier="1:1" id="0le-Sq-ehj"/>
@@ -116,7 +116,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Locality View Left Icon" width="120" height="120"/>
         <image name="left-arrow" width="64" height="64"/>
+        <image name="splashImg" width="512" height="512"/>
     </resources>
 </document>

@@ -21,7 +21,7 @@ class MyOrderViewModel: NSObject {
                 strongSelf.orderModel = orderModel
                 completion(orderSummary,message)
             }else{
-                completion(nil,message)
+                completion(nil,"No data found!")
             }
         }
         

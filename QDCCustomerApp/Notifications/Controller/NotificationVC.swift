@@ -23,29 +23,21 @@ class NotificationVC: UIViewController {
         super.viewDidLoad()
 
         notificationTableView.register(NotificationCell.nib, forCellReuseIdentifier: NotificationCell.identifier)
-        
+        showLoadingHUD()
         notificationViewModel.getNotifications { [weak self] (isSuccess, message) in
             
             
             guard let strongSelf = self else{return}
-            //  strongSelf.dismissLoadingHUD()
+              strongSelf.dismissLoadingHUD()
             if isSuccess{
                 DispatchQueue.main.async {
                     strongSelf.notificationTableView.reloadData()
                 }
                 
             }else{
-                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+                showAlertMessage(vc: strongSelf, title: .Message, message: message)
             }
-            
-            
-            
         }
-        
-        
-        
-        
-        
     }
 
     

@@ -147,14 +147,18 @@ extension SuccessfullPickUpVC: CancelReasonDelegate{
                 var message = ""
                 if schedulePickUpModel.Status == "Done" {
                     message = "Pick up successfully cancelled"
+                    showAlertMessage(vc: strongSelf,
+                                     title: "Message",
+                                     message: message,
+                                     actionTitle: "Ok", handler: { (ation) in
+                                        strongSelf.navigationController?.popToRootViewController(animated: true)
+                    })
                 }else{
                     message = "Something went wrong please try again later"
+                    showAlertMessage(vc: strongSelf, title: .Message, message: message)
                 }
-                
-                showAlertMessage(vc: strongSelf, title: .Message, message: message)
-                
-                
-            }else{
+            }
+            else{
                 showAlertMessage(vc: strongSelf, title: .Error, message: "Something went wrong please try again later")
             }
         }
@@ -174,13 +178,17 @@ extension SuccessfullPickUpVC: CancelReasonDelegate{
                 var message = ""
                 if scheduleDropOffModel.Status == "Done" {
                     message = "Drop off successfully cancelled"
+                    showAlertMessage(vc: strongSelf,
+                                     title: "Message",
+                                     message: message,
+                                     actionTitle: "Ok", handler: { (ation) in
+                                        strongSelf.navigationController?.popToRootViewController(animated: true)
+                    })
                 }else{
                     message = "Something went wrong please try again later"
+                    showAlertMessage(vc: strongSelf, title: .Message, message: message)
                 }
-                
-                showAlertMessage(vc: strongSelf, title: .Message, message: message)
-                
-                
+                 
             }else{
                 showAlertMessage(vc: strongSelf, title: .Error, message: "Something went wrong please try again later")
             }

@@ -142,9 +142,10 @@ class DropOffVC: UIViewController {
     func hitRequestPickupWebService(_ flag:Int) {
         //flag 1 for request new pick up and 2 for reschedule
         
-        
+        showLoadingHUD()
         schedulePickUpDateClient.getSchedulePickup(pickupDate: self.selectedPickupDate, pickupTime: self.selectedPickupTime, flag: flag, pickupNumber: self.pickupNumber, expressDeliveryID: "", specialInstruction: self.pickUpInstruction, dropOffDate: self.selectedDropOffDate, dropOffTime: self.selectedDropOffTime, cancelReason: nil) { [weak self](schedulePickUpModel, message) in
             guard let strongSelf = self else{return}
+            strongSelf.dismissLoadingHUD()
             if let schedulePickUpModel = schedulePickUpModel {
                 
                 if schedulePickUpModel.Status == "False" {
@@ -183,11 +184,12 @@ class DropOffVC: UIViewController {
         
         
         
-        
+        showLoadingHUD()
         ScheduleDropOffClient.getScheduleDropOff(dropOffDate: self.selectedDropOffDate, dropOffTime: self.selectedDropOffTime, flag: flag, pickupNumber: self.pickupNumber, bookingNo: self.bookingId, dropOffNumber: self.dropoffNumber, cancelReason: nil) { [weak self](scheduleDropOffModel, message) in
             
             
             guard let strongSelf = self else{return}
+            strongSelf.dismissLoadingHUD()
             if let schedulePickUpModel = scheduleDropOffModel {
                 
                 if schedulePickUpModel.Status == "False" {
@@ -290,10 +292,6 @@ extension DropOffVC:UICollectionViewDataSource{
             return dropOffViewModel.numberOfDropOffTime(dropOffDate: selectedDropOffDate)
             
         }
-        
-        
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -305,9 +303,6 @@ extension DropOffVC:UICollectionViewDataSource{
             
             guard let dateStr =  dropOffViewModel.dropOffDate(for: indexPath) else {return UICollectionViewCell()  }
             if indexPath.row == 0 || indexPath.row == 1 {
-                
-                
-                
                 cell.contentView.backgroundColor = .lightGray
                 cell.dayLabel.textColor = .gray
                 cell.dateLabel.textColor = .gray

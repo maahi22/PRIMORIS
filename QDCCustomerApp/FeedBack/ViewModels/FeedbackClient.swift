@@ -24,7 +24,7 @@ class FeedbackClient: NSObject {
         let branchID = QDCUserDefaults.getBranchId()
         let customerCode = QDCUserDefaults.getCustomerId()
         let token = QDCUserDefaults.getAccessToken()
-        let dbName = QDCUserDefaults.getDataBaseName()
+       // let dbName = QDCUserDefaults.getDataBaseName()
         
         let apiname = FEEDBACK_RELATIVE_URL
         
@@ -32,7 +32,7 @@ class FeedbackClient: NSObject {
         let params = ["Message": messageString,
                       "BranchID":branchID,
                       "CustomerCode": customerCode,
-                      "DatabaseName" :dbName] as [String:Any]
+                      "ClientID" :clientID] as [String:Any]
         
         let headers = ["token": "\(token)", "Content-Type": "application/json"] as [String:String]
         
@@ -43,7 +43,7 @@ class FeedbackClient: NSObject {
                                            success: { (data, httpResponse) in
                                             
                                             if httpResponse.statusCode == 200 {
-                                                completion(true, "Success")
+                                                completion(true, "Thank you for your valuable feedback.")
                                             }
                                             else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
                                                 completion(false, messageModel.Message ?? "")

@@ -12,7 +12,7 @@ class DashboardVC: UIViewController {
 
     @IBOutlet var signUpClient:SignUpClient!
     @IBOutlet var customerSummaryClient:CustomerSummaryClient!
-    
+    @IBOutlet var settingsViewModel:SettingsViewModel!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userAddressLabel: UILabel!
@@ -37,6 +37,7 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        showLoadingHUD()
         customerSummaryClient.getCustomerSummary { [weak self] (customerSummeryModel, message) in
             guard let strongSelf = self else{
                 return
@@ -49,11 +50,18 @@ class DashboardVC: UIViewController {
                     strongSelf.garmentDueLabel.text = customerSummeryModel.PendingGarments
                     strongSelf.payAmountLabel.text = customerSummeryModel.PendingAmount
                 }
-                
+                strongSelf.settingsViewModel.getSettingsinformation(completion: { (isSuccess, message) in
+                        strongSelf.dismissLoadingHUD()
+                    if !isSuccess{
+                           showAlertMessage(vc: strongSelf, title: .Error, message: message)
+                    }
+                })
                 
             }else{
+                strongSelf.dismissLoadingHUD()
                 showAlertMessage(vc: strongSelf, title: .Error, message: message)
             }
+            
             
             
         }

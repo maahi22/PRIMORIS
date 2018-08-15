@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eRx-8S-yJS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eRx-8S-yJS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -91,18 +91,6 @@
                                     <action selector="schedulePickupButtonClickWithSender:" destination="eHl-Mi-ezB" eventType="touchUpInside" id="WgZ-mF-31v"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Special Instruction" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fCL-sV-NDA">
-                                <rect key="frame" x="0.0" y="584" width="375" height="40"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="YXu-7u-age"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="eHl-Mi-ezB" id="wpj-cK-vTn"/>
-                                </connections>
-                            </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qK2-oe-tO2">
                                 <rect key="frame" x="0.0" y="542" width="375" height="40"/>
                                 <subviews>
@@ -198,28 +186,38 @@
                                     <outlet property="delegate" destination="eHl-Mi-ezB" id="InC-RJ-NfQ"/>
                                 </connections>
                             </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Special Instructions" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M0u-iR-MmD">
+                                <rect key="frame" x="0.0" y="584" width="375" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zsj-MC-bcC"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="p5s-bK-Ifh" firstAttribute="trailing" secondItem="fCL-sV-NDA" secondAttribute="trailing" id="5Nc-AN-hYY"/>
                             <constraint firstItem="qK2-oe-tO2" firstAttribute="leading" secondItem="Dyu-KC-Ui4" secondAttribute="leading" id="7cB-dM-X0A"/>
                             <constraint firstItem="e3E-RH-DF8" firstAttribute="top" secondItem="p5s-bK-Ifh" secondAttribute="top" id="Aoe-Zw-4fx"/>
                             <constraint firstItem="p5s-bK-Ifh" firstAttribute="trailing" secondItem="fTL-rb-GBM" secondAttribute="trailing" id="CNz-Lr-2pM"/>
-                            <constraint firstItem="fCL-sV-NDA" firstAttribute="top" secondItem="qK2-oe-tO2" secondAttribute="bottom" constant="2" id="GUP-2k-iPW"/>
                             <constraint firstItem="JYY-dM-3Ao" firstAttribute="top" secondItem="e3E-RH-DF8" secondAttribute="bottom" constant="2" id="KrE-ac-2wN"/>
+                            <constraint firstItem="M0u-iR-MmD" firstAttribute="leading" secondItem="p5s-bK-Ifh" secondAttribute="leading" id="MOE-bx-hxL"/>
                             <constraint firstItem="p5s-bK-Ifh" firstAttribute="trailing" secondItem="e3E-RH-DF8" secondAttribute="trailing" id="MjO-Xq-bzU"/>
                             <constraint firstItem="fTL-rb-GBM" firstAttribute="leading" secondItem="p5s-bK-Ifh" secondAttribute="leading" id="NhS-he-Ah8"/>
+                            <constraint firstItem="p5s-bK-Ifh" firstAttribute="trailing" secondItem="M0u-iR-MmD" secondAttribute="trailing" id="PR1-9C-dC6"/>
                             <constraint firstItem="e3E-RH-DF8" firstAttribute="leading" secondItem="Dyu-KC-Ui4" secondAttribute="leading" id="VPU-K7-Y7H"/>
+                            <constraint firstItem="fTL-rb-GBM" firstAttribute="top" secondItem="M0u-iR-MmD" secondAttribute="bottom" constant="2" id="WVl-Uv-3rJ"/>
                             <constraint firstItem="KoY-4t-Eb9" firstAttribute="leading" secondItem="Dyu-KC-Ui4" secondAttribute="leading" id="a24-Vy-WcP"/>
                             <constraint firstItem="p5s-bK-Ifh" firstAttribute="trailing" secondItem="JYY-dM-3Ao" secondAttribute="trailing" id="brV-Tp-kSf"/>
-                            <constraint firstItem="fCL-sV-NDA" firstAttribute="leading" secondItem="Dyu-KC-Ui4" secondAttribute="leading" id="cru-fa-Vqi"/>
                             <constraint firstItem="p5s-bK-Ifh" firstAttribute="trailing" secondItem="qK2-oe-tO2" secondAttribute="trailing" id="cuP-29-MaF"/>
                             <constraint firstItem="qK2-oe-tO2" firstAttribute="top" secondItem="JYY-dM-3Ao" secondAttribute="bottom" constant="2" id="fFY-GB-BVi"/>
                             <constraint firstAttribute="trailing" secondItem="KoY-4t-Eb9" secondAttribute="trailing" id="fgh-ow-bvH"/>
-                            <constraint firstItem="fTL-rb-GBM" firstAttribute="top" secondItem="fCL-sV-NDA" secondAttribute="bottom" constant="2" id="gqR-ez-fS7"/>
                             <constraint firstItem="p5s-bK-Ifh" firstAttribute="bottom" secondItem="fTL-rb-GBM" secondAttribute="bottom" constant="1" id="tT4-cp-Bnu"/>
                             <constraint firstItem="KoY-4t-Eb9" firstAttribute="top" secondItem="e3E-RH-DF8" secondAttribute="bottom" id="tgE-aJ-E8D"/>
                             <constraint firstItem="JYY-dM-3Ao" firstAttribute="leading" secondItem="Dyu-KC-Ui4" secondAttribute="leading" id="uEl-LB-JS5"/>
+                            <constraint firstItem="M0u-iR-MmD" firstAttribute="top" secondItem="qK2-oe-tO2" secondAttribute="bottom" constant="2" id="yeZ-28-NJo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p5s-bK-Ifh"/>
                     </view>
@@ -240,7 +238,7 @@
                         <outlet property="schedulePickupButton" destination="fTL-rb-GBM" id="DrR-zC-dfT"/>
                         <outlet property="secondButton" destination="kkI-bL-keu" id="LEH-aF-fnS"/>
                         <outlet property="secondButtonRadioImage" destination="p98-XN-MNh" id="Y9s-KY-mzh"/>
-                        <outlet property="specialInstructionTextView" destination="fCL-sV-NDA" id="23f-Qc-XSS"/>
+                        <outlet property="specialInstructionTextView" destination="M0u-iR-MmD" id="h0q-ov-uRF"/>
                         <outlet property="timeSelectionCollectionView" destination="JYY-dM-3Ao" id="Fn0-y7-JxT"/>
                     </connections>
                 </viewController>

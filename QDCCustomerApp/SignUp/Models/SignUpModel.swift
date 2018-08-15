@@ -71,3 +71,5 @@ struct CustomerCreationModel:Codable {
 struct OTPCheckModel:Codable {
     let OTPMatch:String
 }
+
+

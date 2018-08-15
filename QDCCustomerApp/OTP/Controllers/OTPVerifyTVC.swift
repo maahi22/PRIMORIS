@@ -121,6 +121,7 @@ class OTPVerifyTVC: UITableViewController {
             guard let strongSelf = self else{return}
             strongSelf.dismissLoadingHUD()
             if let otpCheckModel = otpCheckModel, otpCheckModel.OTPMatch.lowercased() == "true"{
+                
                 UserDefaults.standard.set(true, forKey: USER_DEFAULT_OTP_CORRECT_KEY)
                 UserDefaults.standard.synchronize()
                 guard let mainView = UIStoryboard(name: Screens.SideMenu.rawValue, bundle: nil).instantiateInitialViewController() as? CustomSideMenuViewController

@@ -39,7 +39,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locality View Left Icon" translatesAutoresizingMaskIntoConstraints="NO" id="wJn-dw-aif">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashImg" translatesAutoresizingMaskIntoConstraints="NO" id="wJn-dw-aif">
                                                     <rect key="frame" x="112" y="15" width="150" height="150"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="wJn-dw-aif" secondAttribute="height" multiplier="1:1" id="Cw1-iw-hfz"/>
@@ -152,6 +152,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Locality View Left Icon" width="120" height="120"/>
+        <image name="splashImg" width="512" height="512"/>
     </resources>
 </document>
