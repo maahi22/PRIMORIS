@@ -19,7 +19,7 @@ class ProfileClient: NSObject {
                             name:String,
                             address:String,
                             
-                            completion:@escaping (CustomerCreationModel?,String)->())  {
+                            completion:@escaping (Bool,CustomerCreationModel?,String)->())  {
         
         let dbName = QDCUserDefaults.getDataBaseName()
         let clientID = QDCUserDefaults.getClientID()
@@ -44,20 +44,45 @@ class ProfileClient: NSObject {
                                            headers: headers,
                                            success: { (data, httpResponse) in
                                             
-                                            if let customerCreationModel = decodeJSON(type: CustomerCreationModel.self, from: data) {
-                                                completion(customerCreationModel, "Success")
+                                            
+                                            if httpResponse.statusCode == 200 {
+                                                
+                                                completion(true,nil, "Profile update successfully")
+                                                return
+                                                
+                                                
+                                                if let customerCreationModel = decodeJSON(type: CustomerCreationModel.self, from: data) {
+                                                    completion(true,customerCreationModel, "Success")
+                                                }else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
+                                                    completion(false,nil, messageModel.Message ?? "")
+                                                }
+                                                    
+                                                else{
+                                                    completion(false,nil,"failed")
+                                                }
+                                                
+                                                
                                             }
                                             else if let messageModel = decodeJSON(type: MessageModel.self, from: data) {
-                                                completion(nil, messageModel.Message ?? "")
+                                                completion(false,nil, messageModel.Message ?? "")
                                             }
                                                 
                                             else{
-                                                completion(nil,"failed")
+                                                completion(false,nil,"failed")
                                             }
+
+                                            
+                                            
+                                            
+                                           
+                                                
+                                                
+                                                
+                                            
                                             
         }) { (error, message) in
             
-            completion(nil,message)
+            completion(false,nil,message)
             
         }
     }

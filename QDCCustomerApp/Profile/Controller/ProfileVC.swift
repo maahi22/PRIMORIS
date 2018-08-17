@@ -39,7 +39,7 @@ class ProfileVC: UIViewController {
         self.mobileTextField.text = QDCUserDefaults.getUserMobile()
         self.addressTextField.text = QDCUserDefaults.getUserAddress()
         
-       // self.pickupAddressTextField.text = QDCUserDefaults.getLocality()
+        self.pickupAddressTextField.text = QDCUserDefaults.getUserSubAddress()
         self.updateButton.layer.cornerRadius = 10
         
     }
@@ -67,18 +67,48 @@ class ProfileVC: UIViewController {
     
     func hitUpdateUserWebService(_ name:String , address:String,addressLocation:String) {
         
-        profileClient.updateProfile(areaLocation: address, name: name, address: address) {  [weak self] (customerModel, message)  in
+        profileClient.updateProfile(areaLocation: address, name: name, address: address) {  [weak self] (status ,customerModel, message)  in
             
             guard let strongSelf = self else{return}
             //  strongSelf.dismissLoadingHUD()
             
+            
+            if status {
+                
+                
+                QDCUserDefaults.setUserName(userName: name)
+                QDCUserDefaults.setUserAddress(adress: address)
+                QDCUserDefaults.setUserSubAddress(adress: addressLocation)
+                
+                DispatchQueue.main.async {
+                    showAlertMessage(vc: strongSelf, title: .Error, message: message)
+                }
+                return
+            
+            
             if let cus = customerModel {
             
+                
+                if let valueString = cus.Name{
+                    QDCUserDefaults.setUserName(userName: valueString)
+                }
+                
+                if let valueString = cus.AreaLocation{
+                    QDCUserDefaults.setUserAddress(adress: valueString)
+                }
+                
+                
+                
                 print(cus.Name)
            // if isSuccess{
                 DispatchQueue.main.async {
                     showAlertMessage(vc: strongSelf, title: .Error, message: message)
                 }
+                
+            }else{
+                showAlertMessage(vc: strongSelf, title: .Error, message: message)
+                }
+                
                 
             }else{
                 showAlertMessage(vc: strongSelf, title: .Error, message: message)
