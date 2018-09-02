@@ -911,10 +911,10 @@
 		03FB56E820ECC79300270859 /* MyOrders */ = {
 			isa = PBXGroup;
 			children = (
-				0FA43BEC20F5FDC600E64E6E /* Models */,
-				0FA43BEB20F5FDBA00E64E6E /* ViewModel */,
 				03FB56E920ECC79B00270859 /* Views */,
 				03FB56EA20ECC7A000270859 /* Controllers */,
+				0FA43BEB20F5FDBA00E64E6E /* ViewModel */,
+				0FA43BEC20F5FDC600E64E6E /* Models */,
 			);
 			path = MyOrders;
 			sourceTree = "<group>";

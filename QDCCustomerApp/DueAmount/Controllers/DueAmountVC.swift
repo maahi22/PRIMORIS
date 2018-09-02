@@ -13,6 +13,7 @@ class DueAmountVC: UIViewController, RazorpayPaymentCompletionProtocol {
 
     @IBOutlet private var dueAmountClient:DueAmountClient!
     //private var customerSummaryModel:CustomerSummaryModel
+    @IBOutlet private var myOrderClient:MyOrderClient!
     
     @IBOutlet weak var dueAmountLabel:UILabel!
     @IBOutlet weak var amountTitleLabel:UILabel!
@@ -20,32 +21,50 @@ class DueAmountVC: UIViewController, RazorpayPaymentCompletionProtocol {
     
     var razorpayTestKey = "rzp_test_UWsFTZ8whOaHyK"
     var razorpay: Razorpay!
-    
-    
+    var paidAmount = ""
+    var pendingAmount = 0
+    var orderNos = ""
+    var paymentDone:(()->())?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         payNowButton.setButtonTheme()
         razorpay = Razorpay.initWithKey(razorpayTestKey, andDelegate: self)
-        dueAmountClient.getDueAmount { [weak self] (customerSummaryModel, message) in
+        
+        myOrderClient.featchMyOrder { [weak self] (orderModel, message) in
             guard let strongSelf = self else{return}
-            
-            if let customerSummaryModel = customerSummaryModel {
+            if let orderModel = orderModel, let orderDetails = orderModel.first?.OrderDetails{
+                
+                
+                 strongSelf.pendingAmount = orderDetails.reduce(0, { pendingAmount, order in
+                    
+                    pendingAmount + (Int(order.PendingAmount ?? "0") ?? 0)
+                })
+                
+                orderDetails.forEach({ (orderDetail) in
+                    if strongSelf.orderNos.count > 0{
+                        strongSelf.orderNos += "," + (orderDetail.OrderNo ?? "")
+                    }else{
+                        strongSelf.orderNos = orderDetail.OrderNo ?? ""
+                    }
+                })
+                
                 DispatchQueue.main.async {
                     
                     //if let amount = customerSummaryModel.PendingAmount {
-                        strongSelf.amountTitleLabel.text = customerSummaryModel.PendingAmount
-                   // }
+                    strongSelf.amountTitleLabel.text = "\(strongSelf.pendingAmount) INR"
+                    // }
                     
                     
                 }
-                
             }else{
                 showAlertMessage(vc: strongSelf, title: .Error, message: message)
+
             }
-            
         }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,18 +113,34 @@ class DueAmountVC: UIViewController, RazorpayPaymentCompletionProtocol {
     }
     
     public func onPaymentSuccess(_ payment_id: String){
-        let alertController = UIAlertController(title: "SUCCESS", message: "Payment Id \(payment_id)", preferredStyle: UIAlertControllerStyle.alert)
-        let cancelAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        self.view.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+        
+        dueAmountClient.updatePayment(paymentResponseData: payment_id,
+                                      amount: paidAmount, orderNumber: orderNos) {[weak self] (isStatus, message) in
+                                        guard let strongSelf = self else{return}
+                                        if isStatus{
+                                            showAlertMessage(vc: strongSelf, title: "Message", message: "Payment received successfully", actionTitle: "Ok", handler: { (action) in
+                                                if let paymentDone = strongSelf.paymentDone{
+                                                    paymentDone()
+                                                    strongSelf.navigationController?.popViewController(animated: true)
+                                                }
+                                            })
+                                        }else{
+                                            showAlertMessage(vc: strongSelf, title: .Information, message: "Payment not received, please try again.")
+                                        }
+        }
+        
+        
+//        let alertController = UIAlertController(title: "SUCCESS", message: "Payment Id \(payment_id)", preferredStyle: UIAlertControllerStyle.alert)
+//        let cancelAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+//        alertController.addAction(cancelAction)
+//        self.view.window?.rootViewController?.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func payNowPressed(_ sender: UIButton) {
-        guard let dueAmount = amountTitleLabel.text else { return  }
-        let arrAmt = dueAmount.components(separatedBy: " ")
         
-        if arrAmt.count == 2 {
-            let payAmt = (Int(arrAmt[0]) ?? 0) * 100
+        if pendingAmount > 0 {
+            let payAmt = pendingAmount * 100
+            paidAmount = "\(payAmt)"
             showPaymentForm(amount: "\(payAmt)")
         }
         

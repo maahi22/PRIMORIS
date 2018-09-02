@@ -26,12 +26,12 @@ class ProfileClient: NSObject {
         let branchID = QDCUserDefaults.getBranchId()
         let customerCode = QDCUserDefaults.getCustomerId()
         let token = QDCUserDefaults.getAccessToken()
-        
+        // {"ClientID":"1677",BranchID:"5",CustomerCode: "Cust34", Name:"dfgfdhgdh",Address:"Delhi,Area","AreaLocation":"Ashok Vihar"}
         var params = ["AreaLocation": areaLocation,
                       "Name":name,
                       "Address": address,
                       "CustomerCode" :customerCode,
-                      "DatabaseName" : dbName,
+                      "ClientID" : clientID,
                       "BranchID":branchID ] as [String:Any]
         
         let headers = ["token": "\(token)", "Content-Type": "application/json"] as [String:String]

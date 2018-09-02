@@ -9,141 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/PriceList/Controller/PriceListVC.swift"
-            timestampString = "553585551.420846"
+            filePath = "QDCCustomerApp/DueAmount/Controllers/DueAmountVC.swift"
+            timestampString = "557498751.357174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/PriceList/Controller/PriceListVC.swift"
-            timestampString = "553585551.421293"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/PriceList/Controller/PriceListVC.swift"
-            timestampString = "553585551.421531"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "loadItemsInTable(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/PriceList/ViewModel/PriceListViewModel.swift"
-            timestampString = "553261385.473322"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "numberOfPriceList(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/PriceList/ViewModel/PriceListViewModel.swift"
-            timestampString = "553261385.4737"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "priceListForIndexPath(_:selectedService:Index:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/MyRequests/Controller/MyRequestsVC.swift"
-            timestampString = "554102753.994342"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
-            landmarkName = "didSelectCancelButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/MyRequests/Controller/MyRequestsVC.swift"
-            timestampString = "554102753.995156"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
-            landmarkName = "didSelectCancelButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/AboutUs/Controller/AboutUsVC.swift"
-            timestampString = "555902386.3201621"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/SignUpChoice/Controllers/SignUpChoiceVC.swift"
-            timestampString = "555090622.234544"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "getFBUserData()"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "onPaymentSuccess(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/DueAmount/Controllers/DueAmountVC.swift"
-            timestampString = "555683518.762908"
+            timestampString = "557498751.357285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "payNowPressed(_:)"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "onPaymentSuccess(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -169,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/AboutUs/ViewModels/AboutUsClient.swift"
-            timestampString = "555692039.769491"
+            filePath = "QDCCustomerApp/DueAmount/ViewModel/DueAmountClient.swift"
+            timestampString = "557498751.357365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "getAboutUs(completion:)"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "updatePayment(paymentResponseData:amount:orderNumber:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,13 +57,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/AboutUs/ViewModels/AboutUsClient.swift"
-            timestampString = "555692079.511516"
+            filePath = "QDCCustomerApp/DueAmount/ViewModel/DueAmountClient.swift"
+            timestampString = "557498751.3574311"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "updatePayment(paymentResponseData:amount:orderNumber:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QDCCustomerApp/DueAmount/ViewModel/DueAmountClient.swift"
+            timestampString = "557498751.357497"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "updatePayment(paymentResponseData:amount:orderNumber:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data, __ObjC.HTTPURLResponse) -&gt; () in QDCCustomerApp.DueAmountClient.updatePayment(paymentResponseData: Swift.String, amount: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "QDCCustomerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amitpant/Documents/QDC/PRIMORIS/QDCCustomerApp/DueAmount/ViewModel/DueAmountClient.swift"
+                  timestampString = "557497604.823235"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "95">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;QDCCustomerApp.NetworkError&gt;, Swift.String) -&gt; () in QDCCustomerApp.DueAmountClient.updatePayment(paymentResponseData: Swift.String, amount: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "QDCCustomerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amitpant/Documents/QDC/PRIMORIS/QDCCustomerApp/DueAmount/ViewModel/DueAmountClient.swift"
+                  timestampString = "557497604.8270839"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "33">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QDCCustomerApp/DueAmount/Controllers/DueAmountVC.swift"
+            timestampString = "557498751.357563"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "getAboutUs(completion:)"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -201,14 +137,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/PickUpDate/Controllers/PickUpDateVC.swift"
-            timestampString = "556050244.084339"
+            filePath = "QDCCustomerApp/DueAmount/Controllers/DueAmountVC.swift"
+            timestampString = "557498751.357632"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
-            landmarkName = "hitRequestPickupWebService(flag:)"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;QDCCustomerApp.OrderModel&gt;&gt;, Swift.String) -&gt; () in QDCCustomerApp.DueAmountVC.viewDidLoad() -&gt; ()"
+                  moduleName = "QDCCustomerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amitpant/Documents/QDC/PRIMORIS/QDCCustomerApp/DueAmount/Controllers/DueAmountVC.swift"
+                  timestampString = "557497604.843823"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "575">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int, QDCCustomerApp.OrderDetailsModel) -&gt; Swift.Int in closure #1 (Swift.Optional&lt;Swift.Array&lt;QDCCustomerApp.OrderModel&gt;&gt;, Swift.String) -&gt; () in QDCCustomerApp.DueAmountVC.viewDidLoad() -&gt; ()"
+                  moduleName = "QDCCustomerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amitpant/Documents/QDC/PRIMORIS/QDCCustomerApp/DueAmount/Controllers/DueAmountVC.swift"
+                  timestampString = "557497604.847108"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -217,45 +185,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/PickUpDate/Controllers/PickUpDateVC.swift"
-            timestampString = "556050244.084571"
+            filePath = "QDCCustomerApp/DueAmount/Controllers/DueAmountVC.swift"
+            timestampString = "557498751.3577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
-            landmarkName = "hitRequestPickupWebService(flag:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/PickUpDate/Controllers/PickUpDateVC.swift"
-            timestampString = "556050244.084682"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "schedulePickupButtonClick(sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QDCCustomerApp/Settings/ViewModels/SettingsViewModel.swift"
-            timestampString = "556050244.084783"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "getSettingsinformation(completion:)"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

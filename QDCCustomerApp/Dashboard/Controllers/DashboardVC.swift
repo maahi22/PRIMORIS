@@ -118,6 +118,10 @@ class DashboardVC: UIViewController {
         guard let navViewController = DueAmountVC.getStoryboardInstance(),
             let viewController = navViewController.topViewController as? DueAmountVC
         else { return  }
+        viewController.paymentDone = { [weak self]() in
+            guard let strongSelf = self else { return  }
+             strongSelf.payAmountLabel.text = "0 INR"
+        }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

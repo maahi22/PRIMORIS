@@ -51,7 +51,7 @@ let GET_CANCEL_REASON_RELATIVE_URL       = "CancelReason/"
 let SHARE_MECHANISM_RELATIVE_URL         = ""
 let GET_LICENSE_RELATIVE_URL             = "License/DryCleanKart/2/1223.26"
 
-
+let PAYMENT_UPDATE                      = "PaymentResponse"
 //enum
 
 

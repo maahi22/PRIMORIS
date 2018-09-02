@@ -80,13 +80,17 @@ class ProfileVC: UIViewController {
                 QDCUserDefaults.setUserAddress(adress: address)
                 QDCUserDefaults.setUserSubAddress(adress: addressLocation)
                 
-                DispatchQueue.main.async {
-                    showAlertMessage(vc: strongSelf, title: .Error, message: message)
-                }
-                return
+                showAlertMessage(vc: strongSelf,
+                                 title: "Message",
+                                 message: message,
+                                 actionTitle: "Ok",
+                                 handler: { (action) in
+                                    strongSelf.sideMenuController?.performSegue(withIdentifier: SideMenuOptions.showHome.rawValue, sender: nil)
+                })
+
             
             
-            if let cus = customerModel {
+            /*if let cus = customerModel {
             
                 
                 if let valueString = cus.Name{
@@ -99,16 +103,11 @@ class ProfileVC: UIViewController {
                 
                 
                 
-                print(cus.Name)
-           // if isSuccess{
-                DispatchQueue.main.async {
-                    showAlertMessage(vc: strongSelf, title: .Error, message: message)
-                }
                 
             }else{
                 showAlertMessage(vc: strongSelf, title: .Error, message: message)
                 }
-                
+                */
                 
             }else{
                 showAlertMessage(vc: strongSelf, title: .Error, message: message)

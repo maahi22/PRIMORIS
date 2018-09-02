@@ -47,4 +47,44 @@ class DueAmountClient: NSObject {
         }
     }
     
+    
+    
+    //schedule details
+    func updatePayment( paymentResponseData:String,
+                             amount:String,
+                             orderNumber:String,
+                             completion:@escaping (Bool,String)->())  {
+        
+        let clientID = QDCUserDefaults.getClientID()
+        let branchID = QDCUserDefaults.getBranchId()
+        //let customerCode = QDCUserDefaults.getCustomerId()
+        let token = QDCUserDefaults.getAccessToken()
+        
+        
+                let params = ["ClientID": clientID,
+                      "BranchID":branchID,
+                      "PaymentMethodID": "2",
+                      "OrderNumber" :"\(orderNumber)",
+                      "ResponseData" : paymentResponseData,
+                      "Amount":amount
+                      ] as [String:Any]
+        
+        let headers = ["token": "\(token)", "Content-Type": "application/json"] as [String:String]
+        
+        let apiname = PAYMENT_UPDATE
+        
+        networkClient.callAPIWithAlamofire(apiname: apiname,
+                                           requestType: .post,
+                                           params: params,
+                                           headers: headers,
+                                           success: { (data, httpResponse) in
+                                            
+                                            completion(true,"")
+                                            
+        }) { (error, message) in
+            
+            completion(false,message)
+            
+        }
+    }
 }
