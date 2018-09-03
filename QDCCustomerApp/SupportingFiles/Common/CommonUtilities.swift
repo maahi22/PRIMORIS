@@ -105,4 +105,25 @@ class CommonUtilities: NSObject {
         return UserDefaults.standard.bool(forKey: USER_DEFAULT_OTP_CORRECT_KEY)
     }
 
+    
+    
+    
+    class func getDateFromString(dateString:String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        return dateFormatter.date(from: dateString)  as! Date
+    }
+    
+    
+    class func getDateFromStringAddedDay(dateString:String, day:Int) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        let date =  dateFormatter.date(from: dateString) as! Date
+        
+        let NewDate = date.add(days: day)
+        return dateFormatter.string(from: NewDate)
+    }
+    
+    
+    
 }

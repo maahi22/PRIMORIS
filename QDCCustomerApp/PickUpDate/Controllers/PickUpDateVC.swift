@@ -53,7 +53,7 @@ class PickUpDateVC: UIViewController {
             guard let strongSelf = self else{return}
             if let scheduleDetailModel = scheduleDetailModel {
                 
-                if scheduleDetailModel.ShowDropOff == "False" {
+                if scheduleDetailModel.ShowDropOff == "True" {
                     strongSelf.showDropOff = true
                     
                     //strongSelf.timeCollectionBottomConstraint.constant = 120
@@ -110,15 +110,10 @@ class PickUpDateVC: UIViewController {
                 DispatchQueue.main.async {
                     
                     strongSelf.dateSelectionCollectionView.reloadData()
-                    
                     guard let dateStr =  strongSelf.pickUpDateViewModel.pickUpFirstDate() else {return }
                     strongSelf.selectedDate = dateStr
-                    
-                    
                     guard let time =  strongSelf.pickUpDateViewModel.pickUpFirstTime() else {return }
                     strongSelf.selectedTime = time
-                    
-                    
                     strongSelf.timeSelectionCollectionView.reloadData()
                     
                     
@@ -224,7 +219,19 @@ class PickUpDateVC: UIViewController {
         }
         
         showLoadingHUD()
-        schedulePickUpDateClient.getSchedulePickup(pickupDate: self.selectedDate, pickupTime: self.selectedTime, flag: flag, pickupNumber: self.pickupNumber, expressDeliveryID: expressId, specialInstruction: instruction, dropOffDate: "", dropOffTime: "", cancelReason: nil) { [weak self](schedulePickUpModel, message) in
+        
+        var dropOffD = ""
+        var dropOffT = ""
+        if let expId = Int (expressId){
+            if expId > 0 {
+                
+                dropOffD =   CommonUtilities.getDateFromStringAddedDay(dateString: self.selectedDate, day: expId)
+                dropOffT = self.selectedTime
+            }
+        }
+        
+        
+        schedulePickUpDateClient.getSchedulePickup(pickupDate: self.selectedDate, pickupTime: self.selectedTime, flag: flag, pickupNumber: self.pickupNumber, expressDeliveryID: expressId, specialInstruction: instruction, dropOffDate: dropOffD, dropOffTime: dropOffT, cancelReason: nil) { [weak self](schedulePickUpModel, message) in
             
             guard let strongSelf = self else{return}
             
@@ -247,7 +254,7 @@ class PickUpDateVC: UIViewController {
                         //this means either of the express delivery is selected send to congratulation screen with pick up and drop off message
                         //self.performSegueWithIdentifier(SEGUE_CONGRATULATIONS_SCHEDULE_IDENTIFIER, sender: self)
                         
-                        guard let navViewController = DropOffVC.getStoryboardInstance(),
+                       /* guard let navViewController = DropOffVC.getStoryboardInstance(),
                             let viewController = navViewController.topViewController as? DropOffVC
                             else { return  }
                         
@@ -262,7 +269,17 @@ class PickUpDateVC: UIViewController {
                         viewController.pickUpInstruction = instruction
                         viewController.isComingFromPickUp = true
                          strongSelf.navigationController?.pushViewController(viewController, animated: true)
+                        */
                         
+                        
+                        guard let navViewController = SuccessfullPickUpVC.getStoryboardInstance(),
+                            let viewController = navViewController.topViewController as? SuccessfullPickUpVC
+                            else { return  }
+                        viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDate), \(strongSelf.selectedTime)"
+                        viewController.pickUpOrderId = strongSelf.pickupNumber
+                        viewController.selectedPickupDate = strongSelf.selectedDate
+                        viewController.selectedPickupTime = strongSelf.selectedTime
+                        strongSelf.navigationController?.pushViewController(viewController, animated: true)
                         
                     } else {
                         //send to congratulations screen with pick up only message

@@ -171,6 +171,7 @@
 		0FA43BFA20F613F800E64E6E /* ProfileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA43BF920F613F800E64E6E /* ProfileClient.swift */; };
 		0FA8C68420F20FA500F9DC83 /* CommonUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8C68320F20FA500F9DC83 /* CommonUtilities.swift */; };
 		0FA8C68620F2248700F9DC83 /* SchedulePickUpDateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8C68520F2248700F9DC83 /* SchedulePickUpDateClient.swift */; };
+		0FD0AB33213D846A00F955C7 /* Date+AddSubDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD0AB32213D846A00F955C7 /* Date+AddSubDay.swift */; };
 		19815D5B28B0965573076D28 /* Pods_QDCCustomerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8206FF962A53EAF360AFEFB3 /* Pods_QDCCustomerAppTests.framework */; };
 		83661F5920BBFDA3B0BAB2C0 /* Pods_QDCCustomerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7DE35483804927E305602D8 /* Pods_QDCCustomerApp.framework */; };
 		C6E2022A9000E255F3924138 /* Pods_QDCCustomerAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA20F2CA4FF68F207C6ABD1B /* Pods_QDCCustomerAppUITests.framework */; };
@@ -364,6 +365,7 @@
 		0FA43BF920F613F800E64E6E /* ProfileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileClient.swift; sourceTree = "<group>"; };
 		0FA8C68320F20FA500F9DC83 /* CommonUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtilities.swift; sourceTree = "<group>"; };
 		0FA8C68520F2248700F9DC83 /* SchedulePickUpDateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePickUpDateClient.swift; sourceTree = "<group>"; };
+		0FD0AB32213D846A00F955C7 /* Date+AddSubDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+AddSubDay.swift"; sourceTree = "<group>"; };
 		3BF99ED0F81071F3C951EEF4 /* Pods-QDCCustomerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDCCustomerAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDCCustomerAppTests/Pods-QDCCustomerAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BE6E2D889EA6C81DD40BD16 /* Pods-QDCCustomerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QDCCustomerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-QDCCustomerApp/Pods-QDCCustomerApp.release.xcconfig"; sourceTree = "<group>"; };
 		8206FF962A53EAF360AFEFB3 /* Pods_QDCCustomerAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QDCCustomerAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -798,6 +800,7 @@
 				03CEBA6C20DC18E000A1FAB3 /* NSMutableData.swift */,
 				03CEBA6D20DC18E000A1FAB3 /* UIImageView.swift */,
 				03CEBA6E20DC18E000A1FAB3 /* UIImageView+URL.swift */,
+				0FD0AB32213D846A00F955C7 /* Date+AddSubDay.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1997,6 +2000,7 @@
 				0FA43BEE20F5FDE400E64E6E /* MyOrderViewModel.swift in Sources */,
 				0F2AD3A220F07B7F002B4BF5 /* BaseVC.swift in Sources */,
 				03EE3CC020DE2874005F1A4F /* WebServiceConstant.swift in Sources */,
+				0FD0AB33213D846A00F955C7 /* Date+AddSubDay.swift in Sources */,
 				034B9B1E20E6C03B004CFD4D /* MenuItemsTVC.swift in Sources */,
 				0F2FE63B20F34D1F00F4CC48 /* OrderDetailCell.swift in Sources */,
 				0F5E423C20F0AD8F005CC203 /* OrderDetailVC.swift in Sources */,
