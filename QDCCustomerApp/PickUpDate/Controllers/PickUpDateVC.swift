@@ -127,19 +127,7 @@ class PickUpDateVC: UIViewController {
             }else{
                 showAlertMessage(vc: strongSelf, title: .Error, message: message)
             }
-            
-            
-            
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
 
     
