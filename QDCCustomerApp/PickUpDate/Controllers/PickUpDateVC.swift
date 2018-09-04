@@ -287,7 +287,7 @@ class PickUpDateVC: UIViewController {
                         guard let navViewController = SuccessfullPickUpVC.getStoryboardInstance(),
                             let viewController = navViewController.topViewController as? SuccessfullPickUpVC
                             else { return  }
-                        viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDate), \(strongSelf.selectedTime)"
+                        viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDate), \(strongSelf.selectedTime) \n\nand Dropoff has been scheduled for \n \(schedulePickUpModel.DropOffDateAndTimeSlot)"
                         viewController.pickUpOrderId = strongSelf.pickupNumber
                         viewController.selectedPickupDate = strongSelf.selectedDate
                         viewController.selectedPickupTime = strongSelf.selectedTime
@@ -300,7 +300,7 @@ class PickUpDateVC: UIViewController {
                         guard let navViewController = SuccessfullPickUpVC.getStoryboardInstance(),
                             let viewController = navViewController.topViewController as? SuccessfullPickUpVC
                             else { return  }
-                        viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDate), \(strongSelf.selectedTime)"
+                        viewController.message = "Your Pickup has been scheduled for \n \(strongSelf.selectedDate), \(strongSelf.selectedTime) \n\nand Dropoff has been scheduled for \n \(schedulePickUpModel.DropOffDateAndTimeSlot)"
                         viewController.pickUpOrderId = strongSelf.pickupNumber
                         viewController.selectedPickupDate = strongSelf.selectedDate
                         viewController.selectedPickupTime = strongSelf.selectedTime
