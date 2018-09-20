@@ -90,7 +90,7 @@
                   moduleName = "QDCCustomerApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/amitpant/Documents/QDC/PRIMORIS/QDCCustomerApp/DueAmount/ViewModel/DueAmountClient.swift"
-                  timestampString = "557688116.559001"
+                  timestampString = "557776508.142388"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -105,7 +105,7 @@
                   moduleName = "QDCCustomerApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/amitpant/Documents/QDC/PRIMORIS/QDCCustomerApp/DueAmount/ViewModel/DueAmountClient.swift"
-                  timestampString = "557688116.563748"
+                  timestampString = "557776508.1468019"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "88"
@@ -154,7 +154,7 @@
                   moduleName = "QDCCustomerApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/amitpant/Documents/QDC/PRIMORIS/QDCCustomerApp/DueAmount/Controllers/DueAmountVC.swift"
-                  timestampString = "557688116.590706"
+                  timestampString = "557776508.1671849"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
@@ -169,7 +169,7 @@
                   moduleName = "QDCCustomerApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/amitpant/Documents/QDC/PRIMORIS/QDCCustomerApp/DueAmount/Controllers/DueAmountVC.swift"
-                  timestampString = "557688116.594167"
+                  timestampString = "557776508.1707129"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
@@ -234,13 +234,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PickUpDate/ViewModels/SchedulePickUpDateClient.swift"
-            timestampString = "557688187.630502"
+            timestampString = "557776506.216157"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
             endingLineNumber = "88"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getSchedulePickup(pickupDate:pickupTime:flag:pickupNumber:expressDeliveryID:specialInstruction:dropOffDate:dropOffTime:cancelReason:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -250,13 +250,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QDCCustomerApp/PickUpDate/ViewModels/SchedulePickUpDateClient.swift"
-            timestampString = "557688215.423046"
+            timestampString = "557776506.220727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getSchedulePickup(pickupDate:pickupTime:flag:pickupNumber:expressDeliveryID:specialInstruction:dropOffDate:dropOffTime:cancelReason:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

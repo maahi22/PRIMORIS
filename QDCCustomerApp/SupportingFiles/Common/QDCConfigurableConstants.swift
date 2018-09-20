@@ -7,17 +7,18 @@
 //
 
 import UIKit
-
+let DRYGREENAPP                 = #colorLiteral(red: 0.5405771136, green: 0.7574445605, blue: 0.2278534472, alpha: 1)
+let PERFECTAPP                  = #colorLiteral(red: 0.06442032009, green: 0.1647019982, blue: 0.5130925775, alpha: 1)
 let APP_NAME                    = "Primoris Laundry"
 let APP_LOGO                    = "Sign Up.png"
 let APP_PACKAGE                 = "primorislaundry"
 let API_BASEURL                 = ""
 let APP_SLUG                    = ""
-let PRIMARY_COLOUR              = #colorLiteral(red: 0.5405771136, green: 0.7574445605, blue: 0.2278534472, alpha: 1)
+let PRIMARY_COLOUR              = PERFECTAPP
 
 let PICK_UP_SCREEN_COLOUR       = ""
-let BUTTON_COLOUR               = #colorLiteral(red: 0.5405771136, green: 0.7574445605, blue: 0.2278534472, alpha: 1)
-let APP_ICON_COLOUR             = #colorLiteral(red: 0.5405771136, green: 0.7574445605, blue: 0.2278534472, alpha: 1)
+let BUTTON_COLOUR               = PERFECTAPP
+let APP_ICON_COLOUR             = PERFECTAPP
 let CURRENCY_PREFIX             = ""
 let ADDRESS_LABEL               = ""
 let LOCALITY_LABEL              = ""
